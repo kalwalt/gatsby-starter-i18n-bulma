@@ -10,9 +10,7 @@ import Content, { HTMLContent } from "../components/Content"
 const HomePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
   return (
-      <div
-
-      >
+      <div>
        <h1>{title}</h1>
       <PageContent className="content" content={content} />
       </div>
@@ -55,21 +53,20 @@ export default HomePage
 export const pageQuery = graphql`
   query HomePageQuery($id: String!) {
     site {
-    siteMetadata {
-      languages {
-        defaultLangKey
-        langs
+      siteMetadata {
+        languages {
+          defaultLangKey
+          langs
+        }
       }
     }
-  }
-    markdownRemark(id: { eq: $id }) {
+    markdownRemark(id: {eq: $id}) {
       html
       frontmatter {
         title
-      },
-       fields{
+      }
+      fields {
         slug
-
       }
     }
   }
