@@ -1,0 +1,12 @@
+.DS_Store
+npm-debug.log
+.hz
+.env
+.vscode/
+.cache/
+node_modules/
+.gatsby-context.js
+.intermediate-representation/
+.env
+.package-lock.json
+public/
