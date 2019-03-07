@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import SelectLanguage from './SelectLanguage';
 
 const Header = (props) => (
+
   <div
     style={{
       background: 'rebeccapurple',
@@ -25,6 +26,9 @@ const Header = (props) => (
           }}
         >
           Gatsby
+        </Link>
+        <Link to={props.langKey + "/artworks/"}>
+        artworks
         </Link>
       </h1>
       <SelectLanguage langs={props.langs} />

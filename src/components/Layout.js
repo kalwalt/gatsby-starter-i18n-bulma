@@ -27,6 +27,8 @@ class TemplateWrapper extends Component {
     const { langs, defaultLangKey } = data.site.siteMetadata.languages;
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;
+    console.log("language is: ");
+    console.log(this.langKey);
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
 
     // get the appropriate message file based on langKey
@@ -48,7 +50,7 @@ class TemplateWrapper extends Component {
               { name: 'keywords', content: 'sample, something' },
             ]}
           />
-          <Header langs={this.langsMenu} />
+          <Header langKey={this.langKey} langs={this.langsMenu} />
           <div
             style={{
               margin: `0 auto`,
