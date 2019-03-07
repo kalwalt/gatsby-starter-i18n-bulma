@@ -7,6 +7,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-i18n',
       options: {
@@ -36,5 +37,12 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    {
+      resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+      options: {
+        develop: true,            // Activates purging in npm run develop
+        purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
+      },
+    }, // must be after other CSS plugins
   ],
 }

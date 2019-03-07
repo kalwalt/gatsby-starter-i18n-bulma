@@ -27,10 +27,11 @@ const Header = (props) => (
         >
           Gatsby
         </Link>
+        </h1>
         <Link to={props.langKey + "/artworks/"}>
-        artworks
+        Artworks
         </Link>
-      </h1>
+
       <SelectLanguage langs={props.langs} />
     </div>
   </div>
