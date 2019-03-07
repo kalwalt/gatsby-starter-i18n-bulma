@@ -9,4 +9,5 @@ node_modules/
 .intermediate-representation/
 .env
 .package-lock.json
+yarn-error-log
 public/
