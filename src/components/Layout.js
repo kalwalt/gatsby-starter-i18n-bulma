@@ -13,6 +13,7 @@ import en from 'react-intl/locale-data/en';
 import 'intl/locale-data/jsonp/en';
 import it from 'react-intl/locale-data/it';
 import 'intl/locale-data/jsonp/it';
+import './all.sass'
 
 // add concatenated locale data
 addLocaleData([...en, ...it]);
