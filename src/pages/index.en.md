@@ -1,9 +1,10 @@
 ---
 title: "English home page"
 description: "qualche contenuto"
-nameSlug: pagina-home-real-en
+nameSlug: pagina-home-en
 templateKey: home
-tags: web
+tags:
+  - web
 lang: it
 date: "05-03-2019"
 path: /en/

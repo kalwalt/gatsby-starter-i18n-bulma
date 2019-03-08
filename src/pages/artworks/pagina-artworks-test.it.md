@@ -3,7 +3,8 @@ title: "Pagina opere italiano"
 description: "qualche contenuto"
 templateKey: artworks
 nameSlug: pagina-opere-it
-tags: web
+tags:
+  - art
 lang: it
 date: "05-03-2019"
 path: /it/artworks/pagina-artworks-test

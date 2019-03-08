@@ -8,7 +8,17 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      site{
+        siteMetadata{
+          languages{
+            langs
+          }
+        }
+      }
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
             id
@@ -16,6 +26,7 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
+              path
               tags
               templateKey
               nameSlug
@@ -82,7 +93,16 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
     createNodeField({
-      name: `slug`,
+      name: [`slug`,`tags`],
+      node,
+      value,
+    })
+  }
+
+  if (_.get(node.internal.type) === `allMarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `tags`,
       node,
       value,
     })
