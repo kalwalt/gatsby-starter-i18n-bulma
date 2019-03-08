@@ -17,7 +17,7 @@ const TagsPage = ({
   },
 }) => (
   <div>
-    <Helmet title={title} />
+    <Helmet title={title} ></Helmet>
     <div>
       <h1>Tags</h1>
       <ul>
