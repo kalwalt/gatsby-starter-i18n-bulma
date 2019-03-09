@@ -5,23 +5,18 @@ import PropTypes from "prop-types"
 import kebabCase from "lodash/kebabCase"
 
 // Components
-import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
+import Layout from "../components/Layout"
 
 const TagsPage = ({
-  data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
+data, location
 }) => (
+  <Layout data={data} location={location}>
   <div>
-    <Helmet title={title} ></Helmet>
     <div>
       <h1>Tags</h1>
       <ul>
-        {group.map(tag => (
+        {data.allMarkdownRemark.group.map(tag => (
           <li key={tag.fieldValue}>
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
@@ -31,9 +26,11 @@ const TagsPage = ({
       </ul>
     </div>
   </div>
+  </Layout>
 )
 
 TagsPage.propTypes = {
+  props: PropTypes.string,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       group: PropTypes.arrayOf(
@@ -58,6 +55,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        languages{
+          langs
+          defaultLangKey
+        }
       }
     }
     allMarkdownRemark(
