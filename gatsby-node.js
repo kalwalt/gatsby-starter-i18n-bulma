@@ -26,6 +26,7 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
+              date
               path
               tags
               templateKey
