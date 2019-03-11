@@ -53,23 +53,8 @@ class TemplateWrapper extends Component {
             ]}
           />
           <Header langKey={this.langKey} langs={this.langsMenu} />
-          <div
-            style={{
-              margin: `0 auto`,
-              marginTop: rhythm(1.5),
-              marginBottom: rhythm(1.5),
-              maxWidth: 650,
-              paddingLeft: rhythm(3 / 4),
-              paddingRight: rhythm(3 / 4),
-            }}
-          >
-            <Link style={{ textDecoration: `none` }} to="/">
-              <h3 style={{ color: `tomato`, marginBottom: rhythm(1.5) }}>
-                Example of a multilanguage site
-              </h3>
-            </Link>
+          <div>
             {this.children}
-            <hr style={{ marginTop: rhythm(3) }} />
           </div>
         </div>
       </IntlProvider>
