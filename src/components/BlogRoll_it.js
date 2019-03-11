@@ -1,12 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
+import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 
 class BlogRoll extends React.Component {
 
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
+    const url = location.pathname;
+    const { langs, defaultLangKey } = data.site.siteMetadata.languages;
+    this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
 
     return (
       <div className="columns is-multiline">
@@ -51,7 +55,7 @@ BlogRoll.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-    query BlogRollQuery {
+    query BlogRollitQuery {
       site {
         siteMetadata {
           title
@@ -63,7 +67,8 @@ export default () => (
       }
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] },
-        filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
+        filter: { frontmatter: { templateKey: { eq: "blog-post" },
+                                 lang: { regex: "/(it|any)/" }}}
       ) {
         edges {
           node {
@@ -76,6 +81,7 @@ export default () => (
               title
               templateKey
               date
+              lang
             }
           }
         }

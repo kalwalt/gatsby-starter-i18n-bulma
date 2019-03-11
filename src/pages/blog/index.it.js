@@ -1,18 +1,15 @@
 import React from 'react'
 
 import Layout from '../../components/Layout'
-import BlogRoll from '../../components/BlogRoll'
+import BlogRoll from '../../components/BlogRoll_it'
 import { graphql } from 'gatsby'
 
 export default class BlogIndexPage extends React.Component {
 
   render() {
     const data = this.props.data;
-    console.log("data in blog index: ");
-    console.log(data);
     const location = this.props.location;
-    console.log("location in blog index: ");
-    console.log(location.pathname);
+
   return (
       <Layout data={data} location={location}>
         <section className="section">
@@ -33,7 +30,7 @@ export default class BlogIndexPage extends React.Component {
                     padding: '1rem',
                   }}
                 >
-                  Latest Stories
+                  Ultime Notizie
                 </h1>
               </div>
             </div>
@@ -46,7 +43,7 @@ export default class BlogIndexPage extends React.Component {
 }
 
 export const pageQuery = graphql`
-  query BlogIndex
+  query BlogIndexIt
    {
     site {
       siteMetadata {
@@ -66,7 +63,8 @@ export const pageQuery = graphql`
         title
         description
         tags
+        lang
       }
     }
-  }
+}
 `
