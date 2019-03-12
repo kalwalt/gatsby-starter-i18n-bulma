@@ -6,6 +6,8 @@ import {
   faApple,
   faAws,
   faFacebook,
+  faInstagram,
+  faVimeo,
   faGithub,
   faHtml5,
   faJs,
@@ -24,6 +26,7 @@ import {
   faPenAlt,
   faQuestion,
   faAmericanSignLanguageInterpreting,
+  faCircle,
 } from '@fortawesome/free-solid-svg-icons'
 
 import './style.scss'
@@ -32,6 +35,8 @@ library.add(
   faApple,
   faAws,
   faFacebook,
+  faInstagram,
+  faVimeo,
   faGithub,
   faHtml5,
   faJs,
@@ -46,18 +51,20 @@ library.add(
   faIdCard,
   faPenAlt,
   faQuestion,
-  faAmericanSignLanguageInterpreting
+  faAmericanSignLanguageInterpreting,
+  faCircle
+
 )
 
 
-const Icon = ({ name }) => (
-  <div className="icon" title={name}>
+const Icon = ({ name, classN }) => (
+  <div className={classN + " icon"} title={name}>
     <FontAwesomeIcon icon={['fa', name]} />
   </div>
 )
 
-const IconB = ({ name }) => (
-  <div className="icon" title={name}>
+const IconB = ({ name, classN }) => (
+  <div className={classN + " icon"} title={name}>
     <FontAwesomeIcon icon={['fab', name]} />
   </div>
 )

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import logo from '../img/logo.svg'
-import { Icon } from '../components/Icon'
+import { FaHome, FaQuestion, FaImage, FaPenAlt, FaAmericanSignLanguageInterpreting } from 'react-icons/fa';
 import SelectLanguage from './SelectLanguage';
 
 const Header = class extends React.Component {
@@ -51,19 +51,19 @@ const Header = class extends React.Component {
         <div id="navMenu" className="navbar-menu">
         <div className="navbar-start has-text-centered">
           <Link className="navbar-item" to={props.langKey}>
-            <Icon title="Home" name="home" />  Home
+            <FaHome /> Home
           </Link>
           <Link className="navbar-item" to={props.langKey + "/about/"}>
-            <Icon title="About" name="question" />  About
+            <FaQuestion /> About
           </Link>
           <Link className="navbar-item" to={props.langKey + "/artworks/"}>
-            <Icon title="Products" name="image" /> Artworks
+            <FaImage /> Artworks
           </Link>
           <Link className="navbar-item" to={props.langKey + "/blog/"}>
-            <Icon title="Blog" name="pen-alt" /> Blog
+            <FaPenAlt /> Blog
           </Link>
           <Link className="navbar-item" to={props.langKey + "/contact/"}>
-            <Icon title="Contact" name="american-sign-language-interpreting" /> Contact
+            <FaAmericanSignLanguageInterpreting /> Contact
           </Link>
         </div>
         <div className="navbar-end has-text-centered">

@@ -3,6 +3,7 @@ import Link from "gatsby-link"
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider, addLocaleData } from 'react-intl';
@@ -56,6 +57,7 @@ class TemplateWrapper extends Component {
           <div>
             {this.children}
           </div>
+          <Footer langKey={this.langKey}/>
         </div>
       </IntlProvider>
     );
