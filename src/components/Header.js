@@ -34,7 +34,10 @@ const Header = class extends React.Component {
 
    return (
 
-
+<header>
+<div className="navbar-end has-text-centered">
+  <SelectLanguage langs={props.langs} />
+</div>
     <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
       <div className="container">
         <div className="navbar-brand">
@@ -66,12 +69,10 @@ const Header = class extends React.Component {
             <FaAmericanSignLanguageInterpreting /> Contact
           </Link>
         </div>
-        <div className="navbar-end has-text-centered">
-          <SelectLanguage langs={props.langs} />
-        </div>
         </div>
       </div>
     </nav>
+</header>
 )}
 }
 
