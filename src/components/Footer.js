@@ -2,14 +2,11 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import logo from '../img/logo.svg'
-import { FaCircle, FaFacebook, FaTwitter, FaInstagram, FaVimeo } from 'react-icons/fa';
-import { IconContext } from "react-icons";
 
 const Footer = class extends React.Component {
   render() {
     const props = this.props;
     return (
-      <IconContext.Provider value={{ className: 'react-icons' }}>
       <footer className="footer has-background-black has-text-white-ter">
         <div className="content has-text-centered">
           <img
@@ -59,35 +56,34 @@ const Footer = class extends React.Component {
                 </div>
                 <div className="column is-4 social">
                   <a title="facebook" href="https://facebook.com">
-                  <span className="fa-stack fa-lg">
-                    <FaCircle className="fa-stack-2x" />
-                    <FaFacebook className="fa-stack-1x fa-inverse" />
-                  </span>
+                    <span className="fa-stack fa-lg">
+                     <i className="fa fa-circle fa-stack-2x"></i>
+                     <i className="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
                   </a>
                   <a title="twitter" href="https://twitter.com">
-                  <span className="fa-stack fa-lg">
-                    <FaCircle className="fa-stack-2x" />
-                    <FaTwitter className="fa-stack-1x fa-inverse" />
-                  </span>
+                    <span className="fa-stack fa-lg">
+                     <i className="fa fa-circle fa-stack-2x"></i>
+                     <i className="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
                   </a>
                   <a title="instagram" href="https://instagram.com">
-                  <span className="fa-stack fa-lg react-icons">
-                    <FaCircle className="fa-stack-2x" />
-                    <FaInstagram className="fa-stack-1x fa-inverse" />
-                  </span>
+                    <span className="fa-stack fa-lg">
+                     <i className="fa fa-circle fa-stack-2x"></i>
+                     <i className="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                    </span>
                   </a>
                   <a title="vimeo" href="https://vimeo.com">
-                  <span className="fa-stack fa-lg">
-                    <FaCircle className="fa-stack-2x" />
-                    <FaVimeo className="fa-stack-1x fa-inverse" />
-                  </span>
+                    <span className="fa-stack fa-lg">
+                     <i className="fa fa-circle fa-stack-2x"></i>
+                     <i className="fa fa-vimeo fa-stack-1x fa-inverse"></i>
+                    </span>
                   </a>
                 </div>
               </div>
             </div>
         </div>
       </footer>
-      </IconContext.Provider>
     )
   }
 }
