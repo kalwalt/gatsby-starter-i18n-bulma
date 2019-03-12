@@ -68,7 +68,7 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
 }
 
 ContactPageTemplate.propTypes = {
-  props: PropTypes.object.isRequired,
+  //props: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
