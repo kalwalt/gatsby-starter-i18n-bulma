@@ -17,6 +17,17 @@ import 'intl/locale-data/jsonp/it';
 import './all.sass'
 import 'font-awesome/css/font-awesome.css'
 
+import articleId from '../data/articleTree'
+
+const getIdUrl = (id, langKey) => {
+  console.log("inside the getter");
+  switch (langKey) {
+    case 'en': return articleId[id][0];
+    case 'it': return articleId[id][1];
+    default: return null;
+  }
+};
+
 // add concatenated locale data
 addLocaleData([...en, ...it]);
 
@@ -33,7 +44,11 @@ class TemplateWrapper extends Component {
     console.log("language is: ");
     console.log(this.langKey);
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
-
+    console.log("langsMenu is: ");
+    console.log(this.langsMenu);
+    const id_article = data.markdownRemark.frontmatter.id;
+    console.log(id_article);
+    console.log(getIdUrl(id_article, this.langKey));
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
     // with the appropriate language code
