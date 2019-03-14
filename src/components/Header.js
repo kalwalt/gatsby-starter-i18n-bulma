@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import logo from '../img/logo.svg'
 import { FaHome, FaQuestion, FaImage, FaPenAlt, FaAmericanSignLanguageInterpreting } from 'react-icons/fa';
 import SelectLanguage from './SelectLanguage';
+import { FormattedMessage } from 'react-intl';
 
 const Header = class extends React.Component {
 
@@ -54,19 +55,19 @@ const Header = class extends React.Component {
         <div id="navMenu" className="navbar-menu">
         <div className="navbar-start has-text-centered">
           <Link className="navbar-item" to={props.langKey}>
-            <FaHome /> Home
+            <FaHome /> <FormattedMessage id="home" />
           </Link>
           <Link className="navbar-item" to={props.langKey + "/about/"}>
-            <FaQuestion /> About
+            <FaQuestion /> <FormattedMessage id="about" />
           </Link>
           <Link className="navbar-item" to={props.langKey + "/artworks/"}>
-            <FaImage /> Artworks
+            <FaImage /> <FormattedMessage id="artworks" />
           </Link>
           <Link className="navbar-item" to={props.langKey + "/blog/"}>
-            <FaPenAlt /> Blog
+            <FaPenAlt /> <FormattedMessage id="blog" />
           </Link>
           <Link className="navbar-item" to={props.langKey + "/contact/"}>
-            <FaAmericanSignLanguageInterpreting /> Contact
+            <FaAmericanSignLanguageInterpreting /> <FormattedMessage id="contact" />
           </Link>
         </div>
         </div>
