@@ -85,7 +85,9 @@ BlogPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
-  location,
+  location: PropTypes.shape({
+   pathname: PropTypes.string.isRequired,
+ }).isRequired,
 }
 
 export default BlogPost
