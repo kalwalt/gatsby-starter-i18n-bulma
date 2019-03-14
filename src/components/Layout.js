@@ -21,12 +21,20 @@ import articleId from '../data/articleTree'
 
 const getIdUrl = (id, langKey) => {
   console.log("inside the getter");
+  var res;
   switch (langKey) {
     //we need the inverse of the current page...
-    case 'en': return articleId[id][0];
-    case 'it': return articleId[id][1];
+    case 'en':
+    res = articleId[id][0];
+    break;
+    case 'it':
+    res = articleId[id][1];
+    break;
     default: return null;
   }
+  console.log("res is:");
+  console.log(res);
+  return res;
 };
 
 const startPath = (langKey, langsMenu, basename, _url) => {
@@ -34,6 +42,8 @@ const startPath = (langKey, langsMenu, basename, _url) => {
   console.log("length of the langKey:");
   console.log(lengthLangKey);
   var indx;
+  indx = _url.indexOf(basename);
+  /*
   switch (langKey) {
     case 'en':
     indx = langsMenu[0].link.indexOf(basename);
@@ -41,10 +51,11 @@ const startPath = (langKey, langsMenu, basename, _url) => {
     case 'it':
     indx = langsMenu[1].link.indexOf(basename);
     break;
-    default: return null;
+    default:
+    return null;
     console.log("indx inside startPath:");
     console.log(indx);
-  }
+  }*/
   console.log("indx inside startPath:");
   console.log(indx);
   //indx = 9;
@@ -82,6 +93,12 @@ const setLangsMenu2 = ( langsMenu, id, basePath) => {
 
 };
 
+const setLangsMenu3 = ( langsMenu, id, basePath) => {
+  console.log("inside the setter");
+  langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en');
+  langsMenu[1].link = `/it/${basePath}` + getIdUrl(id, 'it');
+};
+
 // add concatenated locale data
 addLocaleData([...en, ...it]);
 
@@ -106,7 +123,7 @@ class TemplateWrapper extends Component {
     console.log(this.langsMenu);
     const id_article = data.markdownRemark.frontmatter.id;
     console.log(id_article);
-    const basename = getIdUrl(id_article, 'en');
+    const basename = getIdUrl(id_article, this.langKey);
     const indx = this.langsMenu[0].link.indexOf(basename);
     const lengthLangKey = this.langKey.length;
     console.log("length of the langKey:");
@@ -118,22 +135,13 @@ class TemplateWrapper extends Component {
     const basePath = url.slice(lengthLangKey + 2, indx);
     console.log("basePath is:");
     console.log(basePath);
-
-    const options = {
-      langKeyDefault: 'any',
-      prefixDefault: true
-   };
-    console.log("slug is: ");
-    //var slug = getSlugAndLang(options, this.langsMenu[0].link);
-    var slug = getSlugAndLang(options, '/src/pages/blog/2019-03-11-notizie-dal-pianeta-arte.it.md');
-    console.log(slug);
-    var Path = startPath(this.langKey, this.langsMenu, basename, url)
+    var Path = startPath(this.langKey, this.langsMenu, basename, url);
     console.log("path is:");
     //Path = '/blog'
     console.log(Path);
 
-    //this.langsMenu[0].link = "/en/blog/" + getIdUrl(id_article, this.langKey);
     var out = setLangsMenu2( this.langsMenu, id_article, Path);
+    setLangsMenu3( this.langsMenu, id_article, Path);
     console.log(out);
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
