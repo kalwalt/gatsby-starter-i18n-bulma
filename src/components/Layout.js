@@ -68,30 +68,6 @@ const startPath = (langKey, langsMenu, basename, _url) => {
   return basePath;
 };
 
-const setLangsMenu = ( langsMenu, id, langKey, basePath) => {
-  console.log("inside the setter");
-
-  switch (langKey) {
-    //we need the inverse of the current page...
-    //case 'en': return this.langsMenu[0].link = "/it/blog/" + getIdUrl(id_article, langKey);
-    case 'en': return langsMenu[0].link = `/it/${basePath}` + getIdUrl(id, langKey);
-    //return langsMenu[1].link.replace(getSlugAndLang('any', langsMenu[1].link), getIdUrl(id, langKey));
-    //case 'it': return this.langsMenu[0].link = "/en/blog/" + getIdUrl(id_article, langKey);
-    case 'it': return langsMenu[1].link = `/en/${basePath}` + getIdUrl(id, langKey);
-    default: return null;
-  }
-};
-
-const setLangsMenu2 = ( langsMenu, id, basePath) => {
-  console.log("inside the setter");
-  var eng = langsMenu[0].link;
-  var ita = langsMenu[1].link;
-  eng = `/en/${basePath}` + getIdUrl(id, 'en');
-  ita = `/it/${basePath}` + getIdUrl(id, 'it');
-
-  return [eng, ita];
-
-};
 
 const setLangsMenu3 = ( langsMenu, id, basePath) => {
   console.log("inside the setter");
@@ -140,9 +116,7 @@ class TemplateWrapper extends Component {
     //Path = '/blog'
     console.log(Path);
 
-    var out = setLangsMenu2( this.langsMenu, id_article, Path);
     setLangsMenu3( this.langsMenu, id_article, Path);
-    console.log(out);
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
     // with the appropriate language code
