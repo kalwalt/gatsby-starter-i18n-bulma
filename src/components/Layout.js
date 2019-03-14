@@ -29,24 +29,28 @@ const getIdUrl = (id, langKey) => {
   }
 };
 
-const startPath = (langKey, langsMenu, basename, url) => {
+const startPath = (langKey, langsMenu, basename, _url) => {
   const lengthLangKey = langKey.length;
   console.log("length of the langKey:");
   console.log(lengthLangKey);
   var indx;
   switch (langKey) {
-    case 'en': return indx = langsMenu[0].link.indexOf(basename);
-    case 'it': return indx = langsMenu[1].link.indexOf(basename);
+    case 'en':
+    indx = langsMenu[0].link.indexOf(basename);
+    break;
+    case 'it':
+    indx = langsMenu[1].link.indexOf(basename);
+    break;
     default: return null;
     console.log("indx inside startPath:");
     console.log(indx);
   }
   console.log("indx inside startPath:");
   console.log(indx);
-  indx = 9;
+  //indx = 9;
   console.log("url:");
-  console.log(url);
-  const basePath = url.slice(lengthLangKey + 2, indx);
+  console.log(_url);
+  const basePath = _url.slice(lengthLangKey + 2, indx);
   console.log("basePath is:");
   console.log(basePath);
   //var basePath = '/blog'
@@ -71,8 +75,8 @@ const setLangsMenu2 = ( langsMenu, id, basePath) => {
   console.log("inside the setter");
   var eng = langsMenu[0].link;
   var ita = langsMenu[1].link;
-  eng = `/en/${basePath}/` + getIdUrl(id, 'en');
-  ita = `/it/${basePath}/` + getIdUrl(id, 'it');
+  eng = `/en/${basePath}` + getIdUrl(id, 'en');
+  ita = `/it/${basePath}` + getIdUrl(id, 'it');
 
   return [eng, ita];
 
@@ -102,8 +106,8 @@ class TemplateWrapper extends Component {
     console.log(this.langsMenu);
     const id_article = data.markdownRemark.frontmatter.id;
     console.log(id_article);
-    const basename = getIdUrl(id_article, 'it');
-    const indx = this.langsMenu[1].link.indexOf(basename);
+    const basename = getIdUrl(id_article, 'en');
+    const indx = this.langsMenu[0].link.indexOf(basename);
     const lengthLangKey = this.langKey.length;
     console.log("length of the langKey:");
     console.log(lengthLangKey);
