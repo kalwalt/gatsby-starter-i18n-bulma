@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Helmet from 'react-helmet'
-import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
+import { getCurrentLangKey, getLangs, getUrlForLang, getSlugAndLang } from 'ptz-i18n';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import { rhythm } from "../utils/typography"
 import 'intl';
@@ -22,10 +22,23 @@ import articleId from '../data/articleTree'
 const getIdUrl = (id, langKey) => {
   console.log("inside the getter");
   switch (langKey) {
-    case 'en': return articleId[id][0];
-    case 'it': return articleId[id][1];
+    //we need the inverse of the current page...
+    case 'en': return articleId[id][1];
+    case 'it': return articleId[id][0];
     default: return null;
   }
+};
+
+const setLangsMenu = ( langsMenu, id, langKey) => {
+  console.log("inside the setter");
+
+  //switch (langKey) {
+    //we need the inverse of the current page...
+    //case 'en': return this.langsMenu[0].link = "/it/blog/" + getIdUrl(id_article, langKey);
+    return langsMenu[1].link.replace(getSlugAndLang('any', langsMenu[1].link), getIdUrl(id, langKey));
+    //case 'it': return this.langsMenu[0].link = "/en/blog/" + getIdUrl(id_article, langKey);
+    //default: return null;
+  //}
 };
 
 // add concatenated locale data
@@ -38,17 +51,44 @@ class TemplateWrapper extends Component {
     const data = this.props.data;
     const location = this.props.location;
     const url = location.pathname;
+    console.log("url is: ");
+    console.log(url);
     const { langs, defaultLangKey } = data.site.siteMetadata.languages;
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;
     console.log("language is: ");
     console.log(this.langKey);
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
+    console.log("urlForLang is: ");
+    console.log(getUrlForLang(this.homeLink, url, this.langKey));
     console.log("langsMenu is: ");
     console.log(this.langsMenu);
     const id_article = data.markdownRemark.frontmatter.id;
     console.log(id_article);
-    console.log(getIdUrl(id_article, this.langKey));
+    const basename = getIdUrl(id_article, 'it');
+    const indx = this.langsMenu[1].link.indexOf(basename);
+    const lengthLangKey = this.langKey.length;
+    console.log("length of the langKey:");
+    console.log(lengthLangKey);
+    console.log("start index:");
+    console.log(indx);
+    console.log("basename:");
+    console.log(basename);
+    const basePath = url.slice(lengthLangKey + 2, indx);
+    console.log("basePath is:");
+    console.log(basePath);
+
+    const options = {
+      langKeyDefault: 'any',
+      prefixDefault: true
+   };
+    console.log("slug is: ");
+    //var slug = getSlugAndLang(options, this.langsMenu[0].link);
+    var slug = getSlugAndLang(options, '/src/pages/blog/2019-03-11-notizie-dal-pianeta-arte.it.md');
+    console.log(slug);
+
+    //this.langsMenu[0].link = "/en/blog/" + getIdUrl(id_article, this.langKey);
+    setLangsMenu( this.langsMenu, id_article, this.langKey);
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
     // with the appropriate language code
