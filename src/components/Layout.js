@@ -21,7 +21,6 @@ import articleId from '../data/articleTree'
 
 const getIdUrl = (id, langKey) => {
   if(id){
-  console.log("inside the Id getter");
   var res;
   switch (langKey) {
     //we get the name of the page according the id
@@ -33,8 +32,6 @@ const getIdUrl = (id, langKey) => {
     break;
     default: return null;
   }
-  console.log("res is:");
-  console.log(res);
   return res;
 }
 };
@@ -50,7 +47,6 @@ const startPath = (langKey, langsMenu, basename, _url) => {
 
 const setLangsMenu = ( langsMenu, id, basePath) => {
   if(id){
-  console.log("inside the setter");
   langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en');
   langsMenu[1].link = `/it/${basePath}` + getIdUrl(id, 'it');
 }
