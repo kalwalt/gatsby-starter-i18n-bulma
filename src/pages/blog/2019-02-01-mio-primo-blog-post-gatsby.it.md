@@ -1,6 +1,7 @@
 ---
+id: 02
 templateKey: blog-post
-title: My first gatsby blog post.
+title: Il mio primo post con Gatsby.
 date: 2019-02-01T22:31:28.375Z
 description: Il mio primo blog con Gatsby...
 lang: it
