@@ -71,24 +71,10 @@ class TemplateWrapper extends Component {
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
     const id_article = data.markdownRemark.frontmatter.id;
-    console.log(id_article);
     const basename = getIdUrl(id_article, this.langKey);
-    const indx = this.langsMenu[0].link.indexOf(basename);
-    const lengthLangKey = this.langKey.length;
-    console.log("length of the langKey:");
-    console.log(lengthLangKey);
-    console.log("start index:");
-    console.log(indx);
-    console.log("basename:");
-    console.log(basename);
-    const basePath = url.slice(lengthLangKey + 2, indx);
-    console.log("basePath is:");
-    console.log(basePath);
-    var Path = startPath(this.langKey, this.langsMenu, basename, url);
-    console.log("path is:");
-    console.log(Path);
-
-    setLangsMenu( this.langsMenu, id_article, Path);
+    var basePath = startPath(this.langKey, this.langsMenu, basename, url);
+    //finally here we set the desired url...
+    setLangsMenu( this.langsMenu, id_article, basePath);
 
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
