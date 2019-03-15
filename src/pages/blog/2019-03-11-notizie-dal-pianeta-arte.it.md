@@ -1,4 +1,5 @@
 ---
+id: 07
 templateKey: blog-post
 title: News dal mondo dell'arte.
 date: 2019-03-11

@@ -1,7 +1,7 @@
 ---
+id: 01
 title: "English home page"
 description: "qualche contenuto"
-nameSlug: pagina-home-en
 templateKey: home
 tags:
   - web

@@ -6,11 +6,11 @@ const En = (props) => {
     <Icon viewBox="0 0 640 480" {...props}>
     <defs>
    <clipPath id="a">
-     <path fill-opacity=".7" d="M-85.3 0h682.6v512H-85.3z"/>
+     <path fillOpacity=".7" d="M-85.3 0h682.6v512H-85.3z"/>
    </clipPath>
  </defs>
- <g clip-path="url(#a)" transform="translate(80) scale(.94)">
-   <g stroke-width="1pt">
+ <g clipPath="url(#a)" transform="translate(80) scale(.94)">
+   <g strokeWidth="1pt">
      <path fill="#012169" d="M-256 0H768v512H-256z"/>
      <path fill="#fff" d="M-256 0v57.2L653.5 512H768v-57.2L-141.5 0H-256zM768 0v57.2L-141.5 512H-256v-57.2L653.5 0H768z"/>
      <path fill="#fff" d="M170.7 0v512h170.6V0H170.7zM-256 170.7v170.6H768V170.7H-256z"/>
