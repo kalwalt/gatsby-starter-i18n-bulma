@@ -51,23 +51,36 @@ TagsPage.propTypes = {
 export default TagsPage
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        languages{
-          langs
-          defaultLangKey
-        }
-      }
-    }
-    allMarkdownRemark(
-      limit: 2000
-    ) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
+query {
+  site {
+    siteMetadata {
+      title
+      languages {
+        langs
+        defaultLangKey
       }
     }
   }
+  markdownRemark {
+    frontmatter {
+      id
+    }
+  }
+  allMarkdownRemark(limit: 2000) {
+    group(field: frontmatter___tags) {
+      fieldValue
+      totalCount
+    }
+    edges {
+      node {
+        frontmatter {
+          id
+          title
+          slug
+        }
+      }
+    }
+  }
+}
+
 `
