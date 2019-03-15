@@ -80,8 +80,9 @@ query ($tag: String) {
     edges {
       node {
         frontmatter {
-          date
+          id
           title
+          date
           path
         }
       }
