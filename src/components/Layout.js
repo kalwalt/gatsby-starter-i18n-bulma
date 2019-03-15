@@ -18,6 +18,8 @@ import './all.sass'
 import 'font-awesome/css/font-awesome.css'
 
 import articleId from '../data/articleTree'
+import menuTree from '../data/menuTree'
+
 
 const getIdUrl = (id, langKey) => {
   if(id){
@@ -91,7 +93,7 @@ class TemplateWrapper extends Component {
               { name: 'keywords', content: 'sample, something' },
             ]}
           />
-          <Header langKey={this.langKey} langs={this.langsMenu} />
+          <Header langKey={this.langKey} langs={this.langsMenu} menu={this.menuTree} />
           <div>
             {this.children}
           </div>

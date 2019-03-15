@@ -1,4 +1,5 @@
 ---
+id: 03
 title: "Contact page"
 description: "Page to send an e-mail"
 nameSlug: page-contact-en
@@ -6,7 +7,7 @@ templateKey: contacts
 tags:
   - web
 nameLabel: "Your name"
-lang: it
+lang: en
 date: "08-03-2019"
 path: /en/contact
 slug: /en/contact

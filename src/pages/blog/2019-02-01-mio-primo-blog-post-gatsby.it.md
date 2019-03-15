@@ -1,5 +1,5 @@
 ---
-id: 02
+id: 06
 templateKey: blog-post
 title: Il mio primo post con Gatsby.
 date: 2019-02-01T22:31:28.375Z

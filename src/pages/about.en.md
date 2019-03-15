@@ -1,4 +1,5 @@
 ---
+id: 02
 title: "About me"
 description: "Something about me"
 nameSlug: page-about-en
