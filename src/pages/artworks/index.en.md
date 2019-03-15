@@ -3,7 +3,6 @@ id: 04
 title: "Artworks start page english"
 description: "The root of the artwork page"
 templateKey: artworks
-nameSlug: artwork-page-en
 tags:
   - art
 lang: en

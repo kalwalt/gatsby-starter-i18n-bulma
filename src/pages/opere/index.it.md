@@ -3,7 +3,6 @@ id: 04
 title: "Pagina principale opere italiano"
 description: "La pagina principale delle opere"
 templateKey: artworks
-nameSlug: pagina-opere-it
 tags:
   - art
 lang: it

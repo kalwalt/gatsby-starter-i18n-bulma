@@ -3,7 +3,6 @@ id: 05
 title: "Pagina opere italiano"
 description: "qualche contenuto"
 templateKey: artworks
-nameSlug: pagina-opere-it
 tags:
   - art
 lang: it

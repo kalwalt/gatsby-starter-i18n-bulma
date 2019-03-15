@@ -2,7 +2,6 @@
 id: 03
 title: "Pagina di contatto"
 description: "Pagina per contattarmi"
-nameSlug: pagina-contact-it
 templateKey: contacts
 tags:
   - web

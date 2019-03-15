@@ -2,7 +2,6 @@
 id: 03
 title: "Contact page"
 description: "Page to send an e-mail"
-nameSlug: page-contact-en
 templateKey: contacts
 tags:
   - web
