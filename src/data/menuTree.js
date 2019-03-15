@@ -3,4 +3,4 @@ module.exports = {
   'artworks': ['artworks', 'opere'],
   'blog': ['blog', 'blog'],
   'contact': ['contact', 'contatto']
-}
+};
