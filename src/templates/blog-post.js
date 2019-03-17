@@ -54,6 +54,7 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  location: PropTypes.string,
 }
 
 const BlogPost = ({ data, location }) => {

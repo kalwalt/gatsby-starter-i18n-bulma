@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import Layout from '../../components/Layout'
 import BlogRoll from '../../components/BlogRoll_en'
 import { graphql } from 'gatsby'
@@ -45,6 +45,12 @@ export default class BlogIndexPage extends React.Component {
       </Layout>
     )
   }
+}
+
+BlogIndexPage.propTypes = {
+  location: PropTypes.shape({
+   pathname: PropTypes.string.isRequired,
+ }).isRequired,
 }
 
 export const pageQuery = graphql`
