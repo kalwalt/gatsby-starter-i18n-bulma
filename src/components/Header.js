@@ -3,6 +3,9 @@ import Link from 'gatsby-link'
 import logo from '../img/logo.svg'
 import { FaHome, FaQuestion, FaImage, FaPenAlt, FaAmericanSignLanguageInterpreting } from 'react-icons/fa';
 import SelectLanguage from './SelectLanguage';
+import { FormattedMessage } from 'react-intl';
+import menuTree from '../data/menuTree'
+import select from '../components/utils'
 
 const Header = class extends React.Component {
 
@@ -31,7 +34,7 @@ const Header = class extends React.Component {
  render() {
 
    const props = this.props;
-
+   const sel = select(props.langKey);
    return (
 
 <header>
@@ -54,19 +57,19 @@ const Header = class extends React.Component {
         <div id="navMenu" className="navbar-menu">
         <div className="navbar-start has-text-centered">
           <Link className="navbar-item" to={props.langKey}>
-            <FaHome /> Home
+            <FaHome /> <FormattedMessage id="home" />
           </Link>
-          <Link className="navbar-item" to={props.langKey + "/about/"}>
-            <FaQuestion /> About
+          <Link className="navbar-item" to={props.langKey + "/" + menuTree.about[sel] +"/"}>
+            <FaQuestion /> <FormattedMessage id="about" />
           </Link>
-          <Link className="navbar-item" to={props.langKey + "/artworks/"}>
-            <FaImage /> Artworks
+          <Link className="navbar-item" to={props.langKey + "/" + menuTree.artworks[sel] +"/"}>
+            <FaImage /> <FormattedMessage id="artworks" />
           </Link>
-          <Link className="navbar-item" to={props.langKey + "/blog/"}>
-            <FaPenAlt /> Blog
+          <Link className="navbar-item" to={props.langKey + "/" + menuTree.blog[sel] +"/"}>
+            <FaPenAlt /> <FormattedMessage id="blog" />
           </Link>
-          <Link className="navbar-item" to={props.langKey + "/contact/"}>
-            <FaAmericanSignLanguageInterpreting /> Contact
+          <Link className="navbar-item" to={props.langKey + "/" + menuTree.contact[sel] +"/"}>
+            <FaAmericanSignLanguageInterpreting /> <FormattedMessage id="contact" />
           </Link>
         </div>
         </div>

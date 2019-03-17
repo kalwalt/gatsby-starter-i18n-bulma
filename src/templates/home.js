@@ -63,6 +63,7 @@ export const pageQuery = graphql`
     markdownRemark(id: {eq: $id}) {
       html
       frontmatter {
+        id
         title
       }
       fields {

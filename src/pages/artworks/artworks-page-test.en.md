@@ -1,8 +1,8 @@
 ---
+id: 05
 title: "Artworks page english"
 description: "qualche contenuto"
 templateKey: artworks
-nameSlug: pagina-artrwork-en
 tags:
   - art
 lang: it

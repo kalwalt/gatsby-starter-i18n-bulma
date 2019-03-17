@@ -60,31 +60,33 @@ Tags.propTypes = {
 export default Tags
 
 export const pageQuery = graphql`
-  query($tag: String) {
-    site {
-      siteMetadata {
-        title
-        languages{
-          langs
-          defaultLangKey
-        }
+query ($tag: String) {
+  site {
+    siteMetadata {
+      title
+      languages {
+        langs
+        defaultLangKey
       }
     }
-    allMarkdownRemark(
-      limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            date
-            title
-            path
-          }
+  }
+  markdownRemark {
+    frontmatter {
+      id
+    }
+  }
+  allMarkdownRemark(limit: 2000, sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {tags: {in: [$tag]}}}) {
+    totalCount
+    edges {
+      node {
+        frontmatter {
+          id
+          title
+          date
+          path
         }
       }
     }
   }
+}
 `

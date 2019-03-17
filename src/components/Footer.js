@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import select from '../components/utils'
+import menuTree from '../data/menuTree'
 
 import logo from '../img/logo.svg'
 
 const Footer = class extends React.Component {
   render() {
     const props = this.props;
+    const sel = select(props.langKey);
     return (
       <footer className="footer has-background-black has-text-white-ter">
         <div className="content has-text-centered">
@@ -22,8 +25,8 @@ const Footer = class extends React.Component {
                 <section className="menu">
                     <ul className="menu-list">
                       <li><Link to={props.langKey} className="navbar-item">Home</Link></li>
-                      <li><Link className="navbar-item" to={props.langKey + "/about"}>About</Link></li>
-                      <li><Link className="navbar-item" to={props.langKey + "/artworks"}>
+                      <li><Link className="navbar-item" to={props.langKey + "/" + menuTree.about[sel] +"/"}>About</Link></li>
+                      <li><Link className="navbar-item" to={props.langKey + "/" + menuTree.artworks[sel] +"/"}>
                         Artworks
                       </Link>
                     </li>
@@ -42,12 +45,12 @@ const Footer = class extends React.Component {
                 <section>
                   <ul className="menu-list">
                   <li>
-                    <Link className="navbar-item" to={props.langKey + "/blog"}>
+                    <Link className="navbar-item" to={props.langKey + "/" + menuTree.blog[sel] +"/"}>
                       Latest Stories
                     </Link>
                   </li>
                   <li>
-                    <Link className="navbar-item" to={props.langKey + "/contact"}>
+                    <Link className="navbar-item" to={props.langKey + "/" + menuTree.contact[sel] +"/"}>
                       Contact
                     </Link>
                   </li>
