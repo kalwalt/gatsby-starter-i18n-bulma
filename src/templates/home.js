@@ -60,6 +60,16 @@ export const pageQuery = graphql`
         }
       }
     }
+    allJavascriptFrontmatter {
+  edges {
+    node {
+      frontmatter {
+        id
+        title   
+      }
+    }
+  }
+}
     markdownRemark(id: {eq: $id}) {
       html
       frontmatter {

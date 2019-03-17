@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import logo from '../img/logo.svg'
 import { FaHome, FaQuestion, FaImage, FaPenAlt, FaAmericanSignLanguageInterpreting } from 'react-icons/fa';
 import SelectLanguage from './SelectLanguage';
@@ -56,19 +56,19 @@ const Header = class extends React.Component {
         </div>
         <div id="navMenu" className="navbar-menu">
         <div className="navbar-start has-text-centered">
-          <Link className="navbar-item" to={props.langKey}>
+          <Link className="navbar-item" to={"/" + props.langKey}>
             <FaHome /> <FormattedMessage id="home" />
           </Link>
-          <Link className="navbar-item" to={props.langKey + "/" + menuTree.about[sel] +"/"}>
+          <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
             <FaQuestion /> <FormattedMessage id="about" />
           </Link>
-          <Link className="navbar-item" to={props.langKey + "/" + menuTree.artworks[sel] +"/"}>
+          <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}>
             <FaImage /> <FormattedMessage id="artworks" />
           </Link>
-          <Link className="navbar-item" to={props.langKey + "/" + menuTree.blog[sel] +"/"}>
+          <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
             <FaPenAlt /> <FormattedMessage id="blog" />
           </Link>
-          <Link className="navbar-item" to={props.langKey + "/" + menuTree.contact[sel] +"/"}>
+          <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.contact[sel] +"/"}>
             <FaAmericanSignLanguageInterpreting /> <FormattedMessage id="contact" />
           </Link>
         </div>

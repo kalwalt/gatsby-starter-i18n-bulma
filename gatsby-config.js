@@ -36,6 +36,7 @@ module.exports = {
         name: 'images',
       },
     },
+    "gatsby-transformer-javascript-frontmatter",
     `gatsby-transformer-remark`,
     {
       resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
