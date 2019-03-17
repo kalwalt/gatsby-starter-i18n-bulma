@@ -4,6 +4,12 @@ import Layout from '../../components/Layout'
 import BlogRoll from '../../components/BlogRoll_it'
 import { graphql } from 'gatsby'
 
+export const frontmatter = {
+  id:  '02',
+  title: "pagina blog",
+}
+
+
 export default class BlogIndexPage extends React.Component {
 
   render() {
@@ -54,11 +60,22 @@ export const pageQuery = graphql`
         }
       }
     }
+    allJavascriptFrontmatter {
+    edges {
+      node {
+        frontmatter {
+          id
+          title
+        }
+      }
+    }
+  }
     markdownRemark
      {
       id
       html
       frontmatter {
+        id
         date
         title
         description
