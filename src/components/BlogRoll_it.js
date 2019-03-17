@@ -6,11 +6,8 @@ import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 class BlogRoll extends React.Component {
 
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
-    const url = location.pathname;
-    const { langs, defaultLangKey } = data.site.siteMetadata.languages;
-    this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
 
     return (
       <div className="columns is-multiline">
