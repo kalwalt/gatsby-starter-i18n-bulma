@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-//import Link from "gatsby-link"
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import Header from '../components/Header'
