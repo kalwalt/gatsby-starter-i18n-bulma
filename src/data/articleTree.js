@@ -1,4 +1,5 @@
 module.exports = {
+  '10': ['',''],
   '1': ['/', '/'],
   '2': ['blog', 'blog'],
   '3': ['about','presentazione'],

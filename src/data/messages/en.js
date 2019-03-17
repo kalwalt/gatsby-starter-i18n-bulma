@@ -5,4 +5,5 @@ module.exports = {
   'artworks': 'Artworks',
   'blog': 'Blog',
   'contact': 'Contacts',
+  'not_found': "404 - Page Not Found",
 };
