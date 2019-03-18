@@ -12,21 +12,8 @@ exports.createPages = ({ actions, graphql }) => {
         siteMetadata{
           languages{
             langs
-            defaultLangKey
+
           }
-        }
-      }
-      markdownRemark
-       {
-        id
-        html
-        frontmatter {
-          
-          date
-          title
-          description
-          tags
-          lang
         }
       }
       allMarkdownRemark(

@@ -31,7 +31,7 @@ const getIdUrl = (id, langKey) => {
     case 'it':
     res = articleId[id][1];
     break;
-    default: return res = '404';
+    default: return ' ';
   }
   return res;
 }
@@ -68,14 +68,8 @@ class TemplateWrapper extends Component {
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
     const id_article = data.markdownRemark.frontmatter.id;
-    console.log("id_article is:");
-    console.log(id_article);
     const basename = getIdUrl(id_article, this.langKey);
-    console.log("basename is:");
-    console.log(basename);
     var basePath = startPath(this.langKey, this.langsMenu, basename, url);
-    console.log("basePath is:");
-    console.log(basePath);
     //finally here we set the desired url...
     setLangsMenu( this.langsMenu, id_article, basePath);
 
@@ -84,15 +78,7 @@ class TemplateWrapper extends Component {
     // with the appropriate language code
     this.i18nMessages = require(`../data/messages/${this.langKey}`);
   }
-/*
-  componentDidUpdate(props) {
-    const id_article = data.markdownRemark.frontmatter.id;
-    const basename = getIdUrl(id_article, this.langKey);
-    var basePath = startPath(this.langKey, this.langsMenu, basename, url);
-    //finally here we set the desired url...
-    setLangsMenu( this.langsMenu, id_article, basePath);
-  }
-*/
+
   render() {
     return (
       <IntlProvider

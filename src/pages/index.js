@@ -33,18 +33,5 @@ export const pageQuery = graphql`
         }
       }
     }
-    markdownRemark
-     {
-      id
-      html
-      frontmatter {
-        id
-        date
-        title
-        description
-        tags
-        lang
-      }
-    }
   }
 `;

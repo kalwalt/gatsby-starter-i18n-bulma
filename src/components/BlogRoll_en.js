@@ -65,19 +65,7 @@ export default () => (
           }
         }
       }
-      markdownRemark
-       {
-        id
-        html
-        frontmatter {
-          id
-          date
-          title
-          description
-          tags
-          lang
-        }
-      }
+
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] },
         filter: { frontmatter: { templateKey: { eq: "blog-post" },
