@@ -31,7 +31,7 @@ const getIdUrl = (id, langKey) => {
     case 'it':
     res = articleId[id][1];
     break;
-    default: return ' ';
+    default: return res = '404';
   }
   return res;
 }
@@ -48,8 +48,8 @@ const startPath = (langKey, langsMenu, basename, _url) => {
 
 const setLangsMenu = ( langsMenu, id, basePath) => {
   if(id){
-  langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en');
-  langsMenu[1].link = `/it/${basePath}` + getIdUrl(id, 'it');
+  langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en') + '/';
+  langsMenu[1].link = `/it/${basePath}` + getIdUrl(id, 'it') + '/';
 }
 };
 
@@ -78,6 +78,15 @@ class TemplateWrapper extends Component {
     // with the appropriate language code
     this.i18nMessages = require(`../data/messages/${this.langKey}`);
   }
+/*
+  componentDidUpdate(props) {
+    const id_article = data.markdownRemark.frontmatter.id;
+    const basename = getIdUrl(id_article, this.langKey);
+    var basePath = startPath(this.langKey, this.langsMenu, basename, url);
+    //finally here we set the desired url...
+    setLangsMenu( this.langsMenu, id_article, basePath);
+  }
+*/
   render() {
     return (
       <IntlProvider
