@@ -1,5 +1,5 @@
 ---
-id: 07
+id: '08'
 templateKey: blog-post
 title: News from the art planet.
 date: 2019-03-11
