@@ -16,6 +16,19 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      markdownRemark
+       {
+        id
+        html
+        frontmatter {
+          
+          date
+          title
+          description
+          tags
+          lang
+        }
+      }
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
@@ -27,7 +40,6 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              id
               date
               path
               tags

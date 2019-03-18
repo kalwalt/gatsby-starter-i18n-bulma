@@ -46,13 +46,13 @@ module.exports = {
         purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
-    `gatsby-plugin-remove-trailing-slashes`,
+  /*  `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
       },
     },
-
+*/
   ],
 }
