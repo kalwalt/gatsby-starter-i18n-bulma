@@ -1,5 +1,5 @@
 ---
-id: 03
+id: 04
 title: "Contact page"
 description: "Page to send an e-mail"
 templateKey: contacts

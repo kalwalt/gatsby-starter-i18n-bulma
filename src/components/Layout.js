@@ -68,8 +68,14 @@ class TemplateWrapper extends Component {
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
     const id_article = data.markdownRemark.frontmatter.id;
+    console.log("id_article is:");
+    console.log(id_article);
     const basename = getIdUrl(id_article, this.langKey);
+    console.log("basename is:");
+    console.log(basename);
     var basePath = startPath(this.langKey, this.langsMenu, basename, url);
+    console.log("basePath is:");
+    console.log(basePath);
     //finally here we set the desired url...
     setLangsMenu( this.langsMenu, id_article, basePath);
 

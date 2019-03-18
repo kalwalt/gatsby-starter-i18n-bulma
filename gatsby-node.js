@@ -12,6 +12,7 @@ exports.createPages = ({ actions, graphql }) => {
         siteMetadata{
           languages{
             langs
+            defaultLangKey
           }
         }
       }
