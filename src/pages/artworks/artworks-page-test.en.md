@@ -1,14 +1,14 @@
 ---
-id: 05
+id: '06'
 title: "Artworks page english"
 description: "qualche contenuto"
 templateKey: artworks
 tags:
   - art
-lang: it
+lang: en
 date: "05-03-2019"
-path: /en/artworks/pagina-artworks-test
-slug: /en/artworks/pagina-artworks-test
+path: /en/artworks/artworks-page-test
+slug: /en/artworks/artworks-page-test
 ---
 
 Hello! ciao!

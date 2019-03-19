@@ -1,5 +1,5 @@
 ---
-id: 01
+id: '01'
 title: "Pagina home italiano"
 description: "qualche contenuto"
 templateKey: home
