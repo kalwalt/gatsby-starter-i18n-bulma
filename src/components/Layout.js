@@ -45,6 +45,29 @@ const startPath = (langKey, langsMenu, basename, _url) => {
   return basePath;
 };
 
+const blog_basename = (langKey, _url) => {
+  const lengthLangKey = langKey.length;
+  var indx;
+  var basePath;
+  if (_url.length == 9 && _url.includes("blog")){
+  indx = _url.indexOf('blog');
+  if (indx == 4){
+     basePath = _url.slice(lengthLangKey + 2, 9);
+     }
+  }
+  return basePath
+}
+
+const check_path = (langKey, _url, id_article) => {
+  var basename
+  if (_url.length == 9 && _url.includes("blog")){
+    basename = blog_basename(langKey, _url);
+    id_article = '02';
+  } else {
+    basename = getIdUrl(id_article, langKey);
+  }
+  return [basename, id_article];
+}
 
 const setLangsMenu = ( langsMenu, id, basePath) => {
   if(id){
@@ -68,10 +91,20 @@ class TemplateWrapper extends Component {
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
     const id_article = data.markdownRemark.frontmatter.id;
-    const basename = getIdUrl(id_article, this.langKey);
-    var basePath = startPath(this.langKey, this.langsMenu, basename, url);
+    console.log("id_article is:");
+    console.log(id_article);
+    //const id_js = data.allJavascriptFrontmatter.edges[0].node.frontmatter.id ;
+    console.log("id from blog:");
+    //console.log(id_js);
+    const basename = check_path(this.langKey, url, id_article);
+    //const basename = getIdUrl(id_article, this.langKey);
+    console.log("basename is:");
+    console.log(basename);
+    console.log("blog basename is:");
+    console.log(blog_basename(this.langKey, url));
+    var basePath = startPath(this.langKey, this.langsMenu, basename[0], url);
     //finally here we set the desired url...
-    setLangsMenu( this.langsMenu, id_article, basePath);
+    setLangsMenu( this.langsMenu, basename[1], basePath);
 
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
