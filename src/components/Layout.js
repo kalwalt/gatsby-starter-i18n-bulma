@@ -52,7 +52,7 @@ const blog_basename = (langKey, _url) => {
   if (_url.length == 9 && _url.includes("blog")){
   indx = _url.indexOf('blog');
   if (indx == 4){
-     basePath = _url.slice(lengthLangKey + 2, 9);
+     basePath = _url.slice(lengthLangKey + 2, _url.length);
      }
   }
   return basePath
@@ -71,8 +71,8 @@ const check_path = (langKey, _url, id_article) => {
 
 const setLangsMenu = ( langsMenu, id, basePath) => {
   if(id){
-  langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en');
-  langsMenu[1].link = `/it/${basePath}` + getIdUrl(id, 'it');
+  langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en') + '/';
+  langsMenu[1].link = `/it/${basePath}` + getIdUrl(id, 'it') + '/';
 }
 };
 
@@ -86,6 +86,7 @@ class TemplateWrapper extends Component {
     const data = this.props.data;
     const location = this.props.location;
     const url = location.pathname;
+    console.log(url.length);
     const { langs, defaultLangKey } = data.site.siteMetadata.languages;
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;
