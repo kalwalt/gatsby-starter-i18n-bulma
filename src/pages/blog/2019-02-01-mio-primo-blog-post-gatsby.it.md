@@ -5,6 +5,7 @@ title: Il mio primo post con Gatsby.
 date: 2019-02-01T22:31:28.375Z
 description: Il mio primo blog con Gatsby...
 lang: it
+path: /it/blog/2019-02-01-mio-primo-blog-post-gatsby
 tags:
   - gatsby
 ---
