@@ -12,7 +12,7 @@ const TagsPage = ({
 data, location
 }) => (
   <Layout data={data} location={location}>
-  <div>
+  <div className="container content">
     <div>
       <h1>Tags</h1>
       <ul>

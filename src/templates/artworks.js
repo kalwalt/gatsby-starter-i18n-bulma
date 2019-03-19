@@ -10,7 +10,7 @@ import Content, { HTMLContent } from "../components/Content"
 const ArtworkTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
   return (
-      <div>
+      <div className="container content">
        <h1>{title}</h1>
       <PageContent className="content" content={content} />
       </div>
