@@ -3,6 +3,7 @@ const languages = require('./src/data/languages');
 module.exports = {
   siteMetadata: {
     title: `Gatsby with Contentful`,
+    siteUrl: "localhost:8000",
     languages
   },
   plugins: [
@@ -36,6 +37,7 @@ module.exports = {
         name: 'images',
       },
     },
+    "gatsby-transformer-javascript-frontmatter",
     `gatsby-transformer-remark`,
     {
       resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
@@ -44,5 +46,12 @@ module.exports = {
         purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+      },
+    },
+
   ],
 }

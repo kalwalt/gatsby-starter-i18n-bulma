@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Link from "gatsby-link"
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import Header from '../components/Header'
@@ -32,7 +31,7 @@ const getIdUrl = (id, langKey) => {
     case 'it':
     res = articleId[id][1];
     break;
-    default: return null;
+    default: return ' ';
   }
   return res;
 }
@@ -46,11 +45,34 @@ const startPath = (langKey, langsMenu, basename, _url) => {
   return basePath;
 };
 
+const blog_basename = (langKey, _url) => {
+  const lengthLangKey = langKey.length;
+  var indx;
+  var basePath;
+  if (_url.length == 9 && _url.includes("blog")){
+  indx = _url.indexOf('blog');
+  if (indx == 4){
+     basePath = _url.slice(lengthLangKey + 2, _url.length);
+     }
+  }
+  return basePath
+}
+
+const check_path = (langKey, _url, id_article) => {
+  var basename
+  if (_url.length == 9 && _url.includes("blog")){
+    basename = blog_basename(langKey, _url);
+    id_article = '02';
+  } else {
+    basename = getIdUrl(id_article, langKey);
+  }
+  return [basename, id_article];
+}
 
 const setLangsMenu = ( langsMenu, id, basePath) => {
   if(id){
-  langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en');
-  langsMenu[1].link = `/it/${basePath}` + getIdUrl(id, 'it');
+  langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en') + '/';
+  langsMenu[1].link = `/it/${basePath}` + getIdUrl(id, 'it') + '/';
 }
 };
 
@@ -69,10 +91,10 @@ class TemplateWrapper extends Component {
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
     const id_article = data.markdownRemark.frontmatter.id;
-    const basename = getIdUrl(id_article, this.langKey);
-    var basePath = startPath(this.langKey, this.langsMenu, basename, url);
+    const basename = check_path(this.langKey, url, id_article);
+    var basePath = startPath(this.langKey, this.langsMenu, basename[0], url);
     //finally here we set the desired url...
-    setLangsMenu( this.langsMenu, id_article, basePath);
+    setLangsMenu( this.langsMenu, basename[1], basePath);
 
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us

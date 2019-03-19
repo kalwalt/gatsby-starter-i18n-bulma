@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import select from '../components/utils'
+import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
 
 import logo from '../img/logo.svg'
@@ -24,10 +25,10 @@ const Footer = class extends React.Component {
                 <div className="column is-4">
                 <section className="menu">
                     <ul className="menu-list">
-                      <li><Link to={props.langKey} className="navbar-item">Home</Link></li>
-                      <li><Link className="navbar-item" to={props.langKey + "/" + menuTree.about[sel] +"/"}>About</Link></li>
-                      <li><Link className="navbar-item" to={props.langKey + "/" + menuTree.artworks[sel] +"/"}>
-                        Artworks
+                      <li><Link to={"/" + props.langKey} className="navbar-item"><FormattedMessage id="home" /></Link></li>
+                      <li><Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}><FormattedMessage id="about" /></Link></li>
+                      <li><Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}>
+                        <FormattedMessage id="artworks" />
                       </Link>
                     </li>
                     <li><a
@@ -45,13 +46,13 @@ const Footer = class extends React.Component {
                 <section>
                   <ul className="menu-list">
                   <li>
-                    <Link className="navbar-item" to={props.langKey + "/" + menuTree.blog[sel] +"/"}>
-                      Latest Stories
+                    <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
+                      <FormattedMessage id="blog" />
                     </Link>
                   </li>
                   <li>
-                    <Link className="navbar-item" to={props.langKey + "/" + menuTree.contact[sel] +"/"}>
-                      Contact
+                    <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.contact[sel] +"/"}>
+                      <FormattedMessage id="contact" />
                     </Link>
                   </li>
                   </ul>

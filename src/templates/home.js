@@ -10,7 +10,7 @@ import Content, { HTMLContent } from "../components/Content"
 const HomePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
   return (
-      <div>
+      <div className="container content">
        <h1>{title}</h1>
       <PageContent className="content" content={content} />
       </div>
@@ -60,6 +60,16 @@ export const pageQuery = graphql`
         }
       }
     }
+    allJavascriptFrontmatter {
+  edges {
+    node {
+      frontmatter {
+        id
+        title
+      }
+    }
+  }
+}
     markdownRemark(id: {eq: $id}) {
       html
       frontmatter {

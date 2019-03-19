@@ -1,8 +1,13 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import Layout from '../../components/Layout'
 import BlogRoll from '../../components/BlogRoll_en'
 import { graphql } from 'gatsby'
+
+export const frontmatter = {
+  id:  '02',
+  title: "blog page",
+}
 
 export default class BlogIndexPage extends React.Component {
 
@@ -42,6 +47,12 @@ export default class BlogIndexPage extends React.Component {
   }
 }
 
+BlogIndexPage.propTypes = {
+  location: PropTypes.shape({
+   pathname: PropTypes.string.isRequired,
+ }).isRequired,
+}
+
 export const pageQuery = graphql`
   query BlogIndexEn
    {
@@ -54,11 +65,22 @@ export const pageQuery = graphql`
         }
       }
     }
+    allJavascriptFrontmatter {
+    edges {
+      node {
+        frontmatter {
+          id
+          title
+        }
+      }
+    }
+  }
     markdownRemark
      {
       id
       html
       frontmatter {
+        id
         date
         title
         description
