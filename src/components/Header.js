@@ -5,6 +5,7 @@ import { FaHome, FaQuestion, FaImage, FaPenAlt, FaAmericanSignLanguageInterpreti
 import SelectLanguage from './SelectLanguage';
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
+import Dropdown from '../components/DropDownMenu'
 import select from '../components/utils'
 
 const Header = class extends React.Component {
@@ -63,7 +64,7 @@ const Header = class extends React.Component {
             <FaQuestion /> <FormattedMessage id="about" />
           </Link>
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}>
-            <FaImage /> <FormattedMessage id="artworks" />
+            <Dropdown />
           </Link>
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
             <FaPenAlt /> <FormattedMessage id="blog" />
