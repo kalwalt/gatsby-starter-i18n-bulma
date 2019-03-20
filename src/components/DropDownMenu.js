@@ -7,12 +7,10 @@ import { FormattedMessage } from 'react-intl';
 const DropDownMenu = (props) => {
   return (
 <div className="dropdown is-hover is-hoverable">
-  <div className="dropdown-trigger">
-    <button className="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+  <div className="dropdown-trigger">    
       <FaImage />
       <FormattedMessage id="artworks" />
       <FaAngleDown/>
-    </button>
   </div>
   <div className="dropdown-menu" id="dropdown-menu$" role="menu">
     <div className="dropdown-content">
