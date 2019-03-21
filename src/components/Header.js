@@ -15,6 +15,7 @@ const Header = class extends React.Component {
 
    const props = this.props;
    const sel = select(props.langKey);
+   const keys = ['painting','sculpture','performance','interactivity'];
    return (
 
 <header>
@@ -46,6 +47,7 @@ const Header = class extends React.Component {
             langKey={props.langKey}
             base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
             baseName="artworks"
+            keys={keys}
             />
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
             <FaPenAlt /> <FormattedMessage id="blog" />
