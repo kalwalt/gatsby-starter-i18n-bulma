@@ -18,9 +18,9 @@ const DropDownMenu = (props) => {
        </Link>
        <div className="navbar-dropdown is-hidden-mobile is-boxed">
         {keys &&( keys.map(( message ) => (
-         <a className="navbar-item" href={"/" + props.langKey + "/" + menu[message][sel] + "/"}>
+         <Link className="navbar-item" to={"/" + props.langKey + "/" + menu[message][sel] + "/"}>
            <FormattedMessage id={message} />
-         </a>
+         </Link>
        )))}
        </div>
      </div>
