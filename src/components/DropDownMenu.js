@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby'
 import { FaImage, FaAngleDown } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import dropdown from '@vizuaalog/bulmajs/src/plugins/dropdown';
 import menuTree from '../data/menuTree'
 import select from '../components/utils'
 import { FormattedMessage } from 'react-intl';
