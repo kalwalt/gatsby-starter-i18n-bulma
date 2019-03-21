@@ -11,9 +11,9 @@ const DropDownMenu = (props) => {
   const sel = select(props.langKey);
   return (
     <div className="navbar-item has-dropdown is-hoverable">
-       <Link className="navbar-link" to={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}>
+       <Link className="navbar-link" to={props.base}>
          <FaImage />
-         <FormattedMessage id="artworks" />
+         <FormattedMessage id={props.baseName} />
        </Link>
        <div className="navbar-dropdown is-hidden-mobile is-boxed">
          <a className="navbar-item" href="#">
