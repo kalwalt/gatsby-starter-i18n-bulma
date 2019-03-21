@@ -17,12 +17,7 @@ const Header = class extends React.Component {
    const props = this.props;
    const sel = select(props.langKey);
    const keys = ['painting','sculpture','performance','interactivity'];
-   const injectMenu = (sel) => {
-     keys &&( keys.map((message) => (
-      menu[message][sel]
-     ))
-   )};
-   //const message = 'painting';
+
    return (
 
 <header>
