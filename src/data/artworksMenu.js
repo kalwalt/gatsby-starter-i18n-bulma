@@ -1,6 +1,6 @@
 module.exports = {
-  'painting': ['artworks/painting', 'opere/pittura'],
-  'sculpture': ['artworks/sculpture', 'opere/scultura'],
-  'performance': ['artworks/performance', 'opere/performance'],
-  'interactivity': ['artworks/interactivity', 'opere/interattività'],
+  'painting': ['/en/artworks/painting/', '/it/opere/pittura/'],
+  'sculpture': ['/en/artworks/sculpture/', '/it/opere/scultura/'],
+  'performance': ['/en/artworks/performance/', '/it/opere/performance/'],
+  'interactivity': ['/en/artworks/interactivity/', '/it/opere/interattività/'],
 };

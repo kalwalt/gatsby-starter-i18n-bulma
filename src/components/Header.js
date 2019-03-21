@@ -7,6 +7,7 @@ import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
 import Dropdown from '../components/DropDownMenu'
 import select from '../components/utils'
+import menu from '../data/artworksMenu'
 import navbar from '@vizuaalog/bulmajs/src/plugins/navbar';
 
 const Header = class extends React.Component {
@@ -16,6 +17,12 @@ const Header = class extends React.Component {
    const props = this.props;
    const sel = select(props.langKey);
    const keys = ['painting','sculpture','performance','interactivity'];
+   const injectMenu = (sel) => {
+     keys &&( keys.map((message) => (
+      menu[message][sel]
+     ))
+   )};
+   //const message = 'painting';
    return (
 
 <header>
@@ -48,6 +55,7 @@ const Header = class extends React.Component {
             base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
             baseName="artworks"
             keys={keys}
+            links={menu}
             />
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
             <FaPenAlt /> <FormattedMessage id="blog" />
