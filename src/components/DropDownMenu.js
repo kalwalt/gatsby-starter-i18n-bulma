@@ -1,34 +1,36 @@
 import React from 'react';
+import { Link } from 'gatsby'
 import { FaImage, FaAngleDown } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import dropdown from '@vizuaalog/bulmajs/src/plugins/dropdown';
+import menuTree from '../data/menuTree'
+import select from '../components/utils'
 import { FormattedMessage } from 'react-intl';
 
 const DropDownMenu = (props) => {
+
+  const sel = select(props.langKey);
   return (
-<div className="dropdown is-hover is-hoverable">
-  <div className="dropdown-trigger">    
-      <FaImage />
-      <FormattedMessage id="artworks" />
-      <FaAngleDown/>
-  </div>
-  <div className="dropdown-menu" id="dropdown-menu$" role="menu">
-    <div className="dropdown-content">
-      <a href="#" className="dropdown-item">
-        <FormattedMessage id="painting" />
-      </a>
-      <a className="dropdown-item">
-        <FormattedMessage id="sculpture" />
-      </a>
-      <a href="#" className="dropdown-item">
-        <FormattedMessage id="performance" />
-      </a>
-      <a href="#" className="dropdown-item">
-        <FormattedMessage id="interactivity" />
-      </a>
-    </div>
-  </div>
-</div>
+    <div className="navbar-item has-dropdown is-hoverable">
+       <Link className="navbar-link" to={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}>
+         <FaImage />
+         <FormattedMessage id="artworks" />
+       </Link>
+       <div className="navbar-dropdown is-hidden-mobile is-boxed">
+         <a className="navbar-item" href="#">
+           <FormattedMessage id="painting" />
+         </a>
+         <a className="navbar-item" href="#">
+           <FormattedMessage id="sculpture" />
+         </a>
+         <a className="navbar-item" href="#">
+          <FormattedMessage id="performance" />
+         </a>
+         <a className="navbar-item" href="#">
+          <FormattedMessage id="interactivity" />
+         </a>
+       </div>
+     </div>
   );
 };
 

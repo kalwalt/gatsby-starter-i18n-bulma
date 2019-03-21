@@ -30,6 +30,19 @@ const Header = class extends React.Component {
        });
      });
    }
+
+   // Get all "navbar-link" elements
+  const navbarLink = Array.prototype.slice.call(document.querySelectorAll('.navbar-link'), 0);
+   // Check if there are any navbar links
+  if (navbarLink.length > 0) {
+
+    // Add a click event on each of them
+    navbarLink.forEach( el => {
+      el.addEventListener('click', () => {
+        el.nextElementSibling.classList.toggle('is-hidden-mobile');
+      });
+    });
+  }
  }
 
  render() {
@@ -63,9 +76,7 @@ const Header = class extends React.Component {
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
             <FaQuestion /> <FormattedMessage id="about" />
           </Link>
-          <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}>
-            <Dropdown />
-          </Link>
+            <Dropdown langKey={props.langKey}/>
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
             <FaPenAlt /> <FormattedMessage id="blog" />
           </Link>
