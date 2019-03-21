@@ -8,7 +8,7 @@ import menu from '../data/artworksMenu'
 
 const DropDownMenu = (props) => {
 
-  const keys = props.keys;
+  const switches = props.switches;
   const links = props.links;
   const sel = select(props.langKey);
 
@@ -19,8 +19,8 @@ const DropDownMenu = (props) => {
          <FormattedMessage id={props.baseName} />
        </Link>
        <div className="navbar-dropdown is-hidden-mobile is-boxed">
-       {keys &&( keys.map(( message ) => (
-         <Link className="navbar-item" to={links[message][sel]}>
+       {switches &&( switches.map(( message ) => (
+         <Link className="navbar-item" key={message} to={links[message][sel]}>
            <FormattedMessage id={message} />
          </Link>
         )))}

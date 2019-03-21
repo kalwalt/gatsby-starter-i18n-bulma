@@ -8,9 +8,43 @@ import menuTree from '../data/menuTree'
 import Dropdown from '../components/DropDownMenu'
 import select from '../components/utils'
 import menu from '../data/artworksMenu'
-import navbar from '@vizuaalog/bulmajs/src/plugins/navbar';
 
 const Header = class extends React.Component {
+
+  componentDidMount() {
+    // Get all "navbar-burger" elements
+   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    // Check if there are any navbar burgers
+   if ($navbarBurgers.length > 0) {
+
+     // Add a click event on each of them
+     $navbarBurgers.forEach( el => {
+       el.addEventListener('click', () => {
+
+         // Get the target from the "data-target" attribute
+         const target = el.dataset.target;
+         const $target = document.getElementById(target);
+         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+         el.classList.toggle('is-active');
+         $target.classList.toggle('is-active');
+
+       });
+     });
+   }
+
+   // Get all "navbar-link" elements
+  const navbarLink = Array.prototype.slice.call(document.querySelectorAll('.navbar-link'), 0);
+   // Check if there are any navbar links
+  if (navbarLink.length > 0) {
+
+    // Add a click event on each of them
+    navbarLink.forEach( el => {
+      el.addEventListener('click', () => {
+        el.nextElementSibling.classList.toggle('is-hidden-mobile');
+      });
+    });
+  }
+ }
 
  render() {
 
@@ -49,7 +83,7 @@ const Header = class extends React.Component {
             langKey={props.langKey}
             base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
             baseName="artworks"
-            keys={keys}
+            switches={keys}
             links={menu}
             />
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
