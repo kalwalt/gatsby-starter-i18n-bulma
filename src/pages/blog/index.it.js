@@ -9,6 +9,8 @@ export const frontmatter = {
   id:  '02',
   title: "Pagina indice blog",
   description: "Pagina indice per tutti i blog posts ",
+  siteUrl: "https://www.example.com/",
+  slug: "it/blog",
 }
 
 

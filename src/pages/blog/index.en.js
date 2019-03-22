@@ -9,6 +9,8 @@ export const frontmatter = {
   id:  '02',
   title: "Blog index page",
   description: "Index page for all blog posts ",
+  siteUrl: "https://www.example.com/",
+  slug: "en/blog",
 }
 
 export default class BlogIndexPage extends React.Component {
