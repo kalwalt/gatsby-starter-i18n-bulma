@@ -111,7 +111,8 @@ class TemplateWrapper extends Component {
         <div>
           <Helmet
             key="app-head"
-            title={this.title}
+            defaultTitle={this.title}
+            titleTemplate={`%s | ${this.title}`}
           >
           <html lang={this.langKey} />
 
