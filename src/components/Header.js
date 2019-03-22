@@ -5,7 +5,9 @@ import { FaHome, FaQuestion, FaImage, FaPenAlt, FaAmericanSignLanguageInterpreti
 import SelectLanguage from './SelectLanguage';
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
+import Dropdown from '../components/DropDownMenu'
 import select from '../components/utils'
+import menu from '../data/artworksMenu'
 
 const Header = class extends React.Component {
 
@@ -29,12 +31,27 @@ const Header = class extends React.Component {
        });
      });
    }
+
+   // Get all "navbar-link" elements
+  const navbarLink = Array.prototype.slice.call(document.querySelectorAll('.navbar-link'), 0);
+   // Check if there are any navbar links
+  if (navbarLink.length > 0) {
+
+    // Add a click event on each of them
+    navbarLink.forEach( el => {
+      el.addEventListener('click', () => {
+        el.nextElementSibling.classList.toggle('is-hidden-mobile');
+      });
+    });
+  }
  }
 
  render() {
 
    const props = this.props;
    const sel = select(props.langKey);
+   const keys = ['painting','sculpture','performance','interactivity'];
+
    return (
 
 <header>
@@ -59,11 +76,15 @@ const Header = class extends React.Component {
           <Link className="navbar-item" to={"/" + props.langKey}>
             <FaHome /> <FormattedMessage id="home" />
           </Link>
+            <Dropdown
+            langKey={props.langKey}
+            base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
+            baseName="artworks"
+            switches={keys}
+            links={menu}
+            />
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
             <FaQuestion /> <FormattedMessage id="about" />
-          </Link>
-          <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}>
-            <FaImage /> <FormattedMessage id="artworks" />
           </Link>
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
             <FaPenAlt /> <FormattedMessage id="blog" />
