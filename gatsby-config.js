@@ -2,8 +2,29 @@ const languages = require('./src/data/languages');
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby with Contentful`,
+    title: `Gatsby with Bulma and i18n`,
+    description: `
+  This is a blog theme. The description will be showed in SEO results on pages
+  without their own descriptions.
+`,
     siteUrl: "localhost:8000",
+    image: 'img.jpg',
+    author: {
+      name: 'Your Name',
+      minibio: `
+        This bio is shown at the bottom of each blog post. It supports
+        <strong>custom HTML</strong> if you’re into that sort of thing.
+      `,
+    },
+    organization: {
+      name: 'Example, Inc.',
+      url: 'https://example.com',
+      logo: 'img/logo.svg',
+    },
+    social: {
+      twitter: '@twitter',
+      fbAppID: '',
+    },
     languages
   },
   plugins: [

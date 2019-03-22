@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
+import SEO from '../components/SEO/SEO'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
@@ -63,6 +64,11 @@ const BlogPost = ({ data, location }) => {
 
   return (
     <Layout data={data} location={location}>
+     <SEO
+       frontmatter={post.frontmatter}
+       postImage={post.frontmatter.image}
+       isBlogPost
+     />
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
