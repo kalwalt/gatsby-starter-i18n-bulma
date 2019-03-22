@@ -76,9 +76,6 @@ const Header = class extends React.Component {
           <Link className="navbar-item" to={"/" + props.langKey}>
             <FaHome /> <FormattedMessage id="home" />
           </Link>
-          <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
-            <FaQuestion /> <FormattedMessage id="about" />
-          </Link>
             <Dropdown
             langKey={props.langKey}
             base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
@@ -86,6 +83,9 @@ const Header = class extends React.Component {
             switches={keys}
             links={menu}
             />
+          <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
+            <FaQuestion /> <FormattedMessage id="about" />
+          </Link>
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
             <FaPenAlt /> <FormattedMessage id="blog" />
           </Link>
