@@ -2,11 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../../components/Layout'
 import BlogRoll from '../../components/BlogRoll_en'
+import SEO from '../../components/SEO/SEO'
 import { graphql } from 'gatsby'
 
 export const frontmatter = {
   id:  '02',
-  title: "blog page",
+  title: "Blog index page",
+  description: "Index page for all blog posts ",
+  siteUrl: "https://www.example.com/",
+  slug: "en/blog",
 }
 
 export default class BlogIndexPage extends React.Component {
@@ -14,16 +18,20 @@ export default class BlogIndexPage extends React.Component {
   render() {
     const data = this.props.data;
     const location = this.props.location;
+    const dataJS = data.allJavascriptFrontmatter;
 
   return (
       <Layout data={data} location={location}>
+        <SEO
+          frontmatter={frontmatter}
+          />
         <section className="section">
           <div className="container">
             <div className="content">
             <div
                 className="full-width-image-container margin-top-0"
                 style={{
-                  backgroundImage: `url('/img/blog-index.jpg')`,
+                  backgroundImage: `url('https://upload.wikimedia.org/wikipedia/commons/3/34/Persimmons_yamagata_2005-10.JPG')`,
                 }}
               >
                 <h1

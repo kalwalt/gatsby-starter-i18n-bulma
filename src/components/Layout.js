@@ -85,6 +85,7 @@ class TemplateWrapper extends Component {
     this.children = this.props.children;
     const data = this.props.data;
     const location = this.props.location;
+    this.title = data.markdownRemark.frontmatter.title;
     const url = location.pathname;
     const { langs, defaultLangKey } = data.site.siteMetadata.languages;
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
@@ -109,12 +110,24 @@ class TemplateWrapper extends Component {
       >
         <div>
           <Helmet
-            title="Gatsby Default Starter"
-            meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
-          />
+            key="app-head"
+            defaultTitle={this.title}
+            titleTemplate={`%s | ${this.title}`}
+          >
+          <html lang={this.langKey} />
+
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+          {/* Favicon stuff from realfavicongenerator.net */}
+          <meta name="apple-mobile-web-app-title" content="example.com" />
+          <meta name="application-name" content="example.com" />
+          <meta name="theme-color" content="#D64000" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#D64000" />
+          </Helmet>
           <Header langKey={this.langKey} langs={this.langsMenu} menu={this.menuTree} />
           <div>
             {this.children}

@@ -1,1 +1,138 @@
-<svg viewBox="0 0 109 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns"><title>Logo</title><g transform="translate(-1470)" figma:type="canvas"><g style="mix-blend-mode:normal" figma:type="vector" transform="translate(1470)" fill="#f40"><use xlink:href="#b" style="mix-blend-mode:normal"/><use xlink:href="#c" style="mix-blend-mode:normal"/><use xlink:href="#d" style="mix-blend-mode:normal"/><use xlink:href="#e" style="mix-blend-mode:normal"/><use xlink:href="#f" style="mix-blend-mode:normal"/></g></g><defs><path id="b" d="M22.735 23.171c.283.323.053.829-.376.829h-5.907c-.285 0-.556-.121-.745-.333l-9.414-10.526v10.36c0 .276-.224.5-.5.5h-5.293c-.276 0-.5-.224-.5-.5v-23c0-.276.224-.5.5-.5h5.293c.276 0 .5.224.5.5v9.815l9.141-9.99c.19-.207.457-.325.738-.325h5.762c.437 0 .664.521.366.841l-9.851 10.563 10.287 11.767z"/><path id="c" d="M45.991 24c-.199 0-.38-.118-.459-.301l-2.024-4.669h-10.67l-2.024 4.669c-.079.183-.259.301-.459.301h-5.212c-.366 0-.608-.381-.453-.712l10.782-23c.082-.176.259-.288.453-.288h4.358c.194 0 .37.112.453.287l10.815 23c.156.332-.086.713-.452.713h-5.108zm-11.135-9.668h6.635l-3.317-7.694-3.317 7.694z"/><path id="d" d="M55.525 24c-.276 0-.5-.224-.5-.5v-23c0-.276.224-.5.5-.5h5.293c.276 0 .5.224.5.5v18.428h9.759c.276 0 .5.224.5.5v4.072c0 .276-.224.5-.5.5h-15.552z"/><path id="e" d="M75.279.5c0-.276.224-.5.5-.5h9.315c2.667 0 4.959.477 6.874 1.43 1.938.953 3.42 2.338 4.446 4.153 1.026 1.793 1.539 3.926 1.539 6.4 0 2.496-.513 4.652-1.539 6.468-1.003 1.793-2.474 3.166-4.412 4.119-1.915.953-4.218 1.43-6.908 1.43h-9.315c-.276 0-.5-.224-.5-.5v-23zm9.37 18.462c2.371 0 4.138-.579 5.301-1.736 1.163-1.157 1.744-2.905 1.744-5.242 0-2.338-.581-4.074-1.744-5.209-1.163-1.157-2.93-1.736-5.301-1.736h-3.078v13.923h3.078z"/><path id="f" d="M102.913 24c-.276 0-.5-.224-.5-.5v-23c0-.276.224-.5.5-.5h5.293c.276 0 .5.224.5.5v23c0 .276-.224.5-.5.5h-5.293z"/></defs></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:figma="http://www.figma.com/figma/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 83 24"
+   version="1.1"
+   id="svg25"
+   sodipodi:docname="logo.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   width="83"
+   height="24">
+  <metadata
+     id="metadata29">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Logo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="713"
+     id="namedview27"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="2.9581715"
+     inkscape:cx="77.637163"
+     inkscape:cy="14.172746"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g16"
+     inkscape:measure-start="83.2148,0"
+     inkscape:measure-end="0,0">
+    <sodipodi:guide
+       position="90.833333,-15.776316"
+       orientation="1,0"
+       id="guide864"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <title
+     id="title2">Logo</title>
+  <g
+     transform="translate(-1470)"
+     figma:type="canvas"
+     id="g16">
+    <use
+       height="100%"
+       width="100%"
+       y="0"
+       x="0"
+       id="use4"
+       style="mix-blend-mode:normal;fill:#ff4400"
+       xlink:href="#b"
+       transform="translate(1470)" />
+    <use
+       height="100%"
+       width="100%"
+       y="0"
+       x="0"
+       id="use6"
+       style="mix-blend-mode:normal;fill:#ff4400"
+       xlink:href="#c"
+       transform="translate(1470)" />
+    <use
+       height="100%"
+       width="100%"
+       y="0"
+       x="0"
+       id="use12"
+       style="mix-blend-mode:normal;fill:#ff4400"
+       xlink:href="#f"
+       transform="matrix(0.95344033,0,0,1,1449.3553,0)" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot836"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.33333397px;line-height:125%;font-family:'Nimbus Mono L';-inkscape-font-specification:'Nimbus Mono L';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(1470)"><flowRegion
+         id="flowRegion838"><rect
+           id="rect840"
+           width="125.25439"
+           height="32.508774"
+           x="-1.6732457"
+           y="-3.9671052" /></flowRegion><flowPara
+         id="flowPara842"></flowPara></flowRoot>    <use
+       height="100%"
+       width="100%"
+       y="0"
+       x="0"
+       id="use4-3"
+       style="mix-blend-mode:normal;fill:#ff4400"
+       xlink:href="#b"
+       transform="translate(1522.6316,0.04724537)" />
+  </g>
+  <defs
+     id="defs23">
+    <path
+       id="b"
+       d="M 22.735,23.171 C 23.018,23.494 22.788,24 22.359,24 h -5.907 c -0.285,0 -0.556,-0.121 -0.745,-0.333 L 6.293,13.141 v 10.36 c 0,0.276 -0.224,0.5 -0.5,0.5 H 0.5 c -0.276,0 -0.5,-0.224 -0.5,-0.5 v -23 c 0,-0.276 0.224,-0.5 0.5,-0.5 h 5.293 c 0.276,0 0.5,0.224 0.5,0.5 v 9.815 l 9.141,-9.99 c 0.19,-0.207 0.457,-0.325 0.738,-0.325 h 5.762 c 0.437,0 0.664,0.521 0.366,0.841 l -9.851,10.563 10.287,11.767 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="c"
+       d="m 45.991,24 c -0.199,0 -0.38,-0.118 -0.459,-0.301 L 43.508,19.03 h -10.67 l -2.024,4.669 C 30.735,23.882 30.555,24 30.355,24 h -5.212 c -0.366,0 -0.608,-0.381 -0.453,-0.712 l 10.782,-23 C 35.554,0.112 35.731,0 35.925,0 h 4.358 c 0.194,0 0.37,0.112 0.453,0.287 l 10.815,23 C 51.707,23.619 51.465,24 51.099,24 Z M 34.856,14.332 h 6.635 l -3.317,-7.694 -3.317,7.694 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="d"
+       d="m 55.525,24 c -0.276,0 -0.5,-0.224 -0.5,-0.5 v -23 c 0,-0.276 0.224,-0.5 0.5,-0.5 h 5.293 c 0.276,0 0.5,0.224 0.5,0.5 v 18.428 h 9.759 c 0.276,0 0.5,0.224 0.5,0.5 V 23.5 c 0,0.276 -0.224,0.5 -0.5,0.5 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="e"
+       d="m 75.279,0.5 c 0,-0.276 0.224,-0.5 0.5,-0.5 h 9.315 c 2.667,0 4.959,0.477 6.874,1.43 1.938,0.953 3.42,2.338 4.446,4.153 1.026,1.793 1.539,3.926 1.539,6.4 0,2.496 -0.513,4.652 -1.539,6.468 -1.003,1.793 -2.474,3.166 -4.412,4.119 C 90.087,23.523 87.784,24 85.094,24 h -9.315 c -0.276,0 -0.5,-0.224 -0.5,-0.5 z m 9.37,18.462 c 2.371,0 4.138,-0.579 5.301,-1.736 1.163,-1.157 1.744,-2.905 1.744,-5.242 C 91.694,9.646 91.113,7.91 89.95,6.775 88.787,5.618 87.02,5.039 84.649,5.039 h -3.078 v 13.923 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="f"
+       d="m 102.913,24 c -0.276,0 -0.5,-0.224 -0.5,-0.5 v -23 c 0,-0.276 0.224,-0.5 0.5,-0.5 h 5.293 c 0.276,0 0.5,0.224 0.5,0.5 v 23 c 0,0.276 -0.224,0.5 -0.5,0.5 z"
+       inkscape:connector-curvature="0" />
+  </defs>
+</svg>
