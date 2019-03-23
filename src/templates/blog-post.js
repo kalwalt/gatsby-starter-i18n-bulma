@@ -63,7 +63,7 @@ const BlogPost = ({ data, location }) => {
   //const props = this.props;
 
   return (
-    <Layout data={data} location={location}>
+    <Layout className="container" data={data} location={location}>
      <SEO
        frontmatter={post.frontmatter}
        postImage={post.frontmatter.image}
