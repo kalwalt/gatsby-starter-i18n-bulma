@@ -5,15 +5,6 @@ import BlogRoll from '../components/BlogRoll_it'
 import SEO from '../components/SEO/SEO'
 import { graphql } from 'gatsby'
 
-export const frontmatter = {
-  id:  '02',
-  title: "Pagina indice blog",
-  description: "Pagina indice per tutti i blog posts ",
-  siteUrl: "https://www.example.com/",
-  slug: "it/blog",
-}
-
-
 export default class BlogIndexPage extends React.Component {
 
   render() {
