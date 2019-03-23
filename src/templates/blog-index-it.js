@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
-import BlogRoll from '../../components/BlogRoll_it'
-import SEO from '../../components/SEO/SEO'
+import Layout from '../components/Layout'
+import BlogRoll from '../components/BlogRoll_it'
+import SEO from '../components/SEO/SEO'
 import { graphql } from 'gatsby'
 
 export const frontmatter = {
@@ -23,7 +23,7 @@ export default class BlogIndexPage extends React.Component {
   return (
       <Layout data={data} location={location}>
       <SEO
-        frontmatter={frontmatter}
+        frontmatter={data.markdownRemark.frontmatter}
         />
         <section className="section">
           <div className="container">
@@ -73,16 +73,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    allJavascriptFrontmatter {
-    edges {
-      node {
-        frontmatter {
-          id
-          title
-        }
-      }
-    }
-  }
     markdownRemark
      {
       id

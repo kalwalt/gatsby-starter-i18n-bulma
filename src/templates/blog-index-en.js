@@ -1,29 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
-import BlogRoll from '../../components/BlogRoll_en'
-import SEO from '../../components/SEO/SEO'
+import Layout from '../components/Layout'
+import BlogRoll from '../components/BlogRoll_en'
+import SEO from '../components/SEO/SEO'
 import { graphql } from 'gatsby'
-
-export const frontmatter = {
-  id:  '02',
-  title: "Blog index page",
-  description: "Index page for all blog posts ",
-  siteUrl: "https://www.example.com/",
-  slug: "en/blog",
-}
 
 export default class BlogIndexPage extends React.Component {
 
   render() {
     const data = this.props.data;
     const location = this.props.location;
-    const dataJS = data.allJavascriptFrontmatter;
+    //const dataJS = data.allJavascriptFrontmatter;
 
   return (
       <Layout data={data} location={location}>
         <SEO
-          frontmatter={frontmatter}
+          frontmatter={data.markdownRemark.frontmatter}
           />
         <section className="section">
           <div className="container">
@@ -73,16 +65,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    allJavascriptFrontmatter {
-    edges {
-      node {
-        frontmatter {
-          id
-          title
-        }
-      }
-    }
-  }
     markdownRemark
      {
       id
