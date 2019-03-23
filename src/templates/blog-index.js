@@ -5,6 +5,7 @@ import BlogRollit from '../components/BlogRoll_it'
 import BlogRollen from '../components/BlogRoll_en'
 import { getCurrentLangKey } from 'ptz-i18n';
 import SEO from '../components/SEO/SEO'
+import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby'
 
 const switchBlogRoll = (lang) => {
@@ -46,7 +47,7 @@ export default class BlogIndexPage extends React.Component {
                     padding: '1rem',
                   }}
                 >
-                  Ultime Notizie
+                  <FormattedMessage id="blog-message" />
                 </h1>
               </div>
             </div>

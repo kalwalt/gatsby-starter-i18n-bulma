@@ -8,6 +8,7 @@ module.exports = {
   'performance': 'Performance',
   'interactivity': 'Interactivity',
   'blog': 'Blog',
+  'blog-message': 'Last News',
   'contact': 'Contacts',
   'not_found': "404 - Page Not Found",
   '404': "You are arrived to an unvailable page or you have missed the path...",
