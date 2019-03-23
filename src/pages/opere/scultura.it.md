@@ -11,4 +11,4 @@ path: /it/opere/scultura
 slug: /it/opere/scultura
 ---
 
-## Sculpture
+## Scultura
