@@ -8,8 +8,6 @@ import SEO from '../components/SEO/SEO'
 import { graphql } from 'gatsby'
 
 const switchBlogRoll = (lang) => {
-  console.log('inside the switcher...');
-  console.log(lang);
   switch(lang){
     case 'en': return <BlogRollen />;
     case 'it': return <BlogRollit />;
