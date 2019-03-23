@@ -13,7 +13,7 @@ const Tags = ({ pageContext, data, location }) => {
   } tagged with "${tag}"`
 
   return (
-    <Layout data={data} location={location}>
+    <Layout className="container" data={data} location={location}>
     <div className="container content">
       <h1>{tagHeader}</h1>
       <ul>
