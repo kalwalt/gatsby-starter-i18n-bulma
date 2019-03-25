@@ -21,71 +21,71 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-const BlogRollKey = (langkey) => {
-
+const BlogRollKey = (data, props) => {
+    const langKey = this.props.langKey;
+    const { edges: posts} = switchData(data, langKey);
   return(
-    {langkey}
+    <div className="columns is-multiline">
+    {posts && (posts
+        .map(({ node: post }) => (
+          <div
+            className="is-parent column is-6"
+            key={post.id}
+          >
+          <article className="tile is-child box notification">
+            <p>
+              <Link className="title has-text-primary is-size-4" to={post.fields.slug}>
+                {post.frontmatter.title}
+              </Link>
+              <span> &bull; </span>
+              <span className="subtitle is-size-5 is-block">{post.frontmatter.date}</span>
+            </p>
+            <p>
+              {post.excerpt}
+              <br />
+              <br />
+              <Link className="button" to={post.fields.slug}>
+                Keep Reading →
+              </Link>
+            </p>
+            </article>
+          </div>
+        )))}
+        </div>
   )
 }
-
+BlogRollKey.PropTypes = {
+  langKey: PropTypes.string,
+}
 
 class BlogRoll extends React.Component {
 
   render() {
-    const itEdges = this.props.data.it.edges
-    const  data  = this.props.data;
+    //const itEdges = this.props.data.it.edges
+    const { data } = this.props;
     //console.log(data.markdownRemark.frontmatter.lang);
-    const langKey = this.props.langKey;
-    console.log(langKey);
+    //const langKey = this.props.langKey;
+    //console.log(langKey);
     console.log(data.it);
     //console.log(this.props.location);
     //console.log(switchData(data, 'en'));
-    const { edges: posts} = switchData(data, langKey);
+    //const { edges: posts} = switchData(data, langKey);
     //console.log(posts);
 
 
     return (
-      <div className="columns is-multiline">
-      {posts && (posts
-          .map(({ node: post }) => (
-            <div
-              className="is-parent column is-6"
-              key={post.id}
-            >
-            <article className="tile is-child box notification">
-              <p>
-                <Link className="title has-text-primary is-size-4" to={post.fields.slug}>
-                  {post.frontmatter.title}
-                </Link>
-                <span> &bull; </span>
-                <span className="subtitle is-size-5 is-block">{post.frontmatter.date}</span>
-              </p>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
-                </Link>
-              </p>
-              </article>
-            </div>
-          )))}
-          </div>
+    <BlogRollKey/>
     );
   }
 }
-/*
-BlogRoll.propTypes = {
-  data: PropTypes.object.isRequired,
- langKey: PropTypes.string,
-}
-*/
+
 BlogRoll.propTypes = propTypes
 
-export default BlogRoll
+//export default BlogRoll
 
-export const pageQuery = graphql`
+export default (langKey) => (
+  <StaticQuery
+    query={graphql`
 query BlogRollQuery {
   site {
     siteMetadata {
@@ -93,6 +93,15 @@ query BlogRollQuery {
       languages {
         langs
         defaultLangKey
+      }
+    }
+  }
+  allMarkdownRemark{
+    edges{
+      node{
+        frontmatter{
+          lang
+        }
       }
     }
   }
@@ -137,4 +146,10 @@ query BlogRollQuery {
     }
   }
 }
-`
+`}
+    render={(data, langKey) => (
+      <BlogRoll data={data} langKey={langKey}/>
+
+   )}
+  />
+)

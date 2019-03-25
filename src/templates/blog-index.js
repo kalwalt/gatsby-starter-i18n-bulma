@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 //import BlogRollit from '../components/BlogRoll_it'
 //import BlogRollen from '../components/BlogRoll_en'
-import BlogRoll from '../components/BlogRoll'
+//import BlogRoll from '../components/BlogRoll'
+import BlogRoll from '../components/BlogRollTest'
 import { getCurrentLangKey } from 'ptz-i18n';
 import SEO from '../components/SEO/SEO'
 import { FormattedMessage } from 'react-intl';
