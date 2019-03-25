@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
+import { FormattedMessage } from 'react-intl';
 
 const switchData = (data, langKey) => {
   var posts;
@@ -45,7 +46,7 @@ class BlogRoll extends React.Component {
                 <br />
                 <br />
                 <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
+                  <FormattedMessage id="keep-reading"/>
                 </Link>
               </p>
               </article>

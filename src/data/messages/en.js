@@ -9,6 +9,7 @@ module.exports = {
   'interactivity': 'Interactivity',
   'blog': 'Blog',
   'blog-message': 'Last News',
+  'keep-reading': 'Keep reading →',
   'contact': 'Contacts',
   'not_found': "404 - Page Not Found",
   '404': "You are arrived to an unvailable page or you have missed the path...",
