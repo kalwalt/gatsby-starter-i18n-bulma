@@ -61,16 +61,16 @@ const Footer = class extends React.Component {
                 </div>
                 <div className="column is-4 social">
                   <a title="facebook" href="https://facebook.com">
-                     <FaFacebook size="2em"/>
+                     <FaFacebook className="facebook-icon"  size="2em"/>
                   </a>
                   <a title="twitter" href="https://twitter.com">
-                    <FaTwitter size="2em"/>
+                    <FaTwitter className="twitter-icon"  size="2em"/>
                   </a>
                   <a title="instagram" href="https://instagram.com">
-                    <FaInstagram  size="2em"/>
+                    <FaInstagram className="instagram-icon" size="2em"/>
                   </a>
                   <a title="vimeo" href="https://vimeo.com">
-                    <FaVimeo  size="2em"/>
+                    <FaVimeo className="vimeo-icon"  size="2em"/>
                   </a>
                 </div>
               </div>
