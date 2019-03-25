@@ -31,7 +31,7 @@ class HomePage extends React.Component {
       dataMarkdown = this.props.data.markdownRemark
     }
     return (
-      <Layout data={this.props.data} location={this.props.location}>
+      <Layout className="container" data={this.props.data} location={this.props.location}>
         <div style={{ marginBottom: rhythm(2) }}>
             <HomePageTemplate
             contentComponent={HTMLContent}
@@ -60,16 +60,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    allJavascriptFrontmatter {
-  edges {
-    node {
-      frontmatter {
-        id
-        title
-      }
-    }
-  }
-}
     markdownRemark(id: {eq: $id}) {
       html
       frontmatter {

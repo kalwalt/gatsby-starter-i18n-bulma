@@ -1,30 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
-import BlogRoll from '../../components/BlogRoll_en'
-import SEO from '../../components/SEO/SEO'
+import Layout from '../components/Layout'
+import BlogRoll from '../components/BlogRoll'
+import SEO from '../components/SEO/SEO'
+import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby'
 
-export const frontmatter = {
-  id:  '02',
-  title: "Blog index page",
-  description: "Index page for all blog posts ",
-  siteUrl: "https://www.example.com/",
-  slug: "en/blog",
-}
+const switchBlogRoll = (lang) => {
+  switch(lang){
+    case 'en': return <BlogRollen />;
+    case 'it': return <BlogRollit />;
+  }
+};
 
 export default class BlogIndexPage extends React.Component {
 
   render() {
     const data = this.props.data;
     const location = this.props.location;
-    const dataJS = data.allJavascriptFrontmatter;
 
   return (
       <Layout data={data} location={location}>
-        <SEO
-          frontmatter={frontmatter}
-          />
+      <SEO
+        frontmatter={data.markdownRemark.frontmatter}
+        />
         <section className="section">
           <div className="container">
             <div className="content">
@@ -43,11 +42,11 @@ export default class BlogIndexPage extends React.Component {
                     padding: '1rem',
                   }}
                 >
-                  Latest Stories
+                  <FormattedMessage id="blog-message" />
                 </h1>
               </div>
             </div>
-              <BlogRoll />
+             <BlogRoll />
             </div>
         </section>
       </Layout>
@@ -62,7 +61,7 @@ BlogIndexPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query BlogIndexEn
+  query BlogIndex
    {
     site {
       siteMetadata {
@@ -73,16 +72,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    allJavascriptFrontmatter {
-    edges {
-      node {
-        frontmatter {
-          id
-          title
-        }
-      }
-    }
-  }
     markdownRemark
      {
       id
@@ -96,5 +85,5 @@ export const pageQuery = graphql`
         lang
       }
     }
-  }
+}
 `

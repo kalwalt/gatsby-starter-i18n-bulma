@@ -3,8 +3,9 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Main from '../components/Main'
 import Helmet from 'react-helmet'
-import { getCurrentLangKey, getLangs, getUrlForLang, getSlugAndLang } from 'ptz-i18n';
+import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import { rhythm } from "../utils/typography"
 import 'intl';
@@ -84,6 +85,7 @@ class TemplateWrapper extends Component {
     super(props);
     this.children = this.props.children;
     const data = this.props.data;
+    this.className = this.props.className;
     const location = this.props.location;
     this.title = data.markdownRemark.frontmatter.title;
     const url = location.pathname;
@@ -129,9 +131,9 @@ class TemplateWrapper extends Component {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#D64000" />
           </Helmet>
           <Header langKey={this.langKey} langs={this.langsMenu} menu={this.menuTree} />
-          <div>
+          <Main key="app-main" className={this.className}>
             {this.children}
-          </div>
+          </Main>
           <Footer langKey={this.langKey}/>
         </div>
       </IntlProvider>
