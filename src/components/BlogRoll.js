@@ -29,18 +29,12 @@ class BlogRoll extends React.Component {
 
   componentDidMount(){
     this.getUrl();
-    console.log('url inside ComponentDidMount:')
-    console.log(this.state.url);
   }
 
   render() {
     const { data } = this.props;
     const langKey = this.state.url.slice(1, 3);
-    console.log('langKey inside render:');
-    console.log(langKey);
     const { edges: posts} = switchData(data, langKey);
-    console.log('posts inside render:');
-    console.log(posts);
 
     return (
       <div className="columns is-multiline">
