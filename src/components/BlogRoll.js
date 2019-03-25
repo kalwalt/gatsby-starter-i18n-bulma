@@ -1,13 +1,40 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
+import { FormattedMessage } from 'react-intl';
+
+const switchData = (data, langKey) => {
+  var posts;
+  switch(langKey){
+    case('en'):
+     return posts = data.en;
+    break;
+    case('it'):
+     return posts = data.it;
+    break;
+    default: return ' ';
+  }
+  return posts;
+}
 
 class BlogRoll extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {url: '/en/blog/'};
+  }
+
+  getUrl(){
+    this.setState({url: window.location.pathname});
+  }
+
+  componentDidMount(){
+    this.getUrl();
+  }
 
   render() {
     const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const langKey = this.state.url.slice(1, 3);
+    const { edges: posts} = switchData(data, langKey);
 
     return (
       <div className="columns is-multiline">
@@ -30,7 +57,7 @@ class BlogRoll extends React.Component {
                 <br />
                 <br />
                 <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
+                  <FormattedMessage id="keep-reading"/>
                 </Link>
               </p>
               </article>
@@ -49,10 +76,10 @@ BlogRoll.propTypes = {
   }),
 }
 
-export default () => (
+export default (langKey) => (
   <StaticQuery
     query={graphql`
-    query BlogRollitQuery {
+    query BlogRollQuery {
       site {
         siteMetadata {
           title
@@ -62,7 +89,28 @@ export default () => (
           }
         }
       }
-      allMarkdownRemark(
+      en: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] },
+        filter: { frontmatter: { templateKey: { eq: "blog-post" },
+                                 lang: { regex: "/(en|any)/" }}}
+      ) {
+        edges {
+          node {
+            excerpt(pruneLength: 400)
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              templateKey
+              date
+              lang
+            }
+          }
+        }
+      }
+      it: allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] },
         filter: { frontmatter: { templateKey: { eq: "blog-post" },
                                  lang: { regex: "/(it|any)/" }}}
@@ -85,8 +133,9 @@ export default () => (
       }
     }
     `}
-    render={(data, count) => (
-      <BlogRoll data={data} count={count} />
-    )}
+    render={(data) => (
+      <BlogRoll data={data}/>
+
+  )}
   />
 )
