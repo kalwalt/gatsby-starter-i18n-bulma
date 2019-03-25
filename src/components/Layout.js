@@ -15,7 +15,6 @@ import 'intl/locale-data/jsonp/en';
 import it from 'react-intl/locale-data/it';
 import 'intl/locale-data/jsonp/it';
 import './all.sass'
-import 'font-awesome/css/font-awesome.css'
 
 import articleId from '../data/articleTree'
 import menuTree from '../data/menuTree'
