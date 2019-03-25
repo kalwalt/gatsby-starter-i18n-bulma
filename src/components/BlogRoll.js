@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 
 const switchData = (data, langKey) => {
   var posts;
@@ -22,10 +21,7 @@ class BlogRoll extends React.Component {
   render() {
     const { data } = this.props;
     const url = window.location.pathname;
-    console.log('url is:');
-    console.log(url);
     const langKey = url.slice(1, 3);
-    console.log(langKey);
     const { edges: posts} = switchData(data, langKey);
 
     return (
@@ -66,16 +62,12 @@ BlogRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-  location: PropTypes.shape({
-   pathname: PropTypes.string,
- }),
- langKey: PropTypes.string,
 }
 
 export default (langKey) => (
   <StaticQuery
     query={graphql`
-    query BlogRollTestQuery {
+    query BlogRollQuery {
       site {
         siteMetadata {
           title
@@ -85,21 +77,6 @@ export default (langKey) => (
           }
         }
       }
-      allMarkdownRemark{
-        edges{
-          node{
-            frontmatter{
-              lang
-            }
-          }
-        }
-      }
-      markdownRemark {
-    frontmatter{
-      id
-      lang
-    }
-  }
       en: allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] },
         filter: { frontmatter: { templateKey: { eq: "blog-post" },
@@ -144,8 +121,8 @@ export default (langKey) => (
       }
     }
     `}
-    render={(data, langKey) => (
-      <BlogRoll data={data} langKey={langKey}/>
+    render={(data) => (
+      <BlogRoll data={data}/>
 
   )}
   />

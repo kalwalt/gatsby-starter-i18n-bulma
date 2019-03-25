@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll'
-import { getCurrentLangKey } from 'ptz-i18n';
 import SEO from '../components/SEO/SEO'
 import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby'
@@ -18,11 +17,6 @@ export default class BlogIndexPage extends React.Component {
 
   render() {
     const data = this.props.data;
-    const location = this.props.location;
-    const url = location.pathname;
-    const { langs, defaultLangKey } = data.site.siteMetadata.languages;
-    this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
-    console.log(this.langKey);
 
   return (
       <Layout data={data} location={location}>
