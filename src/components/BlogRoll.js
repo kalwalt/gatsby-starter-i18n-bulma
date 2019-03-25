@@ -17,139 +17,136 @@ const switchData = (data, langKey) => {
   return posts;
 }
 
-const propTypes = {
-  data: PropTypes.object.isRequired,
-}
-
-const BlogRollKey = (data, props) => {
-    const langKey = this.props.langKey;
-    const { edges: posts} = switchData(data, langKey);
-  return(
-    <div className="columns is-multiline">
-    {posts && (posts
-        .map(({ node: post }) => (
-          <div
-            className="is-parent column is-6"
-            key={post.id}
-          >
-          <article className="tile is-child box notification">
-            <p>
-              <Link className="title has-text-primary is-size-4" to={post.fields.slug}>
-                {post.frontmatter.title}
-              </Link>
-              <span> &bull; </span>
-              <span className="subtitle is-size-5 is-block">{post.frontmatter.date}</span>
-            </p>
-            <p>
-              {post.excerpt}
-              <br />
-              <br />
-              <Link className="button" to={post.fields.slug}>
-                Keep Reading →
-              </Link>
-            </p>
-            </article>
-          </div>
-        )))}
-        </div>
-  )
-}
-BlogRollKey.PropTypes = {
-  langKey: PropTypes.string,
-}
-
 class BlogRoll extends React.Component {
 
   render() {
-    //const itEdges = this.props.data.it.edges
     const { data } = this.props;
-    //console.log(data.markdownRemark.frontmatter.lang);
-    //const langKey = this.props.langKey;
-    //console.log(langKey);
-    console.log(data.it);
-    //console.log(this.props.location);
-    //console.log(switchData(data, 'en'));
-    //const { edges: posts} = switchData(data, langKey);
-    //console.log(posts);
-
+    const url = window.location.pathname;
+    console.log('url is:');
+    console.log(url);
+    const langKey = url.slice(1, 3);
+    console.log(langKey);
+    const { edges: posts} = switchData(data, langKey);
 
     return (
-    <BlogRollKey/>
+      <div className="columns is-multiline">
+      {posts && (posts
+          .map(({ node: post }) => (
+            <div
+              className="is-parent column is-6"
+              key={post.id}
+            >
+            <article className="tile is-child box notification">
+              <p>
+                <Link className="title has-text-primary is-size-4" to={post.fields.slug}>
+                  {post.frontmatter.title}
+                </Link>
+                <span> &bull; </span>
+                <span className="subtitle is-size-5 is-block">{post.frontmatter.date}</span>
+              </p>
+              <p>
+                {post.excerpt}
+                <br />
+                <br />
+                <Link className="button" to={post.fields.slug}>
+                  Keep Reading →
+                </Link>
+              </p>
+              </article>
+            </div>
+          )))}
+          </div>
     );
   }
 }
 
-BlogRoll.propTypes = propTypes
-
-//export default BlogRoll
+BlogRoll.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+  }),
+  location: PropTypes.shape({
+   pathname: PropTypes.string,
+ }),
+ langKey: PropTypes.string,
+}
 
 export default (langKey) => (
   <StaticQuery
     query={graphql`
-query BlogRollQuery {
-  site {
-    siteMetadata {
-      title
-      languages {
-        langs
-        defaultLangKey
-      }
-    }
-  }
-  allMarkdownRemark{
-    edges{
-      node{
-        frontmatter{
-          lang
+    query BlogRollTestQuery {
+      site {
+        siteMetadata {
+          title
+          languages{
+            langs
+            defaultLangKey
+          }
         }
       }
-    }
-  }
-  markdownRemark {
-    frontmatter {
+      allMarkdownRemark{
+        edges{
+          node{
+            frontmatter{
+              lang
+            }
+          }
+        }
+      }
+      markdownRemark {
+    frontmatter{
       id
       lang
     }
   }
-  en: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {templateKey: {eq: "blog-post"}, lang: {regex: "/(en any)/"}}}) {
-    edges {
-      node {
-        excerpt(pruneLength: 400)
-        id
-        fields {
-          slug
+      en: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] },
+        filter: { frontmatter: { templateKey: { eq: "blog-post" },
+                                 lang: { regex: "/(en|any)/" }}}
+      ) {
+        edges {
+          node {
+            excerpt(pruneLength: 400)
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              templateKey
+              date
+              lang
+            }
+          }
         }
-        frontmatter {
-          title
-          templateKey
-          date
-          lang
+      }
+      it: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] },
+        filter: { frontmatter: { templateKey: { eq: "blog-post" },
+                                 lang: { regex: "/(it|any)/" }}}
+      ) {
+        edges {
+          node {
+            excerpt(pruneLength: 400)
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              templateKey
+              date
+              lang
+            }
+          }
         }
       }
     }
-  }
-  it: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {templateKey: {eq: "blog-post"}, lang: {regex: "/(it any)/"}}}) {
-    edges {
-      node {
-        excerpt(pruneLength: 400)
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          templateKey
-          date
-          lang
-        }
-      }
-    }
-  }
-}
-`}
+    `}
     render={(data, langKey) => (
       <BlogRoll data={data} langKey={langKey}/>
 
-   )}
+  )}
   />
 )

@@ -1,10 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
-//import BlogRollit from '../components/BlogRoll_it'
-//import BlogRollen from '../components/BlogRoll_en'
-//import BlogRoll from '../components/BlogRoll'
-import BlogRoll from '../components/BlogRollTest'
+import BlogRoll from '../components/BlogRoll'
 import { getCurrentLangKey } from 'ptz-i18n';
 import SEO from '../components/SEO/SEO'
 import { FormattedMessage } from 'react-intl';
@@ -25,7 +22,7 @@ export default class BlogIndexPage extends React.Component {
     const url = location.pathname;
     const { langs, defaultLangKey } = data.site.siteMetadata.languages;
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
-    //console.log(this.langKey);
+    console.log(this.langKey);
 
   return (
       <Layout data={data} location={location}>
@@ -54,7 +51,7 @@ export default class BlogIndexPage extends React.Component {
                 </h1>
               </div>
             </div>
-             <BlogRoll langKey={this.langKey}/>
+             <BlogRoll />
             </div>
         </section>
       </Layout>
