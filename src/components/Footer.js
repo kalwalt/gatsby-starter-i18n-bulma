@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import select from '../components/utils'
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
+import { FaFacebook, FaTwitter, FaInstagram, FaVimeo } from 'react-icons/fa';
 
 import logo from '../img/logo.svg'
 
@@ -60,28 +61,16 @@ const Footer = class extends React.Component {
                 </div>
                 <div className="column is-4 social">
                   <a title="facebook" href="https://facebook.com">
-                    <span className="fa-stack fa-lg">
-                     <i className="fa fa-circle fa-stack-2x"></i>
-                     <i className="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
+                     <FaFacebook size="2em"/>
                   </a>
                   <a title="twitter" href="https://twitter.com">
-                    <span className="fa-stack fa-lg">
-                     <i className="fa fa-circle fa-stack-2x"></i>
-                     <i className="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
+                    <FaTwitter size="2em"/>
                   </a>
                   <a title="instagram" href="https://instagram.com">
-                    <span className="fa-stack fa-lg">
-                     <i className="fa fa-circle fa-stack-2x"></i>
-                     <i className="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                    </span>
+                    <FaInstagram  size="2em"/>
                   </a>
                   <a title="vimeo" href="https://vimeo.com">
-                    <span className="fa-stack fa-lg">
-                     <i className="fa fa-circle fa-stack-2x"></i>
-                     <i className="fa fa-vimeo fa-stack-1x fa-inverse"></i>
-                    </span>
+                    <FaVimeo  size="2em"/>
                   </a>
                 </div>
               </div>
