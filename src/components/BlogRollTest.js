@@ -23,16 +23,10 @@ class BlogRoll extends React.Component {
     const { data } = this.props;
     const url = window.location.pathname;
     console.log('url is:');
-    console.log(url); //yields: "/js" (where snippets run)
-    //const { data } = this.props;
-    //console.log(data.allMarkdownRemark.edges.node);
-    const langKey = this.props.langKey;
-    //console.log(langKey);
-    //console.log(this.props.location);
-    //console.log(switchData(data, 'en'));
-    //const { edges: posts} = switchData(data, langKey);
-    //console.log(posts);
-
+    console.log(url);
+    const langKey = url.slice(1, 3);
+    console.log(langKey);
+    const { edges: posts} = switchData(data, langKey);
 
     return (
       <div className="columns is-multiline">
