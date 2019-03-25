@@ -17,6 +17,7 @@ export default class BlogIndexPage extends React.Component {
 
   render() {
     const data = this.props.data;
+    const location = this.props.location;
 
   return (
       <Layout data={data} location={location}>
