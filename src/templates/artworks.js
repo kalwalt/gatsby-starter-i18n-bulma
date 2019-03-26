@@ -80,6 +80,7 @@ query ArtworksQuery($id: String!) {
   }
    markdownRemark(id: { eq: $id }) {
      frontmatter {
+       id
        title
        image {
          childImageSharp {
