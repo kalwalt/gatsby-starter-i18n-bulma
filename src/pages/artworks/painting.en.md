@@ -4,7 +4,7 @@ title: "Painting artworks page - english"
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
 description: "Artworks page for painting"
-templateKey: home
+templateKey: artworks
 tags:
   - art
 lang: en
