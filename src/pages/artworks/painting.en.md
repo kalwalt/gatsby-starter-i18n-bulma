@@ -9,8 +9,8 @@ tags:
   - art
 lang: en
 date: "22-03-2019"
-path: /en/artworks/painting
-slug: /en/artworks/painting
+path: /en/artworks/painting/
+slug: /en/artworks/painting/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg

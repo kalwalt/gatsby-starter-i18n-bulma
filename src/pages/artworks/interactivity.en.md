@@ -9,8 +9,8 @@ tags:
   - art
 lang: en
 date: "22-03-2019"
-path: /en/artworks/interactivity
-slug: /en/artworks/interactivity
+path: /en/artworks/interactivity/
+slug: /en/artworks/interactivity/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg

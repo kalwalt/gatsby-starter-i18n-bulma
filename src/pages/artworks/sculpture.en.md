@@ -9,8 +9,8 @@ tags:
   - art
 lang: en
 date: "22-03-2019"
-path: /en/artworks/sculpture
-slug: /en/artworks/sculpture
+path: /en/artworks/sculpture/
+slug: /en/artworks/sculpture/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg

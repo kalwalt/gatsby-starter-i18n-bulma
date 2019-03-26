@@ -9,8 +9,8 @@ tags:
   - art
 lang: it
 date: "22-03-2019"
-path: /it/opere/pittura
-slug: /it/opere/pittura
+path: /it/opere/pittura/
+slug: /it/opere/pittura/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg

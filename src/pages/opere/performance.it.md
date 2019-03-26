@@ -9,8 +9,8 @@ tags:
   - art
 lang: it
 date: "22-03-2019"
-path: /it/opere/performance
-slug: /it/opere/performance
+path: /it/opere/performance/
+slug: /it/opere/performance/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg

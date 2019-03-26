@@ -9,8 +9,8 @@ tags:
   - art
 lang: en
 date: "22-03-2019"
-path: /en/artworks/performance
-slug: /en/artworks/performance
+path: /en/artworks/performance/
+slug: /en/artworks/performance/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg

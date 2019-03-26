@@ -9,8 +9,8 @@ tags:
   - art
 lang: it
 date: "22-03-2019"
-path: /it/opere/scultura
-slug: /it/opere/scultura
+path: /it/opere/scultura/
+slug: /it/opere/scultura/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg
