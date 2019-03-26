@@ -6,37 +6,51 @@ import { rhythm } from "../utils/typography"
 
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
+import Features from '../components/Features'
 
-const ArtworkTemplate = ({ title, content, contentComponent }) => {
+const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, }) => {
   const PageContent = contentComponent || Content
   return (
       <div className="container content">
-       <h1>{title}</h1>
-      <PageContent className="content" content={content} />
+       <h1 className="title">{title}</h1>
+         <div className="columns">
+           <div className="column is-7">
+             <h2 className="has-text-weight-semibold subtitle">
+             {heading}
+             </h2>
+             <Features gridItems={intro.blurbs} />
+             <PageContent className="content" content={content} />
+           </div>
+         </div>
       </div>
 )
 }
 
 ArtworkTemplate.propTypes = {
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  heading: PropTypes.string,
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  intro: PropTypes.shape({
+    blurbs: PropTypes.array,
+  }),
 }
 
 class ArtworksPage extends React.Component {
 
-  render() {
-    var dataMarkdown = [];
-    if (this.props.data !== null) {
-      dataMarkdown = this.props.data.markdownRemark
-    }
+render() {
+  const data = this.props.data;
+  const { frontmatter } = data.markdownRemark;
     return (
-      <Layout className="container" data={this.props.data} location={this.props.location}>
+      <Layout className="container" data={data} location={this.props.location}>
         <div style={{ marginBottom: rhythm(2) }}>
             <ArtworkTemplate
             contentComponent={HTMLContent}
-            title={dataMarkdown.frontmatter.title}
-            content={dataMarkdown.html}
+            heading={frontmatter.heading}
+            title={frontmatter.title}
+            content={data.markdownRemark.html}
+            intro={frontmatter.intro}
             />
         </div>
       </Layout>
@@ -45,30 +59,52 @@ class ArtworksPage extends React.Component {
 }
 
 ArtworksPage.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
 }
 
 export default ArtworksPage
 
 export const pageQuery = graphql`
-  query ArtworksQuery($id: String!) {
-    site {
-      siteMetadata {
-        languages {
-          defaultLangKey
-          langs
-        }
-      }
-    }
-    markdownRemark(id: {eq: $id}) {
-      html
-      frontmatter {
-        id
-        title
-      }
-      fields {
-        slug
+query ArtworksQuery($id: String!) {
+  site {
+    siteMetadata {
+      languages {
+        defaultLangKey
+        langs
       }
     }
   }
+   markdownRemark(id: { eq: $id }) {
+     html
+     frontmatter {
+       id
+       title
+       image {
+         childImageSharp {
+           fluid(maxWidth: 2048, quality: 100) {
+             ...GatsbyImageSharpFluid
+           }
+         }
+       }
+       heading
+       description
+       intro {
+         blurbs {
+           image {
+             childImageSharp {
+               fluid(maxWidth: 240, quality: 64) {
+                 ...GatsbyImageSharpFluid
+               }
+             }
+           }
+          text
+         }
+      }
+   }
+ }
+}
 `
