@@ -85,9 +85,13 @@ class TemplateWrapper extends Component {
     this.children = this.props.children;
     const data = this.props.data;
     this.className = this.props.className;
-    const location = this.props.location;
+    //const location = this.props.location;
+    //const location = {pathname: "/it/opere/pittura/"}
+    console.log(location);
     this.title = data.markdownRemark.frontmatter.title;
-    const url = location.pathname;
+    //const url = location.pathname;
+    const url = "/it/opere/pittura/";
+    console.log(url);
     const { langs, defaultLangKey } = data.site.siteMetadata.languages;
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;

@@ -15,6 +15,11 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      markdownRemark{
+        frontmatter{
+          heading
+        }
+      }
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
@@ -33,6 +38,7 @@ exports.createPages = ({ actions, graphql }) => {
               templateKey
               lang
               title
+              heading
             }
           }
         }
