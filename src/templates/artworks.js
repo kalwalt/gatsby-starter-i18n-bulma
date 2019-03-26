@@ -13,9 +13,9 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, }) 
   return (
       <div className="container content">
        <h1>{title}</h1>
-       {heading}
-       <Features gridItems={intro.blurbs} />
-      <PageContent className="content" content={content} />
+         <h2>{heading}</h2>
+         <Features gridItems={intro.blurbs} />
+       <PageContent className="content" content={content} />
       </div>
 )
 }
