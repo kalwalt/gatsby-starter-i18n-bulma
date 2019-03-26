@@ -31,12 +31,14 @@ ArtworkTemplate.propTypes = {
   }),
 }
 
-const ArtworksPage = ({ data, props }) => {
+class ArtworksPage extends React.Component {
+//const ArtworksPage = ({ data, props }) => {
+render() {
+  const data = this.props.data;
   const { frontmatter } = data.markdownRemark;
-  //const location = props.location;
-  //console.log(location);
+  console.log(this.props.location);
     return (
-      <Layout className="container" data={data} >
+      <Layout className="container" data={data} location={this.props.location}>
         <div style={{ marginBottom: rhythm(2) }}>
             <ArtworkTemplate
             contentComponent={HTMLContent}
@@ -49,6 +51,7 @@ const ArtworksPage = ({ data, props }) => {
       </Layout>
     )
 }
+}
 
 ArtworksPage.propTypes = {
   data: PropTypes.shape({
@@ -56,7 +59,6 @@ ArtworksPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-  props: PropTypes.object,
 }
 
 export default ArtworksPage
