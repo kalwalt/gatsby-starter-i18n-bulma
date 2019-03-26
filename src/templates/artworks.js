@@ -32,11 +32,10 @@ ArtworkTemplate.propTypes = {
 }
 
 class ArtworksPage extends React.Component {
-//const ArtworksPage = ({ data, props }) => {
+
 render() {
   const data = this.props.data;
   const { frontmatter } = data.markdownRemark;
-  console.log(this.props.location);
     return (
       <Layout className="container" data={data} location={this.props.location}>
         <div style={{ marginBottom: rhythm(2) }}>
@@ -50,7 +49,7 @@ render() {
         </div>
       </Layout>
     )
-}
+  }
 }
 
 ArtworksPage.propTypes = {
@@ -94,7 +93,7 @@ query ArtworksQuery($id: String!) {
                }
              }
            }
-            text
+          text
          }
       }
    }
