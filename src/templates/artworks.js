@@ -15,9 +15,9 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, }) 
        <h1 className="title">{title}</h1>
          <div className="columns">
            <div className="column is-7">
-             <h3 className="has-text-weight-semibold subtitle">
+             <h2 className="has-text-weight-semibold subtitle">
              {heading}
-             </h3>
+             </h2>
              <Features gridItems={intro.blurbs} />
              <PageContent className="content" content={content} />
            </div>
@@ -49,7 +49,7 @@ render() {
             contentComponent={HTMLContent}
             heading={frontmatter.heading}
             title={frontmatter.title}
-            content={data.html}
+            content={data.markdownRemark.html}
             intro={frontmatter.intro}
             />
         </div>
@@ -79,6 +79,7 @@ query ArtworksQuery($id: String!) {
     }
   }
    markdownRemark(id: { eq: $id }) {
+     html
      frontmatter {
        id
        title
