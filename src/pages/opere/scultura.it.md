@@ -2,6 +2,7 @@
 id: '10'
 title: "Pagina di opere di scultura - italiano"
 image: /img/Persimmon.jpg
+heading: La bellezza del caco
 description: "Pagina dedicata alle opere di scultura"
 templateKey: artworks
 tags:
