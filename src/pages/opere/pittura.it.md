@@ -15,7 +15,10 @@ intro:
   blurbs:
     - image: /img/Persimmon.jpg
       text: >
-        Il caco è un frutto che cresce su un albero e in autunno si tinge di arancio...
+        Il caco è un frutto che cresce su un albero e in autunno si tinge di arancio...Quanti poeti ha ispirato?
+    - image: /img/Kaki.jpg
+      text: >
+        Molti Kaki maturi su un albero. Un bellissimo soggetto per la pittura.
 ---
 
 ## Pittura

@@ -12,10 +12,16 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, }) 
   const PageContent = contentComponent || Content
   return (
       <div className="container content">
-       <h1>{title}</h1>
-         <h2>{heading}</h2>
-         <Features gridItems={intro.blurbs} />
-       <PageContent className="content" content={content} />
+       <h1 className="title">{title}</h1>
+         <div className="columns">
+           <div className="column is-7">
+             <h3 className="has-text-weight-semibold subtitle">
+             {heading}
+             </h3>
+             <Features gridItems={intro.blurbs} />
+             <PageContent className="content" content={content} />
+           </div>
+         </div>
       </div>
 )
 }
