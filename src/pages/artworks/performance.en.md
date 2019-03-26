@@ -2,7 +2,7 @@
 id: '11'
 title: "Performance artworks page - english"
 description: "Artworks page for performance"
-templateKey: artworks
+templateKey: home
 tags:
   - art
 lang: en

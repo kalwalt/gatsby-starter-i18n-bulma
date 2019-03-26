@@ -2,7 +2,7 @@
 id: '10'
 title: "Sculpture artworks page - english"
 description: "Artworks page for sculpture"
-templateKey: artworks
+templateKey: home
 tags:
   - art
 lang: en

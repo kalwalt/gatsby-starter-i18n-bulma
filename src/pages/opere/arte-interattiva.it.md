@@ -2,7 +2,7 @@
 id: '12'
 title: "Pagina di opere di interattività - italiano"
 description: "Pagina dedicata alle opere di interattività"
-templateKey: artworks
+templateKey: home
 tags:
   - art
 lang: it

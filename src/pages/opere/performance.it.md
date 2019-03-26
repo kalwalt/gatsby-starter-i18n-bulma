@@ -2,7 +2,7 @@
 id: '11'
 title: "Pagina di opere di performance - italiano"
 description: "Pagina dedicata alle opere di performance"
-templateKey: artworks
+templateKey: home
 tags:
   - art
 lang: it

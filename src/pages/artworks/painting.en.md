@@ -2,7 +2,7 @@
 id: '09'
 title: "Painting artworks page - english"
 description: "Artworks page for painting"
-templateKey: artworks
+templateKey: home
 tags:
   - art
 lang: en

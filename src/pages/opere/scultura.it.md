@@ -2,7 +2,7 @@
 id: '10'
 title: "Pagina di opere di scultura - italiano"
 description: "Pagina dedicata alle opere di scultura"
-templateKey: artworks
+templateKey: home
 tags:
   - art
 lang: it

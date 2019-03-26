@@ -2,7 +2,7 @@
 id: '12'
 title: "Interactivity artworks page - english"
 description: "Artworks page for interactivity"
-templateKey: artworks
+templateKey: home
 tags:
   - art
 lang: en

@@ -2,7 +2,7 @@
 id: '06'
 title: "Pagina opere italiano"
 description: "qualche contenuto"
-templateKey: artworks
+templateKey: home
 tags:
   - art
 lang: it
