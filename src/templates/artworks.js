@@ -7,18 +7,19 @@ import { rhythm } from "../utils/typography"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import Features from '../components/Features'
-import ImageGallery from 'react-image-gallery';
-import "react-image-gallery/styles/css/image-gallery.css";
+import Gallery from '../components/Gallery'
+import "react-image-gallery/styles/css/image-gallery.css"
 import images from '../data/imageSlider'
 
 const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, }) => {
   const PageContent = contentComponent || Content
+
   return (
 
       <div className="container content">
        <h1 className="title">{title}</h1>
        <div className="hero">
-       <ImageGallery  items={images} />
+      <Gallery images={images.array} />
        </div>
          <div className="columns">
            <div className="column is-7">
