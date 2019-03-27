@@ -7,12 +7,32 @@ import { rhythm } from "../utils/typography"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import Features from '../components/Features'
+import ImageGallery from 'react-image-gallery';
+import "react-image-gallery/styles/css/image-gallery.css";
 
 const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, }) => {
   const PageContent = contentComponent || Content
+  const images = [
+      {
+        original: 'http://lorempixel.com/1000/600/nature/1/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/1/',
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/2/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/2/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      }
+    ]
   return (
+
       <div className="container content">
        <h1 className="title">{title}</h1>
+       <div className="hero">
+       <ImageGallery  items={images} />
+       </div>
          <div className="columns">
            <div className="column is-7">
              <h2 className="has-text-weight-semibold subtitle">
@@ -40,6 +60,20 @@ ArtworkTemplate.propTypes = {
 class ArtworksPage extends React.Component {
 
 render() {
+  const images = [
+      {
+        original: 'http://lorempixel.com/1000/600/nature/1/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/1/',
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/2/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/2/'
+      },
+      {
+        original: 'http://lorempixel.com/1000/600/nature/3/',
+        thumbnail: 'http://lorempixel.com/250/150/nature/3/'
+      }
+    ]
   const data = this.props.data;
   const { frontmatter } = data.markdownRemark;
     return (
