@@ -21,8 +21,8 @@ import menuTree from '../data/menuTree'
 
 
 const getIdUrl = (id, langKey) => {
-  if(id){
-  var res;
+  if(id !== 'undefined'){
+  let res;
   switch (langKey) {
     //we get the name of the page according the id
     case 'en':
@@ -34,46 +34,34 @@ const getIdUrl = (id, langKey) => {
     default: return ' ';
   }
   return res;
-}
+  } else {
+  console.log("missed id in the getIdUrl() function!");
+  }
 };
 
 const startPath = (langKey, langsMenu, basename, _url) => {
   const lengthLangKey = langKey.length;
-  var indx;
+  let indx;
   indx = _url.indexOf(basename);
   const basePath = _url.slice(lengthLangKey + 2, indx);
   return basePath;
 };
 
-const blog_basename = (langKey, _url) => {
-  const lengthLangKey = langKey.length;
-  var indx;
-  var basePath;
-  if (_url.length == 9 && _url.includes("blog")){
-  indx = _url.indexOf('blog');
-  if (indx == 4){
-     basePath = _url.slice(lengthLangKey + 2, _url.length);
-     }
-  }
-  return basePath
-}
-
 const check_path = (langKey, _url, id_article) => {
-  var basename
-  if (_url.length == 9 && _url.includes("blog")){
-    basename = blog_basename(langKey, _url);
-    id_article = '02';
-  } else {
+  let basename
+  if (id_article !== 'undefined'){
     basename = getIdUrl(id_article, langKey);
   }
   return [basename, id_article];
 }
 
 const setLangsMenu = ( langsMenu, id, basePath) => {
-  if(id){
+  if(id !== 'undefined'){
   langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en') + '/';
   langsMenu[1].link = `/it/${basePath}` + getIdUrl(id, 'it') + '/';
-}
+  }else{
+  console.log("missed id in the setLangsMenu() function!");
+  }
 };
 
 // add concatenated locale data
