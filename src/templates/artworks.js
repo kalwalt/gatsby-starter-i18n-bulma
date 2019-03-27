@@ -19,7 +19,7 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, }) 
       <div className="container content">
        <h1 className="title">{title}</h1>
        <div className="hero">
-      <Gallery images={images.array} />
+      <Gallery images={images} />
        </div>
          <div className="columns">
            <div className="column is-7">
