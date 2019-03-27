@@ -48,6 +48,7 @@
     "react-helmet": "^5.2.0",
     "react-icon-base": "^2.1.2",
     "react-icons": "^3.5.0",
+    "react-image-gallery": "^0.8.14",
     "react-intl": "^2.7.2",
     "react-typography": "^0.16.3",
     "slash": "^2.0.0",
