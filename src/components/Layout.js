@@ -50,31 +50,7 @@ const startPath = (langKey, langsMenu, basename, _url) => {
   return basePath;
 };
 
-const blog_basename = (langKey, _url) => {
-  const lengthLangKey = langKey.length;
-  let indx;
-  let basePath;
-  if (_url.length == 9 && _url.includes("blog")){
-  indx = _url.indexOf('blog');
-  if (indx == 4){
-     basePath = _url.slice(lengthLangKey + 2, _url.length);
-     }
-  }
-  return basePath;
-}
-
 const check_path = (langKey, _url, id_article) => {
-  let basename
-  if (_url.length == 9 && _url.includes("blog")){
-    basename = blog_basename(langKey, _url);
-    id_article = '02';
-  } else {
-    basename = getIdUrl(id_article, langKey);
-  }
-  return [basename, id_article];
-}
-
-const check_path2 = (langKey, _url, id_article) => {
   let basename
   if (id_article !== 'undefined'){
     basename = getIdUrl(id_article, langKey);
@@ -109,7 +85,7 @@ class TemplateWrapper extends Component {
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
     const id_article = data.markdownRemark.frontmatter.id;
     //console.log(id_article);
-    const basename = check_path2(this.langKey, url, id_article);
+    const basename = check_path(this.langKey, url, id_article);
     // code to test...
     //const basename = getIdUrl(id_article, this.langKey);
     //console.log(basename);
