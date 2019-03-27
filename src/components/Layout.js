@@ -74,6 +74,14 @@ const check_path = (langKey, _url, id_article) => {
   return [basename, id_article];
 }
 
+const check_path2 = (langKey, _url, id_article) => {
+  let basename
+  if (id_article !== 'undefined'){
+    basename = getIdUrl(id_article, langKey);
+  }
+  return [basename, id_article];
+}
+
 const setLangsMenu = ( langsMenu, id, basePath) => {
   if(id !== 'undefined'){
   langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en') + '/';
@@ -101,7 +109,7 @@ class TemplateWrapper extends Component {
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
     const id_article = data.markdownRemark.frontmatter.id;
     //console.log(id_article);
-    const basename = check_path(this.langKey, url, id_article);
+    const basename = check_path2(this.langKey, url, id_article);
     // code to test...
     //const basename = getIdUrl(id_article, this.langKey);
     //console.log(basename);
