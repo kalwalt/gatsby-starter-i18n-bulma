@@ -3,17 +3,23 @@ import PropTypes from 'prop-types'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import ImageGallery from 'react-image-gallery';
 import Img from 'gatsby-image'
+import { injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import "react-image-gallery/styles/css/image-gallery.css";
 
+renderImage.propTypes = {
+  intl: intlShape.isRequired
+}
+
+
 function renderImage(item) {
+
+  const originalAlt = intl.formatMessage({id: 'imageAlt01'});
   return (
     <div className='image-gallery-image'>
     {
       item.imageSet ?
-        <picture
-          //onLoad={this.props.onImageLoad}
-          //onError={onImageError}
-        >
+        <picture>
           {
             item.imageSet.map((source, index) => (
               <source
@@ -25,26 +31,24 @@ function renderImage(item) {
             ))
           }
           <img
-            alt={item.originalAlt}
+            alt={originalAlt}
             src={item.original}
           />
         </picture>
       :
         <img
           src={item.original}
-          alt={item.originalAlt}
+          alt={originalAlt}
           srcSet={item.srcSet}
           sizes={item.sizes}
           title={item.originalTitle}
-          //onLoad={this.props.onImageLoad}
-          //onError={onImageError}
         />
     }
 
     {
       item.description &&
         <span className='image-gallery-description'>
-          {item.description}
+          <FormattedMessage id={item.description}/>
         </span>
     }
   </div>
@@ -52,12 +56,20 @@ function renderImage(item) {
   );
 }
 
-const Gallery = ( { images } ) => (
-  <ImageGallery lazyLoad={true} showBullets={true} renderItem={renderImage} items={images} />
-)
+const Gallery = ( { images, intl } ) => {
+  const placeholder = intl.formatMessage({id: 'imageAlt01'});
+  return (
+    <div>
+    <input placeholder={placeholder}></input><br/>
+  <ImageGallery lazyLoad={true} showBullets={true} renderItem={intl.renderImage} items={images} />
+   </div>
+);
+}
+
 
 Gallery.propTypes = {
   images: PropTypes.array,
+  intl: intlShape.isRequired
 }
 
-export default Gallery
+export default injectIntl(Gallery);
