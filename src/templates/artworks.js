@@ -3,12 +3,10 @@ import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import { rhythm } from "../utils/typography"
-
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import Features from '../components/Features'
 import Gallery from '../components/Gallery'
-import "react-image-gallery/styles/css/image-gallery.css"
 import images from '../data/imageSlider'
 
 const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, }) => {
@@ -18,10 +16,10 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, }) 
 
       <div className="container content">
        <h1 className="title">{title}</h1>
-       <div className="hero">
-      <Gallery images={images} />
-       </div>
-         <div className="columns">
+        <div className="hero">
+          <Gallery images={images} />
+          </div>
+          <div className="columns">
            <div className="column is-7">
              <h2 className="has-text-weight-semibold subtitle">
              {heading}
@@ -52,7 +50,7 @@ render() {
   const { frontmatter } = data.markdownRemark;
     return (
       <Layout className="container" data={data} location={this.props.location}>
-        <div style={{ marginBottom: rhythm(2) }}>
+        <div>
             <ArtworkTemplate
             contentComponent={HTMLContent}
             heading={frontmatter.heading}

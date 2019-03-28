@@ -7,24 +7,53 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 function renderImage(item) {
   return (
-    <div className="image-gallery-image">
-      <img
-        src={item.original}
-        alt={item.title || ''}
-        style={{
-          height: '100vh',
-          width: '100vw',
-          objectFit: 'scale-down',
-          fontFamily: "'object-fit: scale-down'",
-          background: 'black',
-        }}
-      />
-    </div>
+    <div className='image-gallery-image'>
+    {
+      item.imageSet ?
+        <picture
+          //onLoad={this.props.onImageLoad}
+          //onError={onImageError}
+        >
+          {
+            item.imageSet.map((source, index) => (
+              <source
+                key={index}
+                media={source.media}
+                srcSet={source.srcSet}
+                type={source.type}
+              />
+            ))
+          }
+          <img
+            alt={item.originalAlt}
+            src={item.original}
+          />
+        </picture>
+      :
+        <img
+          src={item.original}
+          alt={item.originalAlt}
+          srcSet={item.srcSet}
+          sizes={item.sizes}
+          title={item.originalTitle}
+          //onLoad={this.props.onImageLoad}
+          //onError={onImageError}
+        />
+    }
+
+    {
+      item.description &&
+        <span className='image-gallery-description'>
+          {item.description}
+        </span>
+    }
+  </div>
+
   );
 }
 
 const Gallery = ( { images } ) => (
-  <ImageGallery  renderItem={renderImage} items={images} />
+  <ImageGallery lazyLoad={true} showBullets={true} renderItem={renderImage} items={images} />
 )
 
 Gallery.propTypes = {
