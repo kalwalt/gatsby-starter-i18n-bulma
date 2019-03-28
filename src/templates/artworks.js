@@ -2,7 +2,6 @@ import React from "react"
 import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
-import { rhythm } from "../utils/typography"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import Features from '../components/Features'
