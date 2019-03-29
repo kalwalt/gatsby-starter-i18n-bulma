@@ -12,9 +12,11 @@ renderImage.propTypes = {
 }
 
 
-function renderImage(item) {
+function renderImage(item, intl) {
 
-  const originalAlt = intl.formatMessage({id: 'imageAlt01'});
+  const originalAlt = intl.formatMessage({id: intl.item.originalAlt});
+  const description = intl.formatMessage({id: intl.item.description});
+
   return (
     <div className='image-gallery-image'>
     {
@@ -48,7 +50,7 @@ function renderImage(item) {
     {
       item.description &&
         <span className='image-gallery-description'>
-          <FormattedMessage id={item.description}/>
+          {description}
         </span>
     }
   </div>
@@ -57,12 +59,13 @@ function renderImage(item) {
 }
 
 const Gallery = ( { images, intl } ) => {
-  const placeholder = intl.formatMessage({id: 'imageAlt01'});
+  //const placeholder = intl.formatMessage({id: 'image01'});
+  //const placeholder = "test";
   return (
     <div>
-    <input placeholder={placeholder}></input><br/>
-  <ImageGallery lazyLoad={true} showBullets={true} renderItem={intl.renderImage} items={images} />
-   </div>
+
+     <ImageGallery lazyLoad={true} showBullets={true} renderItem={intl.renderImage} items={images} />
+    </div>
 );
 }
 
