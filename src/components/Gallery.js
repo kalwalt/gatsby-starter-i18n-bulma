@@ -3,19 +3,9 @@ import PropTypes from 'prop-types'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import ImageGallery from 'react-image-gallery';
 import Img from 'gatsby-image'
-import { injectIntl, intlShape } from 'react-intl';
-import { FormattedMessage } from 'react-intl';
 import "react-image-gallery/styles/css/image-gallery.css";
 
-renderImage.propTypes = {
-  intl: intlShape.isRequired
-}
-
-
-function renderImage(item, intl) {
-
-  const originalAlt = intl.formatMessage({id: intl.item.originalAlt});
-  const description = intl.formatMessage({id: intl.item.description});
+function renderImage(item) {
 
   return (
     <div className='image-gallery-image'>
@@ -33,14 +23,14 @@ function renderImage(item, intl) {
             ))
           }
           <img
-            alt={originalAlt}
+            alt={item.originalAlt}
             src={item.original}
           />
         </picture>
       :
         <img
           src={item.original}
-          alt={originalAlt}
+          alt={item.originalAlt}
           srcSet={item.srcSet}
           sizes={item.sizes}
           title={item.originalTitle}
@@ -50,7 +40,7 @@ function renderImage(item, intl) {
     {
       item.description &&
         <span className='image-gallery-description'>
-          {description}
+          {item.description}
         </span>
     }
   </div>
@@ -58,21 +48,16 @@ function renderImage(item, intl) {
   );
 }
 
-const Gallery = ( { images, intl } ) => {
-  //const placeholder = intl.formatMessage({id: 'image01'});
-  //const placeholder = "test";
-  return (
-    <div>
+const Gallery = ( { images } ) => {
 
-     <ImageGallery lazyLoad={true} showBullets={true} renderItem={intl.renderImage} items={images} />
-    </div>
+  return (
+     <ImageGallery lazyLoad={true} showBullets={true} renderItem={renderImage} items={images} />
 );
 }
 
 
 Gallery.propTypes = {
   images: PropTypes.array,
-  intl: intlShape.isRequired
 }
 
-export default injectIntl(Gallery);
+export default Gallery;
