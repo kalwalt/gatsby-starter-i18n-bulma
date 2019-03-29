@@ -13,8 +13,4 @@ module.exports = {
   'contact': 'Contatti',
   'not_found': "404 - Pagina Non Trovata",
   '404': "Sei giunto ad una pagina che non esiste più o hai sbagliato il percorso...",
-  'image01': "Delle formiche su un filo d'erba.",
-  'imageAlt01': "Oh! Delle formiche!",
-  'image02': "Un bel tramonto sul mare.",
-  'image03': "Una scogliera sul mare",
 };

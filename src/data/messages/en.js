@@ -13,9 +13,4 @@ module.exports = {
   'contact': 'Contacts',
   'not_found': "404 - Page Not Found",
   '404': "You are arrived to an unvailable page or you have missed the path...",
-  'image01': "Ants on a blade of grass.",
-  'imageAlt01': "Oh! Some ants!",
-  'image02': "A beautiful sunset over the sea.",
-  'image03': "A cliff on the sea.",
-
 };
