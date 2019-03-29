@@ -62,6 +62,7 @@ render() {
             content={data.markdownRemark.html}
             intro={frontmatter.intro}
             langKey={this.langKey}
+            display={true}
             />
         </div>
       </Layout>

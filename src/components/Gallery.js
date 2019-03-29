@@ -61,10 +61,15 @@ function renderImage(item) {
   );
 }
 
-const Gallery = ( { en, it, langKey } ) => {
+const Gallery = ( { en, it, langKey, display } ) => {
+  if (display==false) {
+    return null;
+  }
   const images = getImages(en, it, langKey);
   return (
+
      <ImageGallery lazyLoad={true} showBullets={true} renderItem={renderImage} items={images} />
+
 );
 }
 
