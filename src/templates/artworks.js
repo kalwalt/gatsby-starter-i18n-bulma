@@ -49,6 +49,8 @@ class ArtworksPage extends React.Component {
 render() {
   const data = this.props.data;
   const { frontmatter } = data.markdownRemark;
+  const { display } = frontmatter.slider;
+  console.log(display);
   const url = location.pathname;
   const { langs, defaultLangKey } = data.site.siteMetadata.languages;
   this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
@@ -62,7 +64,7 @@ render() {
             content={data.markdownRemark.html}
             intro={frontmatter.intro}
             langKey={this.langKey}
-            display={true}
+            display={display}
             />
         </div>
       </Layout>
@@ -115,6 +117,9 @@ query ArtworksQuery($id: String!) {
            }
           text
          }
+      }
+      slider{
+        display
       }
    }
  }

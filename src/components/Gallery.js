@@ -64,7 +64,7 @@ function renderImage(item) {
 const Gallery = ( { en, it, langKey, display } ) => {
   if (display==false) {
     return null;
-  }
+  };
   const images = getImages(en, it, langKey);
   return (
 

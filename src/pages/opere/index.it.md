@@ -19,6 +19,8 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Molti artisti hanno ritratto l'albero del caco, scopri quanti ne sono rimasti affascinati.
+slider:
+  display: true
 ---
 
 Hello! ciao! Pagina principale opere
