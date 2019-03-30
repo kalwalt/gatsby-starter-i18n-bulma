@@ -5,19 +5,6 @@ import ImageGallery from 'react-image-gallery';
 import Img from 'gatsby-image'
 import "react-image-gallery/styles/css/image-gallery.css";
 
-const getImages = (en, it, langKey) => {
-  let images;
-  switch(langKey){
-    case('en'):
-      images = en;
-    break;
-    case('it'):
-      images = it;
-    break;
-  }
-  return images;
-}
-
 function renderImage(item) {
 
   return (
@@ -61,10 +48,8 @@ function renderImage(item) {
   );
 }
 
-const Gallery = ( { array, en, it, langKey, display } ) => {
+const Gallery = ( { array, display } ) => {
 
-  const images = getImages(en, it, langKey);
-  console.log(display);
   return (
     <div className='testclass'>
         { display == 'slide'  ?

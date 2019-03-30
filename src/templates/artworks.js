@@ -7,10 +7,8 @@ import { getCurrentLangKey } from 'ptz-i18n';
 import Content, { HTMLContent } from "../components/Content"
 import Features from '../components/Features'
 import Gallery from '../components/Gallery'
-import it from '../data/imageSlider_it'
-import en from '../data/imageSlider_en'
 
-const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, langKey, display, array }) => {
+const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, display, array }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -18,7 +16,7 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, lan
       <div className="container content">
        <h1 className="title">{title}</h1>
         <div className="hero">
-          <Gallery  array={array} en={en} it={it} langKey={langKey} display={display}/>
+          <Gallery array={array} display={display}/>
           </div>
           <div className="columns">
            <div className="column is-7">
@@ -52,11 +50,7 @@ render() {
   const { frontmatter } = data.markdownRemark;
   const { display } = frontmatter.slider;
   const { array } = frontmatter.slider;
-  console.log(array);
-  //console.log(typeof(display));
   const url = location.pathname;
-  const { langs, defaultLangKey } = data.site.siteMetadata.languages;
-  this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     return (
       <Layout className="container" data={data} location={this.props.location}>
         <div>
@@ -66,7 +60,6 @@ render() {
             title={frontmatter.title}
             content={data.markdownRemark.html}
             intro={frontmatter.intro}
-            langKey={this.langKey}
             display={display}
             array={array}
             />
