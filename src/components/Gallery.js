@@ -64,9 +64,7 @@ const Gallery = ( { array, display } ) => {
 
 Gallery.propTypes = {
   array: PropTypes.array,
-  images: PropTypes.array,
   display: PropTypes.string,
-  langKey: PropTypes.string,
 }
 
 export default Gallery
