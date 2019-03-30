@@ -21,6 +21,7 @@ intro:
         Have you ever thought of creating a persimmon forest?
 slider:
   display: 'false'
+  array: []
 ---
 
 ## Interactivity

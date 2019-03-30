@@ -10,7 +10,7 @@ import Gallery from '../components/Gallery'
 import it from '../data/imageSlider_it'
 import en from '../data/imageSlider_en'
 
-const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, langKey, display }) => {
+const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, langKey, display, array }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -18,7 +18,7 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, lan
       <div className="container content">
        <h1 className="title">{title}</h1>
         <div className="hero">
-          <Gallery en={en} it={it} langKey={langKey} display={display}/>
+          <Gallery  array={array} en={en} it={it} langKey={langKey} display={display}/>
           </div>
           <div className="columns">
            <div className="column is-7">
@@ -42,6 +42,7 @@ ArtworkTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  array: PropTypes.array,
 }
 
 class ArtworksPage extends React.Component {
@@ -50,7 +51,8 @@ render() {
   const data = this.props.data;
   const { frontmatter } = data.markdownRemark;
   const { display } = frontmatter.slider;
-  console.log(display);
+  const { array } = frontmatter.slider;
+  console.log(array);
   //console.log(typeof(display));
   const url = location.pathname;
   const { langs, defaultLangKey } = data.site.siteMetadata.languages;
@@ -66,6 +68,7 @@ render() {
             intro={frontmatter.intro}
             langKey={this.langKey}
             display={display}
+            array={array}
             />
         </div>
       </Layout>
@@ -121,6 +124,13 @@ query ArtworksQuery($id: String!) {
       }
       slider{
         display
+        array{
+          original
+          thumbnail
+          originalAlt
+          originalTitle
+          description
+        }
       }
    }
  }

@@ -21,6 +21,7 @@ intro:
         Many ripe persimmon on a tree. A beautiful subject for painting.
 slider:
   display: 'false'
+  array: []
 ---
 
 ## Painting

@@ -21,6 +21,7 @@ intro:
         Hai mai pensato di creare un bosco di cachi?
 slider:
   display: 'false'
+  array: []
 ---
 
 ## Interattività - arte interattiva

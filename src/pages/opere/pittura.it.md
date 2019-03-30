@@ -21,6 +21,7 @@ intro:
         Molti Kaki maturi su un albero. Un bellissimo soggetto per la pittura.
 slider:
   display: 'false'
+  array: []
 ---
 
 ## Pittura
