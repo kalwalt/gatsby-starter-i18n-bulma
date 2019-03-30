@@ -48,6 +48,12 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
             <div className="control">
               <input className="input" type={"email"} name={"email"} onChange={handleChange} id={"email"} required={true} />
             </div>
+          </div>
+          <div className="field">
+           <label className="label" htmlFor={"subject"}>Subject</label>
+             <div className="control">
+               <input className="input" type={"subject"} name={"subject"} onChange={handleChange} id={"subject"} required={true} />
+            </div>
         </div>
         <div className="field">
           <label className="label" htmlFor={"message"}>Message</label>
