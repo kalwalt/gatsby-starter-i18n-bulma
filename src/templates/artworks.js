@@ -10,7 +10,7 @@ import Gallery from '../components/Gallery'
 import it from '../data/imageSlider_it'
 import en from '../data/imageSlider_en'
 
-const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, langKey }) => {
+const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, langKey, display }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -18,7 +18,7 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, lan
       <div className="container content">
        <h1 className="title">{title}</h1>
         <div className="hero">
-          <Gallery en={en} it={it} langKey={langKey} />
+          <Gallery en={en} it={it} langKey={langKey} display={display}/>
           </div>
           <div className="columns">
            <div className="column is-7">
@@ -51,6 +51,7 @@ render() {
   const { frontmatter } = data.markdownRemark;
   const { display } = frontmatter.slider;
   console.log(display);
+  //console.log(typeof(display));
   const url = location.pathname;
   const { langs, defaultLangKey } = data.site.siteMetadata.languages;
   this.langKey = getCurrentLangKey(langs, defaultLangKey, url);

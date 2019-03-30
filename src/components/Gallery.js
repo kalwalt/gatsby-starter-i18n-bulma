@@ -62,20 +62,25 @@ function renderImage(item) {
 }
 
 const Gallery = ( { en, it, langKey, display } ) => {
-  if (display==false) {
-    return null;
-  };
+
   const images = getImages(en, it, langKey);
+  console.log(display);
   return (
-
+    <div className='testclass'>
+        { display == 'slide'  ?
      <ImageGallery lazyLoad={true} showBullets={true} renderItem={renderImage} items={images} />
-
+    :
+     <div className='void'></div>
+ }
+   </div>
 );
 }
 
 
 Gallery.propTypes = {
   images: PropTypes.array,
+  display: PropTypes.string,
+  langKey: PropTypes.string,
 }
 
-export default Gallery;
+export default Gallery

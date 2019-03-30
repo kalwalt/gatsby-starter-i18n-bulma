@@ -20,7 +20,7 @@ intro:
       text: >
         Molti artisti hanno ritratto l'albero del caco, scopri quanti ne sono rimasti affascinati.
 slider:
-  display: true
+  display: 'slide'
 ---
 
 Hello! ciao! Pagina principale opere

@@ -19,6 +19,8 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Molti Kaki maturi su un albero. Un bellissimo soggetto per la pittura.
+slider:
+  display: 'false'
 ---
 
 ## Pittura

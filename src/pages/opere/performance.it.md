@@ -19,6 +19,8 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Immagina di arrampicarti su di un albero di caco, che cosa vedresti una volta in cima?
+slider:
+  display: 'false'
 ---
 
 ## Performance

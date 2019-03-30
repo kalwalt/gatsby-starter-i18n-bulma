@@ -20,7 +20,7 @@ intro:
       text: >
         Many artists have portrayed the persimmon tree, discover how many they have been fascinated by.
 slider:
-  display: true
+  display: 'slide'
 ---
 
 Hello! ciao! Artworks start page

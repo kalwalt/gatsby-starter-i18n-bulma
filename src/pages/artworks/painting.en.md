@@ -19,6 +19,8 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Many ripe persimmon on a tree. A beautiful subject for painting.
+slider:
+  display: 'false'
 ---
 
 ## Painting

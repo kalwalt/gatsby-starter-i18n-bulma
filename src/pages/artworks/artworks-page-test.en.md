@@ -19,6 +19,8 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Why don't you decide to plant a persimmon tree in your garden?
+slider:
+  display: 'false'
 ---
 
 Hello! ciao!

@@ -19,6 +19,8 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Perchè non decidi di piantare un'albero di caco nel tuo giardino?
+slider:
+  display: 'false'
 ---
 
 Hello! ciao!

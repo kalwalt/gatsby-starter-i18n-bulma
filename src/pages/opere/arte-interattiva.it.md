@@ -19,6 +19,8 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Hai mai pensato di creare un bosco di cachi?
+slider:
+  display: 'false'
 ---
 
 ## Interattività - arte interattiva
