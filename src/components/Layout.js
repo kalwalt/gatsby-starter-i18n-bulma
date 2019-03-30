@@ -7,9 +7,7 @@ import Main from '../components/Main'
 import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider, addLocaleData } from 'react-intl';
-import { rhythm } from "../utils/typography"
 import 'intl';
-
 import en from 'react-intl/locale-data/en';
 import 'intl/locale-data/jsonp/en';
 import it from 'react-intl/locale-data/it';

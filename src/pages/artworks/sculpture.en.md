@@ -19,6 +19,9 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         No matter how many trees I've ever seen, nothing matches persimmon wood ...
+slider:
+  display: 'false'
+  array: []
 ---
 
 ## Sculpture

@@ -19,6 +19,9 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Per quanti alberi abbia mai visto, niente eguaglia il legno di caco...
+slider:
+  display: 'false'
+  array: []
 ---
 
 ## Scultura
