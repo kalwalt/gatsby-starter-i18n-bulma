@@ -6,7 +6,7 @@ import Layout from "../components/Layout"
 import { getCurrentLangKey } from 'ptz-i18n';
 import Content, { HTMLContent } from "../components/Content"
 import Features from '../components/Features'
-import Gallery from '../components/Gallery'
+import Slider from '../components/Slider'
 
 const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, display, array }) => {
   const PageContent = contentComponent || Content
@@ -16,7 +16,7 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, dis
       <div className="container content">
        <h1 className="title">{title}</h1>
         <div className="hero">
-          <Gallery array={array} display={display}/>
+          <Slider array={array} display={display}/>
           </div>
           <div className="columns">
            <div className="column is-7">

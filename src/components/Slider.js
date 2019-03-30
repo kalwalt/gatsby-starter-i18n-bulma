@@ -48,7 +48,7 @@ function renderImage(item) {
   );
 }
 
-const Gallery = ( { array, display } ) => {
+const Slider = ( { array, display } ) => {
 
   return (
     <div className='testclass'>
@@ -62,9 +62,9 @@ const Gallery = ( { array, display } ) => {
 }
 
 
-Gallery.propTypes = {
+Slider.propTypes = {
   array: PropTypes.array,
   display: PropTypes.string,
 }
 
-export default Gallery
+export default Slider
