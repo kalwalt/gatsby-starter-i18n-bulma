@@ -50,7 +50,6 @@ render() {
   const { frontmatter } = data.markdownRemark;
   const { display } = frontmatter.slider;
   const { array } = frontmatter.slider;
-  const url = location.pathname;
     return (
       <Layout className="container" data={data} location={this.props.location}>
         <div>
