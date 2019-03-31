@@ -19,6 +19,9 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Imagine climbing up a persimmon tree, what would you see once at the top?
+slider:
+  display: 'false'
+  array: []
 ---
 
 ## Performance

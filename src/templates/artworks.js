@@ -2,18 +2,23 @@ import React from "react"
 import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
-import { rhythm } from "../utils/typography"
-
 import Layout from "../components/Layout"
+import { getCurrentLangKey } from 'ptz-i18n';
 import Content, { HTMLContent } from "../components/Content"
 import Features from '../components/Features'
+import Slider from '../components/Slider'
 
-const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, }) => {
+const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, display, array }) => {
   const PageContent = contentComponent || Content
+
   return (
+
       <div className="container content">
        <h1 className="title">{title}</h1>
-         <div className="columns">
+        <div className="hero">
+          <Slider array={array} display={display}/>
+          </div>
+          <div className="columns">
            <div className="column is-7">
              <h2 className="has-text-weight-semibold subtitle">
              {heading}
@@ -35,6 +40,7 @@ ArtworkTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  array: PropTypes.array,
 }
 
 class ArtworksPage extends React.Component {
@@ -42,15 +48,19 @@ class ArtworksPage extends React.Component {
 render() {
   const data = this.props.data;
   const { frontmatter } = data.markdownRemark;
+  const { display } = frontmatter.slider;
+  const { array } = frontmatter.slider;
     return (
       <Layout className="container" data={data} location={this.props.location}>
-        <div style={{ marginBottom: rhythm(2) }}>
+        <div>
             <ArtworkTemplate
             contentComponent={HTMLContent}
             heading={frontmatter.heading}
             title={frontmatter.title}
             content={data.markdownRemark.html}
             intro={frontmatter.intro}
+            display={display}
+            array={array}
             />
         </div>
       </Layout>
@@ -103,6 +113,16 @@ query ArtworksQuery($id: String!) {
            }
           text
          }
+      }
+      slider{
+        display
+        array{
+          original
+          thumbnail
+          originalAlt
+          originalTitle
+          description
+        }
       }
    }
  }

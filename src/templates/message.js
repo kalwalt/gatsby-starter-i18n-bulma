@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 
-const HomePageTemplate = ({ title, content, contentComponent }) => {
+const MessagePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
   return (
       <div className="container content">
@@ -15,13 +15,13 @@ const HomePageTemplate = ({ title, content, contentComponent }) => {
 )
 }
 
-HomePageTemplate.propTypes = {
+MessagePageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
 
-class HomePage extends React.Component {
+class MessagePage extends React.Component {
 
   render() {
     var dataMarkdown = [];
@@ -31,7 +31,7 @@ class HomePage extends React.Component {
     return (
       <Layout className="container" data={this.props.data} location={this.props.location}>
         <div>
-            <HomePageTemplate
+            <MessagePageTemplate
             contentComponent={HTMLContent}
             title={dataMarkdown.frontmatter.title}
             content={dataMarkdown.html}
@@ -42,14 +42,14 @@ class HomePage extends React.Component {
   }
 }
 
-HomePage.propTypes = {
+MessagePage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default HomePage
+export default MessagePage
 
 export const pageQuery = graphql`
-  query HomePageQuery($id: String!) {
+  query MessagePageQuery($id: String!) {
     site {
       siteMetadata {
         languages {
