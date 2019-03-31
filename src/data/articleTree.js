@@ -11,4 +11,5 @@ module.exports = {
   '10': ['artworks/sculpture','opere/scultura'],
   '11': ['artworks/performance','opere/performance'],
   '12': ['artworks/interactivity','opere/arte-interattiva'],
+  '13': ['contact/thanks', 'contatto/grazie'],
 };
