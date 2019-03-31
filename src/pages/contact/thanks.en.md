@@ -1,7 +1,7 @@
 ---
 id: '13'
-title: "Pagina di ringraziamento"
-description: "Pagina di ringraziamento"
+title: "Thank you page"
+description: "Thank you page"
 templateKey: message
 tags:
   - web
