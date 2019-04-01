@@ -27,7 +27,9 @@ slider:
     - { original: 'http://lorempixel.com/1000/600/nature/3/', thumbnail: 'http://lorempixel.com/250/150/nature/3/', originalAlt: 'A cliff on the sea.', originalTitle: 'A cliff on the sea.', description: 'A cliff where the sea incessantly breaks its waves.'}
 lightbox:
   display: true
-  images: [/img/Kaki.jpg, /img/Persimmon.jpg]
+  images:
+    - /img/Kaki.jpg
+    - /img/Persimmon.jpg
 ---
 
 Hello! ciao! Artworks start page

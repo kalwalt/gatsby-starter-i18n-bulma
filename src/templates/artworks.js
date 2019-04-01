@@ -11,6 +11,7 @@ import Lightbox from '../components/Lightbox'
 
 const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, display, array, lightbox, images }) => {
   const PageContent = contentComponent || Content
+  console.log(images);
   return (
 
       <div className="container content">
@@ -42,7 +43,7 @@ ArtworkTemplate.propTypes = {
     blurbs: PropTypes.array,
   }),
   array: PropTypes.array,
-  images: PropTypes.array,
+  images: PropTypes.arrayOf(PropTypes.object),
   lightbox: PropTypes.object,
 }
 
