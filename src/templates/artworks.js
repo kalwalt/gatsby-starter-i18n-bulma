@@ -54,7 +54,6 @@ render() {
   const { frontmatter } = data.markdownRemark;
   const { display } = frontmatter.slider;
   const { array } = frontmatter.slider;
-  //const images = data.allImageSharp.edges;
   const images = frontmatter.lightbox.images;
   console.log(images);
   const lightbox = frontmatter.lightbox;
@@ -140,21 +139,12 @@ query ArtworksQuery($id: String!) {
          id
          relativePath
          childImageSharp {
-           fluid(maxWidth: 240, quality: 64) {
+           fluid(maxWidth: 640, quality: 85) {
              ...GatsbyImageSharpFluid
              src
              sizes
-           }
-         }
-      }
-    }
-   }
- }
-allImageSharp {
-    edges {
-      node {
-        sizes(maxWidth: 1800) {
-          ...GatsbyImageSharpSizes
+            }
+          }
         }
       }
     }
