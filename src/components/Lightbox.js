@@ -69,9 +69,9 @@ class Lightbox extends Component {
       <Fragment>
         <Gallery>
           {images.map((img, i) => (
-            <GalleryItem key={img.node.sizes.src}>
-              <a href={img.node.sizes.src} alt="Image" onClick={e => this.handleClick(e, i)}>
-                <StyledImg sizes={img.node.sizes} />
+            <GalleryItem key={img.childImageSharp.fluid.src}>
+              <a href={img.childImageSharp.fluid.src} alt="Image" onClick={e => this.handleClick(e, i)}>
+                <StyledImg sizes={img.childImageSharp.fluid.sizes} />
               </a>
             </GalleryItem>
           ))}

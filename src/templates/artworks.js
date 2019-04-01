@@ -53,8 +53,8 @@ render() {
   const { frontmatter } = data.markdownRemark;
   const { display } = frontmatter.slider;
   const { array } = frontmatter.slider;
-  const images = data.allImageSharp.edges;
-  //const images = frontmatter.lightbox.images;
+  //const images = data.allImageSharp.edges;
+  const images = frontmatter.lightbox.images;
   console.log(images);
   const lightbox = frontmatter.lightbox;
     return (
@@ -83,7 +83,6 @@ ArtworksPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-  images: PropTypes.array,
 }
 
 export default ArtworksPage
@@ -142,6 +141,8 @@ query ArtworksQuery($id: String!) {
          childImageSharp {
            fluid(maxWidth: 240, quality: 64) {
              ...GatsbyImageSharpFluid
+             src
+             sizes
            }
          }
       }
