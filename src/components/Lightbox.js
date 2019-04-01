@@ -63,7 +63,7 @@ class Lightbox extends Component {
     const display = lightbox.display;
     console.log(display);
     console.log(images);
-    console.log(images[0].childImageSharp.fluid.sizes);
+    console.log(images[0].childImageSharp.fluid.src);
     return (
       <div className="lightbox">
       {display === true ?
@@ -80,7 +80,7 @@ class Lightbox extends Component {
 
         <LightboxModal visible={showLightbox} onKeyUp={e => this.handleKeyDown(e)}>
           <LightboxContent>
-            <Img sizes={images[selectedImage].childImageSharp.fluid.sizes} />
+            <Img  fluid={images[selectedImage].childImageSharp.fluid} />
             <Controls>
               <Button onClick={this.closeModal}>Close</Button>
               <LeftRight>
