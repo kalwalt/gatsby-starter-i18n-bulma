@@ -77,7 +77,10 @@ class Lightbox extends Component {
       }
       if (keyCode === 27) {
         // Escape key
-        this.setState({ showLightbox: false })
+        this.setState({ showLightbox: false });
+        const target = 'modal-lightbox';
+        const $target = document.getElementById(target);
+        $target.classList.toggle('is-active');
       }
     }
   }
