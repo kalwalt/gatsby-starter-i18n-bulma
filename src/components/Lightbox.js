@@ -13,7 +13,6 @@ class Lightbox extends Component {
     window.addEventListener('keyup', this.handleKeyUp, false);
     // Get all "#modal-lightbox" elements
     const modal = Array.prototype.slice.call(document.querySelectorAll('#img-lightbox'), 0);
-    console.log(modal);
     // Check if there are any #modal-lightbox links
     if (modal.length > 0) {
      const target = 'modal-lightbox';
@@ -25,7 +24,19 @@ class Lightbox extends Component {
          $target.classList.toggle('is-active');
        });
      });
-    }
+   }
+    //this make close the modal
+    const close = Array.prototype.slice.call(document.querySelectorAll('#modal-close'), 0);
+    if (close.length > 0) {
+      const target = 'modal-lightbox';
+      const $target = document.getElementById(target);
+     // Add a click event on each of them
+     close.forEach( el => {
+       el.addEventListener('click', () => {
+         $target.classList.toggle('is-active');
+       });
+     });
+   }
   }
 
   componentWillUnmount = () => {
@@ -95,17 +106,18 @@ class Lightbox extends Component {
         <div id="modal-lightbox" className="modal">
           <div className="modal-background"></div>
           <div className="modal-content">
+          <button id="modal-close" className="modal-close is-large" aria-label="close"></button>
             <Img  fluid={images[selectedImage].childImageSharp.fluid} />
-            <div className="field is-grouped is-right">
+            <footer class="modal-card-foot">
                 <button className="button is-primary" onClick={this.goBack} disabled={selectedImage === 0}>
                   Previous
                 </button>
                 <button className="button is-primary" onClick={this.goForward} disabled={selectedImage === images.length - 1}>
                   Next
                 </button>
-            </div>
+            </footer>
           </div>
-           <button className="modal-close is-large" aria-label="close"></button>
+
         </div>
       </Fragment>
       :
