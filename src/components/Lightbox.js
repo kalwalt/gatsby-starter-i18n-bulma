@@ -61,19 +61,20 @@ class Lightbox extends Component {
     const { images, lightbox } = this.props;
     const { showLightbox, selectedImage } = this.state;
     const display = lightbox.display;
+    const imageStyle = { borderRadius: '5px' }
     return (
       <div className="lightbox">
       {display === true ?
       <Fragment>
-        <Gallery>
+        <div className="columns">
           {images.map((img, i) => (
-            <GalleryItem key={img.childImageSharp.fluid.src}>
+            <div className="column" key={img.childImageSharp.fluid.src}>
               <a href={img.childImageSharp.fluid.src} alt="Image" onClick={e => this.handleClick(e, i)}>
-                <StyledImg fluid={img.childImageSharp.fluid} />
+                <Img className="image is-4by3" fluid={img.childImageSharp.fluid} style={imageStyle} />
               </a>
-            </GalleryItem>
+            </div>
           ))}
-        </Gallery>
+        </div>
 
         <LightboxModal visible={showLightbox} onKeyUp={e => this.handleKeyDown(e)}>
           <LightboxContent>
