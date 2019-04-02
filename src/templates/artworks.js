@@ -11,7 +11,6 @@ import Lightbox from '../components/Lightbox'
 
 const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, display, array, lightbox, images }) => {
   const PageContent = contentComponent || Content
-  console.log(images);
   return (
 
       <div className="container content">
@@ -55,7 +54,6 @@ render() {
   const { display } = frontmatter.slider;
   const { array } = frontmatter.slider;
   const images = frontmatter.lightbox.images;
-  console.log(images);
   const lightbox = frontmatter.lightbox;
     return (
       <Layout className="container" data={data} location={this.props.location}>

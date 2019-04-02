@@ -61,9 +61,6 @@ class Lightbox extends Component {
     const { images, lightbox } = this.props;
     const { showLightbox, selectedImage } = this.state;
     const display = lightbox.display;
-    console.log(display);
-    console.log(images);
-    console.log(images[0].childImageSharp.fluid.src);
     return (
       <div className="lightbox">
       {display === true ?
