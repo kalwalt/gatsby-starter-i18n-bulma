@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 
 class Lightbox extends Component {
   state = {
-    showLightbox: false,
     selectedImage: 0,
   }
 
@@ -44,11 +43,7 @@ class Lightbox extends Component {
 
   handleClick = (e, index) => {
     e.preventDefault()
-    this.setState({ showLightbox: !this.state.showLightbox, selectedImage: index })
-  }
-
-  closeModal = () => {
-    this.setState({ showLightbox: false })
+    this.setState({ selectedImage: index })
   }
 
   goBack = () => {
@@ -87,7 +82,7 @@ class Lightbox extends Component {
 
   render() {
     const { images, lightbox } = this.props;
-    const { showLightbox, selectedImage } = this.state;
+    const { selectedImage } = this.state;
     const display = lightbox.display;
     const imageStyle = { borderRadius: '5px' }
     return (
