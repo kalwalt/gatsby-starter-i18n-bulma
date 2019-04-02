@@ -79,14 +79,14 @@ class Lightbox extends Component {
           <LightboxContent>
             <Img  fluid={images[selectedImage].childImageSharp.fluid} />
             <Controls>
-              <Button onClick={this.closeModal}>Close</Button>
+              <button className="button is-primary" onClick={this.closeModal}>Close</button>
               <LeftRight>
-                <Button onClick={this.goBack} disabled={selectedImage === 0}>
+                <button className="button is-primary" onClick={this.goBack} disabled={selectedImage === 0}>
                   Previous
-                </Button>
-                <Button onClick={this.goForward} disabled={selectedImage === images.length - 1}>
+                </button>
+                <button className="button is-primary" onClick={this.goForward} disabled={selectedImage === images.length - 1}>
                   Next
-                </Button>
+                </button>
               </LeftRight>
             </Controls>
           </LightboxContent>
@@ -132,8 +132,6 @@ const Gallery = styled.div`
 const GalleryItem = styled.div`
   position: relative;
 `
-
-const Button = styled.button``
 
 const LightboxModal = styled.div`
   position: absolute;
