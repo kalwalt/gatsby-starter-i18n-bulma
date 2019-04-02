@@ -10,7 +10,22 @@ class Lightbox extends Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener('keyup', this.handleKeyUp, false)
+    window.addEventListener('keyup', this.handleKeyUp, false);
+    // Get all "#modal-lightbox" elements
+    const modal = Array.prototype.slice.call(document.querySelectorAll('#img-lightbox'), 0);
+    console.log(modal);
+    // Check if there are any #modal-lightbox links
+    if (modal.length > 0) {
+     const target = 'modal-lightbox';
+     const $target = document.getElementById(target);
+     // Add a click event on each of them
+     modal.forEach( el => {
+       el.addEventListener('click', () => {
+         el.classList.toggle('is-active');
+         $target.classList.toggle('is-active');
+       });
+     });
+    }
   }
 
   componentWillUnmount = () => {
@@ -69,29 +84,29 @@ class Lightbox extends Component {
         <div className="columns">
           {images.map((img, i) => (
             <div className="column" key={img.childImageSharp.fluid.src}>
-              <a href={img.childImageSharp.fluid.src} alt="Image" onClick={e => this.handleClick(e, i)}>
-                <Img className="image is-4by3" fluid={img.childImageSharp.fluid} style={imageStyle} />
+              <a id="img-lightbox" className="image is-4by3" href={img.childImageSharp.fluid.src} alt="Image" onClick={e => this.handleClick(e, i)}>
+                <Img fluid={img.childImageSharp.fluid} style={imageStyle} />
               </a>
             </div>
           ))}
         </div>
 
-        <LightboxModal visible={showLightbox} onKeyUp={e => this.handleKeyDown(e)}>
-          <LightboxContent>
+
+        <div id="modal-lightbox" className="modal">
+          <div className="modal-background"></div>
+          <div className="modal-content">
             <Img  fluid={images[selectedImage].childImageSharp.fluid} />
-            <Controls>
-              <button className="button is-primary" onClick={this.closeModal}>Close</button>
-              <LeftRight>
+            <div className="field is-grouped is-right">
                 <button className="button is-primary" onClick={this.goBack} disabled={selectedImage === 0}>
                   Previous
                 </button>
                 <button className="button is-primary" onClick={this.goForward} disabled={selectedImage === images.length - 1}>
                   Next
                 </button>
-              </LeftRight>
-            </Controls>
-          </LightboxContent>
-        </LightboxModal>
+            </div>
+          </div>
+           <button className="modal-close is-large" aria-label="close"></button>
+        </div>
       </Fragment>
       :
       <div></div>

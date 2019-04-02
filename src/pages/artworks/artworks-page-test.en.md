@@ -23,8 +23,10 @@ slider:
   display: 'false'
   array: []
 lightbox:
-  display: false
-  images: []
+  display: true
+  images:
+    - /img/Kaki.jpg
+    - /img/Persimmon.jpg
 ---
 
 Hello! ciao!
