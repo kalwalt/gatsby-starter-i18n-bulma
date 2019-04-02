@@ -95,7 +95,7 @@ class Lightbox extends Component {
         <div className="columns">
           {images.map((img, i) => (
             <div className="column" key={img.childImageSharp.fluid.src}>
-              <a id="img-lightbox" className="image is-4by3" href={img.childImageSharp.fluid.src} alt="Image" onClick={e => this.handleClick(e, i)}>
+              <a id="img-lightbox" className="image" href={img.childImageSharp.fluid.src} alt="Image" onClick={e => this.handleClick(e, i)}>
                 <Img fluid={img.childImageSharp.fluid} style={imageStyle} />
               </a>
             </div>
@@ -108,7 +108,7 @@ class Lightbox extends Component {
           <div className="modal-content">
           <button id="modal-close" className="modal-close is-large" aria-label="close"></button>
             <Img  fluid={images[selectedImage].childImageSharp.fluid} />
-            <footer class="modal-card-foot">
+            <footer className="modal-card-foot">
                 <button className="button is-primary" onClick={this.goBack} disabled={selectedImage === 0}>
                   Previous
                 </button>
