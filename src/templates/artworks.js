@@ -14,7 +14,7 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, dis
   return (
 
       <div className="container content">
-       <h1 className="title">{title}</h1>
+       <h1 className="title animated bounceInLeft">{title}</h1>
         <div className="hero">
           <Slider array={array} display={display}/>
           </div>
