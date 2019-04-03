@@ -25,7 +25,9 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, dis
              </h2>
              <Features gridItems={intro.blurbs} />
              <Lightbox lightbox={lightbox} images={images} />
-             <PageContent className="content" content={content} />
+             <section className="section">
+               <PageContent className="container content" content={content} />
+             </section>
            </div>
          </div>
       </div>
