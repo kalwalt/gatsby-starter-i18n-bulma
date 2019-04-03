@@ -9,7 +9,7 @@ const HomePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
   return (
       <div className="container content">
-       <h1>{title}</h1>
+       <h1 className="title animated bounceInLeft">{title}</h1>
       <PageContent className="content" content={content} />
       </div>
 )
