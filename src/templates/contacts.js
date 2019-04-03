@@ -125,7 +125,6 @@ class ContactPage extends React.Component {
     return (
       <Layout className="container" data={this.props.data} location={this.props.location}>
         <div>
-        <div>{action}</div>
             <ContactPageTemplate
             contentComponent={HTMLContent}
             title={dataMarkdown.frontmatter.title}
