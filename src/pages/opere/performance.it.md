@@ -22,6 +22,9 @@ intro:
 slider:
   display: 'false'
   array: []
+lightbox:
+  display: false
+  images: []
 ---
 
 ## Performance

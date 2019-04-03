@@ -3,14 +3,14 @@ import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from "../components/Layout"
-import { getCurrentLangKey } from 'ptz-i18n';
+import { getCurrentLangKey } from 'ptz-i18n'
 import Content, { HTMLContent } from "../components/Content"
 import Features from '../components/Features'
 import Slider from '../components/Slider'
+import Lightbox from '../components/Lightbox'
 
-const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, display, array }) => {
+const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, display, array, lightbox, images }) => {
   const PageContent = contentComponent || Content
-
   return (
 
       <div className="container content">
@@ -24,6 +24,7 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, dis
              {heading}
              </h2>
              <Features gridItems={intro.blurbs} />
+             <Lightbox lightbox={lightbox} images={images} />
              <PageContent className="content" content={content} />
            </div>
          </div>
@@ -41,6 +42,8 @@ ArtworkTemplate.propTypes = {
     blurbs: PropTypes.array,
   }),
   array: PropTypes.array,
+  images: PropTypes.arrayOf(PropTypes.object),
+  lightbox: PropTypes.object,
 }
 
 class ArtworksPage extends React.Component {
@@ -50,6 +53,8 @@ render() {
   const { frontmatter } = data.markdownRemark;
   const { display } = frontmatter.slider;
   const { array } = frontmatter.slider;
+  const images = frontmatter.lightbox.images;
+  const lightbox = frontmatter.lightbox;
     return (
       <Layout className="container" data={data} location={this.props.location}>
         <div>
@@ -61,6 +66,8 @@ render() {
             intro={frontmatter.intro}
             display={display}
             array={array}
+            images={images}
+            lightbox={lightbox}
             />
         </div>
       </Layout>
@@ -124,7 +131,21 @@ query ArtworksQuery($id: String!) {
           description
         }
       }
-   }
- }
+      lightbox {
+        display
+        images{
+         id
+         relativePath
+         childImageSharp {
+           fluid(maxWidth: 640, quality: 85) {
+             ...GatsbyImageSharpFluid
+             src
+             sizes
+            }
+          }
+        }
+      }
+    }
+  }
 }
 `
