@@ -36,7 +36,9 @@ export const BlogPostTemplate = ({
                 <ul className="taglist">
                   {tags.map(tag => (
                     <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      <span className="tag is-light is-small">
+                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      </span>
                     </li>
                   ))}
                 </ul>

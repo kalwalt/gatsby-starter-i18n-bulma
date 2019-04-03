@@ -15,13 +15,15 @@ const Tags = ({ pageContext, data, location }) => {
   return (
     <Layout className="container" data={data} location={location}>
     <div className="container content">
-      <h1>{tagHeader}</h1>
+      <h1 className="title">{tagHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
           const { path, title } = node.frontmatter
           return (
             <li key={path}>
+              <span className="tag is-light is-small">
               <Link to={path}>{title}</Link>
+              </span>
             </li>
           )
         })}
