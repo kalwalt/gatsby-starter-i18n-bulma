@@ -19,7 +19,7 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, dis
           <Slider array={array} display={display}/>
           </div>
           <div className="columns">
-           <div className="column is-7">
+           <div className="column is-6">
              <h2 className="has-text-weight-semibold subtitle">
              {heading}
              </h2>
