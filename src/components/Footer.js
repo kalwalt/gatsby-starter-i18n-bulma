@@ -4,7 +4,7 @@ import select from '../components/utils'
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
 import { FaFacebook, FaTwitter, FaInstagram, FaVimeo, FaLinkedin } from 'react-icons/fa';
-
+import Copyright from '../components/Copyright'
 import logo from '../img/logo.svg'
 
 const Footer = class extends React.Component {
@@ -78,6 +78,7 @@ const Footer = class extends React.Component {
                 </div>
               </div>
             </div>
+            <Copyright />
         </div>
       </footer>
     )
