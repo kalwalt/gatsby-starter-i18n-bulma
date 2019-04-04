@@ -9,8 +9,10 @@ const MessagePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
   return (
       <div className="container content">
-       <h1>{title}</h1>
-      <PageContent className="content" content={content} />
+       <h1 className="title">{title}</h1>
+        <section className="section">
+          <PageContent className="content" content={content} />
+        </section>
       </div>
 )
 }

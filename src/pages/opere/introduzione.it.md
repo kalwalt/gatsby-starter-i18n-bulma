@@ -9,8 +9,8 @@ tags:
   - art
 lang: it
 date: "05-03-2019"
-path: /it/opere/pagina-artworks-test/
-slug: /it/opere/pagina-artworks-test/
+path: /it/opere/introduzione/
+slug: /it/opere/introduzione/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg
