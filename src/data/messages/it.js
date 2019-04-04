@@ -3,6 +3,7 @@ module.exports = {
   'home': 'Casa',
   'about': 'A proposito',
   'artworks': 'Opere',
+  'introduction': 'Introduzione',
   'painting': 'Pittura',
   'sculpture': 'Scultura',
   'performance': 'Performance',

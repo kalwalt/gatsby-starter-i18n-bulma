@@ -1,5 +1,5 @@
 module.exports = {
-  'introdcution': ['/en/artworks/introduction/','/it/opere/introduzione/'],
+  'introduction': ['/en/artworks/introduction/','/it/opere/introduzione/'],
   'painting': ['/en/artworks/painting/', '/it/opere/pittura/'],
   'sculpture': ['/en/artworks/sculpture/', '/it/opere/scultura/'],
   'performance': ['/en/artworks/performance/', '/it/opere/performance/'],

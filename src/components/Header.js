@@ -50,7 +50,7 @@ const Header = class extends React.Component {
 
    const props = this.props;
    const sel = select(props.langKey);
-   const keys = ['introdcution','painting','sculpture','performance','interactivity'];
+   const keys = ['introduction','painting','sculpture','performance','interactivity'];
 
    return (
 

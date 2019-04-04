@@ -3,6 +3,7 @@ module.exports = {
   'home': 'Home',
   'about': 'About',
   'artworks': 'Artworks',
+  'introduction': 'Introduction',
   'painting': 'Painting',
   'sculpture': 'Sculpture',
   'performance': 'Performance',
