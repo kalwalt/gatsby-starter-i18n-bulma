@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import select from '../components/utils'
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
-import { FaFacebook, FaTwitter, FaInstagram, FaVimeo } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaVimeo, FaLinkedin } from 'react-icons/fa';
 
 import logo from '../img/logo.svg'
 
@@ -17,7 +17,7 @@ const Footer = class extends React.Component {
           <img
             src={logo}
             alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
+            style={{ width: '14em', height: '5em' }}
           />
         </div>
         <div className="content has-text-centered has-background-black has-text-white-ter">
@@ -71,6 +71,9 @@ const Footer = class extends React.Component {
                   </a>
                   <a title="vimeo" href="https://vimeo.com">
                     <FaVimeo className="vimeo-icon"  size="2em"/>
+                  </a>
+                  <a title="linkedin" href="https://linkedin.com">
+                    <FaLinkedin className="linkedin-icon"  size="2em"/>
                   </a>
                 </div>
               </div>
