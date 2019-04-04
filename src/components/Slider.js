@@ -8,6 +8,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 function renderImage(item) {
 
   return (
+
     <div className='image-gallery-image'>
     {
       item.imageSet ?
@@ -51,13 +52,13 @@ function renderImage(item) {
 const Slider = ( { array, display } ) => {
 
   return (
-    <div className='testclass'>
+    <section className="section">
         { display == 'slide'  ?
      <ImageGallery lazyLoad={true} showBullets={true} renderItem={renderImage} items={array} />
     :
      <div className='void'></div>
  }
-   </div>
+   </section>
 );
 }
 
