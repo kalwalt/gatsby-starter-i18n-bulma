@@ -16,17 +16,15 @@ data, location
   <div className="container content">
     <div>
       <h1 className="title">Tags</h1>
-      <ul>
+      <div className="tags">
         {data.allMarkdownRemark.group.map(tag => (
-          <li key={tag.fieldValue}>
-            <span className="tag is-light is-small">
+            <span key={tag.fieldValue} className="tag is-light is-small">
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
             </Link>
             </span>
-          </li>
         ))}
-      </ul>
+      </div>
     </div>
   </div>
   </section>

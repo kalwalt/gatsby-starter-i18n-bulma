@@ -14,13 +14,13 @@ const Tags = ({ pageContext, data, location }) => {
 
   return (
     <Layout className="container" data={data} location={location}>
-    <div className="container content">
+    <div className="container block">
       <h1 className="title">{tagHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
           const { path, title } = node.frontmatter
           return (
-            <li key={path}>
+            <li style={{ marginBottom: `.5rem` }} key={path}>
               <span className="tag is-light is-small">
               <Link to={path}>{title}</Link>
               </span>
@@ -32,7 +32,9 @@ const Tags = ({ pageContext, data, location }) => {
               This links to a page that does not yet exist.
               We'll come back to it!
             */}
-      <Link to="/tags">All tags</Link>
+      <span style={{ marginBottom: `.5rem` }} className="tag is-light is-medium">
+        <Link to="/tags">All tags</Link>
+      </span>
     </div>
     </Layout>
   )
