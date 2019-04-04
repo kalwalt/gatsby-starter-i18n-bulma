@@ -74,7 +74,7 @@ const Header = class extends React.Component {
         <div id="navMenu" className="navbar-menu">
         <div className="navbar-start has-text-centered">
           <Link className="navbar-item" to={"/" + props.langKey}>
-            <FaHome /> <FormattedMessage id="home" />
+            <FaHome className="menu-names" /> <FormattedMessage id="home" />
           </Link>
             <Dropdown
             langKey={props.langKey}
@@ -84,13 +84,13 @@ const Header = class extends React.Component {
             links={menu}
             />
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
-            <FaQuestion /> <FormattedMessage id="about" />
+            <FaQuestion className="menu-names" /> <FormattedMessage id="about" />
           </Link>
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
-            <FaPenAlt /> <FormattedMessage id="blog" />
+            <FaPenAlt className="menu-names" /> <FormattedMessage id="blog" />
           </Link>
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.contact[sel] +"/"}>
-            <FaAmericanSignLanguageInterpreting /> <FormattedMessage id="contact" />
+            <FaAmericanSignLanguageInterpreting className="menu-names" /> <FormattedMessage id="contact" />
           </Link>
         </div>
         </div>
