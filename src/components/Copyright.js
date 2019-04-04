@@ -7,7 +7,7 @@ const Copyright = () => (
      <br/>
      <div className="container content">
       <div className="container is-fluid has-text-light">
-        <FaCopyright /> <FormattedMessage id="copyright"/>
+        <FaCopyright className="menu-names" /> <FormattedMessage id="copyright"/>
       </div>
      </div>
    </section>
