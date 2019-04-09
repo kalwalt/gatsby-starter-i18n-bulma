@@ -15,8 +15,9 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Id", name: id, widget: number}
-      - {label: "Language", name: "lang", widget: "select", default: "en", options: [label: "English", value: "en", label: "Italiano", value: "it"]}
+      - {label: "Language", name: "lang", widget: "select", options: [{label: "English", value: "en"}, {label: "Italiano", value: "it"}]}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
+      - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
