@@ -28,6 +28,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home"}
           - {label: Title, name: title, widget: string}
+          - {label: Id, name: id, widget: number}
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Subheading, name: subheading, widget: string}
@@ -41,6 +42,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
+          - {label: Id, name: id, widget: number}
           - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/artworks/index.md"
         label: "Artworks Page"
@@ -48,6 +50,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "artworks"}
           - {label: Title, name: title, widget: string}
+          - {label: Id, name: id, widget: number}
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
