@@ -26,6 +26,7 @@
     "gatsby-image": "^2.0.5",
     "gatsby-plugin-google-analytics": "^2.0.5",
     "gatsby-plugin-i18n": "^0.4.2",
+    "gatsby-plugin-netlify": "^2.0.13",
     "gatsby-plugin-netlify-cms": "^3.0.17",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-purgecss": "^3.1.0",
