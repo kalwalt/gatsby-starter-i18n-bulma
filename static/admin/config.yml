@@ -8,6 +8,8 @@ publish_mode: editorial_workflow # Enable drafts
 
 collections:
   - label: "Blog in English"
+    extension: en.md
+    format: markdown
     name: "english_posts"
     folder: "src/pages/blog"
     create: true
@@ -25,6 +27,8 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
   - label: "Blog in Italiano"
+    extension: it.md
+    format: markdown
     name: "Italiano_posts"
     folder: "src/pages/blog"
     create: true
