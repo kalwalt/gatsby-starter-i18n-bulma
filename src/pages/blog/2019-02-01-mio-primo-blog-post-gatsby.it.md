@@ -11,4 +11,4 @@ tags:
 ---
 Il mio primo post con **Gatsby** davvero... dove sono? Non posso trovarli da nessuna parte, nessuna pagina blog
 ?
-In ricerca....chissà se li troverò
+In ricerca....chissà se li troverò, e chissà se funziona...
