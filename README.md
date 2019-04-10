@@ -1,5 +1,9 @@
 #  A Gatsby template: gatsby-starter-i18n-bulma
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cb8de327-5514-42c9-8eda-d93c4df41768/deploy-status)](https://app.netlify.com/sites/gatsby-starter-i18n-bulma/deploys)
+
+You can view the starter at this link: https://gatsby-starter-i18n-bulma.netlify.com
+
 ## Introduction
 
 A gatsby multilanguage template with bulma and i18n. This project is under heavy development, consider that frequent changes can break compatibility.
@@ -24,8 +28,18 @@ gatsby develop
 
 ## Features
 
-A simple website with multilanguage support, blogging, bulma css, fontawesome, i18n,
+A simple website with multilanguage support, blogging, bulma css, fontawesome, i18n, netlify-cms
 and much more...
+
+### Language switcher
+
+With this starter you can switch between different languages pages with different names for example:
+
+`en/artworks/`
+
+to
+
+`/it/opere/`
 
 ## Inspired by
 
