@@ -3,6 +3,7 @@ module.exports = {
   'home': 'Home',
   'about': 'About',
   'artworks': 'Artworks',
+  'introduction': 'Introduction',
   'painting': 'Painting',
   'sculpture': 'Sculpture',
   'performance': 'Performance',
@@ -13,4 +14,5 @@ module.exports = {
   'contact': 'Contacts',
   'not_found': "404 - Page Not Found",
   '404': "You are arrived to an unvailable page or you have missed the path...",
+  'copyright': "2019, KAKI - All rights reserved.",
 };

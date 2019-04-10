@@ -12,20 +12,22 @@ const TagsPage = ({
 data, location
 }) => (
   <Layout data={data} location={location}>
+  <section className="section">
   <div className="container content">
     <div>
-      <h1>Tags</h1>
-      <ul>
+      <h1 className="title">Tags</h1>
+      <div className="tags">
         {data.allMarkdownRemark.group.map(tag => (
-          <li key={tag.fieldValue}>
+            <span key={tag.fieldValue} className="tag is-light is-small">
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
             </Link>
-          </li>
+            </span>
         ))}
-      </ul>
+      </div>
     </div>
   </div>
+  </section>
   </Layout>
 )
 

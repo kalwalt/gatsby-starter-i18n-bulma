@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+publish_mode: editorial_workflow # Enable drafts
+
+collections:
+  - label: "Blog in English"
+    name: "english_posts"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter: {field: "lang", value: "en"}
+    fields:
+      - {label: "Id", name: id, widget: number}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Language", name: "lang", widget: "select", options: ["en", "it"]}
+      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
+  - label: "Blog in Italiano"
+    name: "Italiano_posts"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter: {field: "lang", value: "it"}
+    fields:
+      - {label: "Id", name: id, widget: number}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Titolo", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Descrizione", name: "description", widget: "text"}
+      - {label: "Linguaggio", name: "lang", widget: "select", options: ["en", "it"]}
+      - {label: "Percorso", name: "path", widget: "string"}
+      - {label: "Paragrafo introduttivo", name: "intro_paragraph", widget: "markdown", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}

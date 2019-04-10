@@ -15,7 +15,7 @@ const DropDownMenu = (props) => {
   return (
     <div className="navbar-item has-dropdown is-hoverable">
        <Link className="navbar-link" to={props.base}>
-         <FaImage />
+         <FaImage className="menu-names" />
          <FormattedMessage id={props.baseName} />
        </Link>
        <div className="navbar-dropdown is-hidden-mobile is-boxed">

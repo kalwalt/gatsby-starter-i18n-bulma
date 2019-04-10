@@ -5,8 +5,7 @@ import { navigate } from "gatsby-link";
 import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
-//import { injectIntl, intlShape } from 'react-intl';
-import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
+import { getCurrentLangKey } from 'ptz-i18n';
 
 function encode(data) {
   return Object.keys(data)
@@ -30,8 +29,8 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
       <section className="section">
         <div className="container">
           <div className="content">
-      <h1>{title}</h1>
-      <PageContent className="content" content={content} />
+      <h1 className="title">{title}</h1>
+      <PageContent className="container content" content={content} />
       <form
         name="contact"
         method="post"

@@ -86,7 +86,7 @@ class Lightbox extends Component {
     const display = lightbox.display;
     const imageStyle = { borderRadius: '5px' }
     return (
-      <div className="lightbox">
+      <section className="section">
       {display === true ?
       <Fragment>
         <div className="columns">
@@ -119,7 +119,7 @@ class Lightbox extends Component {
       </Fragment>
       :
       <div></div>
-    } </div>)
+    } </section>)
   }
 }
 

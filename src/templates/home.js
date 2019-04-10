@@ -10,7 +10,9 @@ const HomePageTemplate = ({ title, content, contentComponent }) => {
   return (
       <div className="container content">
        <h1 className="title animated bounceInLeft">{title}</h1>
-      <PageContent className="content" content={content} />
+        <section className="section">
+          <PageContent className="container content" content={content} />
+        </section>
       </div>
 )
 }
