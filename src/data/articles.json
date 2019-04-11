@@ -1,0 +1,15 @@
+[
+{"id": "01", "en": "/", "it": "/"},
+{"id": "02", "en": "blog", "it": "blog"},
+{"id": "03", "en": "about", "it": "presentazione"},
+{"id": "04", "en": "contact", "it": "contatto"},
+{"id": "05", "en": "artworks", "it": "opere"},
+{"id": "06", "en": "artworks/introduction", "it": "opere/introduzione"},
+{"id": "07", "en": "2019-02-01-my-first-gatsby-blog-post", "it": "2019-02-01-mio-primo-blog-post-gatsby"},
+{"id": "08", "en": "2019-03-11-news-from-art-planet", "it": "2019-03-11-notizie-dal-pianeta-arte"},
+{"id": "09", "en": "artworks/painting", "it": "opere/pittura"},
+{"id": "10", "en": "artworks/sculpture", "it": "opere/scultura"},
+{"id": "11", "en": "artworks/performance", "it": "opere/performance"},
+{"id": "12", "en": "artworks/interactivity", "it": "opere/arte-interattiva"},
+{"id": "13", "en": "contact/thanks", "it": "contatto/grazie"}
+]
