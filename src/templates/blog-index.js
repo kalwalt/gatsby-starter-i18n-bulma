@@ -18,9 +18,10 @@ export default class BlogIndexPage extends React.Component {
   render() {
     const data = this.props.data;
     const location = this.props.location;
+    const jsonData = this.props.data.allArticlesJson.edges[0].node.articles;
 
   return (
-      <Layout data={data} location={location}>
+      <Layout data={data} jsonData={jsonData} location={location}>
       <SEO
         frontmatter={data.markdownRemark.frontmatter}
         />
@@ -72,6 +73,16 @@ export const pageQuery = graphql`
         }
       }
     }
+    allArticlesJson(filter:{title:{eq:"home"}}){
+   edges{
+     node{
+       articles {
+         en
+         it
+       }
+     }
+   }
+  }
     markdownRemark
      {
       id

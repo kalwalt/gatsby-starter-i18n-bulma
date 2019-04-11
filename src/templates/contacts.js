@@ -121,8 +121,9 @@ class ContactPage extends React.Component {
     const { langs, defaultLangKey } = this.props.data.site.siteMetadata.languages;
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     const action = setActionPath(this.langKey);
+    const jsonData = this.props.data.allArticlesJson.edges[0].node.articles;
     return (
-      <Layout className="container" data={this.props.data} location={this.props.location}>
+      <Layout className="container" data={this.props.data} jsonData={jsonData} location={this.props.location}>
         <div>
             <ContactPageTemplate
             contentComponent={HTMLContent}
@@ -154,6 +155,16 @@ export const pageQuery = graphql`
         }
       }
     }
+    allArticlesJson(filter:{title:{eq:"home"}}){
+   edges{
+     node{
+       articles {
+         en
+         it
+       }
+     }
+   }
+  }
     markdownRemark(id: {eq: $id}) {
       html
       frontmatter {
