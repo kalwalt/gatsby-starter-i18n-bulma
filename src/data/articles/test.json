@@ -1,0 +1,10 @@
+{
+  "title": "test",
+  "articles": [
+    {
+      "id": 1,
+      "en": "walk",
+      "it": "cammina"
+    }
+  ]
+}
