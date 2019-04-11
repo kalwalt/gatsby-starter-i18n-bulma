@@ -1,13 +1,13 @@
 {
-  "title": "home",
+  "title": "home2",
   "articles": [
     {
-      "id": 1,
+      "id": "1",
       "en": "home",
       "it": "casa"
     },
     {
-      "id": 2,
+      "id": "2",
       "en": "blog",
       "it": "blog"
     }

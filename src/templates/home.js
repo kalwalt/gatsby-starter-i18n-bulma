@@ -30,8 +30,10 @@ class HomePage extends React.Component {
     if (this.props.data !== null) {
       dataMarkdown = this.props.data.markdownRemark
     }
+    const jsonData = this.props.data.allArticlesJson.edges[0].node.articles;
+    console.log(jsonData[0]);
     return (
-      <Layout className="container" data={this.props.data} location={this.props.location}>
+      <Layout className="container" data={this.props.data} jsonData={jsonData} location={this.props.location}>
         <div>
             <HomePageTemplate
             contentComponent={HTMLContent}
@@ -60,6 +62,16 @@ export const pageQuery = graphql`
         }
       }
     }
+    allArticlesJson(filter:{title:{eq:"home"}}){
+   edges{
+     node{
+       articles {
+         en
+         it
+       }
+     }
+   }
+ }
     markdownRemark(id: {eq: $id}) {
       html
       frontmatter {
