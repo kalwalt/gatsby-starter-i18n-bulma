@@ -52,6 +52,7 @@ collections:
     folder: "src/data"
     create: true
     fields:
+      - {label: "Titolo/Title", name: "title", widget: "string"}
       - {label: "id", name: id, widget: number}
       - {label: "en", name: en, widget: "string"}
       - {label: "it", name: it, widget: "string"}
