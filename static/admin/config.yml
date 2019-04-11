@@ -47,20 +47,17 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
   - label: "articles tree"
     name: "articles"
-    files:
-      - file: "src/data/articles.json"
-        label: "Article Tree"
+    file: "src/data/articles.json"
+    extension: json
+    format: json
+    folder: "src/data"
+    create: true
+    fields:
+      - {label: "Titolo/Title", name: "title", widget: "string"}
+      - label: "List of articles"
         name: "articles"
-        extension: json
-        format: json
-        folder: "src/data"
-        create: true
+        widget: "list"
         fields:
-          - {label: "Titolo/Title", name: "title", widget: "string"}
-          - label: "List of articles"
-            name: "articles"
-            widget: "list"
-            fields:
-              - {label: "id", name: id, widget: number}
-              - {label: "en", name: en, widget: "string"}
-              - {label: "it", name: it, widget: "string"}
+          - {label: "id", name: id, widget: number}
+          - {label: "en", name: en, widget: "string"}
+          - {label: "it", name: it, widget: "string"}
