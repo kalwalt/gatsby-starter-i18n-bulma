@@ -55,9 +55,9 @@ collections:
     fields:
       - {label: "Titolo/Title", name: "title", widget: "string"}
       - label: "List"
-      - name: "list"
-      - widget: "list"
-      - fields:
+        name: "list"
+        widget: "list"
+        fields:
         - {label: "id", name: id, widget: number}
         - {label: "en", name: en, widget: "string"}
         - {label: "it", name: it, widget: "string"}
