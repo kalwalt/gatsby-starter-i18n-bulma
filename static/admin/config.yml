@@ -50,12 +50,12 @@ collections:
     format: json
     name: "articles"
     folder: "src/data"
-    file: "articles.json"
+    file: "src/data/articles.json"
     create: true
     fields:
       - {label: "Titolo/Title", name: "title", widget: "string"}
-      - label: "List"
-        name: "list"
+      - label: "List of articles"
+        name: "articles"
         widget: "list"
         fields:
         - {label: "id", name: id, widget: number}
