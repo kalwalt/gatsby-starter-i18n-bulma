@@ -45,3 +45,13 @@ collections:
       - {label: "Paragrafo introduttivo", name: "intro_paragraph", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+  - label: "articles tree"
+    extension: json
+    format: json
+    name: "articles"
+    folder: "src/data"
+    create: true
+    fields:
+      - {label: "id", name: id, widget: number}
+      - {label: "en", name: en, widget: "string"}
+      - {label: "it", name: it, widget: "string"}
