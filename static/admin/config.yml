@@ -50,7 +50,7 @@ collections:
     format: json
     name: "articles"
     folder: "src/data/articles"
-    file: "src/data/articles/home.json"    
+    #file: "src/data/articles/home.json"    
     create: true
     fields:
       - {label: "Titolo/Title", name: "title", widget: "string"}
