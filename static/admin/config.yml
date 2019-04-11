@@ -47,7 +47,7 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
   - label: "articles tree"
     name: "articles"
-    file: "src/data/articles.json"
+    file: "src/data/home.json"
     extension: json
     format: json
     folder: "src/data"
