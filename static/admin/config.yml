@@ -52,6 +52,8 @@ collections:
     folder: "src/data"
     files:
       - file: "src/data/articles.json"
+        label: "Article Tree"
+        name: "articles"
         create: true
         fields:
           - {label: "Titolo/Title", name: "title", widget: "string"}
