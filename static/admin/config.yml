@@ -46,11 +46,11 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
   - label: "articles tree"
-    name: "articles"
-    file: "src/data/home.json"
     extension: json
     format: json
+    name: "articles"
     folder: "src/data"
+    file: "src/data/home.json"    
     create: true
     fields:
       - {label: "Titolo/Title", name: "title", widget: "string"}
