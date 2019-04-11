@@ -1,0 +1,14 @@
+{
+  "title": "home",
+  "articles": [
+    {
+      "id": 1,
+      "en": "home",
+      "it": "casa"
+    },
+    {
+      "id": 2,
+      "en": "blog",
+      "it": "blog"
+    }
+  ]
