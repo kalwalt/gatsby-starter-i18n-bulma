@@ -31,7 +31,6 @@ class HomePage extends React.Component {
       dataMarkdown = this.props.data.markdownRemark
     }
     const jsonData = this.props.data.allArticlesJson.edges[0].node.articles;
-    console.log(jsonData[0]);
     return (
       <Layout className="container" data={this.props.data} jsonData={jsonData} location={this.props.location}>
         <div>

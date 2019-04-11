@@ -20,10 +20,7 @@ import menuTree from '../data/menuTree'
 const getIdJsonUrl = (id, langKey, jsonData) => {
   if(id !== 'undefined'){
   let res;
-  console.log(id);
-  id = Number(id);
-  console.log(id);
-  //console.log(jsonData[id].it);
+  id = Number(id - 1);
   switch (langKey) {
     //we get the name of the page according the id
     case 'en':
@@ -31,25 +28,6 @@ const getIdJsonUrl = (id, langKey, jsonData) => {
     break;
     case 'it':
     res = jsonData[id].it;
-    break;
-    default: return ' ';
-  }
-  return res;
-  } else {
-  console.log("missed id in the getIdUrl() function!");
-  }
-};
-
-const getIdUrl = (id, langKey) => {
-  if(id !== 'undefined'){
-  let res;
-  switch (langKey) {
-    //we get the name of the page according the id
-    case 'en':
-    res = articleId[id][0];
-    break;
-    case 'it':
-    res = articleId[id][1];
     break;
     default: return ' ';
   }
@@ -70,7 +48,6 @@ const startPath = (langKey, langsMenu, basename, _url) => {
 const check_path = (langKey, _url, id_article, jsonData) => {
   let basename
   if (id_article !== 'undefined'){
-    //basename = getIdUrl(id_article, langKey);
     basename = getIdJsonUrl(id_article, langKey, jsonData);
   }
   return [basename, id_article];
@@ -78,9 +55,7 @@ const check_path = (langKey, _url, id_article, jsonData) => {
 
 const setLangsMenu = ( langsMenu, id, basePath, jsonData) => {
   if(id !== 'undefined'){
-  //langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en') + '/';
   langsMenu[0].link = `/en/${basePath}` + getIdJsonUrl(id, 'en', jsonData) + '/';
-  //langsMenu[1].link = `/it/${basePath}` + getIdUrl(id, 'it') + '/';
   langsMenu[1].link = `/it/${basePath}` + getIdJsonUrl(id, 'it', jsonData) + '/';
   }else{
   console.log("missed id in the setLangsMenu() function!");
@@ -96,7 +71,6 @@ class TemplateWrapper extends Component {
     this.children = this.props.children;
     const data = this.props.data;
     const jsonData = this.props.jsonData;
-    console.log(jsonData);
     this.className = this.props.className;
     const location = this.props.location;
     this.title = data.markdownRemark.frontmatter.title;
