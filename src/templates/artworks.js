@@ -57,7 +57,7 @@ render() {
   const { array } = frontmatter.slider;
   const images = frontmatter.lightbox.images;
   const lightbox = frontmatter.lightbox;
-  const jsonData = this.props.data.allArticlesJson.edges[0].node.articles;
+  const jsonData = data.allArticlesJson.edges[0].node.articles;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
         <div>
