@@ -6,13 +6,6 @@ import SEO from '../components/SEO/SEO'
 import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby'
 
-const switchBlogRoll = (lang) => {
-  switch(lang){
-    case 'en': return <BlogRollen />;
-    case 'it': return <BlogRollit />;
-  }
-};
-
 export default class BlogIndexPage extends React.Component {
 
   render() {
