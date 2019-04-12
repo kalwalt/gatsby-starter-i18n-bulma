@@ -11,9 +11,10 @@ const Tags = ({ pageContext, data, location }) => {
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
+  const jsonData = data.allArticlesJson.edges[0].node.articles;
 
   return (
-    <Layout className="container" data={data} location={location}>
+    <Layout className="container" data={data} jsonData={jsonData} location={location}>
     <div className="container block">
       <h1 className="title">{tagHeader}</h1>
       <ul>
@@ -79,6 +80,16 @@ query ($tag: String) {
       id
     }
   }
+  allArticlesJson(filter:{title:{eq:"home"}}){
+ edges{
+   node{
+     articles {
+       en
+       it
+     }
+   }
+ }
+}
   allMarkdownRemark(limit: 2000, sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {tags: {in: [$tag]}}}) {
     totalCount
     edges {
