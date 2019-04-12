@@ -46,7 +46,7 @@ collections:
       - {label: "Paragrafo introduttivo", name: "intro_paragraph", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-  - label: "articles tree"
+  - label: "Articles tree"
     extension: json
     format: json
     name: "articles"
@@ -54,7 +54,7 @@ collections:
     create: false
     delete: false
     fields:
-      - {label: "Titolo / Title", name: "title", widget: "hidden", default: "home"}
+      - {label: "Titolo / Title", name: "title", widget: "string", default: "home"}
       - label: "List of articles"
         name: "articles"
         widget: "list"
