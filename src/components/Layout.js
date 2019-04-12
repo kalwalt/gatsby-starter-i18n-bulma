@@ -14,20 +14,18 @@ import it from 'react-intl/locale-data/it';
 import 'intl/locale-data/jsonp/it';
 import './all.sass'
 
-import articleId from '../data/articleTree'
 import menuTree from '../data/menuTree'
 
-
-const getIdUrl = (id, langKey) => {
+const getIdJsonUrl = (id, langKey, jsonData) => {
   if(id !== 'undefined'){
   let res;
   switch (langKey) {
     //we get the name of the page according the id
     case 'en':
-    res = articleId[id][0];
+    res = jsonData[id].en;
     break;
     case 'it':
-    res = articleId[id][1];
+    res = jsonData[id].it;
     break;
     default: return ' ';
   }
@@ -45,18 +43,18 @@ const startPath = (langKey, langsMenu, basename, _url) => {
   return basePath;
 };
 
-const check_path = (langKey, _url, id_article) => {
+const check_path = (langKey, _url, id_article, jsonData) => {
   let basename
   if (id_article !== 'undefined'){
-    basename = getIdUrl(id_article, langKey);
+    basename = getIdJsonUrl(id_article, langKey, jsonData);
   }
   return [basename, id_article];
 }
 
-const setLangsMenu = ( langsMenu, id, basePath) => {
+const setLangsMenu = ( langsMenu, id, basePath, jsonData) => {
   if(id !== 'undefined'){
-  langsMenu[0].link = `/en/${basePath}` + getIdUrl(id, 'en') + '/';
-  langsMenu[1].link = `/it/${basePath}` + getIdUrl(id, 'it') + '/';
+  langsMenu[0].link = `/en/${basePath}` + getIdJsonUrl(id, 'en', jsonData) + '/';
+  langsMenu[1].link = `/it/${basePath}` + getIdJsonUrl(id, 'it', jsonData) + '/';
   }else{
   console.log("missed id in the setLangsMenu() function!");
   }
@@ -70,6 +68,7 @@ class TemplateWrapper extends Component {
     super(props);
     this.children = this.props.children;
     const data = this.props.data;
+    const jsonData = this.props.jsonData;
     this.className = this.props.className;
     const location = this.props.location;
     this.title = data.markdownRemark.frontmatter.title;
@@ -78,11 +77,12 @@ class TemplateWrapper extends Component {
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
-    const id_article = data.markdownRemark.frontmatter.id;
-    const basename = check_path(this.langKey, url, id_article);
+    const id_article = data.markdownRemark.frontmatter.id;;
+    const id = Number(id_article) - 1;
+    const basename = check_path(this.langKey, url, id, jsonData);
     var basePath = startPath(this.langKey, this.langsMenu, basename[0], url);
     //finally here we set the desired url...
-    setLangsMenu( this.langsMenu, basename[1], basePath);
+    setLangsMenu( this.langsMenu, basename[1], basePath, jsonData);
 
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us

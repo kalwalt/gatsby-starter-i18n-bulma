@@ -26,12 +26,15 @@ MessagePageTemplate.propTypes = {
 class MessagePage extends React.Component {
 
   render() {
-    var dataMarkdown = [];
+    let dataMarkdown = [];
+    let data;
     if (this.props.data !== null) {
       dataMarkdown = this.props.data.markdownRemark
+      data = this.props.data;
     }
+    const jsonData = data.allArticlesJson.edges[0].node.articles;
     return (
-      <Layout className="container" data={this.props.data} location={this.props.location}>
+      <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
         <div>
             <MessagePageTemplate
             contentComponent={HTMLContent}
@@ -60,6 +63,16 @@ export const pageQuery = graphql`
         }
       }
     }
+    allArticlesJson(filter:{title:{eq:"home"}}){
+   edges{
+     node{
+       articles {
+         en
+         it
+       }
+     }
+   }
+  }
     markdownRemark(id: {eq: $id}) {
       html
       frontmatter {

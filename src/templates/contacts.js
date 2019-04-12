@@ -112,17 +112,20 @@ class ContactPage extends React.Component {
       .catch(error => alert(error));
   };
   render() {
-    var dataMarkdown = [];
+    let dataMarkdown = [];
+    let data;
     if (this.props.data !== null) {
-      dataMarkdown = this.props.data.markdownRemark
+      dataMarkdown = this.props.data.markdownRemark;
+      data = this.props.data;
     }
     const location = this.props.location;
     const url = location.pathname;
-    const { langs, defaultLangKey } = this.props.data.site.siteMetadata.languages;
+    const { langs, defaultLangKey } = data.site.siteMetadata.languages;
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     const action = setActionPath(this.langKey);
+    const jsonData = data.allArticlesJson.edges[0].node.articles;
     return (
-      <Layout className="container" data={this.props.data} location={this.props.location}>
+      <Layout className="container" data={data} jsonData={jsonData} location={location}>
         <div>
             <ContactPageTemplate
             contentComponent={HTMLContent}
@@ -154,6 +157,16 @@ export const pageQuery = graphql`
         }
       }
     }
+    allArticlesJson(filter:{title:{eq:"home"}}){
+   edges{
+     node{
+       articles {
+         en
+         it
+       }
+     }
+   }
+  }
     markdownRemark(id: {eq: $id}) {
       html
       frontmatter {

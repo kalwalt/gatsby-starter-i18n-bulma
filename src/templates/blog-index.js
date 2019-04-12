@@ -6,21 +6,15 @@ import SEO from '../components/SEO/SEO'
 import { FormattedMessage } from 'react-intl';
 import { graphql } from 'gatsby'
 
-const switchBlogRoll = (lang) => {
-  switch(lang){
-    case 'en': return <BlogRollen />;
-    case 'it': return <BlogRollit />;
-  }
-};
-
 export default class BlogIndexPage extends React.Component {
 
   render() {
     const data = this.props.data;
     const location = this.props.location;
+    const jsonData = data.allArticlesJson.edges[0].node.articles;
 
   return (
-      <Layout data={data} location={location}>
+      <Layout data={data} jsonData={jsonData} location={location}>
       <SEO
         frontmatter={data.markdownRemark.frontmatter}
         />
@@ -61,7 +55,7 @@ BlogIndexPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query BlogIndex
+  query BlogIndex($id: String!)
    {
     site {
       siteMetadata {
@@ -72,7 +66,17 @@ export const pageQuery = graphql`
         }
       }
     }
-    markdownRemark
+    allArticlesJson(filter:{title:{eq:"home"}}){
+   edges{
+     node{
+       articles {
+         en
+         it
+       }
+     }
+   }
+  }
+    markdownRemark(id: { eq: $id })
      {
       id
       html
