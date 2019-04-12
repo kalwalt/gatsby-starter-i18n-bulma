@@ -10,8 +10,10 @@ import Layout from "../components/Layout"
 
 const TagsPage = ({
 data, location
-}) => (
-  <Layout data={data} location={location}>
+}) => {
+    const jsonData = data.allArticlesJson.edges[0].node.articles;
+    return(
+  <Layout data={data} jsonData={jsonData} location={location}>
   <section className="section">
   <div className="container content">
     <div>
@@ -30,6 +32,7 @@ data, location
   </section>
   </Layout>
 )
+}
 
 TagsPage.propTypes = {
   props: PropTypes.string,
@@ -68,6 +71,16 @@ query {
       id
     }
   }
+  allArticlesJson(filter:{title:{eq:"home"}}){
+ edges{
+   node{
+     articles {
+       en
+       it
+     }
+   }
+ }
+}
   allMarkdownRemark(limit: 2000) {
     group(field: frontmatter___tags) {
       fieldValue

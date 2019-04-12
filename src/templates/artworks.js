@@ -57,8 +57,9 @@ render() {
   const { array } = frontmatter.slider;
   const images = frontmatter.lightbox.images;
   const lightbox = frontmatter.lightbox;
+  const jsonData = data.allArticlesJson.edges[0].node.articles;
     return (
-      <Layout className="container" data={data} location={this.props.location}>
+      <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
         <div>
             <ArtworkTemplate
             contentComponent={HTMLContent}
@@ -97,6 +98,16 @@ query ArtworksQuery($id: String!) {
       }
     }
   }
+  allArticlesJson(filter:{title:{eq:"home"}}){
+ edges{
+   node{
+     articles {
+       en
+       it
+     }
+   }
+ }
+}
    markdownRemark(id: { eq: $id }) {
      html
      frontmatter {
