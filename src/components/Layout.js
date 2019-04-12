@@ -14,7 +14,6 @@ import it from 'react-intl/locale-data/it';
 import 'intl/locale-data/jsonp/it';
 import './all.sass'
 
-import articleId from '../data/articleTree'
 import menuTree from '../data/menuTree'
 
 const getIdJsonUrl = (id, langKey, jsonData) => {
