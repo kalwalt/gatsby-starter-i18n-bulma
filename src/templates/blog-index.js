@@ -18,7 +18,7 @@ export default class BlogIndexPage extends React.Component {
   render() {
     const data = this.props.data;
     const location = this.props.location;
-    const jsonData = this.props.data.allArticlesJson.edges[0].node.articles;
+    const jsonData = data.allArticlesJson.edges[0].node.articles;
 
   return (
       <Layout data={data} jsonData={jsonData} location={location}>
