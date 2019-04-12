@@ -51,13 +51,16 @@ collections:
     format: json
     name: "articles"
     folder: "src/data/articles"
-    #file: "src/data/articles/home.json"
-    create: true
+    create: false
+    delete: false
     fields:
-      - {label: "Titolo/Title", name: "title", widget: "string"}
+      - {label: "Titolo / Title", name: "title", widget: "hidden", default: "home"}
       - label: "List of articles"
         name: "articles"
         widget: "list"
+        hint: >-
+          This is a json file where to set the links for every article in the switcher selector
+          for the language, fill the id and the name of the article for both languages
         fields:
           - {label: "id", name: id, widget: number}
           - {label: "en", name: en, widget: "string"}
