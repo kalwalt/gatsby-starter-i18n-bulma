@@ -19,7 +19,6 @@ import menuTree from '../data/menuTree'
 const getIdJsonUrl = (id, langKey, jsonData) => {
   if(id !== 'undefined'){
   let res;
-  id = Number(id - 1);
   switch (langKey) {
     //we get the name of the page according the id
     case 'en':
@@ -78,8 +77,9 @@ class TemplateWrapper extends Component {
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
-    const id_article = data.markdownRemark.frontmatter.id;
-    const basename = check_path(this.langKey, url, id_article, jsonData);
+    const id_article = data.markdownRemark.frontmatter.id;;
+    const id = Number(id_article) - 1;
+    const basename = check_path(this.langKey, url, id, jsonData);
     var basePath = startPath(this.langKey, this.langsMenu, basename[0], url);
     //finally here we set the desired url...
     setLangsMenu( this.langsMenu, basename[1], basePath, jsonData);

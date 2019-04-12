@@ -55,7 +55,7 @@ BlogIndexPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query BlogIndex
+  query BlogIndex($id: String!)
    {
     site {
       siteMetadata {
@@ -76,7 +76,7 @@ export const pageQuery = graphql`
      }
    }
   }
-    markdownRemark
+    markdownRemark(id: { eq: $id })
      {
       id
       html
