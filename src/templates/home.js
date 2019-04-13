@@ -4,12 +4,14 @@ import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
+import IconMenu from '../components/IconMenu'
 
 const HomePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
   return (
       <div className="container content">
        <h1 className="title animated bounceInLeft">{title}</h1>
+       <IconMenu/>
         <section className="section">
           <PageContent className="container content" content={content} />
         </section>
