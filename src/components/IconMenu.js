@@ -32,7 +32,7 @@ const IconMenu = class extends React.Component {
           <FormattedMessage id="menu-icon-message"/>
         </h3>
       </div>
-    <div className="columns is-8 is-mobile is-multiline is-centered">
+    <div className="columns is-4 is-mobile is-multiline is-centered">
       <a className="column is-narrow has-text-centered" href={firstLink}>
         <FaPaintBrush className="icon is-large animated"/>
       <div className="section">
