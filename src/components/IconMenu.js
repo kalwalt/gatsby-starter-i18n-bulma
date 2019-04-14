@@ -3,8 +3,24 @@ import PropTypes from 'prop-types';
 import {  FaPaintBrush, FaGavel, FaBolt, FaHandPointer} from 'react-icons/fa';
 import { FormattedMessage } from 'react-intl';
 
-const IconMenu = () => {
+const IconMenu = class extends React.Component {
 
+  componentDidMount() {
+    // Get all "icon" elements
+   const sectionMenu = Array.prototype.slice.call(document.querySelectorAll('.icon'), 0);
+    // Check if there are any icon links
+   if (sectionMenu.length > 0) {
+
+     // Add a mouseover event on each of them
+     sectionMenu.forEach( el => {
+       el.addEventListener('mouseover', () => {
+         el.classList.toggle('shake');
+       });
+     });
+   }
+
+  }
+  render() {
   return(
     <div className="section box">
       <div className="section">
@@ -14,7 +30,7 @@ const IconMenu = () => {
       </div>
     <div className="columns is-8 is-mobile is-multiline is-centered">
       <a className="column is-narrow has-text-centered">
-        <FaPaintBrush className="icon is-large"/>
+        <FaPaintBrush className="icon is-large animated"/>
       <div className="section">
         <h4 className="title has-text-centered">
           <FormattedMessage id="menu-icon-painting"/>
@@ -22,7 +38,7 @@ const IconMenu = () => {
       </div>
       </a>
       <a className="column is-narrow has-text-centered">
-        <FaGavel className="icon is-large"/>
+        <FaGavel className="icon is-large animated"/>
         <div className="section">
           <h4 className="title has-text-centered">
             <FormattedMessage id="menu-icon-sculpture"/>
@@ -30,7 +46,7 @@ const IconMenu = () => {
         </div>
       </a>
       <a className="column is-narrow has-text-centered">
-        <FaBolt className="icon is-large"/>
+        <FaBolt className="icon is-large animated"/>
         <div className="section">
           <h4 className="title has-text-centered">
             <FormattedMessage id="menu-icon-performance"/>
@@ -38,7 +54,7 @@ const IconMenu = () => {
         </div>
       </a>
       <a className="column is-narrow has-text-centered">
-        <FaHandPointer className="icon is-large"/>
+        <FaHandPointer className="icon is-large animated"/>
         <div className="section">
           <h4 className="title has-text-centered">
             <FormattedMessage id="menu-icon-interactivity"/>
@@ -48,6 +64,7 @@ const IconMenu = () => {
      </div>
      </div>
   )
+  }
 };
 
 export default IconMenu;
