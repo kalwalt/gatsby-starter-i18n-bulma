@@ -5,7 +5,7 @@ description: "qualche contenuto"
 templateKey: home
 tags:
   - web
-lang: it
+lang: en
 date: "05-03-2019"
 path: /en/
 slug: /en/

@@ -5,13 +5,21 @@ import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import IconMenu from '../components/IconMenu'
+import iconLinks from '../data/artworksMenu'
+import select from '../components/utils'
 
-const HomePageTemplate = ({ title, content, contentComponent }) => {
+const HomePageTemplate = ({ title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
   const PageContent = contentComponent || Content
+
   return (
       <div className="container content">
        <h1 className="title animated bounceInLeft">{title}</h1>
-       <IconMenu/>
+       <IconMenu
+       firstLink={firstLink}
+       secondLink={secondLink}
+       thirdLink={thirdLink}
+       fourthLink={fourthLink}
+       />
         <section className="section">
           <PageContent className="container content" content={content} />
         </section>
@@ -28,11 +36,17 @@ HomePageTemplate.propTypes = {
 class HomePage extends React.Component {
 
   render() {
-    var dataMarkdown = [];
+    let data;
+    let dataMarkdown = [];
     if (this.props.data !== null) {
       dataMarkdown = this.props.data.markdownRemark
+      data = this.props.data;
     }
-    const jsonData = this.props.data.allArticlesJson.edges[0].node.articles;
+    const jsonData = data.allArticlesJson.edges[0].node.articles;
+    const langKey = dataMarkdown.frontmatter.lang
+    const sel = select(langKey);
+
+
     return (
       <Layout className="container" data={this.props.data} jsonData={jsonData} location={this.props.location}>
         <div>
@@ -40,6 +54,10 @@ class HomePage extends React.Component {
             contentComponent={HTMLContent}
             title={dataMarkdown.frontmatter.title}
             content={dataMarkdown.html}
+            firstLink={iconLinks.painting[sel]}
+            secondLink={iconLinks.sculpture[sel]}
+            thirdLink={iconLinks.performance[sel]}
+            fourthLink={iconLinks.interactivity[sel]}
              />
         </div>
       </Layout>
@@ -78,6 +96,7 @@ export const pageQuery = graphql`
       frontmatter {
         id
         title
+        lang
       }
       fields {
         slug
