@@ -7,6 +7,8 @@ tags:
   - web
 lang: en
 date: "05-03-2019"
+image: /img/PersimmonHD.jpg
+heading: "The persimmon is the artist fruit..."
 path: /en/
 slug: /en/
 ---
