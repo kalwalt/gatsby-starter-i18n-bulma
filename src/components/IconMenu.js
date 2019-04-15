@@ -15,7 +15,7 @@ const IconMenu = class extends React.Component {
      sectionMenu.forEach( el => {
        el.addEventListener('mouseenter', () => {
          el.classList.toggle('shake');
-       });
+       }, true);
      });
    }
 
