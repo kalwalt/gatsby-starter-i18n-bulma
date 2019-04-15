@@ -61,12 +61,14 @@ const HomePageTemplate = ({ image, heading, title, content, contentComponent, fi
         </h3>
        </div>
        </div>
+       <div className="container section">
        <IconMenu
        firstLink={firstLink}
        secondLink={secondLink}
        thirdLink={thirdLink}
        fourthLink={fourthLink}
        />
+       </div>
         <section className="section">
           <PageContent className="container content" content={content} />
         </section>
