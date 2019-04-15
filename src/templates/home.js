@@ -8,7 +8,7 @@ import IconMenu from '../components/IconMenu'
 import iconLinks from '../data/artworksMenu'
 import select from '../components/utils'
 
-const HomePageTemplate = ({ title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
+const HomePageTemplate = ({ image, heading, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
   const PageContent = contentComponent || Content
 
   return (
