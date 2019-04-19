@@ -9,6 +9,9 @@ lang: it
 date: "05-03-2019"
 image: /img/PersimmonHD.jpg
 heading: "Il kako è il frutto dell'artista..."
+mainpitch:
+  title: "Perche Kaki?"
+  description: "Perche è un frutto dalle qualità incredibili..."
 path: /it/
 slug: /it/
 ---

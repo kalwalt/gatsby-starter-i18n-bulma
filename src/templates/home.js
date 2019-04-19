@@ -8,7 +8,7 @@ import IconMenu from '../components/IconMenu'
 import iconLinks from '../data/artworksMenu'
 import select from '../components/utils'
 
-const HomePageTemplate = ({ image, heading, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
+const HomePageTemplate = ({ image, heading, mainpitch, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -61,6 +61,33 @@ const HomePageTemplate = ({ image, heading, title, content, contentComponent, fi
         </h3>
        </div>
        </div>
+       <section className="section">
+       <div className="container animated bounceInUp delay-1s">
+          <div className="columns is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
+              <div className="column is-three-fifths is-offset-one-fifth"
+                   style={{
+                     backgroundImage: 'linear-gradient(rgb(255, 68, 0), yellow)',
+                     borderRadius: '4px',
+                   }}>
+                <div className="content">
+                  <div className="tile">
+                    <h1 className="title is-2"
+                    style={{
+                      color: 'black'
+                    }}>
+                    {mainpitch.title}
+                    </h1>
+                  </div>
+                  <div className="tile">
+                    <h3 className="subtitle is-4">
+                    {mainpitch.description}
+                    </h3>
+                  </div>
+                </div>
+                </div>
+              </div>
+          </div>
+        </section>
        <div className="container section">
        <IconMenu
        firstLink={firstLink}
@@ -72,7 +99,7 @@ const HomePageTemplate = ({ image, heading, title, content, contentComponent, fi
         <section className="section">
           <PageContent className="container content" content={content} />
         </section>
-    </div>
+      </div>
 )
 }
 
@@ -103,6 +130,7 @@ class HomePage extends React.Component {
             <HomePageTemplate
             image={dataMarkdown.frontmatter.image}
             heading={dataMarkdown.frontmatter.heading}
+            mainpitch={dataMarkdown.frontmatter.mainpitch}
             contentComponent={HTMLContent}
             title={dataMarkdown.frontmatter.title}
             content={dataMarkdown.html}
@@ -157,6 +185,10 @@ export const pageQuery = graphql`
           }
         }
         heading
+        mainpitch {
+          title
+          description
+        }
       }
       fields {
         slug

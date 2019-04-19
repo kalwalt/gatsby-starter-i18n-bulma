@@ -9,6 +9,9 @@ lang: en
 date: "05-03-2019"
 image: /img/PersimmonHD.jpg
 heading: "The persimmon is the artist fruit..."
+mainpitch:
+  title: "Why Kaki?"
+  description: "Because it is a fruit with incredible qualities..."
 path: /en/
 slug: /en/
 ---
