@@ -44,17 +44,14 @@ class CardSlide extends React.Component {
         <div className="card-content">
           <div className="media">
             <div className="media-left">
-              <figure className="image is-48x48">
+              <figure className="image is-128x128">
                 <CardImageSlide imageInfo={imageInfo}/>
               </figure>
             </div>
               <div className="media-content">
                 <p className="title is-4">John Kaki</p>
-              </div>
-              <div className="content">
-                  I am a visual artist, follow me in this adventure...!
-                  <br/>
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                <p className="title is-6">I am a visual artist, follow me in this adventure...!</p>
+                <a><i className="">www.kaki.com</i></a>
               </div>
             </div>
           </div>
