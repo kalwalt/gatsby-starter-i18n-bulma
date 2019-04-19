@@ -8,9 +8,11 @@ import IconMenu from '../components/IconMenu'
 import iconLinks from '../data/artworksMenu'
 import select from '../components/utils'
 import PreviewImage from '../components/PreviewCompatibleImage'
+import CardSlide from '../components/CardSlide'
 
-const HomePageTemplate = ({ image, heading, mainpitch, main, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
+const HomePageTemplate = ({ imageSL, image, heading, mainpitch, main, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
   const PageContent = contentComponent || Content
+  //const imageSL = {alt: "", image: "static/img/128x128.png"};
 
   return (
     <div>
@@ -32,7 +34,7 @@ const HomePageTemplate = ({ image, heading, mainpitch, main, title, content, con
         justifyContent: 'space-around',
         alignItems: 'left',
         flexDirection: 'column',
-      }}
+      }}image
     >
       <h1
         className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen is-centered animated bounceInLeft"
@@ -43,7 +45,7 @@ const HomePageTemplate = ({ image, heading, mainpitch, main, title, content, con
           color: 'white',
           lineHeight: '1',
           padding: '0.25em',
-        }}
+        }}image
       >
         {title}
       </h1>
@@ -97,6 +99,7 @@ const HomePageTemplate = ({ image, heading, mainpitch, main, title, content, con
        fourthLink={fourthLink}
        />
        </div>
+       <CardSlide imageInfo={imageSL}/>
         <section className="section">
           <PageContent className="container content" content={content} />
         </section>
@@ -129,6 +132,7 @@ class HomePage extends React.Component {
       <Layout className="content" data={this.props.data} jsonData={jsonData} location={this.props.location}>
         <div>
             <HomePageTemplate
+            imageSL={dataMarkdown.frontmatter.imageSL}
             image={dataMarkdown.frontmatter.image}
             heading={dataMarkdown.frontmatter.heading}
             mainpitch={dataMarkdown.frontmatter.mainpitch}
@@ -190,6 +194,16 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+        }
+        imageSL{
+          alt
+          image {
+            childImageSharp {
+              fluid(maxWidth: 128, quality: 84) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         main {
           image1 {

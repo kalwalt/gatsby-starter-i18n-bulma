@@ -16,6 +16,9 @@ main:
   image1:
     alt: a persimmon
     image: /img/wildPersimmon.jpg
+imageSL:
+  alt: "image"
+  image: /img/128x128.png
 path: /en/
 slug: /en/
 ---
