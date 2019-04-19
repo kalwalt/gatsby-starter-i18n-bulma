@@ -12,6 +12,10 @@ heading: "The persimmon is the artist fruit..."
 mainpitch:
   title: "Why Kaki?"
   description: "Because it is a fruit with incredible qualities..."
+main:
+  image1:
+    alt: a persimmon
+    image: /img/wildPersimmon.jpg
 path: /en/
 slug: /en/
 ---

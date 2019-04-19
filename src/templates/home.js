@@ -7,8 +7,9 @@ import Content, { HTMLContent } from "../components/Content"
 import IconMenu from '../components/IconMenu'
 import iconLinks from '../data/artworksMenu'
 import select from '../components/utils'
+import PreviewImage from '../components/PreviewCompatibleImage'
 
-const HomePageTemplate = ({ image, heading, mainpitch, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
+const HomePageTemplate = ({ image, heading, mainpitch, main, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -69,23 +70,23 @@ const HomePageTemplate = ({ image, heading, mainpitch, title, content, contentCo
                      backgroundImage: 'linear-gradient(rgb(255, 68, 0), yellow)',
                      borderRadius: '4px',
                    }}>
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title is-2"
-                    style={{
-                      color: 'black'
-                    }}>
-                    {mainpitch.title}
-                    </h1>
+                  <PreviewImage imageInfo={main.image1}/>
+                <div className="section">
+                <div className="tile is-parent">
+                  <div className="tile is-child notification is-success">
+                    <div className="content">
+                        <h3 className="title is-2">
+                          {mainpitch.title}
+                        </h3>
+                        <p className="subtitle is-4">
+                          {mainpitch.description}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="tile">
-                    <h3 className="subtitle is-4">
-                    {mainpitch.description}
-                    </h3>
-                  </div>
-                </div>
                 </div>
               </div>
+            </div>
           </div>
         </section>
        <div className="container section">
@@ -131,6 +132,7 @@ class HomePage extends React.Component {
             image={dataMarkdown.frontmatter.image}
             heading={dataMarkdown.frontmatter.heading}
             mainpitch={dataMarkdown.frontmatter.mainpitch}
+            main={dataMarkdown.frontmatter.main}
             contentComponent={HTMLContent}
             title={dataMarkdown.frontmatter.title}
             content={dataMarkdown.html}
@@ -188,6 +190,18 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+        }
+        main {
+          image1 {
+              alt
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 500, quality: 90) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+          }
         }
       }
       fields {

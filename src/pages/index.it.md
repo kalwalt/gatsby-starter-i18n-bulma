@@ -12,6 +12,10 @@ heading: "Il kako è il frutto dell'artista..."
 mainpitch:
   title: "Perche Kaki?"
   description: "Perche è un frutto dalle qualità incredibili..."
+main:
+  image1:
+    alt: un caco
+    image: /img/wildPersimmon.jpg
 path: /it/
 slug: /it/
 ---
