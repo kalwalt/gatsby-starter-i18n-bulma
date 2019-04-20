@@ -16,6 +16,12 @@ main:
   image1:
     alt: a persimmon
     image: /img/wildPersimmon.jpg
+testimonials:
+  - author: anonimous
+    quote: >-
+      The persimmon tree became "the tree of peace"
+      because after Nagasaki destruction in august 1945,
+      survived only some persimmon trees.
 imageCardSL:
   alt: "image"
   image: /img/128x128.png

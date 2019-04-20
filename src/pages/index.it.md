@@ -16,6 +16,12 @@ main:
   image1:
     alt: un caco
     image: /img/wildPersimmon.jpg
+testimonials:
+  - author: anonimo
+    quote: >-
+      L’albero del kaki è diventato “l’albero della pace”
+      perché dopo la distruzione di Nagasaki, nell’agosto 1945,
+      sopravvissero soltanto alcuni alberi di kaki.
 imageCardSL:
   alt: "immagine"
   image: /img/128x128.png

@@ -53,6 +53,7 @@ class CardSlide extends React.Component {
               <div className="media-content">
                 <p className="title is-4">{name}</p>
                 <p className="title is-6">{description}</p>
+                <br/>
                 <a href={"https://" + website}><i className="is-family-code">{website}</i></a>
               </div>
             </div>

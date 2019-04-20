@@ -8,9 +8,10 @@ import IconMenu from '../components/IconMenu'
 import iconLinks from '../data/artworksMenu'
 import select from '../components/utils'
 import PreviewImage from '../components/PreviewCompatibleImage'
+import Testimonials from '../components/Testimonials'
 import CardSlide from '../components/CardSlide'
 
-const HomePageTemplate = ({ imageCardSL, image, heading, mainpitch, main, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
+const HomePageTemplate = ({ imageCardSL, image, heading, mainpitch, main, testimonials, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -98,6 +99,7 @@ const HomePageTemplate = ({ imageCardSL, image, heading, mainpitch, main, title,
        fourthLink={fourthLink}
        />
        </div>
+       <Testimonials testimonials={testimonials} />
        <CardSlide
        imageInfo={imageCardSL}
        name={imageCardSL.name}
@@ -140,6 +142,7 @@ class HomePage extends React.Component {
             heading={dataMarkdown.frontmatter.heading}
             mainpitch={dataMarkdown.frontmatter.mainpitch}
             main={dataMarkdown.frontmatter.main}
+            testimonials={dataMarkdown.frontmatter.testimonials}
             contentComponent={HTMLContent}
             title={dataMarkdown.frontmatter.title}
             content={dataMarkdown.html}
@@ -221,7 +224,11 @@ export const pageQuery = graphql`
                   }
                 }
               }
-          }
+           }
+        }
+        testimonials {
+          author
+          quote
         }
       }
       fields {
