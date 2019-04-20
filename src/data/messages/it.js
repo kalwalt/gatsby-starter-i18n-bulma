@@ -16,6 +16,7 @@ module.exports = {
   '404': "Sei giunto ad una pagina che non esiste più o hai sbagliato il percorso...",
   'copyright': "2019, KAKI - Tutti i diritti riservati.",
   'menu-icon-message': "Scegli una sezione",
+  'menu-icon-subtitle': "Sezione opere d'arte",
   'menu-icon-painting': "Pittura",
   'menu-icon-sculpture': "Scultura",
   'menu-icon-performance': "Performance",
