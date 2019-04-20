@@ -7,12 +7,25 @@ import Content, { HTMLContent } from "../components/Content"
 import IconMenu from '../components/IconMenu'
 import iconLinks from '../data/artworksMenu'
 import select from '../components/utils'
-//import PreviewImage from '../components/PreviewCompatibleImage'
 import Banner from '../components/Banner'
 import Testimonials from '../components/Testimonials'
 import CardSlide from '../components/CardSlide'
 
-const HomePageTemplate = ({ imageCardSL, image, heading, mainpitch, main, testimonials, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
+const HomePageTemplate = ({
+  imageCardSL,
+  image,
+  heading,
+  mainpitch,
+  main,
+  testimonials,
+  title,
+  content,
+  contentComponent,
+  firstLink,
+  secondLink,
+  thirdLink,
+  fourthLink
+}) => {
   const PageContent = contentComponent || Content
 
   return (
