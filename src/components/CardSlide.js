@@ -4,21 +4,22 @@ import * as PropTypes from "prop-types"
 
 const CardImageSlide = ({ imageInfo }) => {
   const { alt = '', childImageSharp, image } = imageInfo
+  const imageStyle = { borderRadius: '50%' }
 
   if (!!image && !!image.childImageSharp) {
     return (
-        <Img className="is-rounded" fluid={image.childImageSharp.fluid} alt={alt} />
+        <Img style={imageStyle} fluid={image.childImageSharp.fluid} alt={alt} />
     )
   }
 
   if (!!childImageSharp) {
     return (
-        <Img className="is-rounded" fluid={childImageSharp.fluid} alt={alt} />
+        <Img style={imageStyle} fluid={childImageSharp.fluid} alt={alt} />
     )
   }
 
   if (!!image && typeof image === 'string')
-    return <img className="is-rounded" src={image} alt={alt} />
+    return <img style={imageStyle} src={image} alt={alt} />
   return null
 }
 
@@ -27,7 +28,6 @@ CardImageSlide.propTypes = {
     alt: PropTypes.string,
     childImageSharp: PropTypes.object,
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
-
   }).isRequired,
 }
 
