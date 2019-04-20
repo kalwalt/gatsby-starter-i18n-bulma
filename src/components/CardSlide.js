@@ -36,8 +36,10 @@ class CardSlide extends React.Component {
   render(){
     const props = this.props;
     const imageInfo = props.imageInfo;
-    //const name = props.name;
-    //const description = props.description;
+    const name = props.imageInfo.name;
+    const description = props.imageInfo.description;
+    const website = props.imageInfo.website;
+
     return (
     <div className="section">
       <div className="card">
@@ -49,9 +51,9 @@ class CardSlide extends React.Component {
               </figure>
             </div>
               <div className="media-content">
-                <p className="title is-4">John Kaki</p>
-                <p className="title is-6">I am a visual artist, follow me in this adventure...!</p>
-                <a><i className="">www.kaki.com</i></a>
+                <p className="title is-4">{name}</p>
+                <p className="title is-6">{description}</p>
+                <a href={"https://" + website}><i className="is-family-code">{website}</i></a>
               </div>
             </div>
           </div>

@@ -10,9 +10,8 @@ import select from '../components/utils'
 import PreviewImage from '../components/PreviewCompatibleImage'
 import CardSlide from '../components/CardSlide'
 
-const HomePageTemplate = ({ imageSL, image, heading, mainpitch, main, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
+const HomePageTemplate = ({ imageCardSL, image, heading, mainpitch, main, title, content, contentComponent, firstLink, secondLink, thirdLink, fourthLink }) => {
   const PageContent = contentComponent || Content
-  //const imageSL = {alt: "", image: "static/img/128x128.png"};
 
   return (
     <div>
@@ -99,7 +98,11 @@ const HomePageTemplate = ({ imageSL, image, heading, mainpitch, main, title, con
        fourthLink={fourthLink}
        />
        </div>
-       <CardSlide imageInfo={imageSL}/>
+       <CardSlide
+       imageInfo={imageCardSL}
+       name={imageCardSL.name}
+       description={imageCardSL.description}
+       website={imageCardSL.website}/>
         <section className="section">
           <PageContent className="container content" content={content} />
         </section>
@@ -132,7 +135,7 @@ class HomePage extends React.Component {
       <Layout className="content" data={this.props.data} jsonData={jsonData} location={this.props.location}>
         <div>
             <HomePageTemplate
-            imageSL={dataMarkdown.frontmatter.imageSL}
+            imageCardSL={dataMarkdown.frontmatter.imageCardSL}
             image={dataMarkdown.frontmatter.image}
             heading={dataMarkdown.frontmatter.heading}
             mainpitch={dataMarkdown.frontmatter.mainpitch}
@@ -195,7 +198,7 @@ export const pageQuery = graphql`
           title
           description
         }
-        imageSL{
+        imageCardSL{
           alt
           image {
             childImageSharp {
@@ -204,6 +207,9 @@ export const pageQuery = graphql`
               }
             }
           }
+          name
+          description
+          website
         }
         main {
           image1 {

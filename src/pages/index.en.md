@@ -16,9 +16,12 @@ main:
   image1:
     alt: a persimmon
     image: /img/wildPersimmon.jpg
-imageSL:
+imageCardSL:
   alt: "image"
   image: /img/128x128.png
+  name: John Kaki
+  description: I am a visual artist, follow me in this adventure...!
+  website: www.kaki.com
 path: /en/
 slug: /en/
 ---

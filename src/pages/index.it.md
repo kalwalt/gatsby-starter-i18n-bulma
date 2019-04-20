@@ -16,9 +16,12 @@ main:
   image1:
     alt: un caco
     image: /img/wildPersimmon.jpg
-imageSL:
-  alt: "image"
+imageCardSL:
+  alt: "immagine"
   image: /img/128x128.png
+  name: John Kaki
+  description: Sono un artista visivo, seguimi in questa avventura...!
+  website: www.kaki.com
 path: /it/
 slug: /it/
 ---
