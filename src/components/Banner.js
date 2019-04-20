@@ -18,7 +18,7 @@ const Banner = ({main, mainpitch}) =>(
            <div className="tile is-parent">
              <div className="tile is-child notification is-success">
                <div className="content">
-                <FaAward color="rgb(255, 68, 0)" className="icon is-large"/>
+                <FaAward color="magenta" className="icon is-large"/>
                    <h3 className="title is-2">
                      {mainpitch.title}
                    </h3>
