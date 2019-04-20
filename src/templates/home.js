@@ -7,7 +7,8 @@ import Content, { HTMLContent } from "../components/Content"
 import IconMenu from '../components/IconMenu'
 import iconLinks from '../data/artworksMenu'
 import select from '../components/utils'
-import PreviewImage from '../components/PreviewCompatibleImage'
+//import PreviewImage from '../components/PreviewCompatibleImage'
+import Banner from '../components/Banner'
 import Testimonials from '../components/Testimonials'
 import CardSlide from '../components/CardSlide'
 
@@ -64,33 +65,7 @@ const HomePageTemplate = ({ imageCardSL, image, heading, mainpitch, main, testim
         </h3>
        </div>
        </div>
-       <section className="section">
-       <div className="container animated bounceInUp delay-1s">
-          <div className="columns is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
-              <div className="column is-three-fifths is-offset-one-fifth"
-                   style={{
-                     backgroundImage: 'linear-gradient(rgb(255, 68, 0), yellow)',
-                     borderRadius: '4px',
-                   }}>
-                  <PreviewImage imageInfo={main.image1}/>
-                <div className="section">
-                <div className="tile is-parent">
-                  <div className="tile is-child notification is-success">
-                    <div className="content">
-                        <h3 className="title is-2">
-                          {mainpitch.title}
-                        </h3>
-                        <p className="subtitle is-4">
-                          {mainpitch.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+       <Banner main={main} mainpitch={mainpitch}/>
        <div className="container section">
        <IconMenu
        firstLink={firstLink}
