@@ -41,7 +41,7 @@ class CardSlide extends React.Component {
     const website = props.imageInfo.website;
 
     return (
-    <div className="section">
+    <div className="section card-slide">
       <div className="card">
         <div className="card-content">
           <div className="media">

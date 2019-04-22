@@ -5,7 +5,7 @@ import PreviewImage from '../components/PreviewCompatibleImage'
 
 const Banner = ({main, mainpitch}) =>(
 
-  <section className="section">
+  <section className="section banner">
   <div className="container animated bounceInUp delay-1s">
      <div className="columns is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
          <div className="column is-three-fifths is-offset-one-fifth"
