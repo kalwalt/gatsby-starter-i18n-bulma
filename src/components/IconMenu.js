@@ -51,7 +51,10 @@ const IconMenu = class extends React.Component {
       </div>
       </a>
       <a className="column is-narrow has-text-centered" href={secondLink}>
-        <FaGavel className="icon is-large animated"/>
+      <span className="fa icon is-large fa-2x fa-stack animated">
+        <FaCircle className="fa fa-stack-2x"/>
+        <FaGavel className="fa fa-stack-1x fa-inverse"/>
+      </span>
         <div className="section">
           <h4 className="title has-text-centered">
             <FormattedMessage id="menu-icon-sculpture"/>
@@ -59,7 +62,10 @@ const IconMenu = class extends React.Component {
         </div>
       </a>
       <a className="column is-narrow has-text-centered" href={thirdLink}>
-        <FaBolt className="icon is-large animated"/>
+      <span className="fa icon is-large fa-2x fa-stack animated">
+        <FaCircle className="fa fa-stack-2x"/>
+        <FaBolt className="fa fa-stack-1x fa-inverse"/>
+      </span>
         <div className="section">
           <h4 className="title has-text-centered">
             <FormattedMessage id="menu-icon-performance"/>
@@ -67,7 +73,10 @@ const IconMenu = class extends React.Component {
         </div>
       </a>
       <a className="column is-narrow has-text-centered" href={fourthLink}>
-        <FaHandPointer className="icon is-large animated"/>
+      <span className="fa icon is-large fa-2x fa-stack animated">
+        <FaCircle className="fa fa-stack-2x"/>
+        <FaHandPointer className="fa fa-stack-1x fa-inverse"/>
+      </span>
         <div className="section">
           <h4 className="title has-text-centered">
             <FormattedMessage id="menu-icon-interactivity"/>
