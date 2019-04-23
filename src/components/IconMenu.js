@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {  FaPaintBrush, FaGavel, FaBolt, FaHandPointer} from 'react-icons/fa';
+import { FaCircle, FaPaintBrush, FaGavel, FaBolt, FaHandPointer } from 'react-icons/fa';
 import { FormattedMessage } from 'react-intl';
 
 const IconMenu = class extends React.Component {
@@ -40,7 +40,10 @@ const IconMenu = class extends React.Component {
       </div>
     <div className="columns is-4 is-mobile is-multiline is-centered">
       <a className="column is-narrow has-text-centered" href={firstLink}>
-        <FaPaintBrush className="icon is-large animated"/>
+        <span className="fa icon is-large fa-2x fa-stack animated">
+          <FaCircle className="fa fa-stack-2x"/>
+          <FaPaintBrush className="fa fa-stack-1x fa-inverse"/>
+        </span>
       <div className="section">
         <h4 className="title has-text-centered">
           <FormattedMessage id="menu-icon-painting"/>
