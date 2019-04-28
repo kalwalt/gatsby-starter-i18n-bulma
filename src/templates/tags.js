@@ -1,107 +1,87 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
+import PostList from '../components/PostList'
+import { FormattedMessage } from 'react-intl'
+import Helmet from 'react-helmet'
 
-// Components
-import { Link, graphql } from "gatsby"
-import Layout from "../components/Layout"
+const TagRoute = ({ data, pageContext }) => {
+  const posts = data.allMarkdownRemark.edges.map(p => p.node);
 
-const Tags = ({ pageContext, data, location }) => {
-  const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
-  const jsonData = data.allArticlesJson.edges[0].node.articles;
+  const allTagsLink = (
+    <FormattedMessage id="tags.allTagsLink" >
+      {(txt) => (
+        <AllTagsLink
+          to={`/${pageContext.langKey}/tags/`}
+        >
+          {txt}
+        </AllTagsLink>
+      )}
+    </FormattedMessage>
+  )
 
   return (
-    <Layout className="container" data={data} jsonData={jsonData} location={location}>
-    <div className="container block">
-      <h1 className="title">{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { path, title } = node.frontmatter
-          return (
-            <li style={{ marginBottom: `.5rem` }} key={path}>
-              <span className="tag is-light is-small">
-              <Link to={path}>{title}</Link>
-              </span>
-            </li>
-          )
-        })}
-      </ul>
-      {/*
-              This links to a page that does not yet exist.
-              We'll come back to it!
-            */}
-      <span style={{ marginBottom: `.5rem` }} className="tag is-light is-medium">
-        <Link to="/tags">All tags</Link>
-      </span>
-    </div>
-    </Layout>
+    <section>
+      <Header>
+        <FormattedMessage id="tags">
+          {(txt) => (
+            <Helmet
+              title={`${pageContext.tag} | ${txt}`}
+              meta={[{ name: 'description', content: txt }]}
+            />
+          )}
+        </FormattedMessage>
+        <FormattedMessage
+          id="tags.nPostsTaggedWith"
+          values={{ nPosts: data.allMarkdownRemark.totalCount }}
+        />
+        <TagName>“{pageContext.tag}”</TagName>
+        {allTagsLink}
+      </Header>
+      <PostList
+        posts={posts}
+      />
+      <footer>
+        {allTagsLink}
+      </footer>
+    </section>
   )
 }
 
-Tags.propTypes = {
-  pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              path: PropTypes.string.isRequired,
-              title: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired
-      ),
-    }),
-  }),
+TagRoute.propTypes = {
+  data: PropTypes.object,
+  pageContext: PropTypes.object
 }
 
-export default Tags
+export default TagRoute
 
 export const pageQuery = graphql`
-query ($tag: String) {
-  site {
-    siteMetadata {
-      title
-      languages {
-        langs
-        defaultLangKey
+  query TagPage($langKey: String!) {
+  allMarkdownRemark(limit: 1000,
+    sort: {fields: [frontmatter___date], order: DESC},
+    filter: {
+      fields: {
+        langKey: {eq: $langKey}
       }
-    }
-  }
-  markdownRemark {
-    frontmatter {
-      id
-    }
-  }
-  allArticlesJson(filter:{title:{eq:"home"}}){
- edges{
-   node{
-     articles {
-       en
-       it
-     }
-   }
- }
-}
-  allMarkdownRemark(limit: 2000, sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {tags: {in: [$tag]}}}) {
+    }) {
     totalCount
     edges {
       node {
-        frontmatter {
-          id
-          title
+        frontmatter{
+          title,
           date
-          path
-        }
+        },
+        fields{
+          slug
+          langKey
+          tagSlugs {
+             tag
+             link
+           }
+        },
+        excerpt
       }
     }
   }
-}
+  }
 `

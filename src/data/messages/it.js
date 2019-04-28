@@ -1,5 +1,11 @@
 module.exports = {
   'selectLanguage': 'Seleziona la lingua',
+  'tags': 'Tags',
+  'tags.allTagsLink': 'Sfoglia tutti i tags',
+  'tags.nPostsTaggedWith': `{nPosts, number} {nPosts, plural,
+      one {post}
+      other {posts}
+    } taggato  con`,
   'home': 'Casa',
   'about': 'A proposito',
   'artworks': 'Opere',

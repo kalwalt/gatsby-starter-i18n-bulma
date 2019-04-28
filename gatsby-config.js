@@ -8,7 +8,7 @@ module.exports = {
   without their own descriptions.
 `,
     siteUrl: "localhost:8000",
-    image: 'img.jpg',
+    image: 'img/PersimmonHD.jpg',
     author: {
       name: 'Your Name',
       minibio: `
@@ -28,46 +28,6 @@ module.exports = {
     languages
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-i18n',
-      options: {
-        langKeyForNull: 'any',
-        langKeyDefault: languages.defaultLangKey,
-        useLangKeyLayout: false
-      }
-    },
-    `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-      path: `${__dirname}/src/data/articles`,
-      },
-    },
-    {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/static/img`,
-        name: 'uploads',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/img`,
-        name: 'images',
-      },
-    },
-    "gatsby-transformer-javascript-frontmatter",
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -98,6 +58,54 @@ module.exports = {
         ],
       },
     },
+    {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img`,
+        name: 'uploads',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/img`,
+        name: 'images',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+      path: `${__dirname}/src/data/articles`,
+      },
+    },
+    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyForNull: 'any',
+        langKeyDefault: languages.defaultLangKey,
+        useLangKeyLayout: false,
+      }
+    },
+    {
+    resolve: 'gatsby-plugin-i18n-tags',
+    options: { // Default options
+      tagPage: 'src/templates/tags.js',
+      tagsUrl: '/tags/',
+      langKeyForNull: 'any',
+    }
+  },
+    `gatsby-transformer-json`,
+    "gatsby-transformer-javascript-frontmatter",
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-netlify`,
     {
@@ -113,6 +121,5 @@ module.exports = {
         output: `/sitemap.xml`,
       },
     },
-
   ],
 }

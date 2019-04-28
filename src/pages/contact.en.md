@@ -7,6 +7,7 @@ tags:
   - web
 nameLabel: "Your name"
 lang: en
+image: /img/PersimmonHD.jpg
 date: "08-03-2019"
 path: /en/contact
 slug: /en/contact
