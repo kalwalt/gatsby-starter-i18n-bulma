@@ -15,7 +15,7 @@ const Banner = ({main, mainpitch}) =>(
                   backgroundImage: 'linear-gradient(rgb(255, 68, 0), yellow)',
                   borderRadius: '4px',
                 }}>
-               <PreviewImage imageInfo={main.image1}/>
+               <PreviewImage imageInfo={main}/>
              <div className="section">
              <div className="tile is-parent">
                <div className="tile is-child notification is-success">
@@ -39,6 +39,7 @@ const Banner = ({main, mainpitch}) =>(
 )
 
 Banner.propTypes = {
+ main: PropTypes.object,
  mainpitch: PropTypes.object,
 }
 

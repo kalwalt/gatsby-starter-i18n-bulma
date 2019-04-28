@@ -1,7 +1,6 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
-import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import IconMenu from '../components/IconMenu'
@@ -78,7 +77,7 @@ const HomePageTemplate = ({
         </h3>
        </div>
        </div>
-       <Banner main={main} mainpitch={mainpitch}/>
+       <Banner main={main.image1} mainpitch={mainpitch}/>
        <div className="container section">
        <IconMenu
        firstLink={firstLink}
@@ -146,6 +145,7 @@ class HomePage extends React.Component {
 }
 
 HomePage.propTypes = {
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   data: PropTypes.object.isRequired,
 }
 
