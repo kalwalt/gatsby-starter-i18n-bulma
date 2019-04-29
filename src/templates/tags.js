@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl'
 import Helmet from 'react-helmet'
 
 const TagRoute = ({ data, pageContext }) => {
-  const posts = data.allMarkdownRemark.edges.map(p => p.node);
+  const posts = data.allMarkdownRemark.edges.map(p => p.node)
 
   const allTagsLink = (
     <FormattedMessage id="tags.allTagsLink" >
