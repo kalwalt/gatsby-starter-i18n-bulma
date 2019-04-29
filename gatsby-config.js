@@ -6,9 +6,9 @@ module.exports = {
     description: `
   This is a blog theme. The description will be showed in SEO results on pages
   without their own descriptions.
-`,
+  `,
     siteUrl: "localhost:8000",
-    image: 'img/PersimmonHD.jpg',
+    image: 'img/logo.svg',
     author: {
       name: 'Your Name',
       minibio: `
@@ -28,6 +28,34 @@ module.exports = {
     languages
   },
   plugins: [
+    {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img`,
+        name: 'uploads',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/img`,
+        name: 'images',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+      path: `${__dirname}/src/data/articles`,
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -56,34 +84,6 @@ module.exports = {
             },
           },
         ],
-      },
-    },
-    {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/static/img`,
-        name: 'uploads',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/img`,
-        name: 'images',
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-      path: `${__dirname}/src/data/articles`,
       },
     },
     `gatsby-plugin-react-helmet`,
