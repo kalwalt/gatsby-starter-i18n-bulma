@@ -6,17 +6,19 @@ export default ({props}) => <TagsPageRoute {...props} />
 
 export const pageQuery = graphql`
   query TagsItQuery {
-    allMarkdownRemark(
-      limit: 2000
-      filter: {
-        fields: {
-          langKey: {eq: "it"}
+    allMarkdownRemark{
+      edges{
+        node{
+          frontmatter{
+            title
+          }
+          fields{
+            tagSlugs {
+              tag
+              link
+            }
+          }
         }
-      }
-    ) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
       }
     }
   }
