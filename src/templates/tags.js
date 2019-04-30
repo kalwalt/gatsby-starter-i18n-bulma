@@ -68,9 +68,9 @@ export const pageQuery = graphql`
     edges {
       node {
         frontmatter{
-          title,
+          title
           date
-        },
+        }
         fields{
           slug
           langKey
@@ -78,7 +78,7 @@ export const pageQuery = graphql`
              tag
              link
            }
-        },
+        }
         excerpt
       }
     }
