@@ -1,15 +1,14 @@
 import React from 'react'
 import TagsPageRoute from './_tags'
-import { graphql } from 'graphql'
+import { graphql, StaticQuery } from 'gatsby'
 
-export default ({ props }) => <TagsPageRoute {...props} />
-
-export const pageQuery = graphql`
+export default ({ props }) => (
+  <StaticQuery
+    query={graphql`
 query TagsEnQuery {
   allMarkdownRemark(
     limit: 2000
     filter: {
-      
       fields: {
         langKey: {eq: "en"}
       }
@@ -21,4 +20,10 @@ query TagsEnQuery {
     }
   }
 }
-`
+`}
+render={(props) => (
+  <TagsPageRoute {...props} />
+
+)}
+/>
+)
