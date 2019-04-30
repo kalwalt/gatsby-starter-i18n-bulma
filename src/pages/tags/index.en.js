@@ -9,7 +9,7 @@ query TagsEnQuery {
   allMarkdownRemark(
     limit: 2000
     filter: {
-      frontmatter: { draft: { ne: true } } ,
+      
       fields: {
         langKey: {eq: "en"}
       }

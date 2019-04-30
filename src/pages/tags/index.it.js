@@ -9,7 +9,7 @@ query TagsItQuery {
   allMarkdownRemark(
     limit: 2000
     filter: {
-      frontmatter: { draft: { ne: true } } ,
+      
       fields: {
         langKey: {eq: "it"}
       }
