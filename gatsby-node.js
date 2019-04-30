@@ -18,30 +18,23 @@ exports.createPages = ({ actions, graphql }) => {
       markdownRemark{
         frontmatter{
           heading
-          image
         }
       }
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
-        group
         edges {
           node {
             id
             fields {
               slug
-              tagSlugs {
-              tag
-              link
-            }
             }
             frontmatter {
               id
               date
               path
               tags
-              image
               templateKey
               lang
               title
@@ -72,7 +65,9 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
-  )}
+
+  })
+}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -86,4 +81,5 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
+
 }
