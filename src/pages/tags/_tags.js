@@ -4,11 +4,13 @@ import { Link } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import { FormattedMessage } from 'react-intl'
 import Helmet from 'react-helmet'
+import Layout from "../../components/Layout"
 
-const TagsPageRoute = ({ props }) => {
-  const allTags = props.data.allMarkdownRemark.group;
+const TagsPageRoute = ({ data, location }) => {
+  const allTags = data.allMarkdownRemark.group;
 
   return (
+    <Layout data={data} location={location}>
     <section className="post-list">
       <FormattedMessage id="tags">
         {(txt) => (
@@ -40,12 +42,14 @@ const TagsPageRoute = ({ props }) => {
         </ul>
       </nav>
     </section>
+    </Layout>
+
   );
 };
 
 TagsPageRoute.propTypes = {
   data: PropTypes.object,
-  pageContext: PropTypes.object
+  pageContext: PropTypes.object,
 };
 
 export default TagsPageRoute

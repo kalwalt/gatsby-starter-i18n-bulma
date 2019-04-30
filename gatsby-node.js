@@ -29,7 +29,7 @@ exports.createPages = ({ actions, graphql }) => {
             id
             fields {
               slug
-            
+
             }
             frontmatter {
               id
@@ -82,5 +82,4 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
-
 }

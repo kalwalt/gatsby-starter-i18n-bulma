@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import PostList from '../components/PostList'
 import { FormattedMessage } from 'react-intl'
 import Helmet from 'react-helmet'
+import Layout from "../components/Layout"
 
 const TagRoute = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges.map(p => p.node)
@@ -21,8 +22,9 @@ const TagRoute = ({ data, pageContext }) => {
   )
 
   return (
+    <Layout data={data} location={location}>
     <section>
-      <Header>
+      <header>
         <FormattedMessage id="tags">
           {(txt) => (
             <Helmet
@@ -35,9 +37,9 @@ const TagRoute = ({ data, pageContext }) => {
           id="tags.nPostsTaggedWith"
           values={{ nPosts: data.allMarkdownRemark.totalCount }}
         />
-        <TagName>“{pageContext.tag}”</TagName>
+        <span>“{pageContext.tag}”</span>
         {allTagsLink}
-      </Header>
+      </header>
       <PostList
         posts={posts}
       />
@@ -45,6 +47,7 @@ const TagRoute = ({ data, pageContext }) => {
         {allTagsLink}
       </footer>
     </section>
+    </Layout>
   )
 }
 
@@ -72,7 +75,7 @@ export const pageQuery = graphql`
           date
         }
         fields{
-          slug
+
           langKey
           tagSlugs {
              tag
