@@ -5,7 +5,7 @@ import kebabCase from 'lodash/kebabCase'
 import { FormattedMessage } from 'react-intl'
 import Helmet from 'react-helmet'
 
-const TagsPageRoute = (props) => {
+const TagsPageRoute = ({ props }) => {
   const allTags = props.data.allMarkdownRemark.group;
 
   return (
