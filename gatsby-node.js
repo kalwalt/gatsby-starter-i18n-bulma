@@ -29,10 +29,7 @@ exports.createPages = ({ actions, graphql }) => {
             id
             fields {
               slug
-              tagSlugs {
-                tag
-                link
-              }
+            
             }
             frontmatter {
               id
@@ -80,7 +77,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
     createNodeField({
-      name: [`slug`],
+      name: `slug`,
       node,
       value,
     })
