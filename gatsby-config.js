@@ -94,7 +94,7 @@ module.exports = {
         langKeyForNull: 'any',
         langKeyDefault: languages.defaultLangKey,
         useLangKeyLayout: false,
-      }
+      },
     },
     {
     resolve: 'gatsby-plugin-i18n-tags',
@@ -102,7 +102,7 @@ module.exports = {
       tagPage: 'src/templates/tags.js',
       tagsUrl: '/tags/',
       langKeyForNull: 'any',
-    }
+    },
   },
     `gatsby-transformer-json`,
     "gatsby-transformer-javascript-frontmatter",

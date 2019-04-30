@@ -63,7 +63,6 @@ exports.createPages = ({ actions, graphql }) => {
       const id = edge.node.id
       createPage({
         path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
         ),
@@ -82,16 +81,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
     createNodeField({
-      name: [`slug`,`tags`],
-      node,
-      value,
-    })
-  }
-
-  if (_.get(node.internal.type) === `allMarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `tags`,
+      name: [`slug`],
       node,
       value,
     })
