@@ -6,17 +6,11 @@ import { FormattedMessage } from 'react-intl'
 import { IntlProvider, addLocaleData } from 'react-intl';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import Helmet from 'react-helmet'
-import Layout from "../components/Layout"
+import Layout from "../components/LayoutTag"
 
 const TagRoute = ({ data, pageContext }) => {
 
   const posts = data.allMarkdownRemark.edges.map(p => p.node)
-  console.log(posts);
-  console.log(data.allMarkdownRemark.edges);
-  const url = location.pathname;
-  const { langs, defaultLangKey } = data.site.siteMetadata.languages;
-  const langKey = getCurrentLangKey(langs, defaultLangKey, url);
-  const i18nMessages = require(`../data/messages/${langKey}`);
 
   const allTagsLink = (
     <FormattedMessage id="tags.allTagsLink" >
@@ -31,11 +25,8 @@ const TagRoute = ({ data, pageContext }) => {
   )
 
   return (
-    <IntlProvider
-      locale={langKey}
-      messages={i18nMessages}
+    <Layout data={data} location={location}>
 
-    >
     <section>
       <header>
         <FormattedMessage id="tags">
@@ -60,7 +51,7 @@ const TagRoute = ({ data, pageContext }) => {
         {allTagsLink}
       </footer>
     </section>
-  </IntlProvider>
+  </Layout>
   )
 }
 
@@ -79,6 +70,11 @@ export const pageQuery = graphql`
             langs
             defaultLangKey
           }
+        }
+      }
+      markdownRemark{
+        frontmatter{
+          title
         }
       }
   allMarkdownRemark(limit: 1000,

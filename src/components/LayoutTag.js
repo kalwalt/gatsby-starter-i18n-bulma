@@ -15,7 +15,7 @@ import 'intl/locale-data/jsonp/it';
 import './all.sass'
 
 import menuTree from '../data/menuTree'
-
+/*
 const getIdJsonUrl = (id, langKey, jsonData) => {
   if(id !== 'undefined'){
   let res;
@@ -59,6 +59,7 @@ const setLangsMenu = ( langsMenu, id, basePath, jsonData) => {
   console.log("missed id in the setLangsMenu() function!");
   }
 };
+*/
 
 // add concatenated locale data
 addLocaleData([...en, ...it]);
@@ -77,12 +78,6 @@ class TemplateWrapper extends Component {
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
-    const id_article = data.markdownRemark.frontmatter.id;
-    const id = Number(id_article) - 1;
-    const basename = check_path(this.langKey, url, id, jsonData);
-    var basePath = startPath(this.langKey, this.langsMenu, basename[0], url);
-    //finally here we set the desired url...
-    setLangsMenu( this.langsMenu, basename[1], basePath, jsonData);
 
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
