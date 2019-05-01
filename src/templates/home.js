@@ -47,7 +47,7 @@ const HomePageTemplate = ({
         justifyContent: 'space-around',
         alignItems: 'left',
         flexDirection: 'column',
-      }}image
+      }}
     >
       <h1
         className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen is-centered animated bounceInLeft"
@@ -58,7 +58,7 @@ const HomePageTemplate = ({
           color: 'white',
           lineHeight: '1',
           padding: '0.25em',
-        }}image
+        }}
       >
         {title}
       </h1>
