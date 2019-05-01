@@ -51,10 +51,6 @@
     "node-sass": "^4.11.0",
     "path": "^0.12.7",
     "react": "^16.3.1",
-<<<<<<< HEAD
-    "react-dom": "^16.8.6",
-=======
->>>>>>> 069e86311c4953010245b792008c56b639afc0f2
     "react-helmet": "^5.2.0",
     "react-icon-base": "^2.1.2",
     "react-icons": "^3.5.0",
