@@ -2,7 +2,7 @@
 id: '03'
 title: "About me"
 description: "Something about me"
-templateKey: home
+templateKey: about
 lang: en
 date: "05-03-2019"
 path: /en/about
