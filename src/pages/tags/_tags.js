@@ -6,8 +6,10 @@ import { FormattedMessage } from 'react-intl'
 import Helmet from 'react-helmet'
 import Layout from "../../components/Layout"
 
-const TagsPageRoute = ({ data, location }) => {
-  const allTags = data.allMarkdownRemark.group;
+const TagsPageRoute = ({ props }) => {
+
+  const allTags = props.data.allMarkdownRemark.group;
+  const data = props.data;
 
   return (
     <Layout data={data} location={location}>

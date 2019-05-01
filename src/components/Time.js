@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedDate } from 'react-intl';
 
-const Time = ({ props }) => {
+const Time = ({ date }) => {
   return (
-    <time {...props} dateTime={props.date}>
+    <time  dateTime={date}>
       <FormattedDate
-        value={new Date(props.date)}
+        value={new Date(date)}
         month="long"
         day="numeric"
         year="numeric"

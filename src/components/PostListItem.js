@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link'
-import CleanTime from '../components/Time';
+import Time from '../components/Time';
 
 const PostListItem = ({ post }) => {
   return (
@@ -15,7 +15,7 @@ const PostListItem = ({ post }) => {
           />
           {post.frontmatter.title}
         </header>
-        <P>{post.excerpt}</P>
+        <p>{post.excerpt}</p>
       </Link>
     </li>
   );

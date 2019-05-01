@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PostListItem from './PostListItem';
 
-const PostList = ({props}) => {
+const PostList = ({posts}) => {
   return (
     <nav>
       <ul>
-        {props.posts.map(post =>
+        {posts.map(post =>
           <PostListItem post={post} />
         )}
       </ul>

@@ -72,12 +72,15 @@ class TemplateWrapper extends Component {
     this.className = this.props.className;
     const location = this.props.location;
     this.title = data.markdownRemark.frontmatter.title;
+    //this.title = "title"
     const url = location.pathname;
     const { langs, defaultLangKey } = data.site.siteMetadata.languages;
+    //const { langs, defaultLangKey } = {defaultLangKey: "en", langs: ['en', 'it']};
+    //console.log(data.site.siteMetadata.languages);
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
-    const id_article = data.markdownRemark.frontmatter.id;;
+    const id_article = data.markdownRemark.frontmatter.id;
     const id = Number(id_article) - 1;
     const basename = check_path(this.langKey, url, id, jsonData);
     var basePath = startPath(this.langKey, this.langsMenu, basename[0], url);
