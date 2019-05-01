@@ -15,51 +15,6 @@ import 'intl/locale-data/jsonp/it';
 import './all.sass'
 
 import menuTree from '../data/menuTree'
-/*
-const getIdJsonUrl = (id, langKey, jsonData) => {
-  if(id !== 'undefined'){
-  let res;
-  switch (langKey) {
-    //we get the name of the page according the id
-    case 'en':
-    res = jsonData[id].en;
-    break;
-    case 'it':
-    res = jsonData[id].it;
-    break;
-    default: return ' ';
-  }
-  return res;
-  } else {
-  console.log("missed id in the getIdUrl() function!");
-  }
-};
-
-const startPath = (langKey, langsMenu, basename, _url) => {
-  const lengthLangKey = langKey.length;
-  let indx;
-  indx = _url.indexOf(basename);
-  const basePath = _url.slice(lengthLangKey + 2, indx);
-  return basePath;
-};
-
-const check_path = (langKey, _url, id_article, jsonData) => {
-  let basename
-  if (id_article !== 'undefined'){
-    basename = getIdJsonUrl(id_article, langKey, jsonData);
-  }
-  return [basename, id_article];
-}
-
-const setLangsMenu = ( langsMenu, id, basePath, jsonData) => {
-  if(id !== 'undefined'){
-  langsMenu[0].link = `/en/${basePath}` + getIdJsonUrl(id, 'en', jsonData) + '/';
-  langsMenu[1].link = `/it/${basePath}` + getIdJsonUrl(id, 'it', jsonData) + '/';
-  }else{
-  console.log("missed id in the setLangsMenu() function!");
-  }
-};
-*/
 
 // add concatenated locale data
 addLocaleData([...en, ...it]);
