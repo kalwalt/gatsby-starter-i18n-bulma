@@ -24,8 +24,8 @@ const TagRoute = ({ data, pageContext }) => {
 
   return (
   <Layout data={data} location={location}>
-    <section>
-      <header>
+    <section className="section">
+      <header className="title is-size-3 has-text-weight-bold is-bold-light">
         <FormattedMessage id="tags">
           {(txt) => (
             <Helmet
@@ -38,14 +38,18 @@ const TagRoute = ({ data, pageContext }) => {
           id="tags.nPostsTaggedWith"
           values={{ nPosts: data.allMarkdownRemark.totalCount }}
         />
-        <span>“{pageContext.tag}”</span>
+        <div className="content">
+        <span className="tag is-light is-medium">“{pageContext.tag}”</span>
+        </div>
         {allTagsLink}
       </header>
       <PostList
         posts={posts}
       />
-      <footer>
+      <footer className="footer">
+        <span className="tag is-light is-medium">
         {allTagsLink}
+        </span>
       </footer>
     </section>
   </Layout>

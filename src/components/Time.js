@@ -4,7 +4,7 @@ import { FormattedDate } from 'react-intl';
 
 const Time = ({ date }) => {
   return (
-    <time  dateTime={date}>
+    <time  className="section" dateTime={date}>
       <FormattedDate
         value={new Date(date)}
         month="long"

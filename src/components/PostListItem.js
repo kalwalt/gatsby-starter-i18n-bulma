@@ -5,9 +5,9 @@ import Time from '../components/Time';
 
 const PostListItem = ({ post }) => {
   return (
-    <li key={post.fields.slug}>
+    <li key={post.id}>
       <Link to={post.fields.slug}>
-        <header>
+        <header className="title is-size-3">
           <Time
             pubdate
             langKey={post.fields.langKey}
@@ -15,7 +15,7 @@ const PostListItem = ({ post }) => {
           />
           {post.frontmatter.title}
         </header>
-        <p>{post.excerpt}</p>
+        <p className="subtitle">{post.excerpt}</p>
       </Link>
     </li>
   );

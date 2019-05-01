@@ -13,24 +13,24 @@ const AllTagsPageTemplate = ({ props }) => {
   const { langs, defaultLangKey } = props.site.siteMetadata.languages;
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
   return (
-    <section className="post-list">
+    <section className="section">
       <FormattedMessage id="tags">
         {(txt) => (
-          <header>
+          <header className="section">
             <Helmet
               title={txt}
               meta={[{ name: 'description', content: txt }]}
             />
-            <h1>
+            <h1 className="title">
               {txt}
             </h1>
           </header>
         )}
       </FormattedMessage>
-      <nav>
-        <ul>
+      <nav className="content">
+        <ul className="taglist">
           {allTags.map(tag =>
-            <li key={tag.fieldValue}>
+            <li className="tag is-light is-small" key={tag.fieldValue}>
               <Link
                 style={{
                   textDecoration: 'none',
@@ -62,7 +62,7 @@ class AllTagsPage extends React.Component {
     }
     return (
       <Layout className="container" data={this.props.data} location={this.props.location}>
-        <div>
+        <div className="content">
             <AllTagsPageTemplate
             props={data}
              />
