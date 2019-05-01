@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import PostList from '../components/PostList'
 import { FormattedMessage } from 'react-intl'
-import { IntlProvider, addLocaleData } from 'react-intl';
-import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import Helmet from 'react-helmet'
 import Layout from "../components/LayoutTag"
 
@@ -25,8 +23,7 @@ const TagRoute = ({ data, pageContext }) => {
   )
 
   return (
-    <Layout data={data} location={location}>
-
+  <Layout data={data} location={location}>
     <section>
       <header>
         <FormattedMessage id="tags">
@@ -63,46 +60,39 @@ TagRoute.propTypes = {
 export default TagRoute
 
 export const pageQuery = graphql`
-  query TagPage($langKey: String!) {
-      site{
-        siteMetadata{
-          languages{
-            langs
-            defaultLangKey
-          }
-        }
+query TagPage($langKey: String!) {
+  site {
+    siteMetadata {
+      languages {
+        langs
+        defaultLangKey
       }
-      markdownRemark{
-        frontmatter{
-          title
-        }
-      }
-  allMarkdownRemark(limit: 1000,
-    sort: {fields: [frontmatter___date], order: DESC},
-    filter: {
-      frontmatter: { templateKey: { eq: "blog-post" }}
-      fields: {
-        langKey: {eq: $langKey}
-      }
-    }) {
+    }
+  }
+  markdownRemark {
+    frontmatter {
+      title
+    }
+  }
+  allMarkdownRemark(limit: 1000, sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {templateKey: {eq: "blog-post"}}, fields: {langKey: {eq: $langKey}}}) {
     totalCount
     edges {
       node {
-        frontmatter{
+        frontmatter {
           title
           date
         }
-        fields{
+        fields {
           langKey
           slug
           tagSlugs {
-             tag
-             link
-           }
+            tag
+            link
+          }
         }
         excerpt
       }
     }
   }
-  }
+}
 `
