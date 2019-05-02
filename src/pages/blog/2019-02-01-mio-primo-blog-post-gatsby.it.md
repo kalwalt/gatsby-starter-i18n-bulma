@@ -7,6 +7,7 @@ description: Il mio primo blog con Gatsby...
 lang: it
 image: /img/PersimmonHD.jpg
 path: /it/blog/2019-02-01-mio-primo-blog-post-gatsby
+slug: /it/blog/2019-02-01-mio-primo-blog-post-gatsby
 tags:
   - gatsby
 ---

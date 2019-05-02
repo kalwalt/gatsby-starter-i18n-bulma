@@ -58,7 +58,6 @@ class AllTagsPage extends React.Component {
     var data;
     if (this.props.data !== null) {
       data = this.props.data
-      console.log(data);
     }
     return (
       <Layout className="container" data={this.props.data} location={this.props.location}>
@@ -91,6 +90,7 @@ export const pageQuery = graphql`
     markdownRemark(id: {eq: $id}){
       frontmatter{
         title
+        slug
       }
     }
  allMarkdownRemark(limit: 2000,
@@ -106,6 +106,7 @@ export const pageQuery = graphql`
      node {
        frontmatter {
          title
+         slug
        }
      }
    }

@@ -64,6 +64,11 @@
       "id": "13",
       "en": "contact/thanks",
       "it": "contatto/grazie"
+    },
+    {
+      "id": "14",
+      "en": "tags",
+      "it": "tags"
     }
   ]
 }

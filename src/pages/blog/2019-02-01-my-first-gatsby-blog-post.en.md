@@ -7,6 +7,7 @@ description: My first gatsby blog post really...
 lang: en
 image: /img/PersimmonHD.jpg
 path: /en/blog/2019-02-01-my-first-gatsby-blog-post
+slug: /en/blog/2019-02-01-my-first-gatsby-blog-post
 tags:
   - gatsby
 ---

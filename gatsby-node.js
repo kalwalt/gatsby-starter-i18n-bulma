@@ -1,4 +1,4 @@
-const _ = require('lodash')
+//const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
@@ -18,6 +18,7 @@ exports.createPages = ({ actions, graphql }) => {
       markdownRemark{
         frontmatter{
           heading
+          slug
         }
       }
       allMarkdownRemark(
@@ -35,6 +36,7 @@ exports.createPages = ({ actions, graphql }) => {
               id
               date
               path
+              slug
               tags
               templateKey
               lang
@@ -54,7 +56,7 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges
 
     posts.forEach(edge =>{
-      const id = edge.node.id
+      const id = edge.node.id;
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(

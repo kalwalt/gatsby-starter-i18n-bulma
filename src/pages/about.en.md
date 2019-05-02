@@ -6,8 +6,8 @@ templateKey: about
 lang: en
 image: /img/PersimmonHD.jpg
 date: "05-03-2019"
-path: /en/about
-slug: /en/about
+path: /en/about/
+slug: /en/about/
 ---
 
 Hello! ciao! Something about me!

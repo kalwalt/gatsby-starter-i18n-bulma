@@ -7,6 +7,7 @@ description: Un articolo per parlare di arte e interattività.
 lang: it
 image: /img/PersimmonHD.jpg
 path: /it/blog/2019-03-11-notizie-dal-pianeta-arte
+slug: /it/blog/2019-03-11-notizie-dal-pianeta-arte
 tags:
   - art
 ---
