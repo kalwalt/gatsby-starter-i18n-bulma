@@ -8,11 +8,8 @@ import Helmet from 'react-helmet'
 import Layout from "../components/LayoutTag"
 import { FaTag, FaTags } from 'react-icons/fa'
 
-const AllTagsPageTemplate = ({ props }) => {
-  const allTags = props.allMarkdownRemark.group;
-  const url = props.markdownRemark.frontmatter.slug;
-  const { langs, defaultLangKey } = props.site.siteMetadata.languages;
-  const langKey = getCurrentLangKey(langs, defaultLangKey, url);
+const AllTagsPageTemplate = ({ allTags, langKey }) => {
+
   return (
     <section className="section">
       <div className="container content">
@@ -30,7 +27,7 @@ const AllTagsPageTemplate = ({ props }) => {
           )}
         </FormattedMessage>
           <p>
-            <FormattedMessage id="tags.intro"/>
+            <FormattedMessage id="tags.intro"></FormattedMessage>
           </p>
         <nav className="content">
 
@@ -65,11 +62,17 @@ class AllTagsPage extends React.Component {
     if (this.props.data !== null) {
       data = this.props.data
     }
+    const allTags = data.allMarkdownRemark.group;
+    const url = this.props.location.pathname;
+    const { langs, defaultLangKey } = data.site.siteMetadata.languages;
+    const langKey = getCurrentLangKey(langs, defaultLangKey, url);
+
     return (
       <Layout className="container" data={this.props.data} location={this.props.location}>
         <div className="content">
             <AllTagsPageTemplate
-            props={data}
+            allTags={allTags}
+            langKey={langKey}
              />
         </div>
       </Layout>
@@ -97,6 +100,7 @@ export const pageQuery = graphql`
       frontmatter{
         title
         slug
+        path
       }
     }
  allMarkdownRemark(limit: 2000,
