@@ -27,7 +27,11 @@ const AllTagsPageTemplate = ({ props }) => {
           </header>
         )}
       </FormattedMessage>
+        <p>
+          <FormattedMessage id="tags.intro"/>
+        </p>
       <nav className="content">
+
         <ul className="taglist">
           {allTags.map(tag =>
             <li key={tag.fieldValue}>
