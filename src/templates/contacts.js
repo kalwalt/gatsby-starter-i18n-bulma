@@ -66,6 +66,46 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
             </div>
         </div>
         <div className="field">
+          <div className="control">
+          <label className="radio menu-names">
+            <input
+              type="radio"
+              name="gender"
+              value="male"
+              defaultChecked
+            />
+            <span>Male</span>
+          </label>
+          <label className="radio">
+            <input
+              type="radio"
+              name="gender"
+              value="female"
+            />
+            <span>Female</span>
+          </label>
+        </div>
+        </div>
+        <div className="field">
+        <label className="label">
+            <div className="select">
+            <select
+              className="content has-text-weight-semibold"
+              name="type"
+              defaultValue="Type of Enquiry"
+              required
+            >
+              <option disabled hidden>
+                Type of Enquiry
+              </option>
+              <option>Need to know more</option>
+              <option>About art</option>
+              <option>Want to say hello</option>
+            </select>
+            </div>
+          </label>
+        </div>
+        <div className="field">
           <label className="label" htmlFor={"message"}>Message</label>
           <div className="control">
             <textarea className="textarea" name={"message"} onChange={handleChange} id={"message"} required={true} />
