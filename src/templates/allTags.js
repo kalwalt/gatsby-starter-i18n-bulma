@@ -15,38 +15,40 @@ const AllTagsPageTemplate = ({ props }) => {
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
   return (
     <section className="section">
-      <FormattedMessage id="tags">
-        {(txt) => (
-          <header className="section">
-            <Helmet
-              title={txt}
-              meta={[{ name: 'description', content: txt }]}
-            />
-            <h1 className="title">
-              <FaTags className="menu-names"/> {txt}
-            </h1>
-          </header>
-        )}
-      </FormattedMessage>
-        <p>
-          <FormattedMessage id="tags.intro"/>
-        </p>
-      <nav className="content">
-
-        <ul className="taglist">
-          {allTags.map(tag =>
-            <li key={tag.fieldValue}>
-            <span className="tag is-light is-small">
-                <Link
-                  to={`${langKey}/tags/${kebabCase(tag.fieldValue)}/`}
-                >
-                  <FaTag className="menu-names"/>  {tag.fieldValue} ({tag.totalCount})
-                </Link>
-              </span>
-            </li>
+      <div className="container content">
+        <FormattedMessage id="tags">
+          {(txt) => (
+            <header className="section">
+              <Helmet
+                title={txt}
+                meta={[{ name: 'description', content: txt }]}
+              />
+              <h1 className="title">
+                <FaTags className="menu-names"/> {txt}
+              </h1>
+            </header>
           )}
-        </ul>
-      </nav>
+        </FormattedMessage>
+          <p>
+            <FormattedMessage id="tags.intro"/>
+          </p>
+        <nav className="content">
+
+          <ul className="taglist">
+            {allTags.map(tag =>
+              <li key={tag.fieldValue}>
+              <span className="tag is-light is-small">
+                  <Link
+                    to={`${langKey}/tags/${kebabCase(tag.fieldValue)}/`}
+                  >
+                    <FaTag className="menu-names"/>  {tag.fieldValue} ({tag.totalCount})
+                  </Link>
+                </span>
+              </li>
+            )}
+          </ul>
+        </nav>
+      </div>
     </section>
 )
 }

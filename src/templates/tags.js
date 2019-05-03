@@ -25,32 +25,34 @@ const TagRouteTemplate = ({ data, pageContext }) => {
 
   return (
     <section className="section">
-      <header className="title is-size-3 has-text-weight-bold is-bold-light">
-        <FormattedMessage id="tags">
-          {(txt) => (
-            <Helmet
-              title={`${pageContext.tag} | ${txt}`}
-              meta={[{ name: 'description', content: txt }]}
-            />
-          )}
-        </FormattedMessage>
-        <FormattedMessage
-          id="tags.nPostsTaggedWith"
-          values={{ nPosts: data.allMarkdownRemark.totalCount }}
+      <div className="container content">
+        <header className="title is-size-3 has-text-weight-bold is-bold-light">
+          <FormattedMessage id="tags">
+            {(txt) => (
+              <Helmet
+                title={`${pageContext.tag} | ${txt}`}
+                meta={[{ name: 'description', content: txt }]}
+              />
+            )}
+          </FormattedMessage>
+          <FormattedMessage
+            id="tags.nPostsTaggedWith"
+            values={{ nPosts: data.allMarkdownRemark.totalCount }}
+          />
+          <div className="content">
+          <span className="tag is-light is-medium"><FaTag className="menu-names"/>{pageContext.tag}</span>
+          </div>
+          {allTagsLink}
+        </header>
+        <PostList
+          posts={posts}
         />
-        <div className="content">
-        <span className="tag is-light is-medium"><FaTag className="menu-names"/>{pageContext.tag}</span>
-        </div>
-        {allTagsLink}
-      </header>
-      <PostList
-        posts={posts}
-      />
-      <footer className="footer">
-        <span className="tag is-light is-medium">
-        {allTagsLink}
-        </span>
-      </footer>
+        <footer className="footer">
+          <span className="tag is-light is-medium">
+          {allTagsLink}
+          </span>
+        </footer>
+      </div>
     </section>
   )
 }
