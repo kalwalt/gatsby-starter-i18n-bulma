@@ -6,8 +6,8 @@ date: 2019-05-03
 description: Un articolo per parlare sull'Arte e sul mondo che ci gira attorno.
 lang: it
 image: /img/PersimmonHD.jpg
-path: /it/blog/2019-05-03-art-di-kaki
-slug: /it/blog/2019-05-03-art-di-kaki
+path: /it/blog/2019-05-03-arte-di-kaki
+slug: /it/blog/2019-05-03-arte-di-kaki
 tags:
   - art
 ---
