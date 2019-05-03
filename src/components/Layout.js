@@ -94,6 +94,7 @@ class TemplateWrapper extends Component {
       <IntlProvider
         locale={this.langKey}
         messages={this.i18nMessages}
+        textComponent={React.Fragment}
       >
         <div>
           <Helmet

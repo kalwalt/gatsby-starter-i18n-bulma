@@ -6,6 +6,10 @@ import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import { getCurrentLangKey } from 'ptz-i18n';
+import { FormattedMessage } from 'react-intl';
+//import formatMessage from 'format-message'
+import * as format from 'react-intl-format';
+import { Format } from 'react-intl-format';
 
 function encode(data) {
   return Object.keys(data)
@@ -23,7 +27,7 @@ function setActionPath(langKey) {
   return path;
 }
 
-const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, handleChange, nameLabel, action }) => {
+const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, handleChange, nameLabel, action, option, optionA, optionB, optionC }) => {
   const PageContent = contentComponent || Content
   return (
       <section className="section">
@@ -48,19 +52,19 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
           </label>
         </div>
         <div className="field">
-          <label className="label" htmlFor={"name"} >{nameLabel}</label>
+          <label className="label" htmlFor={"name"} ><FormattedMessage id="contact.name"/></label>
           <div className="control">
             <input className="input" type={"text"} name={"name"} onChange={handleChange} id={"name"} required={true} />
           </div>
         </div>
         <div className="field">
-          <label className="label" htmlFor={"email"}>Email</label>
+          <label className="label" htmlFor={"email"}><FormattedMessage id="contact.email"/></label>
             <div className="control">
               <input className="input" type={"email"} name={"email"} onChange={handleChange} id={"email"} required={true} />
             </div>
           </div>
           <div className="field">
-           <label className="label" htmlFor={"subject"}>Subject</label>
+           <label className="label" htmlFor={"subject"}><FormattedMessage id="contact.subject"/></label>
              <div className="control">
                <input className="input" type={"subject"} name={"subject"} onChange={handleChange} id={"subject"} required={true} />
             </div>
@@ -74,7 +78,7 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
               value="male"
               defaultChecked
             />
-            <span>Male</span>
+            <span><FormattedMessage id="contact.gender.male"/></span>
           </label>
           <label className="radio">
             <input
@@ -82,7 +86,7 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
               name="gender"
               value="female"
             />
-            <span>Female</span>
+            <span><FormattedMessage id="contact.gender.female"/></span>
           </label>
         </div>
         </div>
@@ -96,23 +100,25 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
               required
             >
               <option disabled hidden>
-                Type of Enquiry
+                Choose
               </option>
-              <option>Need to know more</option>
-              <option>About art</option>
-              <option>Want to say hello</option>
+              <option>{optionA}</option>
+              <option>{optionB}</option>
+              <option>{optionC}</option>
             </select>
             </div>
           </label>
         </div>
         <div className="field">
-          <label className="label" htmlFor={"message"}>Message</label>
+          <label className="label" htmlFor={"message"}><FormattedMessage id="contact.message"/></label>
           <div className="control">
             <textarea className="textarea" name={"message"} onChange={handleChange} id={"message"} required={true} />
           </div>
         </div>
         <div className="field">
-          <button className="button is-link" type="submit">Send</button>
+        <div className="control">
+          <button className="button is-link" type="submit"><FormattedMessage id="contact.send"/></button>
+        </div>
         </div>
       </form>
       </div>
@@ -166,6 +172,8 @@ class ContactPage extends React.Component {
     const jsonData = data.allArticlesJson.edges[0].node.articles;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={location}>
+      <Format>
+       {intl => (
         <div>
             <ContactPageTemplate
             contentComponent={HTMLContent}
@@ -174,8 +182,13 @@ class ContactPage extends React.Component {
             onSubmit={this.handleSubmit}
             nameLabel={dataMarkdown.frontmatter.nameLabel}
             action={action}
+            optionA={intl.formatMessage({ id: 'contact.enquiry.a' })}
+            optionB={intl.formatMessage({ id: 'contact.enquiry.b' })}
+            optionC={intl.formatMessage({ id: 'contact.enquiry.c' })}
              />
         </div>
+      )}
+    </Format>
       </Layout>
     )
   }
