@@ -5,6 +5,7 @@ import PostList from '../components/PostList'
 import { FormattedMessage } from 'react-intl'
 import Helmet from 'react-helmet'
 import Layout from "../components/LayoutTag"
+import { FaTag, FaTags } from 'react-icons/fa'
 
 const TagRouteTemplate = ({ data, pageContext }) => {
 
@@ -16,7 +17,7 @@ const TagRouteTemplate = ({ data, pageContext }) => {
         <Link
           to={`/${pageContext.langKey}/tags/`}
         >
-          {txt}
+        <FaTags className="menu-names"/>  {txt}
         </Link>
       )}
     </FormattedMessage>
@@ -38,7 +39,7 @@ const TagRouteTemplate = ({ data, pageContext }) => {
           values={{ nPosts: data.allMarkdownRemark.totalCount }}
         />
         <div className="content">
-        <span className="tag is-light is-medium">“{pageContext.tag}”</span>
+        <span className="tag is-light is-medium"><FaTag className="menu-names"/>{pageContext.tag}</span>
         </div>
         {allTagsLink}
       </header>

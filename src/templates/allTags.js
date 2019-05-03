@@ -6,6 +6,7 @@ import kebabCase from 'lodash/kebabCase'
 import { FormattedMessage } from 'react-intl'
 import Helmet from 'react-helmet'
 import Layout from "../components/LayoutTag"
+import { FaTag, FaTags } from 'react-icons/fa'
 
 const AllTagsPageTemplate = ({ props }) => {
   const allTags = props.allMarkdownRemark.group;
@@ -22,7 +23,7 @@ const AllTagsPageTemplate = ({ props }) => {
               meta={[{ name: 'description', content: txt }]}
             />
             <h1 className="title">
-              {txt}
+              <FaTags className="menu-names"/> {txt}
             </h1>
           </header>
         )}
@@ -36,11 +37,11 @@ const AllTagsPageTemplate = ({ props }) => {
           {allTags.map(tag =>
             <li key={tag.fieldValue}>
             <span className="tag is-light is-small">
-              <Link
-                to={`${langKey}/tags/${kebabCase(tag.fieldValue)}/`}
-              >
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
+                <Link
+                  to={`${langKey}/tags/${kebabCase(tag.fieldValue)}/`}
+                >
+                  <FaTag className="menu-names"/>  {tag.fieldValue} ({tag.totalCount})
+                </Link>
               </span>
             </li>
           )}
