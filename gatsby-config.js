@@ -25,7 +25,7 @@ module.exports = {
       twitter: '@twitter',
       fbAppID: '',
     },
-    languages
+    languages,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -35,7 +35,7 @@ module.exports = {
       options: {
         langKeyForNull: 'any',
         langKeyDefault: languages.defaultLangKey,
-        useLangKeyLayout: false
+        useLangKeyLayout: false,
       }
     },
     {

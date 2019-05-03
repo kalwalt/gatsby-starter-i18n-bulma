@@ -24,7 +24,6 @@ class TemplateWrapper extends Component {
     super(props);
     this.children = this.props.children;
     const data = this.props.data;
-    const jsonData = this.props.jsonData;
     this.className = this.props.className;
     const location = this.props.location;
     this.title = data.markdownRemark.frontmatter.title;
