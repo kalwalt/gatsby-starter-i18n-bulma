@@ -9,7 +9,6 @@ import Layout from "../components/LayoutTag"
 const TagRouteTemplate = ({ data, pageContext }) => {
 
   const posts = data.allMarkdownRemark.edges.map(p => p.node)
-  //const location = {pathname:  window.location.pathname}
 
   const allTagsLink = (
     <FormattedMessage id="tags.allTagsLink" >
@@ -94,7 +93,7 @@ class TagRoute extends React.Component {
 export default TagRoute
 
 export const pageQuery = graphql`
-query TagPage($langKey: String!) {
+query TagPage($langKey: String!, $tag: String!) {
   site {
     siteMetadata {
       languages {
@@ -109,7 +108,12 @@ query TagPage($langKey: String!) {
       slug
     }
   }
-  allMarkdownRemark(limit: 1000, sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {templateKey: {eq: "blog-post"}}, fields: {langKey: {eq: $langKey}}}) {
+  allMarkdownRemark(limit: 1000, sort: {fields: [frontmatter___date], order: DESC},
+    filter: {frontmatter: {templateKey: {eq: "blog-post"}},
+    fields: {
+    langKey: {eq: $langKey},
+    tagSlugs: {elemMatch: {tag: {eq: $tag}}}
+  }}) {
     totalCount
     edges {
       node {

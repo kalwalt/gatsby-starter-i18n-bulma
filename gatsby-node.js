@@ -31,12 +31,15 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               slug
               langKey
+              tagSlugs{
+                tag
+                link
+              }
             }
             frontmatter {
               id
               date
               path
-
               tags
               templateKey
               lang
