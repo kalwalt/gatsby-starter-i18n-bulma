@@ -30,15 +30,14 @@ const AllTagsPageTemplate = ({ props }) => {
       <nav className="content">
         <ul className="taglist">
           {allTags.map(tag =>
-            <li className="tag is-light is-small" key={tag.fieldValue}>
+            <li key={tag.fieldValue}>
+            <span className="tag is-light is-small">
               <Link
-                style={{
-                  textDecoration: 'none',
-                }}
                 to={`${langKey}/tags/${kebabCase(tag.fieldValue)}/`}
               >
                 {tag.fieldValue} ({tag.totalCount})
               </Link>
+              </span>
             </li>
           )}
         </ul>
