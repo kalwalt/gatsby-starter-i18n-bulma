@@ -64,6 +64,16 @@
       "id": "13",
       "en": "contact/thanks",
       "it": "contatto/grazie"
+    },
+    {
+      "id": "14",
+      "en": "tags",
+      "it": "tags"
+    },
+    {
+      "id": "15",
+      "en": "2019-05-03-art-of-kaki",
+      "it": "2019-05-03-arte-di-kaki"
     }
   ]
 }

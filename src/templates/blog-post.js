@@ -6,6 +6,7 @@ import SEO from '../components/SEO/SEO'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import { FaTag } from 'react-icons/fa'
 
 export const BlogPostTemplate = ({
   data,
@@ -16,6 +17,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  langKey,
 }) => {
   const PostContent = contentComponent || Content
 
@@ -37,7 +39,7 @@ export const BlogPostTemplate = ({
                   {tags.map(tag => (
                     <li key={tag + `tag`}>
                       <span className="tag is-light is-small">
-                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                        <Link to={`/${langKey}/tags/${kebabCase(tag)}/`}><FaTag className="menu-names"/>{tag}</Link>
                       </span>
                     </li>
                   ))}
@@ -63,6 +65,7 @@ BlogPostTemplate.propTypes = {
 const BlogPost = ({ data, location }) => {
   const { markdownRemark: post } = data
   const jsonData = data.allArticlesJson.edges[0].node.articles;
+  const langKey = post.frontmatter.lang;
 
   return (
     <Layout className="container" data={data} jsonData={jsonData} location={location}>
@@ -85,6 +88,7 @@ const BlogPost = ({ data, location }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        langKey={langKey}
       />
     </Layout>
   )
@@ -131,6 +135,7 @@ export const pageQuery = graphql`
         description
         date
         tags
+        lang
       }
     }
   }

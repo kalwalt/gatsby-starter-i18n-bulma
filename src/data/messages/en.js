@@ -1,5 +1,12 @@
 module.exports = {
   'selectLanguage': 'Select your language',
+  'tags': 'Tags',
+  'tags.allTagsLink': 'Browse all tags',
+  'tags.intro': 'Here you can find all the tags',
+  'tags.nPostsTaggedWith': `{nPosts, number} {nPosts, plural,
+      one {post}
+      other {posts}
+    } tagged with`,
   'home': 'Home',
   'about': 'About',
   'artworks': 'Artworks',
