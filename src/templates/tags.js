@@ -6,9 +6,10 @@ import { FormattedMessage } from 'react-intl'
 import Helmet from 'react-helmet'
 import Layout from "../components/LayoutTag"
 
-const TagRoute = ({ data, pageContext }) => {
+const TagRouteTemplate = ({ data, pageContext }) => {
 
   const posts = data.allMarkdownRemark.edges.map(p => p.node)
+  //const location = {pathname:  window.location.pathname}
 
   const allTagsLink = (
     <FormattedMessage id="tags.allTagsLink" >
@@ -23,7 +24,6 @@ const TagRoute = ({ data, pageContext }) => {
   )
 
   return (
-  <Layout data={data} location={location}>
     <section className="section">
       <header className="title is-size-3 has-text-weight-bold is-bold-light">
         <FormattedMessage id="tags">
@@ -52,13 +52,43 @@ const TagRoute = ({ data, pageContext }) => {
         </span>
       </footer>
     </section>
-  </Layout>
   )
 }
 
-TagRoute.propTypes = {
-  data: PropTypes.object,
+TagRouteTemplate.propTypes = {
+  posts: PropTypes.object,
   pageContext: PropTypes.object
+}
+
+class TagRoute extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      location:  { pathname: "" },
+  };
+  }
+  componentDidMount(){
+    if (typeof window !== 'undefined'){
+    this.state = {location:  {pathname: window.location.pathname}};
+  }
+  }
+
+  render() {
+    let data;
+    let pageContext;
+    if (this.props.data !== null) {
+      data = this.props.data;
+      pageContext = this.props.pageContext;
+    }
+
+    return(
+      <Layout data={data} location={this.state.location}>
+      <TagRouteTemplate data={data} pageContext={pageContext}></TagRouteTemplate>
+      </Layout>
+
+    )
+
+  }
 }
 
 export default TagRoute
@@ -76,6 +106,7 @@ query TagPage($langKey: String!) {
   markdownRemark {
     frontmatter {
       title
+      slug
     }
   }
   allMarkdownRemark(limit: 1000, sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {templateKey: {eq: "blog-post"}}, fields: {langKey: {eq: $langKey}}}) {
@@ -85,6 +116,7 @@ query TagPage($langKey: String!) {
         frontmatter {
           title
           date
+          slug
         }
         fields {
           langKey

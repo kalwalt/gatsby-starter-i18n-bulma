@@ -9,7 +9,7 @@ import Layout from "../components/LayoutTag"
 
 const AllTagsPageTemplate = ({ props }) => {
   const allTags = props.allMarkdownRemark.group;
-  const url = location.pathname;
+  const url = props.markdownRemark.frontmatter.slug;
   const { langs, defaultLangKey } = props.site.siteMetadata.languages;
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
   return (
