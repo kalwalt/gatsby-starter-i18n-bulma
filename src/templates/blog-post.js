@@ -6,6 +6,7 @@ import SEO from '../components/SEO/SEO'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import { FaTag } from 'react-icons/fa'
 
 export const BlogPostTemplate = ({
   data,
@@ -38,7 +39,7 @@ export const BlogPostTemplate = ({
                   {tags.map(tag => (
                     <li key={tag + `tag`}>
                       <span className="tag is-light is-small">
-                        <Link to={`/${langKey}/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                        <Link to={`/${langKey}/tags/${kebabCase(tag)}/`}><FaTag className="menu-names"/>{tag}</Link>
                       </span>
                     </li>
                   ))}
