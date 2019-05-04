@@ -83,8 +83,8 @@ const ContactPageTemplate = ({
           <div className="control">
           <label className="radio menu-names">
             <input
-              type="radio"
-              name="gender"
+              type={"radio"}
+              name={"gender-male"}
               value="male"
               defaultChecked
             />
@@ -92,8 +92,8 @@ const ContactPageTemplate = ({
           </label>
           <label className="radio">
             <input
-              type="radio"
-              name="gender"
+              type={"radio"}
+              name={"gender-female"}
               value="female"
             />
             <span><FormattedMessage id="contact.gender.female"/></span>
@@ -106,7 +106,7 @@ const ContactPageTemplate = ({
             <div className="select">
             <select
               className="content"
-              name="type"
+              name={"type"}
               defaultValue="Type of Enquiry"
               required
             >
