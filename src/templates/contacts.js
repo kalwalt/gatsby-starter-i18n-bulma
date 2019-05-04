@@ -7,8 +7,6 @@ import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import { getCurrentLangKey } from 'ptz-i18n';
 import { FormattedMessage } from 'react-intl';
-//import formatMessage from 'format-message'
-import * as format from 'react-intl-format';
 import { Format } from 'react-intl-format';
 
 
@@ -192,7 +190,6 @@ class ContactPage extends React.Component {
             title={dataMarkdown.frontmatter.title}
             content={dataMarkdown.html}
             onSubmit={this.handleSubmit}
-            nameLabel={dataMarkdown.frontmatter.nameLabel}
             action={action}
             option={intl.formatMessage({ id: 'contact.enquiry' })}
             optionA={intl.formatMessage({ id: 'contact.enquiry.a' })}

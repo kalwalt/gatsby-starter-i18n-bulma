@@ -23,7 +23,6 @@
     "dependencies": "^0.0.1",
     "font-awesome": "^4.7.0",
     "fontawesome": "^5.6.3",
-    "format-message": "^6.2.1",
     "gatsby": "^2.3.16",
     "gatsby-image": "^2.0.5",
     "gatsby-plugin-google-analytics": "^2.0.5",
