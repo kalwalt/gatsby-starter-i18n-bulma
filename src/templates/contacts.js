@@ -84,7 +84,7 @@ const ContactPageTemplate = ({
           <label className="radio menu-names">
             <input
               type={"radio"}
-              name={"gender-male"}
+              name={"gender"}
               value="male"
               defaultChecked
             />
@@ -93,7 +93,7 @@ const ContactPageTemplate = ({
           <label className="radio">
             <input
               type={"radio"}
-              name={"gender-female"}
+              name={"gender"}
               value="female"
             />
             <span><FormattedMessage id="contact.gender.female"/></span>
