@@ -12,4 +12,4 @@ path: /en/contact
 slug: /en/contact
 ---
 
-In this page you can send me an e-mail.
+In this page you can send an e-mail.

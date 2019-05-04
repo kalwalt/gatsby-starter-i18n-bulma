@@ -12,4 +12,4 @@ path: /it/contatto
 slug: /it/contatto
 ---
 
-In questa pagina di contatto puoi inviare una e-mail.
+In questa pagina di contatto potete inviare un messaggio e-mail.
