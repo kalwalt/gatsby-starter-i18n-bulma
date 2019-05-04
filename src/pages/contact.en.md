@@ -5,7 +5,6 @@ description: "Page to send an e-mail"
 templateKey: contacts
 tags:
   - web
-nameLabel: "Your name"
 lang: en
 image: /img/PersimmonHD.jpg
 date: "08-03-2019"

@@ -5,7 +5,6 @@ description: "Pagina per contattarmi"
 templateKey: contacts
 tags:
   - web
-nameLabel: "Il tuo nome"
 lang: it
 image: /img/PersimmonHD.jpg
 date: "08-03-2019"

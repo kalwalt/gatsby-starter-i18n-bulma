@@ -11,6 +11,7 @@ import { FormattedMessage } from 'react-intl';
 import * as format from 'react-intl-format';
 import { Format } from 'react-intl-format';
 
+
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -27,7 +28,7 @@ function setActionPath(langKey) {
   return path;
 }
 
-const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, handleChange, nameLabel, action, option, optionA, optionB, optionC }) => {
+const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, handleChange, action, option, optionA, optionB, optionC }) => {
   const PageContent = contentComponent || Content
   return (
       <section className="section">
@@ -55,6 +56,12 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
           <label className="label" htmlFor={"name"} ><FormattedMessage id="contact.name"/></label>
           <div className="control">
             <input className="input" type={"text"} name={"name"} onChange={handleChange} id={"name"} required={true} />
+          </div>
+        </div>
+        <div className="field">
+          <label className="label" htmlFor={"surname"} ><FormattedMessage id="contact.surname"/></label>
+          <div className="control">
+            <input className="input" type={"text"} name={"surname"} onChange={handleChange} id={"surname"} required={true} />
           </div>
         </div>
         <div className="field">
@@ -92,9 +99,10 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
         </div>
         <div className="field">
         <label className="label">
+        <p className="content has-text-weight-semibold">{option}</p>
             <div className="select">
             <select
-              className="content has-text-weight-semibold"
+              className="content"
               name="type"
               defaultValue="Type of Enquiry"
               required
@@ -182,6 +190,7 @@ class ContactPage extends React.Component {
             onSubmit={this.handleSubmit}
             nameLabel={dataMarkdown.frontmatter.nameLabel}
             action={action}
+            option={intl.formatMessage({ id: 'contact.enquiry' })}
             optionA={intl.formatMessage({ id: 'contact.enquiry.a' })}
             optionB={intl.formatMessage({ id: 'contact.enquiry.b' })}
             optionC={intl.formatMessage({ id: 'contact.enquiry.c' })}
@@ -225,7 +234,6 @@ export const pageQuery = graphql`
       frontmatter {
         id
         title
-        nameLabel
       }
       fields {
         slug
