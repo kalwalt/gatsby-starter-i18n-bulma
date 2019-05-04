@@ -18,6 +18,7 @@ module.exports = {
   'blog': 'Blog',
   'blog-message': 'Ultime Notizie',
   'keep-reading': 'Continua a leggere →',
+  'followus': 'Segui: ',
   'contact': 'Contatti',
   'contact.infos': 'Informazioni di contatto',
   'contact.name': 'Nome',

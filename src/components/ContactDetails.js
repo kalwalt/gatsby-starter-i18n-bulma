@@ -19,21 +19,21 @@ const ContactDetails = ({ infos, address, phone, email }) =>(
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaMapMarkerAlt /> {address}
+                <FaMapMarkerAlt className="menu-names"/> {address}
               </a>
               </div>
             )}
             {phone && (
               <div className="content">
               <a className="Contact--Details--Item" href={`tel:${phone}`}>
-                <FaPhone /> {phone}
+                <FaPhone className="menu-names"/> {phone}
               </a>
               </div>
             )}
             {email && (
               <div className="content">
               <a className="Contact--Details--Item" href={`mailto:${email}`}>
-                <FaRegEnvelope /> {email}
+                <FaRegEnvelope className="menu-names"/> {email}
               </a>
               </div>
             )}

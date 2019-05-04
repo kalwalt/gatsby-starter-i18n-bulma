@@ -7,6 +7,7 @@ import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import ContactDetails from "../components/ContactDetails"
 import GoogleMap from '../components/GoogleMap'
+import FollowUs from '../components/FollowUs'
 import { getCurrentLangKey } from 'ptz-i18n';
 import { FormattedMessage } from 'react-intl';
 import { Format } from 'react-intl-format';
@@ -197,6 +198,8 @@ class ContactPage extends React.Component {
     const locations = dataMarkdown.frontmatter.locations;
     const center = {center: {lat: Number(locations[0].lat), lng: Number(locations[0].lng)} };
     //console.log(center);
+    const linkinsta = dataMarkdown.frontmatter.linkinsta;
+    const instagram = dataMarkdown.frontmatter.instagram;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={location}>
           <Format>
@@ -221,6 +224,7 @@ class ContactPage extends React.Component {
           )}
         </Format>
       <GoogleMap />
+      <FollowUs link={linkinsta} instagram={instagram}/>
     </Layout>
     )
   }
@@ -265,6 +269,8 @@ export const pageQuery = graphql`
           lng
           mapLink
         }
+        linkinsta
+        instagram
       }
       fields {
         slug
