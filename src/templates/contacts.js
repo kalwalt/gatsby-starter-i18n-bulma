@@ -6,6 +6,7 @@ import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import ContactDetails from "../components/ContactDetails"
+import GoogleMap from '../components/GoogleMap'
 import { getCurrentLangKey } from 'ptz-i18n';
 import { FormattedMessage } from 'react-intl';
 import { Format } from 'react-intl-format';
@@ -193,11 +194,12 @@ class ContactPage extends React.Component {
     const address = dataMarkdown.frontmatter.address;
     const phone = dataMarkdown.frontmatter.phone;
     const email = dataMarkdown.frontmatter.email;
+    const locations = dataMarkdown.frontmatter.locations;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={location}>
       <Format>
        {intl => (
-        <div>
+        <div className="container">
             <ContactPageTemplate
             contentComponent={HTMLContent}
             infos={intl.formatMessage({ id: 'contact.infos' })}
@@ -215,7 +217,9 @@ class ContactPage extends React.Component {
              />
         </div>
       )}
+
     </Format>
+    <GoogleMap />
       </Layout>
     )
   }
@@ -255,6 +259,11 @@ export const pageQuery = graphql`
         address
         phone
         email
+        locations{
+          lat
+          lng
+          mapLink
+        }
       }
       fields {
         slug
