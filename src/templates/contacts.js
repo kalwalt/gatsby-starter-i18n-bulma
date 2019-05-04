@@ -127,8 +127,8 @@ const ContactPageTemplate = ({
           </div>
         </div>
         <div className="field">
+        <div data-netlify-recaptcha="true"></div>
         <div className="control">
-          <div data-netlify-recaptcha="true"></div>
           <button className="button is-link" type="submit"><FormattedMessage id="contact.send"/></button>
         </div>
         </div>
