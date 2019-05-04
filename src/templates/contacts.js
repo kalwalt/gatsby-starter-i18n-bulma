@@ -28,7 +28,11 @@ function setActionPath(langKey) {
   return path;
 }
 
-const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, handleChange, action, option, optionA, optionB, optionC }) => {
+const ContactPageTemplate = ({
+  title, content, contentComponent,
+  handleSubmit, handleChange, action,
+  option, optionA, optionB, optionC
+}) => {
   const PageContent = contentComponent || Content
   return (
       <section className="section">
