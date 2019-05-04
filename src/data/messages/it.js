@@ -19,6 +19,7 @@ module.exports = {
   'blog-message': 'Ultime Notizie',
   'keep-reading': 'Continua a leggere →',
   'contact': 'Contatti',
+  'contact.infos': 'Informazioni di contatto',
   'contact.name': 'Nome',
   'contact.surname': 'Cognome',
   'contact.email': 'Email',

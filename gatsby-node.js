@@ -18,7 +18,6 @@ exports.createPages = ({ actions, graphql }) => {
       markdownRemark{
         frontmatter{
           heading
-
         }
       }
       allMarkdownRemark(

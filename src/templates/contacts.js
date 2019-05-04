@@ -5,6 +5,7 @@ import { navigate } from "gatsby-link";
 import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
+import ContactDetails from "../components/ContactDetails"
 import { getCurrentLangKey } from 'ptz-i18n';
 import { FormattedMessage } from 'react-intl';
 import { Format } from 'react-intl-format';
@@ -28,6 +29,7 @@ function setActionPath(langKey) {
 
 const ContactPageTemplate = ({
   title, content, contentComponent,
+  infos, address, phone, email,
   handleSubmit, handleChange, action,
   option, optionA, optionB, optionC
 }) => {
@@ -38,6 +40,12 @@ const ContactPageTemplate = ({
           <div className="content">
       <h1 className="title">{title}</h1>
       <PageContent className="container content" content={content} />
+      <ContactDetails
+      infos={infos}
+      address={address}
+      phone={phone}
+      email={email}
+      />
       <form
         name="contact"
         method="post"
@@ -182,6 +190,9 @@ class ContactPage extends React.Component {
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     const action = setActionPath(this.langKey);
     const jsonData = data.allArticlesJson.edges[0].node.articles;
+    const address = dataMarkdown.frontmatter.address;
+    const phone = dataMarkdown.frontmatter.phone;
+    const email = dataMarkdown.frontmatter.email;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={location}>
       <Format>
@@ -189,6 +200,10 @@ class ContactPage extends React.Component {
         <div>
             <ContactPageTemplate
             contentComponent={HTMLContent}
+            infos={intl.formatMessage({ id: 'contact.infos' })}
+            address={address}
+            phone={phone}
+            email={email}
             title={dataMarkdown.frontmatter.title}
             content={dataMarkdown.html}
             onSubmit={this.handleSubmit}
@@ -237,6 +252,9 @@ export const pageQuery = graphql`
       frontmatter {
         id
         title
+        address
+        phone
+        email
       }
       fields {
         slug
