@@ -8,25 +8,29 @@ if (process.env.NETLIFY_MAP_KEY) {
 }
 
 class GoogleMap extends Component {
+
   static defaultProps = {
     center: {
-      lat: -28.0914483,
-      lng: 153.4425208
+      lat: 45.6500779,
+      lng: 13.7677618
     },
     zoom: 14
   }
 
   render() {
+    const center = this.props.center;
+    const lat = center.lat;
+    const lng = center.lng;
     return (
       // Important! Always set the container height explicitly
       <section className="container">
       <div className="full-width-image-container">
         <GoogleMapReact
           bootstrapURLKeys={{ key: mapkey }}
-          defaultCenter={this.props.center}
+          defaultCenter={center}
           defaultZoom={this.props.zoom}
         >
-          <Marker lat={-28.0914483} lng={153.4425208} text={'Kreyser Avrora'} />
+          <Marker lat={lat} lng={lng} text={'Piazza Unità'} />
         </GoogleMapReact>
         </div>
       </section>
@@ -36,10 +40,11 @@ class GoogleMap extends Component {
 
 export default GoogleMap
 
-const Marker = () => {
+const Marker = ({text}) => {
   return (
     <div>
       <FaMapMarkerAlt color="red"/>
+      {text}
     </div>
   )
 }

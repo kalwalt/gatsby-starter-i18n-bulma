@@ -144,7 +144,7 @@ const ContactPageTemplate = ({
       </form>
       </div>
       </div>
-      </section>
+    </section>
 )
 }
 
@@ -195,32 +195,33 @@ class ContactPage extends React.Component {
     const phone = dataMarkdown.frontmatter.phone;
     const email = dataMarkdown.frontmatter.email;
     const locations = dataMarkdown.frontmatter.locations;
+    const center = {center: {lat: Number(locations[0].lat), lng: Number(locations[0].lng)} };
+    //console.log(center);
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={location}>
-      <Format>
-       {intl => (
-        <div className="container">
-            <ContactPageTemplate
-            contentComponent={HTMLContent}
-            infos={intl.formatMessage({ id: 'contact.infos' })}
-            address={address}
-            phone={phone}
-            email={email}
-            title={dataMarkdown.frontmatter.title}
-            content={dataMarkdown.html}
-            onSubmit={this.handleSubmit}
-            action={action}
-            option={intl.formatMessage({ id: 'contact.enquiry' })}
-            optionA={intl.formatMessage({ id: 'contact.enquiry.a' })}
-            optionB={intl.formatMessage({ id: 'contact.enquiry.b' })}
-            optionC={intl.formatMessage({ id: 'contact.enquiry.c' })}
-             />
-        </div>
-      )}
-
-    </Format>
-    <GoogleMap />
-      </Layout>
+          <Format>
+           {intl => (
+            <div className="container">
+                <ContactPageTemplate
+                contentComponent={HTMLContent}
+                infos={intl.formatMessage({ id: 'contact.infos' })}
+                address={address}
+                phone={phone}
+                email={email}
+                title={dataMarkdown.frontmatter.title}
+                content={dataMarkdown.html}
+                onSubmit={this.handleSubmit}
+                action={action}
+                option={intl.formatMessage({ id: 'contact.enquiry' })}
+                optionA={intl.formatMessage({ id: 'contact.enquiry.a' })}
+                optionB={intl.formatMessage({ id: 'contact.enquiry.b' })}
+                optionC={intl.formatMessage({ id: 'contact.enquiry.c' })}
+                 />
+            </div>
+          )}
+        </Format>
+      <GoogleMap />
+    </Layout>
     )
   }
 }
