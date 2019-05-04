@@ -5,7 +5,13 @@ import { navigate } from "gatsby-link";
 import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
+import ContactDetails from "../components/ContactDetails"
+import GoogleMap from '../components/GoogleMap'
+import FollowUs from '../components/FollowUs'
 import { getCurrentLangKey } from 'ptz-i18n';
+import { FormattedMessage } from 'react-intl';
+import { Format } from 'react-intl-format';
+
 
 function encode(data) {
   return Object.keys(data)
@@ -23,7 +29,12 @@ function setActionPath(langKey) {
   return path;
 }
 
-const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, handleChange, nameLabel, action }) => {
+const ContactPageTemplate = ({
+  title, content, contentComponent,
+  infos, address, phone, email,
+  handleSubmit, handleChange, action,
+  option, optionA, optionB, optionC
+}) => {
   const PageContent = contentComponent || Content
   return (
       <section className="section">
@@ -31,11 +42,18 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
           <div className="content">
       <h1 className="title">{title}</h1>
       <PageContent className="container content" content={content} />
+      <ContactDetails
+      infos={infos}
+      address={address}
+      phone={phone}
+      email={email}
+      />
       <form
         name="contact"
         method="post"
         action={action}
         data-netlify="true"
+        data-netlify-recaptcha="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
       >
@@ -48,36 +66,86 @@ const ContactPageTemplate = ({ title, content, contentComponent, handleSubmit, h
           </label>
         </div>
         <div className="field">
-          <label className="label" htmlFor={"name"} >{nameLabel}</label>
+          <label className="label" htmlFor={"name"} ><FormattedMessage id="contact.name"/></label>
           <div className="control">
             <input className="input" type={"text"} name={"name"} onChange={handleChange} id={"name"} required={true} />
           </div>
         </div>
         <div className="field">
-          <label className="label" htmlFor={"email"}>Email</label>
+          <label className="label" htmlFor={"surname"} ><FormattedMessage id="contact.surname"/></label>
+          <div className="control">
+            <input className="input" type={"text"} name={"surname"} onChange={handleChange} id={"surname"} required={true} />
+          </div>
+        </div>
+        <div className="field">
+          <label className="label" htmlFor={"email"}><FormattedMessage id="contact.email"/></label>
             <div className="control">
               <input className="input" type={"email"} name={"email"} onChange={handleChange} id={"email"} required={true} />
             </div>
           </div>
           <div className="field">
-           <label className="label" htmlFor={"subject"}>Subject</label>
+           <label className="label" htmlFor={"subject"}><FormattedMessage id="contact.subject"/></label>
              <div className="control">
                <input className="input" type={"subject"} name={"subject"} onChange={handleChange} id={"subject"} required={true} />
             </div>
         </div>
         <div className="field">
-          <label className="label" htmlFor={"message"}>Message</label>
+          <div className="control">
+          <label className="radio menu-names">
+            <input
+              type={"radio"}
+              name={"gender"}
+              value="male"
+              defaultChecked
+            />
+            <span><FormattedMessage id="contact.gender.male"/></span>
+          </label>
+          <label className="radio">
+            <input
+              type={"radio"}
+              name={"gender"}
+              value="female"
+            />
+            <span><FormattedMessage id="contact.gender.female"/></span>
+          </label>
+        </div>
+        </div>
+        <div className="field">
+        <label className="label">
+        <p className="content has-text-weight-semibold">{option}</p>
+            <div className="select">
+            <select
+              className="content"
+              name={"type"}
+              defaultValue="Type of Enquiry"
+              required
+            >
+              <option disabled hidden>
+                Choose
+              </option>
+              <option>{optionA}</option>
+              <option>{optionB}</option>
+              <option>{optionC}</option>
+            </select>
+            </div>
+          </label>
+        </div>
+        <div className="field">
+          <label className="label" htmlFor={"message"}><FormattedMessage id="contact.message"/></label>
           <div className="control">
             <textarea className="textarea" name={"message"} onChange={handleChange} id={"message"} required={true} />
           </div>
         </div>
         <div className="field">
-          <button className="button is-link" type="submit">Send</button>
+        <div data-netlify-recaptcha="true"></div>
+        <div className="control">
+          <button className="button is-link" type="submit"><FormattedMessage id="contact.send"/></button>
+        </div>
         </div>
       </form>
       </div>
       </div>
-      </section>
+    </section>
 )
 }
 
@@ -124,19 +192,40 @@ class ContactPage extends React.Component {
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     const action = setActionPath(this.langKey);
     const jsonData = data.allArticlesJson.edges[0].node.articles;
+    const address = dataMarkdown.frontmatter.address;
+    const phone = dataMarkdown.frontmatter.phone;
+    const email = dataMarkdown.frontmatter.email;
+    const locations = dataMarkdown.frontmatter.locations;
+    const center = {center: {lat: Number(locations[0].lat), lng: Number(locations[0].lng)} };
+    //console.log(center);
+    const linkinsta = dataMarkdown.frontmatter.linkinsta;
+    const instagram = dataMarkdown.frontmatter.instagram;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={location}>
-        <div>
-            <ContactPageTemplate
-            contentComponent={HTMLContent}
-            title={dataMarkdown.frontmatter.title}
-            content={dataMarkdown.html}
-            onSubmit={this.handleSubmit}
-            nameLabel={dataMarkdown.frontmatter.nameLabel}
-            action={action}
-             />
-        </div>
-      </Layout>
+          <Format>
+           {intl => (
+            <div className="container">
+                <ContactPageTemplate
+                contentComponent={HTMLContent}
+                infos={intl.formatMessage({ id: 'contact.infos' })}
+                address={address}
+                phone={phone}
+                email={email}
+                title={dataMarkdown.frontmatter.title}
+                content={dataMarkdown.html}
+                onSubmit={this.handleSubmit}
+                action={action}
+                option={intl.formatMessage({ id: 'contact.enquiry' })}
+                optionA={intl.formatMessage({ id: 'contact.enquiry.a' })}
+                optionB={intl.formatMessage({ id: 'contact.enquiry.b' })}
+                optionC={intl.formatMessage({ id: 'contact.enquiry.c' })}
+                 />
+            </div>
+          )}
+        </Format>
+      <GoogleMap />
+      <FollowUs link={linkinsta} instagram={instagram}/>
+    </Layout>
     )
   }
 }
@@ -172,7 +261,16 @@ export const pageQuery = graphql`
       frontmatter {
         id
         title
-        nameLabel
+        address
+        phone
+        email
+        locations{
+          lat
+          lng
+          mapLink
+        }
+        linkinsta
+        instagram
       }
       fields {
         slug
