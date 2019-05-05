@@ -1,6 +1,7 @@
 import React from 'react';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
+import renderImg from './RenderImages';
 
 const photos = [
   { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
@@ -13,16 +14,19 @@ const photos = [
   { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3 },
   { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 }
 ];
-
+/*
 const renderImg = (photo, index) => {
 
   return(
   <div className="testClass">
-    <img key={"ah_"+index.toString()}  width={photo.width} height={photo.height} style={{margin: "10px", display: "block", position: "absolute", left: "0px", top: "0px", cursor: "pointer"}}/>
+    <img key={"ah_"+index.toString()}
+    {...photo}
+    width={photo.width} height={photo.height}
+    style={{margin: "10px", display: "block", position: "absolute", left: "0px", top: "0px", cursor: "pointer"}}/>
     <a href="#">text</a>
   </div>
   )
-}
+}*/
 
 function columns(containerWidth) {
   let columns = 1;
@@ -64,13 +68,10 @@ class MasonryGal extends React.Component {
     });
   }
   render() {
-    //console.log(photos);
-    //{photos.map( (photo, index) => (
+
     return (
 
       <div className="container">
-        {photos.map( (photo, index) => (
-
         <Gallery
         galleryStyle={{ backgroundColor: 'red' }}
         margin={10}
@@ -80,9 +81,6 @@ class MasonryGal extends React.Component {
         columns={columns}
         renderImage={renderImg}
         />
-
-      ))}
-
         <Lightbox
           theme={{ container: { background: 'rgba(0, 0, 0, 0.85)' } }}
           images={photos}
@@ -94,7 +92,7 @@ class MasonryGal extends React.Component {
         />
       </div>
     )
-      //))}
+
   }
 }
 
