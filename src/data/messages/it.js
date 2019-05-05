@@ -11,6 +11,7 @@ module.exports = {
   'about': 'A proposito',
   'artworks': 'Opere',
   'introduction': 'Introduzione',
+  'portfolio': 'Portfolio',
   'painting': 'Pittura',
   'sculpture': 'Scultura',
   'performance': 'Performance',

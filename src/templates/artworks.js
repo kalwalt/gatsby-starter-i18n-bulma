@@ -8,6 +8,7 @@ import Content, { HTMLContent } from "../components/Content"
 import Features from '../components/Features'
 import Slider from '../components/Slider'
 import Lightbox from '../components/Lightbox'
+import MasonryGal from "../components/MasonryGal"
 
 const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, display, array, lightbox, images }) => {
   const PageContent = contentComponent || Content
@@ -24,6 +25,7 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, dis
              {heading}
              </h2>
              <Features gridItems={intro.blurbs} />
+             <MasonryGal/>
              <Lightbox lightbox={lightbox} images={images} />
              <section className="section">
                <PageContent className="container content" content={content} />
