@@ -19,6 +19,7 @@ module.exports = {
   'blog': 'Blog',
   'blog-message': 'Last News',
   'keep-reading': 'Keep reading →',
+  'find-out-more': 'Find out more',
   'followus': 'Follow Us: ',
   'contact': 'Contacts',
   'contact.infos': 'Contact informations',

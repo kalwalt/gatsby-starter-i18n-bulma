@@ -1,13 +1,6 @@
 import React from "react";
+import { FormattedMessage } from 'react-intl';
 
-//this regulate the transition between the two states
-const imgStyle = {
-  transition: "transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s"
-};
-const selectedImgStyle = {
-  transform: "translateZ(0px) scale3d(0.9, 0.9, 1)",
-  transition: "transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s"
-};
 const cont = {
   backgroundColor: "#eee",
   cursor: "pointer",
@@ -22,7 +15,8 @@ const RenderImage = ({
   margin,
   direction,
   top,
-  left
+  left,
+  link
 }) => {
 
   if (direction === "column") {
@@ -40,9 +34,9 @@ const RenderImage = ({
         onClick={e => onClick(e, { index, photo })}
       />
       //<style>{`.not-selected:hover{outline:2px solid #06befa}`}</style>
-        <a href="/en/artworks/" style={{ position: "absolute", zIndex: "4" }} className="tag is-primary is-large">
+        <a href={photo.link} style={{ position: "absolute", zIndex: "4" }} className="tag is-primary is-large">
           <p className="has-text-centered has-text-light is-large">
-          Some text
+          <FormattedMessage id="find-out-more"/>
         </p>
       </a>
     </div>
