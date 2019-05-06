@@ -33,21 +33,19 @@ const RenderImage = ({
   return (
     <div
       style={{ margin, height: photo.height, width: photo.width, borderRadius: "5px", ...cont }}
-
     >
       <img
         style={{}}
         {...photo}
         onClick={e => onClick(e, { index, photo })}
       />
-    //<style>{`.not-selected:hover{outline:2px solid #06befa}`}</style>
-      <a href="/en/artworks/" style={{ position: "absolute", zIndex: "4" }} className="is-large">
-        <p className="has-text-centered has-text-info is-large">
+      //<style>{`.not-selected:hover{outline:2px solid #06befa}`}</style>
+        <a href="/en/artworks/" style={{ position: "absolute", zIndex: "4" }} className="tag is-primary is-large">
+          <p className="has-text-centered has-text-light is-large">
           Some text
         </p>
       </a>
     </div>
-
   );
 };
 
