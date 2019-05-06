@@ -34,11 +34,12 @@ const RenderImage = ({
         {photo.title + ': '} <FormattedMessage id="find-out-more"/>
       </p>
     </a>
-      <img
-        style={{ overflow: 'hidden'}}
-        {...photo}
-      />
-    </div>
+    <img
+      style={{ overflow: 'hidden'}}
+      {...photo}
+      onClick={e => onClick(e, { index, photo })}
+    />
+  </div>
   );
 };
 
