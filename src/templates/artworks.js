@@ -10,13 +10,27 @@ import Slider from '../components/Slider'
 import Lightbox from '../components/Lightbox'
 import MasonryGal from "../components/Masonry/MasonryGal"
 
-const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, display, array, lightbox, images }) => {
+const ArtworkTemplate = ({
+  title,
+  content,
+  contentComponent,
+  intro,
+  heading,
+  display,
+  array,
+  lightbox,
+  images,
+  masonry
+}) => {
   const PageContent = contentComponent || Content
+  console.log(masonry);
   return (
-
       <div className="container content">
        <h1 className="title animated bounceInLeft">{title}</h1>
         <div className="hero">
+          {masonry &&
+          <MasonryGal photos={masonry.photos}/>
+          }
           <Slider array={array} display={display}/>
           </div>
           <div className="columns">
@@ -31,9 +45,8 @@ const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, dis
              </section>
            </div>
          </div>
-         <MasonryGal/>
       </div>
-)
+    )
 }
 
 ArtworkTemplate.propTypes = {
@@ -60,6 +73,7 @@ render() {
   const images = frontmatter.lightbox.images;
   const lightbox = frontmatter.lightbox;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
+  const { masonry } = frontmatter;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
         <div>
@@ -73,6 +87,7 @@ render() {
             array={array}
             images={images}
             lightbox={lightbox}
+            masonry={masonry}
             />
         </div>
       </Layout>
@@ -135,6 +150,15 @@ query ArtworksQuery($id: String!) {
            }
           text
          }
+      }
+      masonry{
+        photos{
+          src
+          width
+          height
+          link
+          title
+        }
       }
       slider{
         display
