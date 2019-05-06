@@ -4,15 +4,15 @@ import Lightbox from 'react-images';
 import renderImg from './RenderImages';
 
 const photos = [
-  { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3, link: '/en/artworks/introduction/' },
-  { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1, link: '/en/artworks/painting/' },
-  { src: 'https://source.unsplash.com/qDkso9nvCg0/600x799', width: 3, height: 4, link: '/en/artworks/sculpture/' },
-  { src: 'https://source.unsplash.com/iecJiKe_RNg/600x799', width: 3, height: 4, link: '/en/artworks/performance/' },
-  { src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', width: 3, height: 4, link: '/en/artworks/interactivity/' },
-  { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3, link: '/en/artworks/' },
-  { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4, link: '/en/artworks/' },
-  { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3, link: '/en/artworks/' },
-  { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3, link: '/en/artworks/' }
+  { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3, link: '/en/artworks/introduction/', title: 'The forest' },
+  { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1, link: '/en/artworks/painting/', title: 'The mushroom' },
+  { src: 'https://source.unsplash.com/qDkso9nvCg0/600x799', width: 3, height: 4, link: '/en/artworks/sculpture/', title: 'The lake' },
+  { src: 'https://source.unsplash.com/iecJiKe_RNg/600x799', width: 3, height: 4, link: '/en/artworks/performance/', title: 'The river' },
+  { src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', width: 3, height: 4, link: '/en/artworks/interactivity/', title: 'The leaves' },
+  { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3, link: '/en/artworks/', title: 'The trees' },
+  { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4, link: '/en/artworks/', title: 'The firs' },
+  { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3, link: '/en/artworks/', title: 'The acorn' },
+  { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3, link: '/en/artworks/', title: 'The road' }
 ];
 
 function columns(containerWidth) {

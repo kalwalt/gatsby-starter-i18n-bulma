@@ -16,7 +16,8 @@ const RenderImage = ({
   direction,
   top,
   left,
-  link
+  link,
+  title
 }) => {
 
   if (direction === "column") {
@@ -36,7 +37,7 @@ const RenderImage = ({
       //<style>{`.not-selected:hover{outline:2px solid #06befa}`}</style>
         <a href={photo.link} style={{ position: "absolute", zIndex: "4" }} className="tag is-primary is-large">
           <p className="has-text-centered has-text-light is-large">
-          <FormattedMessage id="find-out-more"/>
+          {photo.title + ': '} <FormattedMessage id="find-out-more"/>
         </p>
       </a>
     </div>

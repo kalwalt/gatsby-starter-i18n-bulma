@@ -20,7 +20,7 @@ module.exports = {
   'blog-message': 'Ultime Notizie',
   'keep-reading': 'Continua a leggere →',
   'followus': 'Segui: ',
-  'find-out-more': 'Scopri di più',
+  'find-out-more': 'Scopri di più...',
   'contact': 'Contatti',
   'contact.infos': 'Informazioni di contatto',
   'contact.name': 'Nome',
