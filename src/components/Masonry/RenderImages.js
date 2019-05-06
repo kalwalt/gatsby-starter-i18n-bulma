@@ -33,17 +33,16 @@ const RenderImage = ({
   return (
     <div
       style={{ margin, height: photo.height, width: photo.width, borderRadius: "5px", ...cont }}
-      className={!photo.selected ? "not-selected" : ""}
+
     >
       <img
-        style={{...imgStyle}}
+        style={{}}
         {...photo}
         onClick={e => onClick(e, { index, photo })}
       />
-    <style>{`.not-selected:hover{outline:2px solid #06befa}`}</style>
-      <a href="/en/artworks/" className="">
-        <p style={{ position: "absolute", zIndex: "4" }}
-          className="has-text-centered has-text-info">
+    //<style>{`.not-selected:hover{outline:2px solid #06befa}`}</style>
+      <a href="/en/artworks/" style={{ position: "absolute", zIndex: "4" }} className="is-large">
+        <p className="has-text-centered has-text-info is-large">
           Some text
         </p>
       </a>

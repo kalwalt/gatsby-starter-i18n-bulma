@@ -14,19 +14,6 @@ const photos = [
   { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3 },
   { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 }
 ];
-/*
-const renderImg = (photo, index) => {
-
-  return(
-  <div className="testClass">
-    <img key={"ah_"+index.toString()}
-    {...photo}
-    width={photo.width} height={photo.height}
-    style={{margin: "10px", display: "block", position: "absolute", left: "0px", top: "0px", cursor: "pointer"}}/>
-    <a href="#">text</a>
-  </div>
-  )
-}*/
 
 function columns(containerWidth) {
   let columns = 1;
