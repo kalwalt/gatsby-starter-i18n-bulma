@@ -23,13 +23,12 @@ const ArtworkTemplate = ({
   masonry
 }) => {
   const PageContent = contentComponent || Content
-  console.log(masonry);
   return (
       <div className="container content">
        <h1 className="title animated bounceInLeft">{title}</h1>
         <div className="hero">
           {masonry &&
-          <MasonryGal photos={masonry.photos}/>
+            <MasonryGal photos={masonry.photos}/>
           }
           <Slider array={array} display={display}/>
           </div>
@@ -158,6 +157,7 @@ query ArtworksQuery($id: String!) {
           height
           link
           title
+          alt
         }
       }
       slider{
