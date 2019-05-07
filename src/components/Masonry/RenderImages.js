@@ -25,6 +25,7 @@ const RenderImage = ({
     cont.left = left;
     cont.top = top;
   }
+
   return (
     <div
       style={{ margin, height: photo.height, width: photo.width, borderRadius: "5px", ...cont }}

@@ -153,6 +153,8 @@ query ArtworksQuery($id: String!) {
       masonry{
         photos{
           src
+          srcSet
+          sizes
           width
           height
           link
