@@ -1,44 +1,39 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
+import Img from "gatsby-image"
 import Layout from "../components/Layout"
+import { getCurrentLangKey } from 'ptz-i18n'
 import Content, { HTMLContent } from "../components/Content"
 import Slider from '../components/Slider'
-import Testimonials from '../components/Testimonials'
-import Features from '../components/Features'
+import Lightbox from '../components/Lightbox'
+import InfoCard from '../components/InfoCard'
 
 const ArtworkTemplate = ({
   title,
   content,
   contentComponent,
-  intro,
   heading,
-  description,
-  display,
-  array,
-  testimonials,
+
+  lightbox,
+  images,
+  info
 }) => {
   const PageContent = contentComponent || Content
   return (
       <div className="container content">
        <h1 className="title animated bounceInLeft">{title}</h1>
         <div className="hero">
-          <Slider array={array} display={display}/>
+          <Lightbox lightbox={lightbox} images={images} />
           </div>
-          <div className="columns">
-           <div className="column is-9">
+          <div className="columns is-multiline">
+           <div className="column is-6">
              <h2 className="has-text-weight-semibold subtitle">
              {heading}
              </h2>
-             <div className="container content">
-               {description}
-              </div>
-             <Features gridItems={intro.blurbs} />
-             <div className="container content">
-               <Testimonials testimonials={testimonials} />
-             </div>
              <section className="section">
                <PageContent className="container content" content={content} />
+               <InfoCard info={info}/>
              </section>
            </div>
          </div>
@@ -56,6 +51,8 @@ ArtworkTemplate.propTypes = {
     blurbs: PropTypes.array,
   }),
   array: PropTypes.array,
+  images: PropTypes.arrayOf(PropTypes.object),
+  lightbox: PropTypes.object,
 }
 
 class ArtworksPage extends React.Component {
@@ -63,10 +60,12 @@ class ArtworksPage extends React.Component {
 render() {
   const data = this.props.data;
   const { frontmatter } = data.markdownRemark;
-  const { display } = frontmatter.slider;
-  const { array } = frontmatter.slider;
-  const description = frontmatter.headingDesc;
+  //const { display } = frontmatter.slider;
+  //const { array } = frontmatter.slider;
+  const images = frontmatter.lightbox.images;
+  const lightbox = frontmatter.lightbox;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
+  const { masonry } = frontmatter;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
         <div>
@@ -76,10 +75,10 @@ render() {
             title={frontmatter.title}
             content={data.markdownRemark.html}
             intro={frontmatter.intro}
-            display={display}
-            array={array}
-            description={description}
-            testimonials={frontmatter.testimonials}
+            images={images}
+            lightbox={lightbox}
+            masonry={masonry}
+            info={frontmatter.info}
             />
         </div>
       </Layout>
@@ -98,7 +97,7 @@ ArtworksPage.propTypes = {
 export default ArtworksPage
 
 export const pageQuery = graphql`
-query ArtworksQuery($id: String!) {
+query ArtworksSimpleQuery($id: String!) {
   site {
     siteMetadata {
       languages {
@@ -130,25 +129,25 @@ query ArtworksQuery($id: String!) {
          }
        }
        heading
-       headingDesc
        description
-       testimonials{
-         author
-         quote
-       }
-       intro {
-         blurbs {
-           image {
-             childImageSharp {
-               fluid(maxWidth: 240, quality: 64) {
-                 ...GatsbyImageSharpFluid
-               }
-             }
-           }
-          heading
+      info{
+        title
+        artworkTitle
+        year
+        technique
+        dimensions
+      }
+      masonry{
+        photos{
+          src
+          srcSet
+          sizes
+          width
+          height
           link
-          text
-         }
+          title
+          alt
+        }
       }
       slider{
         display

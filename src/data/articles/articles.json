@@ -74,6 +74,16 @@
       "id": "15",
       "en": "2019-05-03-art-of-kaki",
       "it": "2019-05-03-arte-di-kaki"
+    },
+    {
+      "id": "16",
+      "en": "artworks/portfolio",
+      "it": "opere/portfolio"
+    },
+    {
+      "id": "17",
+      "en": "artworks/painting/abstract-art-persimmon-among-the-stars",
+      "it": "opere/pittura/arte-astratta-caco-tra-le-stelle"
     }
   ]
 }

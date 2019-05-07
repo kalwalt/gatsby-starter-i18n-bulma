@@ -1,42 +1,32 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
+import Img from "gatsby-image"
 import Layout from "../components/Layout"
+import { getCurrentLangKey } from 'ptz-i18n'
 import Content, { HTMLContent } from "../components/Content"
-import Slider from '../components/Slider'
-import Testimonials from '../components/Testimonials'
 import Features from '../components/Features'
+import { FaRegGem } from 'react-icons/fa';
 
-const ArtworkTemplate = ({
+const ArtworkIntroTemplate = ({
   title,
   content,
   contentComponent,
   intro,
-  heading,
-  description,
-  display,
-  array,
-  testimonials,
+  heading
 }) => {
   const PageContent = contentComponent || Content
   return (
       <div className="container content">
        <h1 className="title animated bounceInLeft">{title}</h1>
         <div className="hero">
-          <Slider array={array} display={display}/>
+            <Features gridItems={intro.blurbs} />
           </div>
           <div className="columns">
-           <div className="column is-9">
+           <div className="column is-6">
              <h2 className="has-text-weight-semibold subtitle">
-             {heading}
+             <FaRegGem className="menu-names" color="#D64000"/>{heading}
              </h2>
-             <div className="container content">
-               {description}
-              </div>
-             <Features gridItems={intro.blurbs} />
-             <div className="container content">
-               <Testimonials testimonials={testimonials} />
-             </div>
              <section className="section">
                <PageContent className="container content" content={content} />
              </section>
@@ -46,7 +36,7 @@ const ArtworkTemplate = ({
     )
 }
 
-ArtworkTemplate.propTypes = {
+ArtworkIntroTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   heading: PropTypes.string,
   title: PropTypes.string.isRequired,
@@ -55,31 +45,23 @@ ArtworkTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
-  array: PropTypes.array,
 }
 
-class ArtworksPage extends React.Component {
+class ArtworksIntroPage extends React.Component {
 
 render() {
   const data = this.props.data;
   const { frontmatter } = data.markdownRemark;
-  const { display } = frontmatter.slider;
-  const { array } = frontmatter.slider;
-  const description = frontmatter.headingDesc;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
         <div>
-            <ArtworkTemplate
+            <ArtworkIntroTemplate
             contentComponent={HTMLContent}
             heading={frontmatter.heading}
             title={frontmatter.title}
             content={data.markdownRemark.html}
             intro={frontmatter.intro}
-            display={display}
-            array={array}
-            description={description}
-            testimonials={frontmatter.testimonials}
             />
         </div>
       </Layout>
@@ -87,7 +69,7 @@ render() {
   }
 }
 
-ArtworksPage.propTypes = {
+ArtworksIntroPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -95,29 +77,29 @@ ArtworksPage.propTypes = {
   }),
 }
 
-export default ArtworksPage
+export default ArtworksIntroPage
 
 export const pageQuery = graphql`
-query ArtworksQuery($id: String!) {
+query ArtworksIntroQuery($id: String!) {
   site {
-    siteMetadata {
-      languages {
-        defaultLangKey
-        langs
-      }
-    }
-  }
-  allArticlesJson(filter:{title:{eq:"home"}}){
- edges{
-   node{
-     articles {
-       en
-       it
+     siteMetadata {
+       languages {
+         defaultLangKey
+         langs
+       }
      }
    }
- }
-}
-   markdownRemark(id: { eq: $id }) {
+   allArticlesJson(filter: {title: {eq: "home"}}) {
+     edges {
+       node {
+         articles {
+           en
+           it
+         }
+       }
+     }
+   }
+   markdownRemark(id: {eq: $id}) {
      html
      frontmatter {
        id
@@ -130,12 +112,7 @@ query ArtworksQuery($id: String!) {
          }
        }
        heading
-       headingDesc
        description
-       testimonials{
-         author
-         quote
-       }
        intro {
          blurbs {
            image {
@@ -145,36 +122,12 @@ query ArtworksQuery($id: String!) {
                }
              }
            }
-          heading
-          link
-          text
+           heading
+           link
+           text
          }
-      }
-      slider{
-        display
-        array{
-          original
-          thumbnail
-          originalAlt
-          originalTitle
-          description
-        }
-      }
-      lightbox {
-        display
-        images{
-         id
-         relativePath
-         childImageSharp {
-           fluid(maxWidth: 640, quality: 85) {
-             ...GatsbyImageSharpFluid
-             src
-             sizes
-            }
-          }
-        }
-      }
-    }
-  }
+       }
+     }
+   }
 }
 `

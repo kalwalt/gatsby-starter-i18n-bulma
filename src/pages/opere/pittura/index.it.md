@@ -23,8 +23,19 @@ slider:
   display: 'false'
   array: []
 lightbox:
-  display: false
-  images: []
+  display: true
+  images:
+    - /img/Kaki.jpg
+    - /img/Persimmon.jpg
+testimonials:
+  - author: ""
+    quote: ""
 ---
 
 ## Pittura
+
+Di seguito le Opere pittoriche in questa collezione:
+
+[Un caco tra le stelle][19392250]
+
+  [19392250]: /it/opere/pittura/arte-astratta-caco-tra-le-stelle/ "Un caco tra le stelle"

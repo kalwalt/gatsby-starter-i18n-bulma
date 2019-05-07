@@ -3,40 +3,30 @@ import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
-import Slider from '../components/Slider'
-import Testimonials from '../components/Testimonials'
-import Features from '../components/Features'
+import MasonryGal from "../components/Masonry/MasonryGal"
 
-const ArtworkTemplate = ({
+const ArtworkPortfolioTemplate = ({
   title,
   content,
   contentComponent,
   intro,
   heading,
-  description,
-  display,
-  array,
-  testimonials,
+  masonry
 }) => {
   const PageContent = contentComponent || Content
   return (
       <div className="container content">
        <h1 className="title animated bounceInLeft">{title}</h1>
         <div className="hero">
-          <Slider array={array} display={display}/>
+          {masonry &&
+            <MasonryGal photos={masonry.photos}/>
+          }
           </div>
           <div className="columns">
-           <div className="column is-9">
+           <div className="column is-6">
              <h2 className="has-text-weight-semibold subtitle">
              {heading}
              </h2>
-             <div className="container content">
-               {description}
-              </div>
-             <Features gridItems={intro.blurbs} />
-             <div className="container content">
-               <Testimonials testimonials={testimonials} />
-             </div>
              <section className="section">
                <PageContent className="container content" content={content} />
              </section>
@@ -46,40 +36,31 @@ const ArtworkTemplate = ({
     )
 }
 
-ArtworkTemplate.propTypes = {
+ArtworkPortfolioTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   heading: PropTypes.string,
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-  array: PropTypes.array,
 }
 
-class ArtworksPage extends React.Component {
+class ArtworksPortfolioPage extends React.Component {
 
 render() {
   const data = this.props.data;
   const { frontmatter } = data.markdownRemark;
-  const { display } = frontmatter.slider;
-  const { array } = frontmatter.slider;
-  const description = frontmatter.headingDesc;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
+  const { masonry } = frontmatter;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
         <div>
-            <ArtworkTemplate
+            <ArtworkPortfolioTemplate
             contentComponent={HTMLContent}
             heading={frontmatter.heading}
             title={frontmatter.title}
             content={data.markdownRemark.html}
             intro={frontmatter.intro}
-            display={display}
-            array={array}
-            description={description}
-            testimonials={frontmatter.testimonials}
+            masonry={masonry}
             />
         </div>
       </Layout>
@@ -87,7 +68,7 @@ render() {
   }
 }
 
-ArtworksPage.propTypes = {
+ArtworksPortfolioPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -95,10 +76,10 @@ ArtworksPage.propTypes = {
   }),
 }
 
-export default ArtworksPage
+export default ArtworksPortfolioPage
 
 export const pageQuery = graphql`
-query ArtworksQuery($id: String!) {
+query ArtworksPortfolioQuery($id: String!) {
   site {
     siteMetadata {
       languages {
@@ -130,48 +111,17 @@ query ArtworksQuery($id: String!) {
          }
        }
        heading
-       headingDesc
        description
-       testimonials{
-         author
-         quote
-       }
-       intro {
-         blurbs {
-           image {
-             childImageSharp {
-               fluid(maxWidth: 240, quality: 64) {
-                 ...GatsbyImageSharpFluid
-               }
-             }
-           }
-          heading
+      masonry{
+        photos{
+          src
+          srcSet
+          sizes
+          width
+          height
           link
-          text
-         }
-      }
-      slider{
-        display
-        array{
-          original
-          thumbnail
-          originalAlt
-          originalTitle
-          description
-        }
-      }
-      lightbox {
-        display
-        images{
-         id
-         relativePath
-         childImageSharp {
-           fluid(maxWidth: 640, quality: 85) {
-             ...GatsbyImageSharpFluid
-             src
-             sizes
-            }
-          }
+          title
+          alt
         }
       }
     }
