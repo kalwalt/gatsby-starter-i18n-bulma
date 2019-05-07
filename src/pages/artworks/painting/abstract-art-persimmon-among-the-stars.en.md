@@ -1,26 +1,26 @@
 ---
 id: '17'
-title: "Arte astratta | Un caco tra le stelle"
+title: "ABstract Art | A Persimmon among the stars"
 image: /img/Persimmon.jpg
-heading: "La bellezza della Natura nell'Arte"
-description: "Un caco tra le stelle è un opera astratta realizzata con colore acrilico"
+heading: "The Beauty of the Nature"
+description: "A Persimmon among the stars is an abstract work made with acrylic color"
 templateKey: artworks-simple
 tags:
   - art
-lang: it
+lang: en
 date: "07-05-2019"
-path: /it/opere/pittura/arte-astratta-caco-tra-le-stelle/
-slug: /it/opere/pittura/arte-astratta-caco-tra-le-stelle/
+path: /en/artwork/painting/abstract-art-persimmon-among-the-stars/
+slug: /en/artwork/painting/abstract-art-persimmon-among-the-stars/
 lightbox:
   display: true
   images:
     - /img/Kaki.jpg
     - /img/Persimmon.jpg
 info:
-  title: "Un caco tra le stelle"
-  artworkTitle: "Un caco tra le stelle"
+  title: "A Persimmon among the stars"
+  artworkTitle: "A Persimmon among the stars"
   year: "2019"
-  technique: "colore acrilico su tela"
+  technique: "acrylic color on canvas"
   dimensions: "70x50 cm"  
 ---
 

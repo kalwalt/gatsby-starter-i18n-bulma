@@ -27,6 +27,9 @@ lightbox:
   images:
     - /img/Kaki.jpg
     - /img/Persimmon.jpg
+testimonials:
+  - author: ""
+    quote: ""
 ---
 
 ## Pittura

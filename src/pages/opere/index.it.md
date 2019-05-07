@@ -25,17 +25,28 @@ intro:
       link: /it/opere/scultura/
       text: >
         Molti artisti hanno ritratto l'albero del caco, scopri quanti ne sono rimasti affascinati.
+    - image: /img/Caco.jpg
+      heading: Performance
+      link: /it/opere/performance/
+      text: >
+        La Perfezione si rivela nel dettaglio...
+    - image: /img/Kaki_di_Misilmeri.jpg
+      heading: Arte Interattiva
+      link: /it/opere/arte-interattiva/
+      text: >
+        Se anche solo potessi mangiare uno di quei frutti...
 slider:
   display: 'slide'
   array:
     - { original: 'https://lorempixel.com/1000/600/nature/1/', thumbnail: 'https://lorempixel.com/250/150/nature/1/', originalAlt: "Delle formiche su un filo d'erba", originalTitle: "Delle formiche su un filo d'erba", description: "Delle formiche salgono verso l'alto su un filo d'erba."}
     - { original: 'https://lorempixel.com/1000/600/nature/2/', thumbnail: 'https://lorempixel.com/250/150/nature/2/', originalAlt: 'Un bel tramonto sul mare', originalTitle: 'Un bel tramonto sul mare', description: "Un bel tramonto sul mare, dove partono numerose rotte dell'immaginazione."}
     - { original: 'https://lorempixel.com/1000/600/nature/3/', thumbnail: 'https://lorempixel.com/250/150/nature/3/', originalAlt: 'una scogliera sul mare', originalTitle: 'Una scogliera sul mare', description: 'Una scogliera dove il mare infrange incessantemente i suoi flutti.'}
-lightbox:
-  display: true
-  images:
-    - /img/Kaki.jpg
-    - /img/Persimmon.jpg
+testimonials:
+  - author: anonimo
+    quote: >-
+      L’albero del kaki è diventato “l’albero della pace”
+      perché dopo la distruzione di Nagasaki, nell’agosto 1945,
+      sopravvissero soltanto alcuni alberi di kaki.
 ---
 ## Pagina principale opere italiano
 

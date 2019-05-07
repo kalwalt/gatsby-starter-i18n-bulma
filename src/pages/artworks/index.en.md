@@ -25,12 +25,28 @@ intro:
       link: /en/artworks/sculpture/
       text: >
         Many artists have portrayed the persimmon tree, discover how many they have been fascinated by.
+    - image: /img/Caco.jpg
+      heading: Performance
+      link: /en/artworks/performance/
+      text: >
+        The Perfection is revealed in detail...
+    - image: /img/Kaki_di_Misilmeri.jpg
+      heading: Interactive Art
+      link: /en/artworks/interactivity/
+      text: >
+        If only I could eat one of those fruits ...
 slider:
   display: 'slide'
   array:
     - { original: 'https://lorempixel.com/1000/600/nature/1/', thumbnail: 'https://lorempixel.com/250/150/nature/1/', originalAlt: "Ants on a blade of grass.", originalTitle: "Ants on a blade of grass.", description: "Ants rise upwards on a blade of grass." }
     - { original: 'https://lorempixel.com/1000/600/nature/2/', thumbnail: 'https://lorempixel.com/250/150/nature/2/', originalAlt: 'A beautiful sunset over the sea.', originalTitle: 'A beautiful sunset over the sea.', description: 'A beautiful sunset over the sea, where numerous routes of imagination depart.'}
     - { original: 'https://lorempixel.com/1000/600/nature/3/', thumbnail: 'https://lorempixel.com/250/150/nature/3/', originalAlt: 'A cliff on the sea.', originalTitle: 'A cliff on the sea.', description: 'A cliff where the sea incessantly breaks its waves.'}
+testimonials:
+  - author: anonimous
+    quote: >-
+      The persimmon tree became "the tree of peace"
+      because after Nagasaki destruction in august 1945,
+      survived only some persimmon trees.
 ---
 
 ## Artworks start page english

@@ -27,6 +27,15 @@ lightbox:
   images:
     - /img/Kaki.jpg
     - /img/Persimmon.jpg
+testimonials:
+  - author: ""
+    quote: ""
 ---
 
 ## Painting
+
+Here painting artworks of this collection:
+
+[A Persimmon among the stars][19392250]
+
+  [19392250]: /en/artworks/painting/abstract-art-persimmon-among-the-stars/ "A Persimmon among the stars"

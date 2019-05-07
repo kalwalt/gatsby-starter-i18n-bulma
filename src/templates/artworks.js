@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import Slider from '../components/Slider'
-import Lightbox from '../components/Lightbox'
+import Testimonials from '../components/Testimonials'
 import Features from '../components/Features'
 
 const ArtworkTemplate = ({
@@ -16,7 +16,7 @@ const ArtworkTemplate = ({
   description,
   display,
   array,
-  lightbox,
+  testimonials,
 }) => {
   const PageContent = contentComponent || Content
   return (
@@ -26,7 +26,7 @@ const ArtworkTemplate = ({
           <Slider array={array} display={display}/>
           </div>
           <div className="columns">
-           <div className="column is-8">
+           <div className="column is-9">
              <h2 className="has-text-weight-semibold subtitle">
              {heading}
              </h2>
@@ -34,6 +34,9 @@ const ArtworkTemplate = ({
                {description}
               </div>
              <Features gridItems={intro.blurbs} />
+             <div className="container content">
+               <Testimonials testimonials={testimonials} />
+             </div>
              <section className="section">
                <PageContent className="container content" content={content} />
              </section>
@@ -53,7 +56,6 @@ ArtworkTemplate.propTypes = {
     blurbs: PropTypes.array,
   }),
   array: PropTypes.array,
-  lightbox: PropTypes.object,
 }
 
 class ArtworksPage extends React.Component {
@@ -64,7 +66,6 @@ render() {
   const { display } = frontmatter.slider;
   const { array } = frontmatter.slider;
   const description = frontmatter.headingDesc;
-  const lightbox = frontmatter.lightbox;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
@@ -78,6 +79,7 @@ render() {
             display={display}
             array={array}
             description={description}
+            testimonials={frontmatter.testimonials}
             />
         </div>
       </Layout>
@@ -130,6 +132,10 @@ query ArtworksQuery($id: String!) {
        heading
        headingDesc
        description
+       testimonials{
+         author
+         quote
+       }
        intro {
          blurbs {
            image {
