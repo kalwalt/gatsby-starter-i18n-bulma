@@ -4,7 +4,7 @@ title: "Pagina opere italiano"
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
 description: "qualche contenuto"
-templateKey: artworks-introduction
+templateKey: artworksIntro
 tags:
   - art
 lang: it
