@@ -1,9 +1,9 @@
 ---
 id: '17'
-title: "ABstract Art | A Persimmon among the stars"
+title: "Abstract Art | A Persimmon among the stars"
 image: /img/Persimmon.jpg
 heading: "The Beauty of the Nature"
-description: "A Persimmon among the stars is an abstract work made with acrylic color"
+description: "A Persimmon among the stars is an abstract work made with acrylic color on canvas"
 templateKey: artworks-simple
 tags:
   - art

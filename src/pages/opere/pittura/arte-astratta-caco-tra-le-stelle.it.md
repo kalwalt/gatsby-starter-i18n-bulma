@@ -3,7 +3,7 @@ id: '17'
 title: "Arte astratta | Un caco tra le stelle"
 image: /img/Persimmon.jpg
 heading: "La bellezza della Natura nell'Arte"
-description: "Un caco tra le stelle è un opera astratta realizzata con colore acrilico"
+description: "Un caco tra le stelle è un opera astratta realizzata con colore acrilico su tela"
 templateKey: artworks-simple
 tags:
   - art
