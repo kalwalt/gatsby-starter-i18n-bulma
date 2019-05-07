@@ -4,7 +4,7 @@ title: "Artistic portfolio"
 image: /img/Persimmon.jpg
 heading: ""
 description: "My artistic portfolio"
-templateKey: artworks
+templateKey: artworks-portfolio
 tags:
   - art
 lang: en
@@ -85,17 +85,7 @@ masonry:
       "https://source.unsplash.com/I1ASdgphUH4/1600x1200 1600w"
     ],
     sizes: ["(min-width: 480px) 50vw,(min-width: 1024px) 33.3vw,100vw"], width: 4, height: 3, link: '/en/artworks/', alt: 'road', title: 'The road' }
-intro:
-  blurbs:
-    - image: /img/Persimmon.jpg
-      text: ""
-
-    - image: /img/Persimmon.jpg
-      text: ""
-slider:
-  display: 'false'
-  array: []
-lightbox:
-  display: false
-  images: []
 ---
+## My artistic Portfolio
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
