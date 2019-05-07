@@ -1,14 +1,11 @@
 import React from "react"
 import * as PropTypes from "prop-types"
 import { Link, graphql } from 'gatsby'
-import Img from "gatsby-image"
 import Layout from "../components/Layout"
-import { getCurrentLangKey } from 'ptz-i18n'
 import Content, { HTMLContent } from "../components/Content"
-//import Features from '../components/Features'
 import Slider from '../components/Slider'
 import Lightbox from '../components/Lightbox'
-import MasonryGal from "../components/Masonry/MasonryGal"
+import Features from '../components/Features'
 
 const ArtworkTemplate = ({
   title,
@@ -16,29 +13,27 @@ const ArtworkTemplate = ({
   contentComponent,
   intro,
   heading,
+  description,
   display,
   array,
   lightbox,
-  images,
-  masonry
 }) => {
   const PageContent = contentComponent || Content
   return (
       <div className="container content">
        <h1 className="title animated bounceInLeft">{title}</h1>
         <div className="hero">
-          {masonry &&
-            <MasonryGal photos={masonry.photos}/>
-          }
           <Slider array={array} display={display}/>
           </div>
           <div className="columns">
-           <div className="column is-6">
+           <div className="column is-8">
              <h2 className="has-text-weight-semibold subtitle">
              {heading}
              </h2>
-
-             <Lightbox lightbox={lightbox} images={images} />
+             <div className="container content">
+               {description}
+              </div>
+             <Features gridItems={intro.blurbs} />
              <section className="section">
                <PageContent className="container content" content={content} />
              </section>
@@ -58,7 +53,6 @@ ArtworkTemplate.propTypes = {
     blurbs: PropTypes.array,
   }),
   array: PropTypes.array,
-  images: PropTypes.arrayOf(PropTypes.object),
   lightbox: PropTypes.object,
 }
 
@@ -69,10 +63,9 @@ render() {
   const { frontmatter } = data.markdownRemark;
   const { display } = frontmatter.slider;
   const { array } = frontmatter.slider;
-  const images = frontmatter.lightbox.images;
+  const description = frontmatter.headingDesc;
   const lightbox = frontmatter.lightbox;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
-  const { masonry } = frontmatter;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
         <div>
@@ -84,9 +77,7 @@ render() {
             intro={frontmatter.intro}
             display={display}
             array={array}
-            images={images}
-            lightbox={lightbox}
-            masonry={masonry}
+            description={description}
             />
         </div>
       </Layout>
@@ -137,6 +128,7 @@ query ArtworksQuery($id: String!) {
          }
        }
        heading
+       headingDesc
        description
        intro {
          blurbs {
@@ -147,20 +139,10 @@ query ArtworksQuery($id: String!) {
                }
              }
            }
+          heading
+          link
           text
          }
-      }
-      masonry{
-        photos{
-          src
-          srcSet
-          sizes
-          width
-          height
-          link
-          title
-          alt
-        }
       }
       slider{
         display
