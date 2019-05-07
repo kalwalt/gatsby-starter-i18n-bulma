@@ -79,6 +79,11 @@
       "id": "16",
       "en": "artworks/portfolio",
       "it": "opere/portfolio"
+    },
+    {
+      "id": "17",
+      "en": "artworks/painting",
+      "it": "opere/pittura/caco-tra-le-stelle"
     }
   ]
 }
