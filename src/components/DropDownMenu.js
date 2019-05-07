@@ -4,7 +4,6 @@ import { FaImage } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import select from '../components/utils'
-import menu from '../data/artworksMenu'
 
 const DropDownMenu = (props) => {
 
