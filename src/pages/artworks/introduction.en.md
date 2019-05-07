@@ -4,7 +4,7 @@ title: "Artworks page english"
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
 description: "A test for the artworks page"
-templateKey: artworks
+templateKey: artworks-introduction
 tags:
   - art
 lang: en
@@ -19,14 +19,6 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Why don't you decide to plant a persimmon tree in your garden?
-slider:
-  display: 'false'
-  array: []
-lightbox:
-  display: true
-  images:
-    - /img/Kaki.jpg
-    - /img/Persimmon.jpg
 ---
 
 Hello! ciao!

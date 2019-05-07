@@ -4,7 +4,7 @@ title: "Pagina opere italiano"
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
 description: "qualche contenuto"
-templateKey: artworks
+templateKey: artworks-introduction
 tags:
   - art
 lang: it
@@ -19,12 +19,6 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Perchè non decidi di piantare un'albero di caco nel tuo giardino?
-slider:
-  display: 'false'
-  array: []
-lightbox:
-  display: true
-  images: [/img/Kaki.jpg, /img/Persimmon.jpg]
 ---
 
 Hello! ciao!
