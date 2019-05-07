@@ -6,6 +6,7 @@ import Layout from "../components/Layout"
 import { getCurrentLangKey } from 'ptz-i18n'
 import Content, { HTMLContent } from "../components/Content"
 import Features from '../components/Features'
+import { FaRegGem } from 'react-icons/fa';
 
 const ArtworkIntroTemplate = ({
   title,
@@ -24,7 +25,7 @@ const ArtworkIntroTemplate = ({
           <div className="columns">
            <div className="column is-6">
              <h2 className="has-text-weight-semibold subtitle">
-             {heading}
+             <FaRegGem className="menu-names" color="#D64000"/>{heading}
              </h2>
              <section className="section">
                <PageContent className="container content" content={content} />
@@ -121,6 +122,8 @@ query ArtworksIntroQuery($id: String!) {
                }
              }
            }
+           heading
+           link
            text
          }
        }

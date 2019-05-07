@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import { getCurrentLangKey } from 'ptz-i18n'
 import Content, { HTMLContent } from "../components/Content"
-import Features from '../components/Features'
+//import Features from '../components/Features'
 import Slider from '../components/Slider'
 import Lightbox from '../components/Lightbox'
 import MasonryGal from "../components/Masonry/MasonryGal"
@@ -37,7 +37,7 @@ const ArtworkTemplate = ({
              <h2 className="has-text-weight-semibold subtitle">
              {heading}
              </h2>
-             <Features gridItems={intro.blurbs} />
+
              <Lightbox lightbox={lightbox} images={images} />
              <section className="section">
                <PageContent className="container content" content={content} />
