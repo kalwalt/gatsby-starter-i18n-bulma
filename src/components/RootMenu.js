@@ -6,6 +6,8 @@ import { FormattedMessage } from 'react-intl';
 import menu from '../data/artworksMenu'
 import menu_P from '../data/paintingMenu'
 import menu_S from '../data/sculptureMenu'
+import menu_Perf from '../data/performanceMenu'
+import menu_NM from '../data/newmediaMenu'
 import menuTree from '../data/menuTree'
 import select from '../components/utils'
 import { FaImage, FaAngleRight } from 'react-icons/fa'
@@ -16,17 +18,19 @@ const RootMenu = ( props ) => {
     const keys = [ 'painting', 'sculpture', 'performance' ];
     const keys_P = [ 'painting-new', 'painting-oldest' ];
     const keys_S = [ 'marble', 'wood', 'bronze', 'other-materials' ];
-    const base = '/en/test/';
+    const keys_Perf = [ 'performance01', 'performance02', 'performance03', 'performance04' ];
+    const keys_NM = [ 'augmented_reality', 'interactivity', 'experimental' ]
+    //const base = '/en/test/';
     const sel = select(props.langKey);
 
     return(
       <div className="navbar-item has-dropdown is-hoverable">
-        <Link className="navbar-link" to={"/" + props.langKey + "/" + menuTree.artworks[sel] + "/"}>
+        <Link className="navbar-link" to={ "/" + props.langKey + "/" + menuTree.artworks[sel] + "/" }>
           <FaImage className="menu-names" />
           <FormattedMessage id="artworks"/>
         </Link>
         <div className="navbar-dropdown">
-          <Link className="navbar-item" to={"/" + menu.portfolio[sel] + "/"}>
+          <Link className="navbar-item" to={ menu.portfolio[sel] }>
             <FormattedMessage id="portfolio"/>
           </Link>
           <div className="nested navbar-item dropdown">
@@ -42,7 +46,7 @@ const RootMenu = ( props ) => {
                <div className="dropdown-content">
                <Dropdown
                langKey={langKey}
-               base={"/" + menu_P.introduction[sel] + "/"}
+               base={ menu_P.introduction[sel] }
                baseName="introduction"
                switches={keys_P}
                links={menu_P}
@@ -63,7 +67,7 @@ const RootMenu = ( props ) => {
              <div className="dropdown-content">
              <Dropdown
              langKey={langKey}
-             base={base}
+             base={ menu_S.introduction[sel] }
              baseName="introduction"
              switches={keys_S}
              links={menu_S}
@@ -84,10 +88,10 @@ const RootMenu = ( props ) => {
            <div className="dropdown-content">
            <Dropdown
            langKey={langKey}
-           base={base}
+           base={ menu_S.introduction[sel] }
            baseName="introduction"
-           switches={keys}
-           links={menu}
+           switches={keys_Perf}
+           links={menu_Perf}
            />
        </div>
       </div>
@@ -105,10 +109,10 @@ const RootMenu = ( props ) => {
          <div className="dropdown-content">
          <Dropdown
          langKey={langKey}
-         base={base}
-         baseName="augmented-reality"
-         switches={keys}
-         links={menu}
+         base={ menu_NM.augmented_reality[sel] }
+         baseName="augmented_reality"
+         switches={keys_NM}
+         links={menu_NM}
          />
      </div>
     </div>
