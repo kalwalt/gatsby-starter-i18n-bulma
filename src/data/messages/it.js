@@ -16,6 +16,7 @@ module.exports = {
   'sculpture': 'Scultura',
   'performance': 'Performance',
   'new-media': "New media",
+  'augmented-reality': 'Realtà aumentata',
   'interactivity': 'Interattività',
   'blog': 'Blog',
   'blog-message': 'Ultime Notizie',

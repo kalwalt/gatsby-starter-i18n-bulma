@@ -13,21 +13,19 @@ const RootMenu = ( props ) => {
     const langKey = props.langKey;
     const keys = [ 'painting', 'sculpture', 'performance' ];
     const base = '/en/test/';
-    const basename = 'artworks'
     const sel = select(props.langKey);
-    console.log(sel);
-    console.log("/" + props.langKey + "/" + menuTree.about[sel] + "/");
+
     return(
       <div className="navbar-item has-dropdown is-hoverable">
-        <Link className="navbar-link" to={"/" + props.langKey + "/" + menuTree.about[sel] + "/"}>
+        <Link className="navbar-link" to={"/" + props.langKey + "/" + menuTree.artworks[sel] + "/"}>
           <FaImage className="menu-names" />
           <FormattedMessage id="artworks"/>
         </Link>
         <div className="navbar-dropdown">
-          <Link className="navbar-item">
+          <Link className="navbar-item" to={"/" + menu.portfolio[sel] + "/"}>
             <FormattedMessage id="portfolio"/>
           </Link>
-          <div className="nested navbar-item dropdown  is-hidden-mobile">
+          <div className="nested navbar-item dropdown">
             <div className="dropdown-trigger">
               <button className="button" aria-haspopup="true" aria-controls="dropdown-menu">
                 <FormattedMessage id="painting"/>
@@ -62,7 +60,7 @@ const RootMenu = ( props ) => {
              <Dropdown
              langKey={langKey}
              base={base}
-             baseName={basename}
+             baseName="introduction"
              switches={keys}
              links={menu}
              />
@@ -83,7 +81,7 @@ const RootMenu = ( props ) => {
            <Dropdown
            langKey={langKey}
            base={base}
-           baseName={basename}
+           baseName="introduction"
            switches={keys}
            links={menu}
            />
@@ -104,7 +102,7 @@ const RootMenu = ( props ) => {
          <Dropdown
          langKey={langKey}
          base={base}
-         baseName={basename}
+         baseName="augmented-reality"
          switches={keys}
          links={menu}
          />
