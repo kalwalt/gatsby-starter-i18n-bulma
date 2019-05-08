@@ -15,12 +15,10 @@ import { FaImage, FaAngleRight } from 'react-icons/fa'
 
 const RootMenu = ( props ) => {
     const langKey = props.langKey;
-    const keys = [ 'painting', 'sculpture', 'performance' ];
     const keys_P = [ 'painting-new', 'painting-oldest' ];
     const keys_S = [ 'marble', 'wood', 'bronze', 'other-materials' ];
     const keys_Perf = [ 'performance01', 'performance02', 'performance03', 'performance04' ];
     const keys_NM = [ 'augmented_reality', 'interactivity', 'experimental' ]
-    //const base = '/en/test/';
     const sel = select(props.langKey);
 
     return(

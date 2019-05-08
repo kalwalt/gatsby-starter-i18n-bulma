@@ -77,13 +77,13 @@ const Header = class extends React.Component {
           <Link className="navbar-item" to={"/" + props.langKey}>
             <FaHome className="menu-names" /> <FormattedMessage id="home" />
           </Link>
-            <Dropdown
-            langKey={props.langKey}
-            base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
-            baseName="artworks"
-            switches={keys}
-            links={menu}
-            />
+            <RootMenu
+              langKey={props.langKey}
+              base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
+              baseName="test"
+              switches={keys}
+              links={menu}
+              />
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
             <FaQuestion className="menu-names" /> <FormattedMessage id="about" />
           </Link>
@@ -93,13 +93,6 @@ const Header = class extends React.Component {
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.contact[sel] +"/"}>
             <FaAmericanSignLanguageInterpreting className="menu-names" /> <FormattedMessage id="contact" />
           </Link>
-          <RootMenu
-            langKey={props.langKey}
-            base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
-            baseName="test"
-            switches={keys}
-            links={menu}
-            />
         </div>
         </div>
       </div>
