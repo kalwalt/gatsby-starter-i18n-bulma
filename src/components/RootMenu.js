@@ -4,17 +4,22 @@ import PropTypes from 'prop-types'
 import Dropdown from '../components/DropDownMenu'
 import { FormattedMessage } from 'react-intl';
 import menu from '../data/artworksMenu'
+import menuTree from '../data/menuTree'
+import select from '../components/utils'
 import { FaImage, FaAngleRight } from 'react-icons/fa'
+
 
 const RootMenu = ( props ) => {
     const langKey = props.langKey;
     const keys = [ 'painting', 'sculpture', 'performance' ];
     const base = '/en/test/';
     const basename = 'artworks'
-    console.log(langKey);
+    const sel = select(props.langKey);
+    console.log(sel);
+    console.log("/" + props.langKey + "/" + menuTree.about[sel] + "/");
     return(
       <div className="navbar-item has-dropdown is-hoverable">
-        <Link className="navbar-link">
+        <Link className="navbar-link" to={"/" + props.langKey + "/" + menuTree.about[sel] + "/"}>
           <FaImage className="menu-names" />
           <FormattedMessage id="artworks"/>
         </Link>
@@ -22,7 +27,7 @@ const RootMenu = ( props ) => {
           <Link className="navbar-item">
             <FormattedMessage id="portfolio"/>
           </Link>
-          <div className="nested navbar-item dropdown">
+          <div className="nested navbar-item dropdown  is-hidden-mobile">
             <div className="dropdown-trigger">
               <button className="button" aria-haspopup="true" aria-controls="dropdown-menu">
                 <FormattedMessage id="painting"/>
