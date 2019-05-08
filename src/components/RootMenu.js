@@ -5,6 +5,7 @@ import Dropdown from '../components/DropDownMenu'
 import { FormattedMessage } from 'react-intl';
 import menu from '../data/artworksMenu'
 import menu_P from '../data/paintingMenu'
+import menu_S from '../data/sculptureMenu'
 import menuTree from '../data/menuTree'
 import select from '../components/utils'
 import { FaImage, FaAngleRight } from 'react-icons/fa'
@@ -13,7 +14,8 @@ import { FaImage, FaAngleRight } from 'react-icons/fa'
 const RootMenu = ( props ) => {
     const langKey = props.langKey;
     const keys = [ 'painting', 'sculpture', 'performance' ];
-    const keys_P = [ 'painting-new', 'painting-oldest'];
+    const keys_P = [ 'painting-new', 'painting-oldest' ];
+    const keys_S = [ 'marble', 'wood', 'bronze', 'other-materials' ];
     const base = '/en/test/';
     const sel = select(props.langKey);
 
@@ -63,8 +65,8 @@ const RootMenu = ( props ) => {
              langKey={langKey}
              base={base}
              baseName="introduction"
-             switches={keys}
-             links={menu}
+             switches={keys_S}
+             links={menu_S}
              />
          </div>
         </div>
