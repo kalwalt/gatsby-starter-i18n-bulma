@@ -6,6 +6,7 @@ import SelectLanguage from './SelectLanguage';
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
 import Dropdown from '../components/DropDownMenu'
+import RootMenu from '../components/RootMenu'
 import select from '../components/utils'
 import menu from '../data/artworksMenu'
 
@@ -92,6 +93,13 @@ const Header = class extends React.Component {
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.contact[sel] +"/"}>
             <FaAmericanSignLanguageInterpreting className="menu-names" /> <FormattedMessage id="contact" />
           </Link>
+          <RootMenu
+            langKey={props.langKey}
+            base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
+            baseName="test"
+            switches={keys}
+            links={menu}
+            />
         </div>
         </div>
       </div>
