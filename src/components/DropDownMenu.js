@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby'
-import { FaImage } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import select from '../components/utils'
@@ -14,7 +13,6 @@ const DropDownMenu = (props) => {
   return (
     <div className="navbar-item has-dropdown is-hoverable">
        <Link className="navbar-link" to={props.base}>
-         <FaImage className="menu-names" />
          <FormattedMessage id={props.baseName} />
        </Link>
        <div className="navbar-dropdown is-hidden-mobile is-boxed">
