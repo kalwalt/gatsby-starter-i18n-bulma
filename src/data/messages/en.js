@@ -15,6 +15,7 @@ module.exports = {
   'painting': 'Painting',
   'sculpture': 'Sculpture',
   'performance': 'Performance',
+  'new-media': "New media",
   'interactivity': 'Interactivity',
   'blog': 'Blog',
   'blog-message': 'Last News',

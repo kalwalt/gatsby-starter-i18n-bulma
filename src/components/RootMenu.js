@@ -6,12 +6,12 @@ import { FormattedMessage } from 'react-intl';
 import menu from '../data/artworksMenu'
 import { FaImage, FaAngleRight } from 'react-icons/fa'
 
-const RootMenu = ( {props} ) => {
-    const langKey = 'en';
+const RootMenu = ( props ) => {
+    const langKey = props.langKey;
     const keys = [ 'painting', 'sculpture', 'performance' ];
     const base = '/en/test/';
     const basename = 'artworks'
-    console.log(keys);
+    console.log(langKey);
     return(
       <div className="navbar-item has-dropdown is-hoverable">
         <Link className="navbar-link">
@@ -36,7 +36,7 @@ const RootMenu = ( {props} ) => {
                <Dropdown
                langKey={langKey}
                base={base}
-               baseName={basename}
+               baseName="introduction"
                switches={keys}
                links={menu}
                />
@@ -88,7 +88,7 @@ const RootMenu = ( {props} ) => {
     <div className="nested navbar-item dropdown">
       <div className="dropdown-trigger">
         <button className="button" aria-haspopup="true" aria-controls="dropdown-menu">
-          <FormattedMessage id="interactivity"/>
+          <FormattedMessage id="new-media"/>
           <span className="icon is-small">
             <FaAngleRight  aria-hidden="true"/>
           </span>
@@ -108,7 +108,7 @@ const RootMenu = ( {props} ) => {
   </div>
 </div>
 </div>
-    )
-}
+  );
+};
 
 export default RootMenu;
