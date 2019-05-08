@@ -13,6 +13,8 @@ module.exports = {
   'introduction': 'Introduzione',
   'portfolio': 'Portfolio',
   'painting': 'Pittura',
+  'painting-new': '2019',
+  'painting-oldest': 'meno recenti',
   'sculpture': 'Scultura',
   'performance': 'Performance',
   'new-media': "New media",

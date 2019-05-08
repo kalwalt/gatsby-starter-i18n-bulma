@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Dropdown from '../components/DropDownMenu'
 import { FormattedMessage } from 'react-intl';
 import menu from '../data/artworksMenu'
+import menu_P from '../data/paintingMenu'
 import menuTree from '../data/menuTree'
 import select from '../components/utils'
 import { FaImage, FaAngleRight } from 'react-icons/fa'
@@ -12,6 +13,7 @@ import { FaImage, FaAngleRight } from 'react-icons/fa'
 const RootMenu = ( props ) => {
     const langKey = props.langKey;
     const keys = [ 'painting', 'sculpture', 'performance' ];
+    const keys_P = [ 'painting-new', 'painting-oldest'];
     const base = '/en/test/';
     const sel = select(props.langKey);
 
@@ -38,10 +40,10 @@ const RootMenu = ( props ) => {
                <div className="dropdown-content">
                <Dropdown
                langKey={langKey}
-               base={base}
+               base={"/" + menu_P.introduction[sel] + "/"}
                baseName="introduction"
-               switches={keys}
-               links={menu}
+               switches={keys_P}
+               links={menu_P}
                />
            </div>
           </div>
