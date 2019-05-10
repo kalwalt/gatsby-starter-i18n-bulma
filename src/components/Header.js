@@ -65,17 +65,26 @@ const Header = class extends React.Component {
         console.log(bulmaCollapsibleInstance.collapsed());
     });
 
-    const bulmaCollapsibleElement = new bulmaCollapsible('#collapsible-message-accordion-1');
+    const bulmaCollapsibleElement_1 = new bulmaCollapsible('#collapsible-message-accordion-1');
 
     // Access to the bulmaCollapsible instance from DOM
-    const collapsibleElement = document.getElementById('#collapsible-message-accordion-1');
-    if (collapsibleElement) {
-      const collapsibleInstance = collapsibleElement.bulmaCollapsible();
-      bulmaCollapsibleElement.bulmaCollapsible('open');
+    const collapsibleElement_1 = document.getElementById('#collapsible-message-accordion-1');
+    if (collapsibleElement_1) {
+      const collapsibleInstance_1 = collapsibleElement_1.bulmaCollapsible();
+      bulmaCollapsibleElement_1.bulmaCollapsible('open');
 
     }
+
+    const bulmaCollapsibleElement_2 = new bulmaCollapsible('#collapsible-message-accordion-2');
+
+    // Access to the bulmaCollapsible instance from DOM
+    const collapsibleElement_2 = document.getElementById('#collapsible-message-accordion-2');
+    if (collapsibleElement_2) {
+      const collapsibleInstance_2 = collapsibleElement_2.bulmaCollapsible();
+      bulmaCollapsibleElement_2.bulmaCollapsible('open');
   }
  }
+}
 
  render() {
 

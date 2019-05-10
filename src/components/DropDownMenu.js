@@ -28,7 +28,10 @@ const DropDownMenu = (props) => {
 
 DropDownMenu.propTypes = {
   keys: PropTypes.array,
-  links: PropTypes.object
+  links: PropTypes.object,
+  switches: PropTypes.array,
+  langKey: PropTypes.string,
+  baseName: PropTypes.string,
 };
 
 export default DropDownMenu;
