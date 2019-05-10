@@ -6,9 +6,8 @@ import SelectLanguage from './SelectLanguage';
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
 import Dropdown from '../components/DropDownMenu'
-import TestMenu from '../components/TestMenu'
 import RootMenu from '../components/RootMenu'
-//import RootMenuMobile from '../components/RootMenuMobile'
+import RootMenuMobile from '../components/RootMenuMobile'
 import {
   BrowserView,
   MobileView,
@@ -146,7 +145,7 @@ const Header = class extends React.Component {
               />
           </BrowserView>
           <MobileView>
-            <TestMenu
+            <RootMenuMobile
               langKey={props.langKey}
               base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
               baseName="test"
