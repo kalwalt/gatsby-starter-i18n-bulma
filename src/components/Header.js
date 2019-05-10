@@ -82,7 +82,27 @@ const Header = class extends React.Component {
     if (collapsibleElement_2) {
       const collapsibleInstance_2 = collapsibleElement_2.bulmaCollapsible();
       bulmaCollapsibleElement_2.bulmaCollapsible('open');
-  }
+    }
+
+    const bulmaCollapsibleElement_3 = new bulmaCollapsible('#collapsible-message-accordion-3');
+
+    // Access to the bulmaCollapsible instance from DOM
+    const collapsibleElement_3 = document.getElementById('#collapsible-message-accordion-3');
+    if (collapsibleElement_1) {
+      const collapsibleInstance_3 = collapsibleElement_1.bulmaCollapsible();
+      bulmaCollapsibleElement_3.bulmaCollapsible('open');
+
+    }
+
+    const bulmaCollapsibleElement_4 = new bulmaCollapsible('#collapsible-message-accordion-4');
+
+    // Access to the bulmaCollapsible instance from DOM
+    const collapsibleElement_4 = document.getElementById('#collapsible-message-accordion-4');
+    if (collapsibleElement_1) {
+      const collapsibleInstance_4 = collapsibleElement_4.bulmaCollapsible();
+      bulmaCollapsibleElement_4.bulmaCollapsible('open');
+
+    }
  }
 }
 

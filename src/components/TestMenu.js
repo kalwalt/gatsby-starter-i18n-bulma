@@ -10,7 +10,7 @@ import menu_Perf from '../data/performanceMenu'
 import menu_NM from '../data/newmediaMenu'
 import menuTree from '../data/menuTree'
 import select from '../components/utils'
-import { FaImage, FaAngleRight, FaAngleDown } from 'react-icons/fa'
+import { FaImage } from 'react-icons/fa'
 
 const RootMenu = ( props ) => {
 
@@ -48,6 +48,22 @@ const RootMenu = ( props ) => {
         baseName="sculpture"
         switches={keys_S}
         links={menu_S}
+        />
+        <AccordionCollaps
+        num='3'
+        langKey={langKey}
+        base={ menu_Perf.performance01[sel] }
+        baseName="performance"
+        switches={keys_Perf}
+        links={menu_Perf}
+        />
+        <AccordionCollaps
+        num='4'
+        langKey={langKey}
+        base={ menu_NM.augmented_reality[sel] }
+        baseName="new-media"
+        switches={keys_NM}
+        links={menu_NM}
         />
         {/* end_accordion */}
       </div>
