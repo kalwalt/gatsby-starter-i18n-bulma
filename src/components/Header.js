@@ -6,7 +6,16 @@ import SelectLanguage from './SelectLanguage';
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
 import Dropdown from '../components/DropDownMenu'
+import TestMenu from '../components/TestMenu'
 import RootMenu from '../components/RootMenu'
+//import RootMenuMobile from '../components/RootMenuMobile'
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
+import bulmaCollapsible from '@creativebulma/bulma-collapsible'
 import select from '../components/utils'
 import menu from '../data/artworksMenu'
 
@@ -45,6 +54,27 @@ const Header = class extends React.Component {
       });
     });
   }
+
+  if (isMobile) {
+      // Return an array of bulmaCollapsible instances (empty if no DOM node found)
+    const bulmaCollapsibleInstances = bulmaCollapsible.attach('.is-collapsible');
+
+    // Loop into instances
+    bulmaCollapsibleInstances.forEach(bulmaCollapsibleInstance => {
+        // Check if current state is collapsed or not
+        console.log(bulmaCollapsibleInstance.collapsed());
+    });
+
+    const bulmaCollapsibleElement = new bulmaCollapsible('#collapsible-message-accordion-1');
+
+    // Access to the bulmaCollapsible instance from DOM
+    const collapsibleElement = document.getElementById('#collapsible-message-accordion-1');
+    if (collapsibleElement) {
+      const collapsibleInstance = collapsibleElement.bulmaCollapsible();
+      bulmaCollapsibleElement.bulmaCollapsible('open');
+
+    }
+  }
  }
 
  render() {
@@ -77,6 +107,7 @@ const Header = class extends React.Component {
           <Link className="navbar-item" to={"/" + props.langKey}>
             <FaHome className="menu-names" /> <FormattedMessage id="home" />
           </Link>
+          <BrowserView>
             <RootMenu
               langKey={props.langKey}
               base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
@@ -84,6 +115,16 @@ const Header = class extends React.Component {
               switches={keys}
               links={menu}
               />
+          </BrowserView>
+          <MobileView>
+            <TestMenu
+              langKey={props.langKey}
+              base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
+              baseName="test"
+              switches={keys}
+              links={menu}
+              />
+          </MobileView>
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
             <FaQuestion className="menu-names" /> <FormattedMessage id="about" />
           </Link>
