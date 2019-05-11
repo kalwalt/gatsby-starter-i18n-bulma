@@ -55,16 +55,18 @@ const Header = class extends React.Component {
 
   if (isMobile) {
 
+    let nM = document.getElementById("navMenu");
+    nM.style.backgroundColor = "#abd6d1"
     // Get all "accordions" elements
-   const accordion = Array.prototype.slice.call(document.querySelectorAll('.accordions'), 0);
+    const accordion = Array.prototype.slice.call(document.querySelectorAll('.accordions'), 0);
     // Check if there are any navbar links
-   if (accordion.length > 0) {
+    if (accordion.length > 0) {
 
      // Add a click event on each of them
-     accordion.forEach( el => {
-       el.addEventListener('click', () => {
-         //console.log(el.firstChild);
-         el.firstChild.classList.toggle('is-active');
+        accordion.forEach( el => {
+        el.addEventListener('click', () => {
+        //console.log(el.firstChild);
+        el.firstChild.classList.toggle('is-active');
        });
      });
    }
