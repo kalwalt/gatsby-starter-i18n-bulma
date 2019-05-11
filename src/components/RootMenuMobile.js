@@ -27,7 +27,7 @@ const RootMenuMobile = ( props ) => {
           <FaImage className="menu-names" />
           <FormattedMessage id="artworks"/>
       </Link>
-        <div className="navbar-dropdown">
+        <div className="content">
           <Link className="navbar-item" to={ menu.portfolio[sel] }>
             <FormattedMessage id="portfolio"/>
           </Link>
