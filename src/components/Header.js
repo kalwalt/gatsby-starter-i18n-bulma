@@ -14,14 +14,13 @@ import {
   isBrowser,
   isMobile
 } from "react-device-detect";
-import bulmaCollapsible from '@creativebulma/bulma-collapsible'
 import select from '../components/utils'
 import menu from '../data/artworksMenu'
 
 const Header = class extends React.Component {
 
   componentDidMount() {
-    // Get all "navbar-burger" elements
+
    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     // Check if there are any navbar burgers
    if ($navbarBurgers.length > 0) {
@@ -55,6 +54,24 @@ const Header = class extends React.Component {
   }
 
   if (isMobile) {
+
+    // Get all "accordions" elements
+   const accordion = Array.prototype.slice.call(document.querySelectorAll('.accordions'), 0);
+    // Check if there are any navbar links
+   if (accordion.length > 0) {
+
+     // Add a click event on each of them
+     accordion.forEach( el => {
+       el.addEventListener('click', () => {
+         //console.log(el.firstChild);
+         el.firstChild.classList.toggle('is-active');
+       });
+     });
+   }
+
+    /*
+    if (typeof window !== 'undefined') {
+      const bulmaCollapsible = this.bulmaCollapsible;
       // Return an array of bulmaCollapsible instances (empty if no DOM node found)
     const bulmaCollapsibleInstances = bulmaCollapsible.attach('.is-collapsible');
 
@@ -102,7 +119,8 @@ const Header = class extends React.Component {
       bulmaCollapsibleElement_4.bulmaCollapsible('open');
 
     }
- }
+  }*/
+  }
 }
 
  render() {
