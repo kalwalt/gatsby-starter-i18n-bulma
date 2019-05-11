@@ -22,7 +22,7 @@ const RootMenu = ( props ) => {
     const sel = select(props.langKey);
 
     return(
-      <div className="navbar-item has-dropdown is-hoverable">
+      <div className='navbar-item has-dropdown is-hoverable'>
         <Link className="navbar-link" to={ "/" + props.langKey + "/" + menuTree.artworks[sel] + "/" }>
           <FaImage className="menu-names" />
           <FormattedMessage id="artworks"/>
