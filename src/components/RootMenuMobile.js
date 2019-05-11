@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-//import AccordionCollaps from '../components/AccordionCollaps'
-import AccordionCollapsTest from '../components/AccordionCollapsTest'
+import AccordionCollaps from '../components/AccordionCollaps'
+//import AccordionCollapsTest from '../components/AccordionCollapsTest'
 import { FormattedMessage } from 'react-intl';
 import menu from '../data/artworksMenu'
 import menu_P from '../data/paintingMenu'
@@ -34,7 +34,7 @@ const RootMenuMobile = ( props ) => {
           </Link>
           <div className="navbar-item ">
         {/* accordion begin */}
-        <AccordionCollapsTest
+        <AccordionCollaps
         num='1'
         langKey={langKey}
         base={ menu_P.introduction[sel] }
@@ -42,20 +42,7 @@ const RootMenuMobile = ( props ) => {
         switches={keys_P}
         links={menu_P}
         />
-      <section className="accordions">
-      <article className="accordion is-active">
-        <div className="accordion-header toggle">
-          <p>Hello World</p>
-          <button class="toggle" aria-label="toggle"></button>
-        </div>
-        <div className="accordion-body">
-          <div className="accordion-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-          </div>
-        </div>
-      </article>
-      </section>
-      {/*<AccordionCollaps
+      <AccordionCollaps
         num='2'
         langKey={langKey}
         base={ menu_S.introduction[sel] }
@@ -78,7 +65,7 @@ const RootMenuMobile = ( props ) => {
         baseName="new-media"
         switches={keys_NM}
         links={menu_NM}
-        />*/}
+        />
         {/* end_accordion */}
       </div>
     </div>
