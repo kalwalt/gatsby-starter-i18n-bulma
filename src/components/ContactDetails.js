@@ -1,16 +1,27 @@
 import React from 'react'
 import { FaMapMarkerAlt, FaPhone, FaRegEnvelope } from 'react-icons/fa'
 import PropTypes from 'prop-types'
+import CardSlide from '../components/CardSlide'
 
-const ContactDetails = ({ infos, address, phone, email }) =>(
+const ContactDetails = ({ infos, image, phone, email }) =>(
 
       <div className="section">
         <div className="container">
           <h3 className="title">
             {infos}
             </h3>
-            {address && (
-              <div className="content">
+              <div className="columns is-vcentered">
+                <div className="column">
+                <CardSlide
+                style={{ maxWidth: '20%'}}
+                imageInfo={image}
+                name={image.name}
+                description={image.description}
+                website={image.website}/>
+                </div>
+                <div className="column is-vertical-center">
+                  {address && (
+                  <div className="content">
               <a
                 className="Contact--Details--Item"
                 href={`https://www.google.com.au/maps/search/${encodeURI(
@@ -21,7 +32,7 @@ const ContactDetails = ({ infos, address, phone, email }) =>(
               >
                 <FaMapMarkerAlt className="menu-names"/> {address}
               </a>
-              </div>
+            </div>
             )}
             {phone && (
               <div className="content">
@@ -39,10 +50,14 @@ const ContactDetails = ({ infos, address, phone, email }) =>(
             )}
             </div>
           </div>
+          </div>
+        </div>
     )
 
 
 ContactDetails.propTypes = {
+  infos: PropTypes.string,
+  image: PropTypes.object,
   address: PropTypes.string,
   phone: PropTypes.string,
   email: PropTypes.string,
