@@ -1,6 +1,7 @@
 @import "~bulma/sass/utilities/initial-variables"
 @import "~animate.css/animate.css"
 @import "~font-awesome/css/font-awesome.css"
+@import "~bulma-accordion/dist/css/bulma-accordion.min.css"
 
 // Config vars
 // Kalidi logo brand color: #FD461E
@@ -19,8 +20,28 @@ $pinterest-color: #FF0A12
 $vimeo-color: #47FF33
 $linkedin-color: #57F9FF
 
+#navMenu
+  background-color: #abd6d1
+
 .navbar .navbar-menu
   box-shadow:none !important
+
+.nested.dropdown
+  &:hover > .dropdown-menu
+    display: block
+
+  .dropdown-menu
+    top: -15px
+    margin-left: 100%
+
+  .dropdown-trigger
+
+    button
+      padding: 0px 0px
+      border: 0px
+      font-size: 14px
+      font-weight: 400
+      height: 2em
 
 .content .taglist
   list-style: none

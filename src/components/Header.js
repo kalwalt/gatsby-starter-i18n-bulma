@@ -6,13 +6,21 @@ import SelectLanguage from './SelectLanguage';
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
 import Dropdown from '../components/DropDownMenu'
+import RootMenu from '../components/RootMenu'
+import RootMenuMobile from '../components/RootMenuMobile'
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
 import select from '../components/utils'
 import menu from '../data/artworksMenu'
 
 const Header = class extends React.Component {
 
   componentDidMount() {
-    // Get all "navbar-burger" elements
+
    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     // Check if there are any navbar burgers
    if ($navbarBurgers.length > 0) {
@@ -44,7 +52,24 @@ const Header = class extends React.Component {
       });
     });
   }
- }
+
+  if (isMobile) {
+
+    // Get all "accordions" elements
+   const accordion = Array.prototype.slice.call(document.querySelectorAll('.accordions'), 0);
+    // Check if there are any navbar links
+   if (accordion.length > 0) {
+
+     // Add a click event on each of them
+     accordion.forEach( el => {
+       el.addEventListener('click', () => {
+         //console.log(el.firstChild);
+         el.firstChild.classList.toggle('is-active');
+       });
+     });
+   }
+  }
+}
 
  render() {
 
@@ -76,13 +101,24 @@ const Header = class extends React.Component {
           <Link className="navbar-item" to={"/" + props.langKey}>
             <FaHome className="menu-names" /> <FormattedMessage id="home" />
           </Link>
-            <Dropdown
-            langKey={props.langKey}
-            base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
-            baseName="artworks"
-            switches={keys}
-            links={menu}
-            />
+          <BrowserView viewClassName='navbar-item has-dropdown is-hoverable'>
+            <RootMenu
+              langKey={props.langKey}
+              base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
+              baseName="test"
+              switches={keys}
+              links={menu}
+              />
+          </BrowserView>
+          <MobileView viewClassName='navbar-item has-dropdown is-hoverable'>
+            <RootMenuMobile
+              langKey={props.langKey}
+              base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
+              baseName="test"
+              switches={keys}
+              links={menu}
+              />
+          </MobileView>
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
             <FaQuestion className="menu-names" /> <FormattedMessage id="about" />
           </Link>
