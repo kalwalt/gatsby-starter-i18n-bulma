@@ -3,7 +3,7 @@ import { FaMapMarkerAlt, FaPhone, FaRegEnvelope } from 'react-icons/fa'
 import PropTypes from 'prop-types'
 import CardSlide from '../components/CardSlide'
 
-const ContactDetails = ({ infos, image, phone, email }) =>(
+const ContactDetails = ({ infos, address, image, phone, email }) =>(
 
       <div className="section">
         <div className="container">
