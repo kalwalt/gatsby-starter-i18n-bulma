@@ -46,6 +46,7 @@ const RootMenuMobile = ( props ) => {
       <article className="accordion is-active">
         <div className="accordion-header toggle">
           <p>Hello World</p>
+          <button class="toggle" aria-label="toggle"></button>
         </div>
         <div className="accordion-body">
           <div className="accordion-content">

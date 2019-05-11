@@ -11,18 +11,14 @@ const AccordionCollaps = ( props ) => {
   const sel = select(props.langKey);
 
   return(
-    <div id="collapsible-accordion">
-    <article className="message">
-      <div className="message-header">
+    <section className="accordions">
+    <article className="accordion is-active">
+      <div className="accordion-header toggle">
         <p><FormattedMessage id={props.baseName} /></p>
-        <a href={"#collapsible-message-accordion-" + props.num } data-action="collapse"  aria-label="more options">
-          <span className="icon">
-            <FaAngleDown  aria-hidden="true"/>
-          </span>
-        </a>
+          <button class="toggle" aria-label="toggle"></button>
       </div>
-      <div id={"collapsible-message-accordion-" + props.num } className="message-body is-collapsible" data-parent="collapsible-accordion">
-        <div className="message-body-content">
+      <div className="accordion-body">
+        <div className="accordion-content">
         {switches &&( switches.map(( message ) => (
           <div className="content">
           <Link className="navbar-item" key={message} to={links[message][sel]}>
@@ -33,7 +29,7 @@ const AccordionCollaps = ( props ) => {
         </div>
       </div>
     </article>
-  </div>
+  </section>
   );
 };
 
