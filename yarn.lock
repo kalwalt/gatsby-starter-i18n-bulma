@@ -5509,6 +5509,15 @@ gatsby-plugin-i18n@^0.4.2:
     graphql "^0.11.7"
     ptz-i18n "^0.3.0"
 
+gatsby-plugin-manifest@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.1.1.tgz#e987d6e655b1dcfba6e10d65ff20722aaeb75391"
+  integrity sha512-KUjuMUjfPRTkpTxKWopCJbhByHd/nHUIJ7GtwIPD8lR0RVX1U2MHqNGApRQyq5VLrOKZB/2L/LuyZQGnvKxlfQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    semver "^5.6.0"
+    sharp "^0.22.1"
+
 gatsby-plugin-netlify-cms@^3.0.17:
   version "3.0.18"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms/-/gatsby-plugin-netlify-cms-3.0.18.tgz#5f5f47c7870ce7e55c784fc91a573a13ddfc45f1"
@@ -5533,7 +5542,7 @@ gatsby-plugin-netlify@^2.0.13:
     lodash "^4.17.10"
     webpack-assets-manifest "^3.0.2"
 
-gatsby-plugin-offline@^2.0.5:
+gatsby-plugin-offline@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-2.1.0.tgz#1c2da8881fa3b11b8de3da52f88f76e2c2fda811"
   integrity sha512-qFBERk/tgjslfZ2RrTBb80bQDls4V2iJMB3a3wyHTbYF17laE2ept7GkeiH/W9uuab24pH1+gFIF514Fn5uBTA==
