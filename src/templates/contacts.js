@@ -49,6 +49,8 @@ const ContactPageTemplate = ({
       phone={phone}
       email={email}
       />
+    <div className="box">
+    <h4 classname="subtitle"><FormattedMessage id="contact.fill-the-form"/></h4>
       <form
         name="contact"
         method="post"
@@ -144,6 +146,7 @@ const ContactPageTemplate = ({
         </div>
         </div>
       </form>
+      </div>
       </div>
       </div>
     </section>
@@ -264,6 +267,7 @@ export const pageQuery = graphql`
       frontmatter {
         id
         title
+        description
         address
         phone
         email

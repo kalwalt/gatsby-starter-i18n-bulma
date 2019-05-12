@@ -5,7 +5,7 @@ import CardSlide from '../components/CardSlide'
 
 const ContactDetails = ({ infos, address, image, phone, email }) =>(
 
-      <div className="section">
+      <div className="section box">
         <div className="container">
           <h3 className="title">
             {infos}

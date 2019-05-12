@@ -121,6 +121,19 @@ module.exports = {
         output: `/sitemap.xml`,
       },
     },
-
+    'gatsby-plugin-robots-txt',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `KAKI`,
+        short_name: `Kaki`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#D64000`,
+        display: `standalone`,
+        icon: `src/img/icon.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }

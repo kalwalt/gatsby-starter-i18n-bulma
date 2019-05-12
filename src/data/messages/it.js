@@ -41,6 +41,7 @@ module.exports = {
   'find-out-more': 'Scopri di più...',
   'contact': 'Contatti',
   'contact.infos': 'Informazioni di contatto',
+  'contact.fill-the-form': 'Riempi la scheda per inviare un messaggio',
   'contact.name': 'Nome',
   'contact.surname': 'Cognome',
   'contact.email': 'Email',
