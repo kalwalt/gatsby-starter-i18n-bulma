@@ -31,7 +31,7 @@ function setActionPath(langKey) {
 
 const ContactPageTemplate = ({
   title, content, contentComponent,
-  infos, address, phone, email,
+  infos, image, address, phone, email,
   handleSubmit, handleChange, action,
   option, optionA, optionB, optionC
 }) => {
@@ -44,6 +44,7 @@ const ContactPageTemplate = ({
       <PageContent className="container content" content={content} />
       <ContactDetails
       infos={infos}
+      image={image}
       address={address}
       phone={phone}
       email={email}
@@ -200,6 +201,7 @@ class ContactPage extends React.Component {
     //console.log(center);
     const linkinsta = dataMarkdown.frontmatter.linkinsta;
     const instagram = dataMarkdown.frontmatter.instagram;
+    const image = dataMarkdown.frontmatter.imageCardSL;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={location}>
           <Format>
@@ -208,6 +210,7 @@ class ContactPage extends React.Component {
                 <ContactPageTemplate
                 contentComponent={HTMLContent}
                 infos={intl.formatMessage({ id: 'contact.infos' })}
+                image={image}
                 address={address}
                 phone={phone}
                 email={email}
@@ -271,6 +274,19 @@ export const pageQuery = graphql`
         }
         linkinsta
         instagram
+        imageCardSL{
+          alt
+          image{
+            childImageSharp {
+              fluid(maxWidth: 128, quality: 80) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          name
+          description
+          website
+        }
       }
       fields {
         slug

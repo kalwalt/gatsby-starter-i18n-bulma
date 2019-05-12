@@ -17,6 +17,12 @@ locations:
   - lat: 45.6500779
     lng: 13.7677618
     mapLink: ''
+imageCardSL:
+  alt: "immagine"
+  image: /img/128x128.png
+  name: John Kaki
+  description: I am a visual artist, follow me in this adventure...!
+  website: www.kaki.com
 path: /en/contact
 slug: /en/contact
 ---
