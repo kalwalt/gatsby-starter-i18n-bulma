@@ -41,6 +41,7 @@ module.exports = {
   'info-sheet-dimensions': 'Dimensions: ',
   'contact': 'Contacts',
   'contact.infos': 'Contact informations',
+  'contact.fill-the-form': 'Fill the form to send a message',
   'contact.name': 'Name',
   'contact.surname': 'Surname',
   'contact.email': 'Email',
