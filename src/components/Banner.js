@@ -22,7 +22,7 @@ const Banner = ({main, mainpitch}) =>(
                <PreviewImage imageInfo={main}/>
              <div className="section">
              <div className="tile is-parent">
-               <div className="tile is-child notification is-success">
+               <div className="tile is-child notification is-info">
                  <div className="content">
                   <FaAward color="magenta" className="icon is-large"/>
                      <h3 className="title is-2">
