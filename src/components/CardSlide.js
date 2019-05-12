@@ -55,7 +55,7 @@ class CardSlide extends React.Component {
                 <ReactWOW animation='pulse'>
                   <p className="title is-4">{name}</p>
                 </ReactWOW>
-                <ReactWOW delay='1s' animation='shake'>
+                <ReactWOW delay='1s' animation='pulse'>
                   <p className="title is-6">{description}</p>
                 </ReactWOW>
                 <br/>
