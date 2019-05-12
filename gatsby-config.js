@@ -121,6 +121,7 @@ module.exports = {
         output: `/sitemap.xml`,
       },
     },
+    'gatsby-plugin-robots-txt',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
