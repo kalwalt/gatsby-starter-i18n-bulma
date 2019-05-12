@@ -41,11 +41,46 @@ to
 
 `/it/opere/`
 
+## Plugins
+
+This starter use these Gatsby.js Plugins:
+
+- gatsby-plugin-google-analytics
+- gatsby-plugin-i18n
+- gatsby-plugin-i18n-tags
+- gatsby-plugin-manifest
+- gatsby-plugin-netlify
+- gatsby-plugin-netlify-cms
+- gatsby-plugin-offline
+- gatsby-plugin-purgecss
+- gatsby-plugin-react-helmet
+- gatsby-plugin-remove-trailing-slashes
+- gatsby-plugin-robots-txt
+- gatsby-plugin-sass
+- gatsby-plugin-sharp
+- gatsby-plugin-sitemap
+- gatsby-remark-copy-linked-files
+- gatsby-remark-images
+- gatsby-remark-relative-images
+- gatsby-source-filesystem
+- gatsby-transformer-javascript-frontmatter
+- gatsby-transformer-json
+- gatsby-transformer-remark
+- gatsby-transformer-sharp
+
 ## Inspired by
 
 This project in part is based on the Netify template: [gatsby-starter-netlify-cms](https://github.com/netlify-templates/gatsby-starter-netlify-cms)
 and the [gatsby-starter-contentful-i18n](https://github.com/mccrodp/gatsby-starter-contentful-i18n)
  But a special mention i reserved to [gatsby-plugin-i18n](https://github.com/angeloocana/gatsby-plugin-i18n)
+
+## Documentation
+
+For more information, see the [wiki page][4509389d]
+
+  [4509389d]: https://github.com/kalwalt/gatsby-starter-i18n-bulma/wiki "wiki"
+
+  (Under costruction!)
 
 ## Copyright
 
