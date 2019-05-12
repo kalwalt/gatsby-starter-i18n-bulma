@@ -3,6 +3,7 @@ import ReactWOW from 'react-wow'
 import * as PropTypes from "prop-types"
 import { FaAward } from 'react-icons/fa'
 import PreviewImage from '../components/PreviewCompatibleImage'
+import { FormattedMessage } from 'react-intl'
 
 const Banner = ({main, mainpitch}) =>(
 
@@ -15,6 +16,9 @@ const Banner = ({main, mainpitch}) =>(
                   backgroundImage: 'linear-gradient(rgb(255, 68, 0), yellow)',
                   borderRadius: '4px',
                 }}>
+                <h3 className="title has-text-light has-text-centered">{mainpitch.heading}</h3>
+                <hr/>
+                <h4 className="subtitle has-text-light has-text-centered">{mainpitch.subheading}</h4>
                <PreviewImage imageInfo={main}/>
              <div className="section">
              <div className="tile is-parent">
@@ -27,6 +31,7 @@ const Banner = ({main, mainpitch}) =>(
                      <p className="subtitle is-4">
                        {mainpitch.description}
                      </p>
+                     <a href={mainpitch.link}><FormattedMessage id="find-out-more"/></a>
                    </div>
                  </div>
                </div>

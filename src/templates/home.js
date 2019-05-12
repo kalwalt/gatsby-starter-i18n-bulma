@@ -195,8 +195,11 @@ export const pageQuery = graphql`
         }
         heading
         mainpitch {
+          heading
+          subheading
           title
           description
+          link
         }
         slider{
           display

@@ -16,8 +16,11 @@ slider:
     - { original: 'https://lorempixel.com/1000/600/nature/2/', thumbnail: 'https://lorempixel.com/250/150/nature/2/', originalAlt: 'A beautiful sunset over the sea.', originalTitle: 'A beautiful sunset over the sea.', description: 'A beautiful sunset over the sea, where numerous routes of imagination depart.'}
     - { original: 'https://lorempixel.com/1000/600/nature/3/', thumbnail: 'https://lorempixel.com/250/150/nature/3/', originalAlt: 'A cliff on the sea.', originalTitle: 'A cliff on the sea.', description: 'A cliff where the sea incessantly breaks its waves.'}
 mainpitch:
+  heading: "Artworks with augmented reality"
+  subheading: "Interactive Art"
   title: "Why Kaki?"
   description: "Because it is a fruit with incredible qualities..."
+  link: /it/opere/nuovi-media/realtà-aumentata/
 main:
   image1:
     alt: a persimmon
