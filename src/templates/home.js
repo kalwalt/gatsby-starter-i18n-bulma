@@ -185,6 +185,7 @@ export const pageQuery = graphql`
       frontmatter {
         id
         title
+        description
         lang
         image {
           childImageSharp {

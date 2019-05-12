@@ -122,6 +122,7 @@ query TagPage($langKey: String!, $tag: String!) {
       node {
         frontmatter {
           title
+          description
           date
           slug
         }

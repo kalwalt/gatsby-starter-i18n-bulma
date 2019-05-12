@@ -24,6 +24,7 @@ class TemplateWrapper extends Component {
     super(props);
     this.children = this.props.children;
     const data = this.props.data;
+    this.description = data.markdownRemark.frontmatter.description;
     this.className = this.props.className;
     const location = this.props.location;
     this.title = data.markdownRemark.frontmatter.title;
@@ -51,6 +52,7 @@ class TemplateWrapper extends Component {
             titleTemplate={`%s | ${this.title}`}
           >
           <html lang={this.langKey} />
+          <meta name="description"  content={this.description}/>
           </Helmet>
           <Header langKey={this.langKey} langs={this.langsMenu} menu={this.menuTree} />
           <Main key="app-main" className={this.className}>

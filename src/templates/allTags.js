@@ -99,6 +99,7 @@ export const pageQuery = graphql`
     markdownRemark(id: {eq: $id}){
       frontmatter{
         title
+        description
         slug
         path
       }

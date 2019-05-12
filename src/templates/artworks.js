@@ -122,6 +122,7 @@ query ArtworksQuery($id: String!) {
      frontmatter {
        id
        title
+       description
        image {
          childImageSharp {
            fluid(maxWidth: 2048, quality: 100) {

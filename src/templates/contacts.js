@@ -267,6 +267,7 @@ export const pageQuery = graphql`
       frontmatter {
         id
         title
+        description
         address
         phone
         email
