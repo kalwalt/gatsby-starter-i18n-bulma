@@ -6,6 +6,7 @@ import Content, { HTMLContent } from "../components/Content"
 import IconMenu from '../components/IconMenu'
 import iconLinks from '../data/artworksMenu'
 import select from '../components/utils'
+import Slider from '../components/Slider'
 import Banner from '../components/Banner'
 import Testimonials from '../components/Testimonials'
 import CardSlide from '../components/CardSlide'
@@ -14,6 +15,8 @@ const HomePageTemplate = ({
   imageCardSL,
   image,
   heading,
+  display,
+  array,
   mainpitch,
   main,
   testimonials,
@@ -77,6 +80,7 @@ const HomePageTemplate = ({
         </h3>
        </div>
        </div>
+       <Slider array={array} display={display}/>
        <Banner main={main.image1} mainpitch={mainpitch}/>
        <div className="container section">
        <IconMenu
@@ -117,6 +121,9 @@ class HomePage extends React.Component {
     }
     const jsonData = data.allArticlesJson.edges[0].node.articles;
     const langKey = dataMarkdown.frontmatter.lang
+    const { frontmatter } = data.markdownRemark;
+    const { display } = frontmatter.slider;
+    const { array } = frontmatter.slider;
     const sel = select(langKey);
 
 
@@ -127,6 +134,8 @@ class HomePage extends React.Component {
             imageCardSL={dataMarkdown.frontmatter.imageCardSL}
             image={dataMarkdown.frontmatter.image}
             heading={dataMarkdown.frontmatter.heading}
+            display={display}
+            array={array}
             mainpitch={dataMarkdown.frontmatter.mainpitch}
             main={dataMarkdown.frontmatter.main}
             testimonials={dataMarkdown.frontmatter.testimonials}
@@ -188,6 +197,16 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+        }
+        slider{
+          display
+          array{
+            original
+            thumbnail
+            originalAlt
+            originalTitle
+            description
+          }
         }
         imageCardSL{
           alt
