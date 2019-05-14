@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import {Link} from 'gatsby'
 import { FormattedMessage } from 'react-intl';
 import select from '../components/utils'
-import { FaAngleDown } from 'react-icons/fa'
 
 const AccordionCollaps = ( props ) => {
   const switches = props.switches;
