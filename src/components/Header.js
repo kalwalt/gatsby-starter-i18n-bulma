@@ -5,13 +5,11 @@ import { FaHome, FaQuestion, FaImage, FaPenAlt, FaAmericanSignLanguageInterpreti
 import SelectLanguage from './SelectLanguage';
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
-import Dropdown from '../components/DropDownMenu'
 import RootMenu from '../components/RootMenu'
 import RootMenuMobile from '../components/RootMenuMobile'
 import {
   BrowserView,
   MobileView,
-  isBrowser,
   isMobile
 } from "react-device-detect";
 import select from '../components/utils'
