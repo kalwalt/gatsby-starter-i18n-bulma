@@ -19,9 +19,9 @@ const FollowUs = ({link, instagram}) => {
   )
 }
 
-FollowUs.propTypes{
-  link: PropTypes.string;
-  instagram: PropTypes.string;  
-}
+FollowUs.propTypes = {
+  link: PropTypes.string,
+  instagram: PropTypes.string,
+};
 
 export default FollowUs;

@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { graphql } from 'gatsby'
-import PropTypes from 'prop-types'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Main from '../components/Main'
@@ -13,8 +11,6 @@ import 'intl/locale-data/jsonp/en';
 import it from 'react-intl/locale-data/it';
 import 'intl/locale-data/jsonp/it';
 import './all.sass'
-
-import menuTree from '../data/menuTree'
 
 const getIdJsonUrl = (id, langKey, jsonData) => {
   if(id !== 'undefined'){

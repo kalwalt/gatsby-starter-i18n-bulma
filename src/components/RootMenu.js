@@ -120,4 +120,8 @@ const RootMenu = ( props ) => {
   );
 };
 
+RootMenu.propTypes = {
+  props: PropTypes.object,
+};
+
 export default RootMenu;

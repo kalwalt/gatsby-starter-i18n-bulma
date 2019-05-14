@@ -1,8 +1,7 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { navigate } from "gatsby-link";
-import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 import ContactDetails from "../components/ContactDetails"
@@ -21,7 +20,7 @@ function encode(data) {
 
 function setActionPath(langKey) {
   let path;
-  if(langKey=='en'){
+  if(langKey==='en'){
     path = '/en/contact/thanks/';
   }else{
     path = '/it/contatto/grazie/';
@@ -200,8 +199,6 @@ class ContactPage extends React.Component {
     const phone = dataMarkdown.frontmatter.phone;
     const email = dataMarkdown.frontmatter.email;
     const locations = dataMarkdown.frontmatter.locations;
-    const center = {center: {lat: Number(locations[0].lat), lng: Number(locations[0].lng)} };
-    //console.log(center);
     const linkinsta = dataMarkdown.frontmatter.linkinsta;
     const instagram = dataMarkdown.frontmatter.instagram;
     const image = dataMarkdown.frontmatter.imageCardSL;

@@ -1,11 +1,8 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-import { Link, graphql } from 'gatsby'
-import Img from "gatsby-image"
+import { graphql } from 'gatsby'
 import Layout from "../components/Layout"
-import { getCurrentLangKey } from 'ptz-i18n'
 import Content, { HTMLContent } from "../components/Content"
-import Slider from '../components/Slider'
 import Lightbox from '../components/Lightbox'
 import InfoCard from '../components/InfoCard'
 

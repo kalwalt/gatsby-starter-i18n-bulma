@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import ImageGallery from 'react-image-gallery';
-import Img from 'gatsby-image'
 import "react-image-gallery/styles/css/image-gallery.css";
 
 function renderImage(item) {
@@ -53,7 +51,7 @@ const Slider = ( { array, display } ) => {
 
   return (
     <section className="section">
-        { display == 'slide'  ?
+        { display === 'slide'  ?
      <ImageGallery lazyLoad={true} showBullets={true} renderItem={renderImage} items={array} />
     :
      <div className='void'></div>

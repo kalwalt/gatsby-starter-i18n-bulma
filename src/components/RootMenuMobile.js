@@ -72,4 +72,8 @@ const RootMenuMobile = ( props ) => {
   );
 };
 
+RootMenuMobile.propTypes = {
+  props: PropTypes.object,
+};
+
 export default RootMenuMobile;
