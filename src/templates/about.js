@@ -2,6 +2,7 @@ import React from "react"
 import * as PropTypes from "prop-types"
 import { graphql } from 'gatsby'
 import Layout from "../components/Layout"
+import SEO from '../components/SEO/SEO'
 import Content, { HTMLContent } from "../components/Content"
 
 const AboutPageTemplate = ({ title, content, contentComponent }) => {
@@ -30,8 +31,14 @@ class AboutPage extends React.Component {
       dataMarkdown = this.props.data.markdownRemark
     }
     const jsonData = this.props.data.allArticlesJson.edges[0].node.articles;
+    const { frontmatter } = dataMarkdown;
+    const image = frontmatter.image.childImageSharp.fluid.src;
     return (
       <Layout className="container" data={this.props.data} jsonData={jsonData} location={this.props.location}>
+        <SEO
+          frontmatter={frontmatter}
+          postImage={image}
+        />
         <div>
             <AboutPageTemplate
             contentComponent={HTMLContent}
@@ -76,6 +83,14 @@ export const pageQuery = graphql`
         id
         title
         description
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+              src
+            }
+          }
+        }
       }
       fields {
         slug

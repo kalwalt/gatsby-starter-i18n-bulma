@@ -2,6 +2,7 @@ import React from "react"
 import * as PropTypes from "prop-types"
 import { graphql } from 'gatsby'
 import Layout from "../components/Layout"
+import SEO from '../components/SEO/SEO'
 import Content, { HTMLContent } from "../components/Content"
 import Lightbox from '../components/Lightbox'
 import InfoCard from '../components/InfoCard'
@@ -63,8 +64,13 @@ render() {
   const lightbox = frontmatter.lightbox;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
   const { masonry } = frontmatter;
+  const image = frontmatter.image.childImageSharp.fluid.src;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
+        <SEO
+          frontmatter={frontmatter}
+          postImage={image}
+        />
         <div>
             <ArtworkTemplate
             contentComponent={HTMLContent}
@@ -122,6 +128,7 @@ query ArtworksSimpleQuery($id: String!) {
          childImageSharp {
            fluid(maxWidth: 2048, quality: 100) {
              ...GatsbyImageSharpFluid
+             src
            }
          }
        }
