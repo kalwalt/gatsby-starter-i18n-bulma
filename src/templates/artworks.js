@@ -1,5 +1,6 @@
 import React from "react"
 import * as PropTypes from "prop-types"
+import TagList from '../components/TagList'
 import { graphql } from 'gatsby'
 import Layout from "../components/Layout"
 import SEO from '../components/SEO/SEO'
@@ -18,6 +19,8 @@ const ArtworkTemplate = ({
   display,
   array,
   testimonials,
+  tags,
+  langKey
 }) => {
   const PageContent = contentComponent || Content
   return (
@@ -40,6 +43,7 @@ const ArtworkTemplate = ({
              </div>
              <section className="section">
                <PageContent className="container content" content={content} />
+                <TagList tags={tags} langKey={langKey}/>
              </section>
            </div>
          </div>
@@ -57,6 +61,8 @@ ArtworkTemplate.propTypes = {
     blurbs: PropTypes.array,
   }),
   array: PropTypes.array,
+  tags: PropTypes.array,
+  langKey: PropTypes.string
 }
 
 class ArtworksPage extends React.Component {
@@ -69,6 +75,8 @@ render() {
   const description = frontmatter.headingDesc;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
   const image = frontmatter.image.childImageSharp.fluid.src;
+  const langKey = frontmatter.lang;
+  const tags = frontmatter.tags;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
         <SEO
@@ -86,6 +94,8 @@ render() {
             array={array}
             description={description}
             testimonials={frontmatter.testimonials}
+            tags={tags}
+            langKey={langKey}
             />
         </div>
       </Layout>
@@ -129,6 +139,7 @@ query ArtworksQuery($id: String!) {
        id
        title
        description
+       tags
        image {
          childImageSharp {
            fluid(maxWidth: 2048, quality: 100) {

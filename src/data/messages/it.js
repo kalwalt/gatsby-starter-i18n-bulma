@@ -3,6 +3,8 @@ module.exports = {
   'tags': 'Tags',
   'tags.allTagsLink': 'Sfoglia tutti i tags',
   'tags.intro': 'Qui puoi trovare tutti i tags',
+  'tags.blog.intro': 'Qui puoi trovare tutti i tags del blog',
+  'tags.pages.intro': 'Qui puoi trovare tutti i tags delle pagine',
   'tags.nPostsTaggedWith': `{nPosts, number} {nPosts, plural,
       one {post}
       other {posts}

@@ -1,5 +1,6 @@
 import React from "react"
 import * as PropTypes from "prop-types"
+import TagList from '../components/TagList'
 import { graphql } from 'gatsby'
 import Layout from "../components/Layout"
 import SEO from '../components/SEO/SEO'
@@ -27,7 +28,9 @@ const HomePageTemplate = ({
   firstLink,
   secondLink,
   thirdLink,
-  fourthLink
+  fourthLink,
+  tags,
+  langKey
 }) => {
   const PageContent = contentComponent || Content
 
@@ -99,6 +102,7 @@ const HomePageTemplate = ({
        website={imageCardSL.website}/>
         <section className="section">
           <PageContent className="container content" content={content} />
+            <TagList tags={tags} langKey={langKey}/>
         </section>
       </div>
 )
@@ -109,6 +113,8 @@ HomePageTemplate.propTypes = {
   heading: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  tags: PropTypes.array,
+  langKey: PropTypes.string
 }
 
 class HomePage extends React.Component {
@@ -127,7 +133,7 @@ class HomePage extends React.Component {
     const { array } = frontmatter.slider;
     const sel = select(langKey);
     const image = frontmatter.image.childImageSharp.fluid.src;
-
+    const tags = frontmatter.tags;
 
     return (
       <Layout className="content" data={this.props.data} jsonData={jsonData} location={this.props.location}>
@@ -152,6 +158,8 @@ class HomePage extends React.Component {
             secondLink={iconLinks.sculpture[sel]}
             thirdLink={iconLinks.performance[sel]}
             fourthLink={iconLinks.interactivity[sel]}
+            tags={tags}
+            langKey={langKey}
              />
         </div>
       </Layout>
@@ -192,6 +200,7 @@ export const pageQuery = graphql`
         id
         title
         description
+        tags
         lang
         image {
           childImageSharp {

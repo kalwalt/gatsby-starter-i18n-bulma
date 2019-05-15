@@ -112,7 +112,7 @@ query TagPage($langKey: String!, $tag: String!) {
     }
   }
   allMarkdownRemark(limit: 1000, sort: {fields: [frontmatter___date], order: DESC},
-    filter: {frontmatter: {templateKey: {eq: "blog-post"}},
+    filter: {frontmatter: {templateKey: {ne: "message"}, lang: {eq: $langKey}},
     fields: {
     langKey: {eq: $langKey},
     tagSlugs: {elemMatch: {tag: {eq: $tag}}}

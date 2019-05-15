@@ -1,5 +1,6 @@
 import React from "react"
 import * as PropTypes from "prop-types"
+import TagList from '../components/TagList'
 import { graphql } from 'gatsby'
 import Layout from "../components/Layout"
 import SEO from '../components/SEO/SEO'
@@ -12,10 +13,11 @@ const ArtworkTemplate = ({
   content,
   contentComponent,
   heading,
-
   lightbox,
   images,
-  info
+  info,
+  tags,
+  langKey
 }) => {
   const PageContent = contentComponent || Content
   return (
@@ -32,6 +34,7 @@ const ArtworkTemplate = ({
              <section className="section">
                <PageContent className="container content" content={content} />
                <InfoCard info={info}/>
+                <TagList tags={tags} langKey={langKey}/>
              </section>
            </div>
          </div>
@@ -51,6 +54,8 @@ ArtworkTemplate.propTypes = {
   array: PropTypes.array,
   images: PropTypes.arrayOf(PropTypes.object),
   lightbox: PropTypes.object,
+  tags: PropTypes.array,
+  langKey: PropTypes.string
 }
 
 class ArtworksPage extends React.Component {
@@ -65,6 +70,8 @@ render() {
   const jsonData = data.allArticlesJson.edges[0].node.articles;
   const { masonry } = frontmatter;
   const image = frontmatter.image.childImageSharp.fluid.src;
+  const langKey = frontmatter.lang;
+  const tags = frontmatter.tags;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
         <SEO
@@ -82,6 +89,8 @@ render() {
             lightbox={lightbox}
             masonry={masonry}
             info={frontmatter.info}
+            tags={tags}
+            langKey={langKey}
             />
         </div>
       </Layout>
@@ -124,6 +133,7 @@ query ArtworksSimpleQuery($id: String!) {
      frontmatter {
        id
        title
+       tags
        image {
          childImageSharp {
            fluid(maxWidth: 2048, quality: 100) {

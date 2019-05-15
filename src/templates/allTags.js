@@ -8,7 +8,7 @@ import Helmet from 'react-helmet'
 import Layout from "../components/LayoutTag"
 import { FaTag, FaTags } from 'react-icons/fa'
 
-const AllTagsPageTemplate = ({ allTags, langKey }) => {
+const AllTagsPageTemplate = ({ allBlogTags, allPagesTags, allTags, langKey }) => {
 
   return (
     <section className="section">
@@ -27,24 +27,59 @@ const AllTagsPageTemplate = ({ allTags, langKey }) => {
           )}
         </FormattedMessage>
           <p>
+            <FormattedMessage id="tags.blog.intro"></FormattedMessage>
+          </p>
+          <nav className="content">
+            <ul className="taglist">
+              {allBlogTags.map(tag =>
+                <li key={tag.fieldValue}>
+                <span className="tag is-light is-small">
+                    <Link
+                      to={`${langKey}/tags/${kebabCase(tag.fieldValue)}/`}
+                    >
+                      <FaTag className="menu-names"/>  {tag.fieldValue} ({tag.totalCount})
+                    </Link>
+                  </span>
+                </li>
+              )}
+            </ul>
+          </nav>
+          <p>
+            <FormattedMessage id="tags.pages.intro"></FormattedMessage>
+          </p>
+          <nav className="content">
+            <ul className="taglist">
+              {allPagesTags.map(tag =>
+                <li key={tag.fieldValue}>
+                <span className="tag is-light is-small">
+                    <Link
+                      to={`${langKey}/tags/${kebabCase(tag.fieldValue)}/`}
+                    >
+                      <FaTag className="menu-names"/>  {tag.fieldValue} ({tag.totalCount})
+                    </Link>
+                  </span>
+                </li>
+              )}
+            </ul>
+          </nav>
+          <p>
             <FormattedMessage id="tags.intro"></FormattedMessage>
           </p>
-        <nav className="content">
-
-          <ul className="taglist">
-            {allTags.map(tag =>
-              <li key={tag.fieldValue}>
-              <span className="tag is-light is-small">
-                  <Link
-                    to={`${langKey}/tags/${kebabCase(tag.fieldValue)}/`}
-                  >
-                    <FaTag className="menu-names"/>  {tag.fieldValue} ({tag.totalCount})
-                  </Link>
-                </span>
-              </li>
-            )}
-          </ul>
-        </nav>
+          <nav className="content">
+            <ul className="taglist">
+              {allTags.map(tag =>
+                <li key={tag.fieldValue}>
+                <span className="tag is-light is-small">
+                    <Link
+                      to={`${langKey}/tags/${kebabCase(tag.fieldValue)}/`}
+                    >
+                      <FaTag className="menu-names"/>  {tag.fieldValue} ({tag.totalCount})
+                    </Link>
+                  </span>
+                </li>
+              )}
+            </ul>
+          </nav>
       </div>
     </section>
 )
@@ -62,7 +97,9 @@ class AllTagsPage extends React.Component {
     if (this.props.data !== null) {
       data = this.props.data
     }
-    const allTags = data.allMarkdownRemark.group;
+    const allBlogTags = data.blog.group;
+    const allPagesTags = data.pages.group;
+    const allTags = data.all.group;
     const url = this.props.location.pathname;
     const { langs, defaultLangKey } = data.site.siteMetadata.languages;
     const langKey = getCurrentLangKey(langs, defaultLangKey, url);
@@ -71,6 +108,8 @@ class AllTagsPage extends React.Component {
       <Layout className="container" data={this.props.data} location={this.props.location}>
         <div className="content">
             <AllTagsPageTemplate
+            allBlogTags={allBlogTags}
+            allPagesTags={allPagesTags}
             allTags={allTags}
             langKey={langKey}
              />
@@ -104,9 +143,52 @@ export const pageQuery = graphql`
         path
       }
     }
- allMarkdownRemark(limit: 2000,
+ blog: allMarkdownRemark(limit: 2000,
    filter: {
      frontmatter: { templateKey: { eq: "blog-post" }}
+     fields: {
+       langKey: {
+         eq: "en"
+       }
+     }
+   }) {
+   edges {
+     node {
+       frontmatter {
+         title
+         slug
+       }
+     }
+   }
+   group(field: frontmatter___tags) {
+     fieldValue
+     totalCount
+   }
+ }
+ pages: allMarkdownRemark(limit: 2000,
+   filter: {
+     frontmatter: { templateKey: { regex: "/artworks/" }}
+     fields: {
+       langKey: {
+         eq: "en"
+       }
+     }
+   }) {
+   edges {
+     node {
+       frontmatter {
+         title
+         slug
+       }
+     }
+   }
+   group(field: frontmatter___tags) {
+     fieldValue
+     totalCount
+   }
+ }
+ all: allMarkdownRemark(limit: 2000,
+   filter: {
      fields: {
        langKey: {
          eq: "en"
