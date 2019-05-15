@@ -134,6 +134,7 @@ query ArtworksSimpleQuery($id: String!) {
        id
        title
        tags
+       lang
        image {
          childImageSharp {
            fluid(maxWidth: 2048, quality: 100) {

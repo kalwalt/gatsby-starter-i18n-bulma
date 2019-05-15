@@ -140,6 +140,7 @@ query ArtworksQuery($id: String!) {
        title
        description
        tags
+       lang
        image {
          childImageSharp {
            fluid(maxWidth: 2048, quality: 100) {
