@@ -84,6 +84,12 @@
       "id": "17",
       "en": "artworks/painting/abstract-art-persimmon-among-the-stars",
       "it": "opere/pittura/arte-astratta-caco-tra-le-stelle"
+    },
+    {
+      "id": "18",
+      "en": "artworks/painting/introduction",
+      "it": "opere/pittura/introduzione"
     }
+
   ]
 }
