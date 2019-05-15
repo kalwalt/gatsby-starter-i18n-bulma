@@ -3,6 +3,7 @@ import * as PropTypes from "prop-types"
 import { graphql } from 'gatsby'
 import { navigate } from "gatsby-link";
 import Layout from "../components/Layout"
+import SEO from '../components/SEO/SEO'
 import Content, { HTMLContent } from "../components/Content"
 import ContactDetails from "../components/ContactDetails"
 import GoogleMap from '../components/GoogleMap'
@@ -202,8 +203,14 @@ class ContactPage extends React.Component {
     const linkinsta = dataMarkdown.frontmatter.linkinsta;
     const instagram = dataMarkdown.frontmatter.instagram;
     const image = dataMarkdown.frontmatter.imageCardSL;
+    const { frontmatter } = dataMarkdown;
+    const imageSEO = frontmatter.image.childImageSharp.fluid.src;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={location}>
+        <SEO
+          frontmatter={frontmatter}
+          postImage={imageSEO}
+        />
           <Format>
            {intl => (
             <div className="container">
@@ -265,6 +272,14 @@ export const pageQuery = graphql`
         id
         title
         description
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+              src
+            }
+          }
+        }
         address
         phone
         email

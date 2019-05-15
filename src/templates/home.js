@@ -2,6 +2,7 @@ import React from "react"
 import * as PropTypes from "prop-types"
 import { graphql } from 'gatsby'
 import Layout from "../components/Layout"
+import SEO from '../components/SEO/SEO'
 import Content, { HTMLContent } from "../components/Content"
 import IconMenu from '../components/IconMenu'
 import iconLinks from '../data/artworksMenu'
@@ -125,10 +126,15 @@ class HomePage extends React.Component {
     const { display } = frontmatter.slider;
     const { array } = frontmatter.slider;
     const sel = select(langKey);
+    const image = frontmatter.image.childImageSharp.fluid.src;
 
 
     return (
       <Layout className="content" data={this.props.data} jsonData={jsonData} location={this.props.location}>
+        <SEO
+          frontmatter={frontmatter}
+          postImage={image}
+        />
         <div>
             <HomePageTemplate
             imageCardSL={dataMarkdown.frontmatter.imageCardSL}
@@ -191,6 +197,7 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
+              src
             }
           }
         }

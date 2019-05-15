@@ -66,12 +66,13 @@ const BlogPost = ({ data, location }) => {
   const { markdownRemark: post } = data
   const jsonData = data.allArticlesJson.edges[0].node.articles;
   const langKey = post.frontmatter.lang;
+  const image = post.frontmatter.image.childImageSharp.fluid.src;
 
   return (
     <Layout className="container" data={data} jsonData={jsonData} location={location}>
      <SEO
        frontmatter={post.frontmatter}
-       postImage={post.frontmatter.image}
+       postImage={image}
        isBlogPost
      />
       <BlogPostTemplate
@@ -125,13 +126,20 @@ export const pageQuery = graphql`
        }
      }
    }
-  }
+ }        
     markdownRemark(id: { eq: $id }) {
       id
       html
       frontmatter {
         id
         title
+        image{
+          childImageSharp {
+        fluid(maxWidth: 1380) {
+          src
+        }
+      }
+        }
         description
         date
         tags
