@@ -1,5 +1,6 @@
 import React from "react"
 import * as PropTypes from "prop-types"
+import TagList from '../components/TagList'
 import { graphql } from 'gatsby'
 import Layout from "../components/Layout"
 import SEO from '../components/SEO/SEO'
@@ -12,7 +13,9 @@ const ArtworkIntroTemplate = ({
   content,
   contentComponent,
   intro,
-  heading
+  heading,
+  tags,
+  langKey
 }) => {
   const PageContent = contentComponent || Content
   return (
@@ -28,6 +31,7 @@ const ArtworkIntroTemplate = ({
              </h2>
              <section className="section">
                <PageContent className="container content" content={content} />
+                 <TagList tags={tags} langKey={langKey}/>
              </section>
            </div>
          </div>
@@ -44,6 +48,8 @@ ArtworkIntroTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  tags: PropTypes.array,
+  langKey: PropTypes.string
 }
 
 class ArtworksIntroPage extends React.Component {
@@ -53,6 +59,8 @@ render() {
   const { frontmatter } = data.markdownRemark;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
   const image = frontmatter.image.childImageSharp.fluid.src;
+  const langKey = frontmatter.lang;
+  const tags = frontmatter.tags;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
         <SEO
@@ -66,6 +74,8 @@ render() {
             title={frontmatter.title}
             content={data.markdownRemark.html}
             intro={frontmatter.intro}
+            tags={tags}
+            langKey={langKey}
             />
         </div>
       </Layout>
@@ -108,6 +118,7 @@ query ArtworksIntroQuery($id: String!) {
      frontmatter {
        id
        title
+       tags
        image {
          childImageSharp {
            fluid(maxWidth: 2048, quality: 100) {
