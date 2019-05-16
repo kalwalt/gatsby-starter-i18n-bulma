@@ -1,16 +1,16 @@
 ---
-id: '09'
-title: "Painting artworks page - english"
+id: '19'
+title: "New Painting artworks page - english"
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "Artworks page for painting"
+description: "Artworks page for newest painting"
 templateKey: artworks
 tags:
   - art
 lang: en
 date: "22-03-2019"
-path: /en/artworks/painting/
-slug: /en/artworks/painting/
+path: /en/artworks/painting/new/
+slug: /en/artworks/painting/new/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg
@@ -38,4 +38,4 @@ Here painting artworks of this collection:
 
 [A Persimmon among the stars][19392250]
 
-  [19392250]: /en/artworks/painting/abstract-art-persimmon-among-the-stars/ "A Persimmon among the stars"
+  [19392250]: /en/artworks/painting/new/abstract-art-persimmon-among-the-stars/ "A Persimmon among the stars"

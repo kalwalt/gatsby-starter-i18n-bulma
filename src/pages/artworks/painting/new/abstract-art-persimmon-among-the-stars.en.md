@@ -9,8 +9,8 @@ tags:
   - art
 lang: en
 date: "07-05-2019"
-path: /en/artwork/painting/abstract-art-persimmon-among-the-stars/
-slug: /en/artwork/painting/abstract-art-persimmon-among-the-stars/
+path: /en/artwork/painting/new/abstract-art-persimmon-among-the-stars/
+slug: /en/artwork/painting/new/abstract-art-persimmon-among-the-stars/
 lightbox:
   display: true
   images:

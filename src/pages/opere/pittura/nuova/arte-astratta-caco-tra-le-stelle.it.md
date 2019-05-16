@@ -9,8 +9,8 @@ tags:
   - art
 lang: it
 date: "07-05-2019"
-path: /it/opere/pittura/arte-astratta-caco-tra-le-stelle/
-slug: /it/opere/pittura/arte-astratta-caco-tra-le-stelle/
+path: /it/opere/pittura/nuova/arte-astratta-caco-tra-le-stelle/
+slug: /it/opere/pittura/nuova/arte-astratta-caco-tra-le-stelle/
 lightbox:
   display: true
   images:

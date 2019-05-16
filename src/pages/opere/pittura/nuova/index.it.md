@@ -1,16 +1,16 @@
 ---
-id: '09'
-title: "Pagina opere di pittura - italiano"
+id: '19'
+title: "Pagina opere di pittura recenti - italiano"
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina dedicata alle opere di pittura"
+description: "Pagina dedicata alle opere di pittura recenti"
 templateKey: artworks
 tags:
   - art
 lang: it
 date: "22-03-2019"
-path: /it/opere/pittura/
-slug: /it/opere/pittura/
+path: /it/opere/pittura/nuova/
+slug: /it/opere/pittura/nuova/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg
@@ -38,4 +38,4 @@ Di seguito le Opere pittoriche in questa collezione:
 
 [Un caco tra le stelle][19392250]
 
-  [19392250]: /it/opere/pittura/arte-astratta-caco-tra-le-stelle/ "Un caco tra le stelle"
+  [19392250]: /it/opere/pittura/nuova/arte-astratta-caco-tra-le-stelle/ "Un caco tra le stelle"
