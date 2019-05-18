@@ -6,7 +6,7 @@ import select from '../components/utils'
 import { FaAngleDown } from 'react-icons/fa'
 
 const AccordionCollaps = ( props ) => {
-  console.log(props);
+  //console.log(props);
   const switches = props.switches;
   const links = props.links;
   const sel = select(props.langKey);
