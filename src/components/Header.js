@@ -63,7 +63,7 @@ const Header = class extends React.Component {
        console.log(bulmaCollapsibleInstance.collapsed());
    });
 
-   const bulmaCollapsibleElement_1 = new bulmaCollapsible('#collapsible-message-accordion-1');
+  /* const bulmaCollapsibleElement_1 = new bulmaCollapsible('#collapsible-message-accordion-1');
 
    // Access to the bulmaCollapsible instance from DOM
    const collapsibleElement_1 = document.getElementById('#collapsible-message-accordion-1');
@@ -100,7 +100,7 @@ const Header = class extends React.Component {
      const collapsibleInstance_4 = collapsibleElement_4.bulmaCollapsible();
      bulmaCollapsibleElement_4.bulmaCollapsible('open');
 
-   }
+   }*/
  }
 }
 
