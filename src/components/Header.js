@@ -7,6 +7,7 @@ import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
 import RootMenu from '../components/RootMenu'
 import RootMenuMobile from '../components/RootMenuMobile'
+import bulmaCollapsible from '@creativebulma/bulma-collapsible/src/js/index.js'
 import {
   BrowserView,
   MobileView,
@@ -53,22 +54,54 @@ const Header = class extends React.Component {
 
   if (isMobile) {
 
-    let nM = document.getElementById("navMenu");
-    nM.style.backgroundColor = "#abd6d1"
-    // Get all "accordions" elements
-    const accordion = Array.prototype.slice.call(document.querySelectorAll('.accordions'), 0);
-    // Check if there are any navbar links
-    if (accordion.length > 0) {
+    // Return an array of bulmaCollapsible instances (empty if no DOM node found)
+   const bulmaCollapsibleInstances = bulmaCollapsible.attach('.is-collapsible');
 
-     // Add a click event on each of them
-        accordion.forEach( el => {
-        el.addEventListener('click', () => {
-        //console.log(el.firstChild);
-        el.firstChild.classList.toggle('is-active');
-       });
-     });
+   // Loop into instances
+   bulmaCollapsibleInstances.forEach(bulmaCollapsibleInstance => {
+       // Check if current state is collapsed or not
+       console.log(bulmaCollapsibleInstance.collapsed());
+   });
+
+   const bulmaCollapsibleElement_1 = new bulmaCollapsible('#collapsible-message-accordion-1');
+
+   // Access to the bulmaCollapsible instance from DOM
+   const collapsibleElement_1 = document.getElementById('#collapsible-message-accordion-1');
+   if (collapsibleElement_1) {
+     const collapsibleInstance_1 = collapsibleElement_1.bulmaCollapsible();
+     bulmaCollapsibleElement_1.bulmaCollapsible('open');
+
    }
-  }
+
+   const bulmaCollapsibleElement_2 = new bulmaCollapsible('#collapsible-message-accordion-2');
+
+   // Access to the bulmaCollapsible instance from DOM
+   const collapsibleElement_2 = document.getElementById('#collapsible-message-accordion-2');
+   if (collapsibleElement_2) {
+     const collapsibleInstance_2 = collapsibleElement_2.bulmaCollapsible();
+     bulmaCollapsibleElement_2.bulmaCollapsible('open');
+   }
+
+   const bulmaCollapsibleElement_3 = new bulmaCollapsible('#collapsible-message-accordion-3');
+
+   // Access to the bulmaCollapsible instance from DOM
+   const collapsibleElement_3 = document.getElementById('#collapsible-message-accordion-3');
+   if (collapsibleElement_1) {
+     const collapsibleInstance_3 = collapsibleElement_1.bulmaCollapsible();
+     bulmaCollapsibleElement_3.bulmaCollapsible('open');
+
+   }
+
+   const bulmaCollapsibleElement_4 = new bulmaCollapsible('#collapsible-message-accordion-4');
+
+   // Access to the bulmaCollapsible instance from DOM
+   const collapsibleElement_4 = document.getElementById('#collapsible-message-accordion-4');
+   if (collapsibleElement_1) {
+     const collapsibleInstance_4 = collapsibleElement_4.bulmaCollapsible();
+     bulmaCollapsibleElement_4.bulmaCollapsible('open');
+
+   }
+ }
 }
 
  render() {

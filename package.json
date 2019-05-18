@@ -7,7 +7,6 @@
   "dependencies": {
     "@babel/parser": "^7.3.4",
     "@babel/traverse": "^7.3.4",
-    "@creativebulma/bulma-collapsible": "^1.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-brands-svg-icons": "^5.7.2",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
@@ -87,5 +86,8 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "start": "gatsby serve"
+  },
+  "devDependencies": {
+    "@creativebulma/bulma-collapsible": "^1.0.3"
   }
 }
