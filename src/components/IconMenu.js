@@ -26,9 +26,9 @@ const IconMenu = class extends React.Component {
     const thirdLink = this.props.thirdLink;
     const fourthLink = this.props.fourthLink;
   return(
-    <div className="section box">
+    <div className="section box has-background-info">
       <div className="section">
-        <h3 className="title has-text-centered">
+        <h3 className="title has-text-centered has-text-light">
           <FormattedMessage id="menu-icon-message"/>
         </h3>
       </div>
