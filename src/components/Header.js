@@ -72,9 +72,6 @@ const Header = class extends React.Component {
    return (
 
 <header>
-<div className="navbar-end has-text-centered">
-  <SelectLanguage langs={props.langs} />
-</div>
     <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
       <div className="container">
         <div className="navbar-brand">
@@ -120,6 +117,11 @@ const Header = class extends React.Component {
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.contact[sel] +"/"}>
             <FaAmericanSignLanguageInterpreting className="menu-names" /> <FormattedMessage id="contact" />
           </Link>
+        </div>
+        <div className="navbar-end">
+          <div class="navbar-item  has-text-centered">
+            <SelectLanguage langs={props.langs} />
+          </div>
         </div>
         </div>
       </div>
