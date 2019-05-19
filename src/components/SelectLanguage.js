@@ -25,7 +25,7 @@ const SelectLanguage = (props) => {
   );
 
   return (
-    <section className="section">
+    <div className="section" style={{ padding: '1.5rem' }}>
       <header style={{
         color: '#D64000'
       }}>
@@ -34,7 +34,7 @@ const SelectLanguage = (props) => {
       <ul>
         {links}
       </ul>
-    </section>
+    </div>
   );
 };
 
