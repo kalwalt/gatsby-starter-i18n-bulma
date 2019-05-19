@@ -15,6 +15,7 @@ import { FaImage } from 'react-icons/fa'
 const RootMenuMobile = ( props ) => {
 
     const langKey = props.langKey;
+    //console.log(langKey);
     const keys_P = [ 'introduction', 'painting-new', 'painting-oldest' ];
     const keys_S = [ 'introduction', 'marble', 'wood', 'bronze', 'other-materials' ];
     const keys_Perf = [ 'performance01', 'performance02', 'performance03', 'performance04' ];

@@ -7,6 +7,7 @@ import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
 import RootMenu from '../components/RootMenu'
 import RootMenuMobile from '../components/RootMenuMobile'
+import bulmaCollapsible from '@creativebulma/bulma-collapsible/src/js/index.js'
 import {
   BrowserView,
   MobileView,
@@ -53,22 +54,13 @@ const Header = class extends React.Component {
 
   if (isMobile) {
 
-    let nM = document.getElementById("navMenu");
-    nM.style.backgroundColor = "#abd6d1"
-    // Get all "accordions" elements
-    const accordion = Array.prototype.slice.call(document.querySelectorAll('.accordions'), 0);
-    // Check if there are any navbar links
-    if (accordion.length > 0) {
+   let navMenu = document.getElementById("navMenu");
+   navMenu.style.backgroundColor = "#abd6d1"
 
-     // Add a click event on each of them
-        accordion.forEach( el => {
-        el.addEventListener('click', () => {
-        //console.log(el.firstChild);
-        el.firstChild.classList.toggle('is-active');
-       });
-     });
-   }
-  }
+   // Return an array of bulmaCollapsible instances (empty if no DOM node found)
+   const bulmaCollapsibleInstances = bulmaCollapsible.attach('.is-collapsible');
+
+ }
 }
 
  render() {

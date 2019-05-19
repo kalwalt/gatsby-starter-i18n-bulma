@@ -7,7 +7,6 @@
   "dependencies": {
     "@babel/parser": "^7.3.4",
     "@babel/traverse": "^7.3.4",
-    "@creativebulma/bulma-collapsible": "^1.0.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-brands-svg-icons": "^5.7.2",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
@@ -20,7 +19,6 @@
     "babel-runtime": "^6.26.0",
     "bootstrap": "^4.3.1",
     "bulma": "^0.7.4",
-    "bulma-accordion": "^2.0.1",
     "classnames": "^2.2.6",
     "css-loader": "^2.1.1",
     "dependencies": "^0.0.1",
@@ -87,5 +85,8 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "start": "gatsby serve"
+  },
+  "devDependencies": {
+    "@creativebulma/bulma-collapsible": "^1.0.3"
   }
 }

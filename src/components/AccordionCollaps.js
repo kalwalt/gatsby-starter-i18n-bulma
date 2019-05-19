@@ -3,21 +3,27 @@ import PropTypes from 'prop-types'
 import {Link} from 'gatsby'
 import { FormattedMessage } from 'react-intl';
 import select from '../components/utils'
+import { FaAngleDown } from 'react-icons/fa'
 
 const AccordionCollaps = ( props ) => {
+  //console.log(props);
   const switches = props.switches;
   const links = props.links;
   const sel = select(props.langKey);
 
   return(
-    <section className="accordions">
-    <article className="accordion is-active">
-      <div className="accordion-header toggle">
+    <div id="collapsible-accordion">
+    <div className="message">
+      <div className="message-header">
         <p><FormattedMessage id={props.baseName} /></p>
-          <button class="toggle" aria-label="toggle"></button>
+        <a href={"#collapsible-message-accordion-" + props.num } data-action="collapse"  aria-label="more options">
+          <span className="icon">
+            <FaAngleDown  aria-hidden="true"/>
+          </span>
+        </a>
       </div>
-      <div className="accordion-body">
-        <div className="accordion-content">
+      <div id={"collapsible-message-accordion-" + props.num } className="message-body is-collapsible" data-parent="collapsible-accordion">
+        <div className="message-body-content">
         {switches &&( switches.map(( message ) => (
           <div className="content">
           <Link className="navbar-item" key={message} to={links[message][sel]}>
@@ -27,8 +33,8 @@ const AccordionCollaps = ( props ) => {
          )))}
         </div>
       </div>
-    </article>
-  </section>
+    </div>
+  </div>
   );
 };
 
