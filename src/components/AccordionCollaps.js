@@ -13,7 +13,7 @@ const AccordionCollaps = ( props ) => {
 
   return(
     <div id="collapsible-accordion">
-    <article className="message">
+    <div className="message">
       <div className="message-header">
         <p><FormattedMessage id={props.baseName} /></p>
         <a href={"#collapsible-message-accordion-" + props.num } data-action="collapse"  aria-label="more options">
@@ -33,7 +33,7 @@ const AccordionCollaps = ( props ) => {
          )))}
         </div>
       </div>
-    </article>
+    </div>
   </div>
   );
 };
