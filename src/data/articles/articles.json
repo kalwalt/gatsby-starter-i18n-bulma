@@ -94,6 +94,11 @@
       "id": "19",
       "en": "artworks/painting/new",
       "it": "opere/pittura/nuova"
+    },
+    {
+      "id": "20",
+      "en": "artworks/painting/oldest",
+      "it": "opere/pittura/archivio"
     }
 
   ]
