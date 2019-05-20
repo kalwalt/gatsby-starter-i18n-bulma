@@ -80,8 +80,6 @@ For more information, see the [wiki page][4509389d]
 
   [4509389d]: https://github.com/kalwalt/gatsby-starter-i18n-bulma/wiki "wiki"
 
-  (Under costruction!)
-
 ## Copyright
 
 @kalwalt
