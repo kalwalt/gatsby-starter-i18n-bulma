@@ -18,7 +18,7 @@ export default class BlogIndexPage extends React.Component {
       <SEO
         frontmatter={data.markdownRemark.frontmatter}
         />
-        <section className="section">
+      <section className="content">
           <div className="container">
             <div className="content">
             <div
