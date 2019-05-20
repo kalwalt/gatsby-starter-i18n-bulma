@@ -119,7 +119,7 @@ const Header = class extends React.Component {
           </Link>
         </div>
         <div className="navbar-end">
-          <div class="navbar-item  has-text-centered">
+          <div className="navbar-item  has-text-centered">
             <SelectLanguage langs={props.langs} />
           </div>
         </div>
