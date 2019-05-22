@@ -1,7 +1,6 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-import { Link, graphql } from 'gatsby'
-import Img from "gatsby-image"
+import { graphql } from 'gatsby'
 import Layout from "../components/Layout"
 import Content, { HTMLContent } from "../components/Content"
 
@@ -78,6 +77,7 @@ export const pageQuery = graphql`
       frontmatter {
         id
         title
+        description
       }
       fields {
         slug

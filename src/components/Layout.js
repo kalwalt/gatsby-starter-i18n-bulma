@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { graphql } from 'gatsby'
-import PropTypes from 'prop-types'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Main from '../components/Main'
@@ -13,8 +11,6 @@ import 'intl/locale-data/jsonp/en';
 import it from 'react-intl/locale-data/it';
 import 'intl/locale-data/jsonp/it';
 import './all.sass'
-
-import menuTree from '../data/menuTree'
 
 const getIdJsonUrl = (id, langKey, jsonData) => {
   if(id !== 'undefined'){
@@ -68,6 +64,7 @@ class TemplateWrapper extends Component {
     super(props);
     this.children = this.props.children;
     const data = this.props.data;
+    this.description = data.markdownRemark.frontmatter.description;
     const jsonData = this.props.jsonData;
     this.className = this.props.className;
     const location = this.props.location;
@@ -77,7 +74,7 @@ class TemplateWrapper extends Component {
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
-    const id_article = data.markdownRemark.frontmatter.id;;
+    const id_article = data.markdownRemark.frontmatter.id;
     const id = Number(id_article) - 1;
     const basename = check_path(this.langKey, url, id, jsonData);
     var basePath = startPath(this.langKey, this.langsMenu, basename[0], url);
@@ -102,18 +99,7 @@ class TemplateWrapper extends Component {
             titleTemplate={`%s | ${this.title}`}
           >
           <html lang={this.langKey} />
-
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-
-          {/* Favicon stuff from realfavicongenerator.net */}
-          <meta name="apple-mobile-web-app-title" content="example.com" />
-          <meta name="application-name" content="example.com" />
-          <meta name="theme-color" content="#D64000" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#D64000" />
+          <meta name="description"  content={this.description}/>
           </Helmet>
           <Header langKey={this.langKey} langs={this.langsMenu} menu={this.menuTree} />
           <Main key="app-main" className={this.className}>

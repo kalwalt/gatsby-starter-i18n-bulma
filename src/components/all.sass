@@ -1,14 +1,15 @@
 @import "~bulma/sass/utilities/initial-variables"
 @import "~animate.css/animate.css"
 @import "~font-awesome/css/font-awesome.css"
+@import "~@creativebulma/bulma-collapsible/src/sass/index.sass"
 
 // Config vars
-// Kalidi logo brand color: #FD461E
-$kaldi-red: #D64000
-$kaldi-red-invert: #fff
+// Kaki logo brand color: #FD461E
+$kaki-red: #D64000
+$kaki-red-invert: #fff
 
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
+$primary: $kaki-red
+$primary-invert: $kaki-red-invert
 $body-color: #333
 
 //social icons
@@ -19,8 +20,33 @@ $pinterest-color: #FF0A12
 $vimeo-color: #47FF33
 $linkedin-color: #57F9FF
 
+#navMenu
+  background-color: $kaki-red-invert
+
 .navbar .navbar-menu
   box-shadow:none !important
+
+.nested.dropdown
+  &:hover > .dropdown-menu
+    display: block
+
+  .dropdown-menu
+    top: -15px
+    margin-left: 100%
+
+  .dropdown-trigger
+
+    button
+      padding: 0px 0px
+      border: 0px
+      font-size: 14px
+      font-weight: 400
+      height: 2em
+
+.is-vertical-center
+  display: flex
+  align-items: center
+
 
 .content .taglist
   list-style: none

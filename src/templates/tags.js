@@ -1,74 +1,104 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
+import PostList from '../components/PostList'
+import { FormattedMessage } from 'react-intl'
+import Helmet from 'react-helmet'
+import Layout from "../components/LayoutTag"
+import { FaTag, FaTags } from 'react-icons/fa'
 
-// Components
-import { Link, graphql } from "gatsby"
-import Layout from "../components/Layout"
+const TagRouteTemplate = ({ data, pageContext }) => {
 
-const Tags = ({ pageContext, data, location }) => {
-  const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
-  const jsonData = data.allArticlesJson.edges[0].node.articles;
+  const posts = data.allMarkdownRemark.edges.map(p => p.node)
+
+  const allTagsLink = (
+    <FormattedMessage id="tags.allTagsLink" >
+      {(txt) => (
+        <Link
+          to={`/${pageContext.langKey}/tags/`}
+        >
+        <FaTags className="menu-names"/>  {txt}
+        </Link>
+      )}
+    </FormattedMessage>
+  )
 
   return (
-    <Layout className="container" data={data} jsonData={jsonData} location={location}>
-    <div className="container block">
-      <h1 className="title">{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { path, title } = node.frontmatter
-          return (
-            <li style={{ marginBottom: `.5rem` }} key={path}>
-              <span className="tag is-light is-small">
-              <Link to={path}>{title}</Link>
-              </span>
-            </li>
-          )
-        })}
-      </ul>
-      {/*
-              This links to a page that does not yet exist.
-              We'll come back to it!
-            */}
-      <span style={{ marginBottom: `.5rem` }} className="tag is-light is-medium">
-        <Link to="/tags">All tags</Link>
-      </span>
-    </div>
-    </Layout>
+    <section className="section">
+      <div className="container content">
+        <header className="title is-size-3 has-text-weight-bold is-bold-light">
+          <FormattedMessage id="tags">
+            {(txt) => (
+              <Helmet
+                title={`${pageContext.tag} | ${txt}`}
+                meta={[{ name: 'description', content: txt }]}
+              />
+            )}
+          </FormattedMessage>
+          <FormattedMessage
+            id="tags.nPostsTaggedWith"
+            values={{ nPosts: data.allMarkdownRemark.totalCount }}
+          />
+          <div className="content">
+          <span className="tag is-light is-medium"><FaTag className="menu-names"/>{pageContext.tag}</span>
+          </div>
+          {allTagsLink}
+        </header>
+        <PostList
+          posts={posts}
+        />
+        <footer className="footer">
+          <span className="tag is-light is-medium">
+          {allTagsLink}
+          </span>
+        </footer>
+      </div>
+    </section>
   )
 }
 
-Tags.propTypes = {
-  pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              path: PropTypes.string.isRequired,
-              title: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired
-      ),
-    }),
-  }),
+TagRouteTemplate.propTypes = {
+  posts: PropTypes.object,
+  pageContext: PropTypes.object
 }
 
-export default Tags
+class TagRoute extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      location:  { pathname: "" },
+  };
+  }
+  componentDidMount(){
+    if (typeof window !== 'undefined'){
+    this.state = {location:  {pathname: window.location.pathname}};
+  }
+  }
+
+  render() {
+    let data;
+    let pageContext;
+    if (this.props.data !== null) {
+      data = this.props.data;
+      pageContext = this.props.pageContext;
+    }
+
+    return(
+      <Layout data={data} location={this.state.location}>
+      <TagRouteTemplate data={data} pageContext={pageContext}></TagRouteTemplate>
+      </Layout>
+
+    )
+
+  }
+}
+
+export default TagRoute
 
 export const pageQuery = graphql`
-query ($tag: String) {
+query TagPage($langKey: String!, $tag: String!) {
   site {
     siteMetadata {
-      title
       languages {
         langs
         defaultLangKey
@@ -77,29 +107,34 @@ query ($tag: String) {
   }
   markdownRemark {
     frontmatter {
-      id
+      title
+      slug
     }
   }
-  allArticlesJson(filter:{title:{eq:"home"}}){
- edges{
-   node{
-     articles {
-       en
-       it
-     }
-   }
- }
-}
-  allMarkdownRemark(limit: 2000, sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {tags: {in: [$tag]}}}) {
+  allMarkdownRemark(limit: 1000, sort: {fields: [frontmatter___date], order: DESC},
+    filter: {frontmatter: {templateKey: {ne: "message"}, lang: {eq: $langKey}},
+    fields: {
+    langKey: {eq: $langKey},
+    tagSlugs: {elemMatch: {tag: {eq: $tag}}}
+  }}) {
     totalCount
     edges {
       node {
         frontmatter {
-          id
           title
+          description
           date
-          path
+          slug
         }
+        fields {
+          langKey
+          slug
+          tagSlugs {
+            tag
+            link
+          }
+        }
+        excerpt
       }
     }
   }

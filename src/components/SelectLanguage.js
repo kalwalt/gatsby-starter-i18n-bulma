@@ -15,17 +15,17 @@ const getIcon = langKey => {
 
 const SelectLanguage = (props) => {
   const links = props.langs.map(lang =>
-    <Link to={lang.link} key={lang.langKey} style={{
-      color: '#D64000'
-    }}>
-      <li className="flags" selected={lang.selected}>
+      <li className="flags" key={lang.langKey} selected={lang.selected}>
+        <Link to={lang.link} alt={lang.langKey} style={{
+          color: '#D64000'
+        }}>
         {getIcon(lang.langKey)}
+          </Link>
       </li>
-    </Link>
   );
 
   return (
-    <section className="section">
+    <div className="section" style={{ padding: '1.5rem' }}>
       <header style={{
         color: '#D64000'
       }}>
@@ -34,7 +34,7 @@ const SelectLanguage = (props) => {
       <ul>
         {links}
       </ul>
-    </section>
+    </div>
   );
 };
 

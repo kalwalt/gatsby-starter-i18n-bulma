@@ -25,7 +25,7 @@ module.exports = {
       twitter: '@twitter',
       fbAppID: '',
     },
-    languages
+    languages,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -35,9 +35,17 @@ module.exports = {
       options: {
         langKeyForNull: 'any',
         langKeyDefault: languages.defaultLangKey,
-        useLangKeyLayout: false
+        useLangKeyLayout: false,
       }
     },
+    {
+    resolve: 'gatsby-plugin-i18n-tags',
+    options: { // Default options
+      tagPage: 'src/templates/tags.js',
+      tagsUrl: '/tags/',
+      langKeyForNull: 'any',
+    },
+  },
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -113,6 +121,19 @@ module.exports = {
         output: `/sitemap.xml`,
       },
     },
-
+    'gatsby-plugin-robots-txt',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `KAKI`,
+        short_name: `Kaki`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#D64000`,
+        display: `standalone`,
+        icon: `src/img/icon.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }

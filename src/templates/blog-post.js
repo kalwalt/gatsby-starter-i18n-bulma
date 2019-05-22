@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
+import TagList from '../components/TagList'
 import Helmet from 'react-helmet'
 import SEO from '../components/SEO/SEO'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
@@ -16,6 +16,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  langKey,
 }) => {
   const PostContent = contentComponent || Content
 
@@ -30,20 +31,7 @@ export const BlogPostTemplate = ({
             </h1>
             <p>{description}</p>
             <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4 className="subtitle">Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <span className="tag is-light is-small">
-                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
+            <TagList tags={tags} langKey={langKey}/>
           </div>
         </div>
       </div>
@@ -58,17 +46,21 @@ BlogPostTemplate.propTypes = {
   title: PropTypes.string,
   helmet: PropTypes.object,
   location: PropTypes.string,
+  tags: PropTypes.array,
+  langKey: PropTypes.string
 }
 
 const BlogPost = ({ data, location }) => {
   const { markdownRemark: post } = data
   const jsonData = data.allArticlesJson.edges[0].node.articles;
+  const langKey = post.frontmatter.lang;
+  const image = post.frontmatter.image.childImageSharp.fluid.src;
 
   return (
     <Layout className="container" data={data} jsonData={jsonData} location={location}>
      <SEO
        frontmatter={post.frontmatter}
-       postImage={post.frontmatter.image}
+       postImage={image}
        isBlogPost
      />
       <BlogPostTemplate
@@ -85,6 +77,7 @@ const BlogPost = ({ data, location }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        langKey={langKey}
       />
     </Layout>
   )
@@ -121,16 +114,24 @@ export const pageQuery = graphql`
        }
      }
    }
-  }
+ }
     markdownRemark(id: { eq: $id }) {
       id
       html
       frontmatter {
         id
         title
+        image{
+          childImageSharp {
+        fluid(maxWidth: 1380) {
+          src
+        }
+      }
+        }
         description
         date
         tags
+        lang
       }
     }
   }

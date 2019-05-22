@@ -61,6 +61,7 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
 
             {/* Twitter Card tags */}
             <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content={seo.social.twitter} />
             <meta name="twitter:creator" content={seo.social.twitter} />
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={description} />

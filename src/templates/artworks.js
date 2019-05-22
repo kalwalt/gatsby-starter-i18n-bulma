@@ -1,37 +1,54 @@
 import React from "react"
 import * as PropTypes from "prop-types"
-import { Link, graphql } from 'gatsby'
-import Img from "gatsby-image"
+import TagList from '../components/TagList'
+import { graphql } from 'gatsby'
 import Layout from "../components/Layout"
-import { getCurrentLangKey } from 'ptz-i18n'
+import SEO from '../components/SEO/SEO'
 import Content, { HTMLContent } from "../components/Content"
-import Features from '../components/Features'
 import Slider from '../components/Slider'
-import Lightbox from '../components/Lightbox'
+import Testimonials from '../components/Testimonials'
+import Features from '../components/Features'
 
-const ArtworkTemplate = ({ title, content, contentComponent, intro, heading, display, array, lightbox, images }) => {
+const ArtworkTemplate = ({
+  title,
+  content,
+  contentComponent,
+  intro,
+  heading,
+  description,
+  display,
+  array,
+  testimonials,
+  tags,
+  langKey
+}) => {
   const PageContent = contentComponent || Content
   return (
-
       <div className="container content">
        <h1 className="title animated bounceInLeft">{title}</h1>
         <div className="hero">
           <Slider array={array} display={display}/>
           </div>
           <div className="columns">
-           <div className="column is-6">
+           <div className="column is-9">
              <h2 className="has-text-weight-semibold subtitle">
              {heading}
              </h2>
+             <div className="container content">
+               {description}
+              </div>
              <Features gridItems={intro.blurbs} />
-             <Lightbox lightbox={lightbox} images={images} />
+             <div className="container content">
+               <Testimonials testimonials={testimonials} />
+             </div>
              <section className="section">
                <PageContent className="container content" content={content} />
+                <TagList tags={tags} langKey={langKey}/>
              </section>
            </div>
          </div>
       </div>
-)
+    )
 }
 
 ArtworkTemplate.propTypes = {
@@ -44,8 +61,8 @@ ArtworkTemplate.propTypes = {
     blurbs: PropTypes.array,
   }),
   array: PropTypes.array,
-  images: PropTypes.arrayOf(PropTypes.object),
-  lightbox: PropTypes.object,
+  tags: PropTypes.array,
+  langKey: PropTypes.string
 }
 
 class ArtworksPage extends React.Component {
@@ -55,11 +72,17 @@ render() {
   const { frontmatter } = data.markdownRemark;
   const { display } = frontmatter.slider;
   const { array } = frontmatter.slider;
-  const images = frontmatter.lightbox.images;
-  const lightbox = frontmatter.lightbox;
+  const description = frontmatter.headingDesc;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
+  const image = frontmatter.image.childImageSharp.fluid.src;
+  const langKey = frontmatter.lang;
+  const tags = frontmatter.tags;
     return (
       <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
+        <SEO
+          frontmatter={frontmatter}
+          postImage={image}
+        />
         <div>
             <ArtworkTemplate
             contentComponent={HTMLContent}
@@ -69,8 +92,10 @@ render() {
             intro={frontmatter.intro}
             display={display}
             array={array}
-            images={images}
-            lightbox={lightbox}
+            description={description}
+            testimonials={frontmatter.testimonials}
+            tags={tags}
+            langKey={langKey}
             />
         </div>
       </Layout>
@@ -113,15 +138,24 @@ query ArtworksQuery($id: String!) {
      frontmatter {
        id
        title
+       description
+       tags
+       lang
        image {
          childImageSharp {
            fluid(maxWidth: 2048, quality: 100) {
              ...GatsbyImageSharpFluid
+             src
            }
          }
        }
        heading
+       headingDesc
        description
+       testimonials{
+         author
+         quote
+       }
        intro {
          blurbs {
            image {
@@ -131,6 +165,8 @@ query ArtworksQuery($id: String!) {
                }
              }
            }
+          heading
+          link
           text
          }
       }

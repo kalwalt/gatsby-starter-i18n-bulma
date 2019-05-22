@@ -9,9 +9,18 @@ lang: it
 date: "05-03-2019"
 image: /img/PersimmonHD.jpg
 heading: "Il kako è il frutto dell'artista..."
+slider:
+  display: 'slide'
+  array:
+    - { original: 'https://lorempixel.com/1000/600/nature/1/', thumbnail: 'https://lorempixel.com/250/150/nature/1/', originalAlt: "Delle formiche su un filo d'erba", originalTitle: "Delle formiche su un filo d'erba", description: "Delle formiche salgono verso l'alto su un filo d'erba."}
+    - { original: 'https://lorempixel.com/1000/600/nature/2/', thumbnail: 'https://lorempixel.com/250/150/nature/2/', originalAlt: 'Un bel tramonto sul mare', originalTitle: 'Un bel tramonto sul mare', description: "Un bel tramonto sul mare, dove partono numerose rotte dell'immaginazione."}
+    - { original: 'https://lorempixel.com/1000/600/nature/3/', thumbnail: 'https://lorempixel.com/250/150/nature/3/', originalAlt: 'una scogliera sul mare', originalTitle: 'Una scogliera sul mare', description: 'Una scogliera dove il mare infrange incessantemente i suoi flutti.'}
 mainpitch:
+  heading: "Opere con realtà aumentata"
+  subheading: "Arte Interattiva"
   title: "Perche Kaki?"
   description: "Perche è un frutto dalle qualità incredibili..."
+  link: /en/artworks/new-media/augmented-reality/
 main:
   image1:
     alt: un caco

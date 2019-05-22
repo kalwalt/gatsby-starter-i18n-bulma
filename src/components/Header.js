@@ -5,14 +5,21 @@ import { FaHome, FaQuestion, FaImage, FaPenAlt, FaAmericanSignLanguageInterpreti
 import SelectLanguage from './SelectLanguage';
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
-import Dropdown from '../components/DropDownMenu'
+import RootMenu from '../components/RootMenu'
+import RootMenuMobile from '../components/RootMenuMobile'
+import bulmaCollapsible from '@creativebulma/bulma-collapsible/src/js/index.js'
+import {
+  BrowserView,
+  MobileView,
+  isMobile
+} from "react-device-detect";
 import select from '../components/utils'
 import menu from '../data/artworksMenu'
 
 const Header = class extends React.Component {
 
   componentDidMount() {
-    // Get all "navbar-burger" elements
+
    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     // Check if there are any navbar burgers
    if ($navbarBurgers.length > 0) {
@@ -44,20 +51,27 @@ const Header = class extends React.Component {
       });
     });
   }
+
+  if (isMobile) {
+
+   let navMenu = document.getElementById("navMenu");
+   navMenu.style.backgroundColor = "#abd6d1"
+
+   // Return an array of bulmaCollapsible instances (empty if no DOM node found)
+   const bulmaCollapsibleInstances = bulmaCollapsible.attach('.is-collapsible');
+
  }
+}
 
  render() {
 
    const props = this.props;
    const sel = select(props.langKey);
-   const keys = ['introduction','painting','sculpture','performance','interactivity'];
+   const keys = ['introduction','portfolio','painting','sculpture','performance','interactivity'];
 
    return (
 
 <header>
-<div className="navbar-end has-text-centered">
-  <SelectLanguage langs={props.langs} />
-</div>
     <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
       <div className="container">
         <div className="navbar-brand">
@@ -76,13 +90,24 @@ const Header = class extends React.Component {
           <Link className="navbar-item" to={"/" + props.langKey}>
             <FaHome className="menu-names" /> <FormattedMessage id="home" />
           </Link>
-            <Dropdown
-            langKey={props.langKey}
-            base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
-            baseName="artworks"
-            switches={keys}
-            links={menu}
-            />
+          <BrowserView viewClassName='navbar-item has-dropdown is-hoverable'>
+            <RootMenu
+              langKey={props.langKey}
+              base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
+              baseName="test"
+              switches={keys}
+              links={menu}
+              />
+          </BrowserView>
+          <MobileView viewClassName='navbar-item has-dropdown is-hoverable'>
+            <RootMenuMobile
+              langKey={props.langKey}
+              base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
+              baseName="test"
+              switches={keys}
+              links={menu}
+              />
+          </MobileView>
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
             <FaQuestion className="menu-names" /> <FormattedMessage id="about" />
           </Link>
@@ -92,6 +117,11 @@ const Header = class extends React.Component {
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.contact[sel] +"/"}>
             <FaAmericanSignLanguageInterpreting className="menu-names" /> <FormattedMessage id="contact" />
           </Link>
+        </div>
+        <div className="navbar-end">
+          <div className="navbar-item  has-text-centered">
+            <SelectLanguage langs={props.langs} />
+          </div>
         </div>
         </div>
       </div>
