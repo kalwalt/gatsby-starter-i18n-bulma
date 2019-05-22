@@ -27,8 +27,8 @@
     },
     {
       "id": "06",
-      "en": "artworks/introduction",
-      "it": "opere/introduzione"
+      "en": "artworks/sculpture/marble",
+      "it": "opere/scultura/marmo"
     },
     {
       "id": "07",
@@ -99,6 +99,21 @@
       "id": "20",
       "en": "artworks/painting/oldest",
       "it": "opere/pittura/archivio"
+    },
+    {
+      "id": "21",
+      "en": "artworks/sculpture/bronze",
+      "it": "opere/scultura/bronzo"
+    },
+    {
+      "id": "22",
+      "en": "artworks/sculpture/wood",
+      "it": "opere/scultura/legno"
+    },
+    {
+      "id": "23",
+      "en": "artworks/sculpture/other-materials",
+      "it": "opere/scultura/altri-materiali"
     }
 
   ]

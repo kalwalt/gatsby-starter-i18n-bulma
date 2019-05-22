@@ -1,41 +1,41 @@
 ---
 id: '06'
-title: "Artworks Introduction page"
+title: "Pagina introduttiva sulle opere di scultura in marmo"
 image: /img/Persimmon.jpg
-heading: The beauty of Persimmon
-description: "An introduction for the artworks page"
+heading: La bellezza del caco
+description: "Pagina introduttiva sulle sezioni delle opere di scultura in marmo"
 templateKey: artworks-intro
 tags:
   - art
-lang: en
+lang: it
 date: "05-03-2019"
-path: /en/artworks/introduction/
-slug: /en/artworks/introduction/
+path: /it/opere/scultura/marmo/
+slug: /it/opere/scultura/marmo/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg
-      heading: Painting
-      link: /en/artworks/painting/
+      heading: Pittura
+      link: /it/opere/pittura/
       text: >
-        You should test the fruit of the persimmon, it's worth it!
+        Dovresti testare il frutto del caco, ne vale la pena!
     - image: /img/Kaki.jpg
-      heading: Sculpture
-      link: /en/artworks/sculpture/
+      heading: Scultura
+      link: /it/opere/scultura/
       text: >
-        Why don't you decide to plant a persimmon tree in your garden?
+        Perchè non decidi di piantare un'albero di caco nel tuo giardino?
     - image: /img/Caco.jpg
       heading: Performance
-      link: /en/artworks/performance/
+      link: /it/opere/performance/
       text: >
-        The Perfection is revealed in detail...
+        La Perfezione si rivela nel dettaglio...
     - image: /img/Kaki_di_Misilmeri.jpg
-      heading: Interactive Art
-      link: /en/artworks/interactivity/
+      heading: Arte Interattiva
+      link: /it/opere/arte-interattiva/
       text: >
-        If only I could eat one of those fruits ...
+        Se anche solo potessi mangiare uno di quei frutti...
 ---
 
-### Introduction to the beauty of persimmon
+### Introduzione alla bellezza del caco
 
 Quo velit fore a occaecat ab si laborum si nostrud et fabulas quem legam est
 velit, dolor eu voluptate se legam. Tamen mandaremus hic incurreret, aut aute
