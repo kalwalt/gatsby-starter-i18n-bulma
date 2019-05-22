@@ -1,16 +1,16 @@
 ---
 id: '12'
-title: "Pagina di opere di interattività - italiano"
+title: "Pagina di opere di interattività introduzione - italiano"
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina dedicata alle opere di interattività"
-templateKey: artworks
+description: "Pagina di introduzione dedicata alle opere di interattività"
+templateKey: artworks-intro
 tags:
   - art
 lang: it
 date: "22-03-2019"
-path: /it/opere/arte-interattiva/
-slug: /it/opere/arte-interattiva/
+path: /it/opere/arte-interattiva/introduzione/
+slug: /it/opere/arte-interattiva/introduzione/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg

@@ -1,16 +1,16 @@
 ---
 id: '11'
-title: "Performance artworks page - english"
+title: "Performance artworks page introduction - english"
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "Artworks page for performance"
+description: "Artworks introduction page for performance"
 templateKey: artworks
 tags:
   - art
 lang: en
 date: "22-03-2019"
-path: /en/artworks/performance/
-slug: /en/artworks/performance/
+path: /en/artworks/performance/introduction/
+slug: /en/artworks/performance/introduction/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg

@@ -1,16 +1,16 @@
 ---
 id: '11'
-title: "Pagina di opere di performance - italiano"
+title: "Pagina di introduzione alle opere di performance - italiano"
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina dedicata alle opere di performance"
-templateKey: artworks
+description: "Pagina di introduzione dedicata alle opere di performance"
+templateKey: artworks-intro
 tags:
   - art
 lang: it
 date: "22-03-2019"
-path: /it/opere/performance/
-slug: /it/opere/performance/
+path: /it/opere/performance/introduzione/
+slug: /it/opere/performance/introduzione/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg

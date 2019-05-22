@@ -47,18 +47,18 @@
     },
     {
       "id": "10",
-      "en": "artworks/sculpture",
-      "it": "opere/scultura"
+      "en": "artworks/sculpture/introduction",
+      "it": "opere/scultura/introduzione"
     },
     {
       "id": "11",
-      "en": "artworks/performance",
-      "it": "opere/performance"
+      "en": "artworks/performance/introduction",
+      "it": "opere/performance/introduzione"
     },
     {
       "id": "12",
-      "en": "artworks/interactivity",
-      "it": "opere/arte-interattiva"
+      "en": "artworks/interactivity/introduction",
+      "it": "opere/arte-interattiva/introduzione"
     },
     {
       "id": "13",
