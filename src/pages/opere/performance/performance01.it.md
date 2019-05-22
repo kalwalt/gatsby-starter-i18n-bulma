@@ -1,0 +1,41 @@
+---
+id: '24'
+title: "Pagina sulla performance 01 - italiano"
+image: /img/Persimmon.jpg
+heading: La bellezza del caco
+description: "Pagina di introduzione dedicata alle opere di performance"
+templateKey: artworks-simple
+tags:
+  - art
+lang: it
+date: "22-03-2019"
+path: /it/opere/performance/performance01/
+slug: /it/opere/performance/performance01/
+info:
+  title: "Un caco tra le stelle"
+  artworkTitle: "Un caco tra le stelle"
+  year: "2019"
+  technique: "colore acrilico su tela"
+  dimensions: "70x50 cm"  
+intro:
+  blurbs:
+    - image: /img/Persimmon.jpg
+      text: >
+        Hai mai fatto una performance con un caco? Io si!
+    - image: /img/Kaki.jpg
+      text: >
+        Immagina di arrampicarti su di un albero di caco, che cosa vedresti una volta in cima?
+slider:
+  display: 'false'
+  array: []
+lightbox:
+  display: true
+  images:
+    - /img/Kaki.jpg
+    - /img/Persimmon.jpg
+testimonials:
+  - author: ""
+    quote: ""
+---
+
+## Performance 01

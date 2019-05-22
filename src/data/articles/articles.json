@@ -114,7 +114,26 @@
       "id": "23",
       "en": "artworks/sculpture/other-materials",
       "it": "opere/scultura/altri-materiali"
+    },
+    {
+      "id": "24",
+      "en": "artworks/performance/performance01",
+      "it": "opere/performance/performance01"
+    },
+    {
+      "id": "25",
+      "en": "artworks/performance/performance02",
+      "it": "opere/performance/performance02"
+    },
+    {
+      "id": "26",
+      "en": "artworks/performance/performance03",
+      "it": "opere/performance/performance03"
+    },
+    {
+      "id": "27",
+      "en": "artworks/performance/performance04",
+      "it": "opere/performance/performance04"
     }
-
   ]
 }
