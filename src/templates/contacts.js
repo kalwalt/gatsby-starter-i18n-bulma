@@ -139,8 +139,8 @@ const ContactPageTemplate = ({
             <textarea className="textarea" name={"message"} onChange={handleChange} id={"message"} required={true} />
           </div>
         </div>
-        <div className="field">
         <div data-netlify-recaptcha="true"></div>
+        <div className="field">
         <div className="control">
           <button className="button is-link" type="submit"><FormattedMessage id="contact.send"/></button>
         </div>
