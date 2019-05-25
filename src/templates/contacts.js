@@ -99,6 +99,7 @@ const ContactPageTemplate = ({
               type={"radio"}
               name={"gender"}
               value="male"
+              onChange={handleChange}
               defaultChecked
             />
             <span><FormattedMessage id="contact.gender.male"/></span>
@@ -108,6 +109,7 @@ const ContactPageTemplate = ({
               type={"radio"}
               name={"gender"}
               value="female"
+              onChange={handleChange}
             />
             <span><FormattedMessage id="contact.gender.female"/></span>
           </label>
@@ -121,6 +123,7 @@ const ContactPageTemplate = ({
               className="content"
               name={"type"}
               defaultValue="Type of Enquiry"
+              onChange={handleChange} 
               required
             >
               <option disabled hidden>
