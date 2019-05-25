@@ -50,7 +50,7 @@ const ContactPageTemplate = ({
       email={email}
       />
     <div className="box">
-    <h4 classname="subtitle"><FormattedMessage id="contact.fill-the-form"/></h4>
+    <h4 className="subtitle"><FormattedMessage id="contact.fill-the-form"/></h4>
       <form
         name="contact"
         method="post"
@@ -126,7 +126,7 @@ const ContactPageTemplate = ({
               onChange={handleChange}
               required
             >
-              <option disabled hidden>
+              <option name="options" disabled hidden>
                 Choose
               </option>
               <option>{optionA}</option>
