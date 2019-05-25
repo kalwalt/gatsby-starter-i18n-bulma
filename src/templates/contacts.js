@@ -56,7 +56,6 @@ const ContactPageTemplate = ({
         method="post"
         action={action}
         data-netlify="true"
-        data-netlify-recaptcha="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
       >
@@ -142,7 +141,6 @@ const ContactPageTemplate = ({
             <textarea className="textarea" name="message" onChange={handleChange} id="message" required={true} />
           </div>
         </div>
-        <div data-netlify-recaptcha="true"></div>
         <div className="field">
         <div className="control">
           <button className="button is-link" type="submit"><FormattedMessage id="contact.send"/></button>
