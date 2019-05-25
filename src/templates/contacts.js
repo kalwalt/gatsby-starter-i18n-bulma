@@ -97,7 +97,7 @@ const ContactPageTemplate = ({
           <label className="radio menu-names">
             <input
               type={"radio"}
-              name={"gender"}
+              name={"gender-male"}
               value="male"
               onChange={handleChange}
               defaultChecked
@@ -107,7 +107,7 @@ const ContactPageTemplate = ({
           <label className="radio">
             <input
               type={"radio"}
-              name={"gender"}
+              name={"gender-female"}
               value="female"
               onChange={handleChange}
             />
@@ -121,9 +121,9 @@ const ContactPageTemplate = ({
             <div className="select">
             <select
               className="content"
-              name={"type"}
+              name={"type-enquiry"}
               defaultValue="Type of Enquiry"
-              onChange={handleChange} 
+              onChange={handleChange}
               required
             >
               <option disabled hidden>
