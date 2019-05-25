@@ -71,7 +71,7 @@ const ContactPageTemplate = ({
         <div className="field">
           <label className="label" htmlFor="name" ><FormattedMessage id="contact.name"/></label>
           <div className="control">
-            <input className="input" type="text" name="name" onChange={handleChange} id="name" required=true />
+            <input className="input" type="text" name="name" onChange={handleChange} id="name" required={true} />
           </div>
         </div>
         <div className="field">
@@ -83,13 +83,13 @@ const ContactPageTemplate = ({
         <div className="field">
           <label className="label" htmlFor="email"><FormattedMessage id="contact.email"/></label>
             <div className="control">
-              <input className="input" type="email" name="email" onChange={handleChange} id="email" required=true />
+              <input className="input" type="email" name="email" onChange={handleChange} id="email" required={true} />
             </div>
           </div>
           <div className="field">
            <label className="label" htmlFor="subject"><FormattedMessage id="contact.subject"/></label>
              <div className="control">
-               <input className="input" type="subject" name="subject" onChange={handleChange} id="subject" required=true />
+               <input className="input" type="subject" name="subject" onChange={handleChange} id="subject" required={true} />
             </div>
         </div>
         <div className="field">
@@ -139,7 +139,7 @@ const ContactPageTemplate = ({
         <div className="field">
           <label className="label" htmlFor="message"><FormattedMessage id="contact.message"/></label>
           <div className="control">
-            <textarea className="textarea" name="message" onChange={handleChange} id="message" required=true />
+            <textarea className="textarea" name="message" onChange={handleChange} id="message" required={true} />
           </div>
         </div>
         <div data-netlify-recaptcha="true"></div>
