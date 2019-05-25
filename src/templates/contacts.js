@@ -50,13 +50,12 @@ const ContactPageTemplate = ({
       email={email}
       />
     <div className="box">
-    <h4 classname="subtitle"><FormattedMessage id="contact.fill-the-form"/></h4>
+    <h4 className="subtitle"><FormattedMessage id="contact.fill-the-form"/></h4>
       <form
         name="contact"
         method="post"
         action={action}
         data-netlify="true"
-        data-netlify-recaptcha="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
       >
@@ -69,45 +68,47 @@ const ContactPageTemplate = ({
           </label>
         </div>
         <div className="field">
-          <label className="label" htmlFor={"name"} ><FormattedMessage id="contact.name"/></label>
+          <label className="label" htmlFor="name" ><FormattedMessage id="contact.name"/></label>
           <div className="control">
-            <input className="input" type={"text"} name={"name"} onChange={handleChange} id={"name"} required={true} />
+            <input className="input" type="text" name="name" onChange={handleChange} id="name" required={true} />
           </div>
         </div>
         <div className="field">
-          <label className="label" htmlFor={"surname"} ><FormattedMessage id="contact.surname"/></label>
+          <label className="label" htmlFor="surname" ><FormattedMessage id="contact.surname"/></label>
           <div className="control">
-            <input className="input" type={"text"} name={"surname"} onChange={handleChange} id={"surname"} required={true} />
+            <input className="input" type="text" name="surname" onChange={handleChange} id="surname" required={true} />
           </div>
         </div>
         <div className="field">
-          <label className="label" htmlFor={"email"}><FormattedMessage id="contact.email"/></label>
+          <label className="label" htmlFor="email"><FormattedMessage id="contact.email"/></label>
             <div className="control">
-              <input className="input" type={"email"} name={"email"} onChange={handleChange} id={"email"} required={true} />
+              <input className="input" type="email" name="email" onChange={handleChange} id="email" required={true} />
             </div>
           </div>
           <div className="field">
-           <label className="label" htmlFor={"subject"}><FormattedMessage id="contact.subject"/></label>
+           <label className="label" htmlFor="subject"><FormattedMessage id="contact.subject"/></label>
              <div className="control">
-               <input className="input" type={"subject"} name={"subject"} onChange={handleChange} id={"subject"} required={true} />
+               <input className="input" type="subject" name="subject" onChange={handleChange} id="subject" required={true} />
             </div>
         </div>
         <div className="field">
           <div className="control">
           <label className="radio menu-names">
             <input
-              type={"radio"}
-              name={"gender"}
+              type="radio"
+              name="gender-male"
               value="male"
+              onChange={handleChange}
               defaultChecked
             />
             <span><FormattedMessage id="contact.gender.male"/></span>
           </label>
           <label className="radio">
             <input
-              type={"radio"}
-              name={"gender"}
+              type="radio"
+              name="gender-female"
               value="female"
+              onChange={handleChange}
             />
             <span><FormattedMessage id="contact.gender.female"/></span>
           </label>
@@ -119,11 +120,12 @@ const ContactPageTemplate = ({
             <div className="select">
             <select
               className="content"
-              name={"type"}
+              name="type-enquiry"
               defaultValue="Type of Enquiry"
+              onChange={handleChange}
               required
             >
-              <option disabled hidden>
+              <option name="options" disabled hidden>
                 Choose
               </option>
               <option>{optionA}</option>
@@ -134,13 +136,12 @@ const ContactPageTemplate = ({
           </label>
         </div>
         <div className="field">
-          <label className="label" htmlFor={"message"}><FormattedMessage id="contact.message"/></label>
+          <label className="label" htmlFor="message"><FormattedMessage id="contact.message"/></label>
           <div className="control">
-            <textarea className="textarea" name={"message"} onChange={handleChange} id={"message"} required={true} />
+            <textarea className="textarea" name="message" onChange={handleChange} id="message" required={true} />
           </div>
         </div>
         <div className="field">
-        <div data-netlify-recaptcha="true"></div>
         <div className="control">
           <button className="button is-link" type="submit"><FormattedMessage id="contact.send"/></button>
         </div>
@@ -172,7 +173,7 @@ class ContactPage extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
-    fetch("/", {
+    fetch("/?no-cache=1", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
