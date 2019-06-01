@@ -8,7 +8,6 @@ import Content, { HTMLContent } from "../components/Content"
 import MasonryGal from "../components/Masonry/MasonryGal"
 
 const ArtworkPortfolioTemplate = ({
-  title,
   content,
   contentComponent,
   intro,
@@ -19,32 +18,34 @@ const ArtworkPortfolioTemplate = ({
 }) => {
   const PageContent = contentComponent || Content
   return (
-      <div className="container content">
-       <h1 className="title animated bounceInLeft">{title}</h1>
-        <div className="hero">
+      <div className="content">
+        <section className="hero is-info">
+          <div className="hero-body">
+            <div className="content">
           {masonry &&
             <MasonryGal photos={masonry.photos}/>
           }
           </div>
-          <div className="columns">
-           <div className="column is-6">
-             <h2 className="has-text-weight-semibold subtitle">
-             {heading}
-             </h2>
+          </div>
+        </section>
+          <div className="container">
+           <div className="content">
+             <hr/>
+             <h1 className="title animated bounceInLeft">{heading}</h1>
              <section className="section">
                <PageContent className="container content" content={content} />
                   <TagList tags={tags} langKey={langKey}/>
              </section>
            </div>
          </div>
-      </div>
+       </div>
+
     )
 }
 
 ArtworkPortfolioTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   heading: PropTypes.string,
-  title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   tags: PropTypes.array,
@@ -62,7 +63,7 @@ render() {
   const langKey = frontmatter.lang;
   const tags = frontmatter.tags;
     return (
-      <Layout className="container" data={data} jsonData={jsonData} location={this.props.location}>
+      <Layout className="content" data={data} jsonData={jsonData} location={this.props.location}>
         <SEO
           frontmatter={frontmatter}
           postImage={image}
@@ -71,7 +72,6 @@ render() {
             <ArtworkPortfolioTemplate
             contentComponent={HTMLContent}
             heading={frontmatter.heading}
-            title={frontmatter.title}
             content={data.markdownRemark.html}
             intro={frontmatter.intro}
             masonry={masonry}
