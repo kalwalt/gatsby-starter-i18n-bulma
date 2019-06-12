@@ -21,24 +21,28 @@ const ArtworkTemplate = ({
 }) => {
   const PageContent = contentComponent || Content
   return (
-      <div className="container content">
-       <h1 className="title animated bounceInLeft">{title}</h1>
-        <div className="hero">
-          <Lightbox lightbox={lightbox} images={images} />
-          </div>
-          <div className="columns is-multiline">
-           <div className="column is-6">
-             <h2 className="has-text-weight-semibold subtitle">
-             {heading}
-             </h2>
-             <section className="section">
-               <PageContent className="container content" content={content} />
-               <InfoCard info={info}/>
-                <TagList tags={tags} langKey={langKey}/>
-             </section>
-           </div>
-         </div>
+    <div className="content">
+   <h1 className="title animated bounceInLeft">{title}</h1>
+    <div className="hero">
+      <Lightbox lightbox={lightbox} images={images} />
       </div>
+      <div className="section">
+        <h2 className="has-text-weight-semibold subtitle">
+        {heading}
+        </h2>
+      </div>
+      <div className="columns">
+       <div className="column is-4">
+         <section className="section">
+           <InfoCard info={info}/>
+            <TagList tags={tags} langKey={langKey}/>
+         </section>
+       </div>
+       <div className="column is-6">
+          <PageContent className="content" content={content} />
+       </div>
+     </div>
+  </div>
     )
 }
 
