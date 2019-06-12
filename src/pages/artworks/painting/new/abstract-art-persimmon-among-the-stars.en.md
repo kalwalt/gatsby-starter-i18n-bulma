@@ -16,7 +16,7 @@ lightbox:
   images:
     - image: /img/Kaki.jpg
       alt: "Some Persimmon on the tree"
-    - image: img/Persimmon.jpg
+    - image: /img/Persimmon.jpg
       alt: "A Persimmon tree"
 info:
   title: "A Persimmon among the stars"
