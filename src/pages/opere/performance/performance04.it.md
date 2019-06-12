@@ -11,6 +11,13 @@ lang: it
 date: "22-03-2019"
 path: /it/opere/performance/performance04/
 slug: /it/opere/performance/performance04/
+lightbox:
+  display: true
+  images:
+    - image: /img/Kaki.jpg
+      alt: "qualche Kako sull albero"
+    - image: /img/Persimmon.jpg
+      alt: "Un albero del Kako"
 info:
   title: "Un caco tra le stelle"
   artworkTitle: "Un caco tra le stelle"
