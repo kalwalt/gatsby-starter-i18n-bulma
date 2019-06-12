@@ -89,9 +89,9 @@ class Lightbox extends Component {
       <section className="section">
       {display === true ?
       <Fragment>
-        <div className="columns">
+        <div className="columns is-multiline">
           {images.map((img, i) => (
-            <div className="column" key={img.childImageSharp.fluid.src}>
+            <div className="column is-one-quarter" key={img.childImageSharp.fluid.src}>
               <a id="img-lightbox" className="image" href={img.childImageSharp.fluid.src} alt="Image" onClick={e => this.handleClick(e, i)}>
                 <Img fluid={img.childImageSharp.fluid} style={imageStyle} />
               </a>
