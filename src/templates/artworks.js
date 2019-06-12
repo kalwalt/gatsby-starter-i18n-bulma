@@ -180,20 +180,6 @@ query ArtworksQuery($id: String!) {
           description
         }
       }
-      lightbox {
-        display
-        images{
-         id
-         relativePath
-         childImageSharp {
-           fluid(maxWidth: 640, quality: 85) {
-             ...GatsbyImageSharpFluid
-             src
-             sizes
-            }
-          }
-        }
-      }
     }
   }
 }

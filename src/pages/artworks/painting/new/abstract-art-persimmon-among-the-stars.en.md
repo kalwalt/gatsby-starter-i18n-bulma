@@ -14,8 +14,10 @@ slug: /en/artwork/painting/new/abstract-art-persimmon-among-the-stars/
 lightbox:
   display: true
   images:
-    - /img/Kaki.jpg
-    - /img/Persimmon.jpg
+    - image: /img/Kaki.jpg
+      alt: "Some Persimmon on the tree"
+    - image: img/Persimmon.jpg
+      alt: "A Persimmon tree"
 info:
   title: "A Persimmon among the stars"
   artworkTitle: "A Persimmon among the stars"

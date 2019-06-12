@@ -14,8 +14,10 @@ slug: /it/opere/pittura/nuova/arte-astratta-caco-tra-le-stelle/
 lightbox:
   display: true
   images:
-    - /img/Kaki.jpg
-    - /img/Persimmon.jpg
+    - image: /img/Kaki.jpg
+      alt: "qualche Kako sull albero"
+    - image: /img/Persimmon.jpg
+      alt: "Un albero del Kako"
 info:
   title: "Un caco tra le stelle"
   artworkTitle: "Un caco tra le stelle"

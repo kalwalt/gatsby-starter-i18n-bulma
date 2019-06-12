@@ -28,11 +28,6 @@ intro:
 slider:
   display: 'false'
   array: []
-lightbox:
-  display: true
-  images:
-    - /img/Kaki.jpg
-    - /img/Persimmon.jpg
 testimonials:
   - author: ""
     quote: ""
