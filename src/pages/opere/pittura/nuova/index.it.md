@@ -23,8 +23,8 @@ slider:
   display: 'false'
   array: []
 testimonials:
-  - author: ""
-    quote: ""
+  - author: "sconosciuto"
+    quote: "Un kako può salvarti la vita!"
 ---
 
 ## Pittura

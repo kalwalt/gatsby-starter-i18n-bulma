@@ -23,8 +23,8 @@ slider:
   display: 'false'
   array: []
 testimonials:
-  - author: ""
-    quote: ""
+  - author: "unknown"
+    quote: "A Kaki may save your life!"
 ---
 
 ## Painting
