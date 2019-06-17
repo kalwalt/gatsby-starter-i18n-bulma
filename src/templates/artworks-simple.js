@@ -39,7 +39,7 @@ const ArtworkSimpleTemplate = ({
            </section>
          </div>
          <div className="column is-6">
-            <PageContent className="content" content={content} />
+            <PageContent className="section" content={content} />
          </div>
        </div>
     </div>
