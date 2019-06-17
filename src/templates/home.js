@@ -94,7 +94,9 @@ const HomePageTemplate = ({
        fourthLink={fourthLink}
        />
        </div>
-       <Testimonials testimonials={testimonials} />
+       <div className="section">
+          <Testimonials testimonials={testimonials} />
+       </div>
        <CardSlide
        imageInfo={imageCardSL}
        name={imageCardSL.name}
