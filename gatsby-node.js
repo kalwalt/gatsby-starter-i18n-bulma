@@ -4,6 +4,7 @@ const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
+  const ampTemplate = path.resolve('src/templates/home-amp.js');
 
   return graphql(`
     {
@@ -19,7 +20,7 @@ exports.createPages = ({ actions, graphql }) => {
           heading
         }
       }
-      allMarkdownRemark(
+  all: allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
@@ -47,6 +48,37 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+  amp: allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { glob: "**/src/pages/index.*.md" }
+				}
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+        ) {
+          edges {
+            node {
+              id
+              fields {
+                slug
+                langKey
+                tagSlugs{
+                  tag
+                  link
+                }
+              }
+              frontmatter {
+                id
+                date
+                path
+                tags
+                templateKey
+                lang
+                title
+                heading
+              }
+            }
+          }
+        }
     }
   `).then(result => {
     if (result.errors) {
@@ -54,9 +86,9 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    const postsAll = result.data.all.edges
 
-    posts.forEach(edge =>{
+    postsAll.forEach(edge =>{
       const id = edge.node.id;
       createPage({
         path: edge.node.fields.slug,
@@ -70,21 +102,23 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
 
+    // Create blog pages
+		result.data.amp.edges.forEach(({ node }) => {
+        const id = node.id;
+			createPage({
+				path: node.fields.slug,
+				component: ampTemplate,
+        context: {
+          id,
+        },
+			});
+		});
   })
+
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  //const { createNodeField } = actions
   fmImagesToRelative(node) // convert image paths for gatsby images
-
-  /*if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }*/
 }
 
 exports.onCreateWebpackConfig = ({ getConfig, stage }) => {

@@ -29,6 +29,31 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+  {
+    resolve: `gatsby-plugin-amp`,
+    options: {
+      analytics: {
+        type: 'gtag',
+        dataCredentials: 'include',
+        config: {
+          vars: {
+            gtag_id: "GA_TRACKING_ID",
+            config: {
+              "GA_TRACKING_ID": {
+                page_location: '{{pathname}}'
+              },
+            },
+          },
+        },
+      },
+      canonicalBaseUrl: 'localhost:9000/',
+      components: ['amp-img', 'amp-accordion'],
+      excludedPaths: ['/404*'],
+      pathIdentifier: '/amp/',
+      relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
+      useAmpClientIdApi: true,
+        },
+      },
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-i18n',

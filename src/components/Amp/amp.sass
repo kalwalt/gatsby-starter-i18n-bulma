@@ -1,0 +1,168 @@
+@import "~bulma/sass/utilities/initial-variables"
+@import "~font-awesome/css/font-awesome.css"
+
+// Config vars
+// Kaki logo brand color: #FD461E
+$kaki-red: #D64000
+$kaki-red-invert: #fff
+
+$primary: $kaki-red
+$primary-invert: $kaki-red-invert
+$body-color: #333
+
+//social icons
+$facebook-color: #3B5998
+$twitter-color: #00ACED
+$instagram-color: #EA4C89
+$pinterest-color: #FF0A12
+$vimeo-color: #47FF33
+$linkedin-color: #57F9FF
+
+#navMenu
+  background-color: $kaki-red-invert
+
+.navbar .navbar-menu
+  box-shadow:none !important
+
+.nested.dropdown
+  &:hover > .dropdown-menu
+    display: block
+
+  .dropdown-menu
+    top: -15px
+    margin-left: 100%
+
+  .dropdown-trigger
+
+    button
+      padding: 0px 0px
+      border: 0px
+      font-size: 14px
+      font-weight: 400
+      height: 2em
+
+.is-vertical-center
+  display: flex
+  align-items: center
+
+
+.content .taglist
+  list-style: none
+  margin-bottom: 0
+  margin-left: 0
+  margin-right: 1.5rem
+  margin-top: 1.5rem
+  display: flex
+  flex-wrap: wrap
+  justify-content: left
+  align-items: center
+  li
+    padding: 0 2rem 1rem 0
+    margin-bottom: 1.5rem
+    margin-top: 0
+
+// Helper Classes
+.full-width-image-container
+  width: 100vw
+  height: 400px
+  position: relative
+  left: 50%
+  right: 50%
+  margin: 5em -50vw
+  background-size: cover
+  background-position: bottom
+  display: flex
+  justify-content: center
+  align-items: center
+
+.full-width-image
+    width: 100vw
+    height: 400px
+    background-size: cover
+    background-position: bottom
+    display: flex
+    justify-content: center
+    align-items: center
+
+.margin-top-0
+  margin-top: 0 !important
+
+.menu-label
+  font-size: 1em !important
+  text-align: left
+.menu-list
+  list-style: none !important
+  text-align: left
+
+.menu-names
+  margin-right: 5px
+
+footer.footer
+  padding: 3rem 0rem 0rem
+  background-color: transparent
+
+.social
+  padding: 2em
+.social a
+  padding: .5em .5em .5em .5em
+  margin: .5em
+  width: 1em
+  height: 1em
+  vertical-align: middle
+  display: inline
+
+//icons in the footer
+.facebook-icon
+  color: $facebook-color
+.facebook-icon:hover
+  color: white
+.twitter-icon
+  color: $twitter-color
+.twitter-icon:hover
+  color: white
+.instagram-icon
+  color: $instagram-color
+.instagram-icon:hover
+  color: white
+.vimeo-icon
+  color: $vimeo-color
+.vimeo-icon:hover
+  color: white
+.linkedin-icon
+  color: $linkedin-color
+.linkedin-icon:hover
+  color: white
+
+.flags
+  display: inline-block
+  margin-left: .5em
+  margin-right: .5em
+
+.menu-icon
+  padding: 2em
+.menu-icon ul li a
+  padding: .5em .5em .5em .5em
+  margin: .5em
+  //width: 1em
+  //height: 1em
+  vertical-align: middle
+  display: inline
+  background-color: red
+  border-radius: 5px
+  position: relative
+
+.banner
+  margin-top: 10%
+  margin-bottom: 10%
+
+.testimonials
+  margin-top: 10%
+  margin-bottom: 10%
+
+.card-slide
+  margin-top: 10%
+  margin-bottom: 10%
+  .card-content
+    padding: 5%
+
+@import "~bulma"
