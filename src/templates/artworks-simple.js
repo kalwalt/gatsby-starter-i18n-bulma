@@ -8,7 +8,7 @@ import Content, { HTMLContent } from "../components/Content"
 import Lightbox from '../components/Lightbox'
 import InfoCard from '../components/InfoCard'
 
-const ArtworkTemplate = ({
+const ArtworkSimpleTemplate = ({
   title,
   content,
   contentComponent,
@@ -21,28 +21,32 @@ const ArtworkTemplate = ({
 }) => {
   const PageContent = contentComponent || Content
   return (
-      <div className="container content">
-       <h1 className="title animated bounceInLeft">{title}</h1>
-        <div className="hero">
-          <Lightbox lightbox={lightbox} images={images} />
-          </div>
-          <div className="columns is-multiline">
-           <div className="column is-6">
-             <h2 className="has-text-weight-semibold subtitle">
-             {heading}
-             </h2>
-             <section className="section">
-               <PageContent className="container content" content={content} />
-               <InfoCard info={info}/>
-                <TagList tags={tags} langKey={langKey}/>
-             </section>
-           </div>
+    <div className="content">
+     <h1 className="title animated bounceInLeft">{title}</h1>
+      <div className="hero">
+        <Lightbox lightbox={lightbox} images={images} />
+        </div>
+        <div className="section">
+          <h2 className="has-text-weight-semibold subtitle">
+          {heading}
+          </h2>
+        </div>
+        <div className="columns">
+         <div className="column is-4">
+           <section className="section">
+             <InfoCard info={info}/>
+              <TagList tags={tags} langKey={langKey}/>
+           </section>
          </div>
-      </div>
+         <div className="column is-6">
+            <PageContent className="section" content={content} />
+         </div>
+       </div>
+    </div>
     )
 }
 
-ArtworkTemplate.propTypes = {
+ArtworkSimpleTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   heading: PropTypes.string,
   title: PropTypes.string.isRequired,
@@ -52,13 +56,13 @@ ArtworkTemplate.propTypes = {
     blurbs: PropTypes.array,
   }),
   array: PropTypes.array,
-  images: PropTypes.arrayOf(PropTypes.object),
+  //images: PropTypes.arrayOf(PropTypes.object),
   lightbox: PropTypes.object,
   tags: PropTypes.array,
   langKey: PropTypes.string
 }
 
-class ArtworksPage extends React.Component {
+class ArtworksSimplePage extends React.Component {
 
 render() {
   const data = this.props.data;
@@ -79,7 +83,7 @@ render() {
           postImage={image}
         />
         <div>
-            <ArtworkTemplate
+            <ArtworkSimpleTemplate
             contentComponent={HTMLContent}
             heading={frontmatter.heading}
             title={frontmatter.title}
@@ -98,7 +102,7 @@ render() {
   }
 }
 
-ArtworksPage.propTypes = {
+ArtworksSimplePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -106,7 +110,7 @@ ArtworksPage.propTypes = {
   }),
 }
 
-export default ArtworksPage
+export default ArtworksSimplePage
 
 export const pageQuery = graphql`
 query ArtworksSimpleQuery($id: String!) {
@@ -137,7 +141,7 @@ query ArtworksSimpleQuery($id: String!) {
        lang
        image {
          childImageSharp {
-           fluid(maxWidth: 2048, quality: 100) {
+           fluid(maxWidth: 1200, quality: 86) {
              ...GatsbyImageSharpFluid
              src
            }
@@ -177,15 +181,15 @@ query ArtworksSimpleQuery($id: String!) {
       lightbox {
         display
         images{
-         id
-         relativePath
-         childImageSharp {
-           fluid(maxWidth: 640, quality: 85) {
-             ...GatsbyImageSharpFluid
-             src
-             sizes
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1200, quality: 85) {
+                ...GatsbyImageSharpFluid
+                src
+              }
             }
           }
+          alt
         }
       }
     }

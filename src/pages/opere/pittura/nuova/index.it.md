@@ -22,14 +22,9 @@ intro:
 slider:
   display: 'false'
   array: []
-lightbox:
-  display: true
-  images:
-    - /img/Kaki.jpg
-    - /img/Persimmon.jpg
 testimonials:
-  - author: ""
-    quote: ""
+  - author: "sconosciuto"
+    quote: "Un kako può salvarti la vita!"
 ---
 
 ## Pittura

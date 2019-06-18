@@ -11,6 +11,13 @@ lang: en
 date: "22-03-2019"
 path: /en/artworks/performance/performance01/
 slug: /en/artworks/performance/performance01/
+lightbox:
+  display: true
+  images:
+    - image: /img/Kaki.jpg
+      alt: "Some Persimmon on the tree"
+    - image: /img/Persimmon.jpg
+      alt: "A Persimmon tree"
 info:
   title: "Un caco tra le stelle"
   artworkTitle: "Un caco tra le stelle"
@@ -28,11 +35,6 @@ intro:
 slider:
   display: 'false'
   array: []
-lightbox:
-  display: true
-  images:
-    - /img/Kaki.jpg
-    - /img/Persimmon.jpg
 testimonials:
   - author: ""
     quote: ""

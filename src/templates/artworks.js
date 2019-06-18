@@ -28,16 +28,16 @@ const ArtworkTemplate = ({
        <h1 className="title animated bounceInLeft">{title}</h1>
         <div className="hero">
           <Slider array={array} display={display}/>
-          </div>
-          <div className="columns">
-           <div className="column is-9">
-             <h2 className="has-text-weight-semibold subtitle">
-             {heading}
-             </h2>
-             <div className="container content">
-               {description}
-              </div>
+            <div className="section">
+              <h2 className="has-text-weight-semibold subtitle">
+              {heading}
+              </h2>
+              <div className="container content">
+                {description}
+               </div>
+             </div>
              <Features gridItems={intro.blurbs} />
+          </div>
              <div className="container content">
                <Testimonials testimonials={testimonials} />
              </div>
@@ -45,8 +45,6 @@ const ArtworkTemplate = ({
                <PageContent className="container content" content={content} />
                 <TagList tags={tags} langKey={langKey}/>
              </section>
-           </div>
-         </div>
       </div>
     )
 }
@@ -178,20 +176,6 @@ query ArtworksQuery($id: String!) {
           originalAlt
           originalTitle
           description
-        }
-      }
-      lightbox {
-        display
-        images{
-         id
-         relativePath
-         childImageSharp {
-           fluid(maxWidth: 640, quality: 85) {
-             ...GatsbyImageSharpFluid
-             src
-             sizes
-            }
-          }
         }
       }
     }

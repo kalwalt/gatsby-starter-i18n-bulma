@@ -89,11 +89,11 @@ class Lightbox extends Component {
       <section className="section">
       {display === true ?
       <Fragment>
-        <div className="columns">
+        <div className="columns is-multiline">
           {images.map((img, i) => (
-            <div className="column" key={img.childImageSharp.fluid.src}>
-              <a id="img-lightbox" className="image" href={img.childImageSharp.fluid.src} alt="Image" onClick={e => this.handleClick(e, i)}>
-                <Img fluid={img.childImageSharp.fluid} style={imageStyle} />
+            <div className="column is-one-quarter" key={img.image.childImageSharp.fluid.src}>
+              <a id="img-lightbox" className="image" href={img.image.childImageSharp.fluid.src} alt={img.alt} onClick={e => this.handleClick(e, i)}>
+                <Img fluid={img.image.childImageSharp.fluid} alt={img.alt} style={imageStyle} />
               </a>
             </div>
           ))}
@@ -104,7 +104,7 @@ class Lightbox extends Component {
           <div className="modal-background"></div>
           <div className="modal-content">
           <button id="modal-close" className="modal-close is-large" aria-label="close"></button>
-            <Img  fluid={images[selectedImage].childImageSharp.fluid} />
+            <Img  fluid={images[selectedImage].image.childImageSharp.fluid} />
             <footer className="modal-card-foot">
                 <button className="button is-primary" onClick={this.goBack} disabled={selectedImage === 0}>
                   Previous
