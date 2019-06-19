@@ -7,7 +7,7 @@ module.exports = {
   This is a blog theme. The description will be showed in SEO results on pages
   without their own descriptions.
 `,
-    siteUrl: "localhost:8000",
+    siteUrl: "localhost:9000",
     image: 'img.jpg',
     author: {
       name: 'Your Name',
@@ -33,22 +33,22 @@ module.exports = {
     resolve: `gatsby-plugin-amp`,
     options: {
       analytics: {
-        type: 'gtag',
-        dataCredentials: 'include',
-        config: {
-          vars: {
-            gtag_id: "GA_TRACKING_ID",
-            config: {
-              "GA_TRACKING_ID": {
-                page_location: '{{pathname}}'
+      type: 'gtag',
+      dataCredentials: 'include',
+      config: {
+        vars: {
+          gtag_id: 'UA-0000000',
+          config: {
+             'UA-0000000': {
+              page_location: '{{pathname}}'
               },
             },
           },
         },
       },
-      canonicalBaseUrl: 'localhost:9000/',
-      components: ['amp-img', 'amp-accordion'],
-      excludedPaths: ['/404*'],
+      canonicalBaseUrl: 'localhost:9000',
+      components: ['amp-img'],
+      excludedPaths: ['/404*','/admin', '/opere/*','/artworks/*','/blog/*'],
       pathIdentifier: '/amp/',
       relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
       useAmpClientIdApi: true,
@@ -137,7 +137,7 @@ module.exports = {
       resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
         develop: true,            // Activates purging in npm run develop
-        purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
+        purgeOnly: ['/all.sass', '/Amp/amp.sass'], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
     {

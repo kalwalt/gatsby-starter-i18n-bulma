@@ -106,13 +106,14 @@ exports.createPages = ({ actions, graphql }) => {
 		result.data.amp.edges.forEach(({ node }) => {
         const id = node.id;
 			createPage({
-				path: node.fields.slug,
-				component: ampTemplate,
+				path: `${node.fields.slug}amp`,
+				component:  path.resolve('src/templates/home.amp.js'),
         context: {
+           slug: node.fields.slug,
           id,
         },
-			});
-		});
+			})
+		})
   })
 
 }
