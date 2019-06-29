@@ -9,7 +9,7 @@ import IconMenu from '../components/IconMenu'
 import iconLinks from '../data/artworksMenu'
 import select from '../components/utils'
 import Slider from '../components/Amp/SliderAmp'
-import Banner from '../components/Banner'
+import Banner from '../components/Amp/BannerAmp'
 import Testimonials from '../components/Testimonials'
 import CardSlide from '../components/Amp/CardSlideAmp'
 
