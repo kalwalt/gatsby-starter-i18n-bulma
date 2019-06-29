@@ -11,7 +11,7 @@ import select from '../components/utils'
 import Slider from '../components/Amp/SliderAmp'
 import Banner from '../components/Banner'
 import Testimonials from '../components/Testimonials'
-import CardSlide from '../components/CardSlide'
+import CardSlide from '../components/Amp/CardSlideAmp'
 
 const HomePageTemplate = ({
   imageCardSL,
@@ -236,6 +236,7 @@ export const pageQuery = graphql`
             childImageSharp {
               fluid(maxWidth: 128, quality: 84) {
                 ...GatsbyImageSharpFluid
+                src
               }
             }
           }
