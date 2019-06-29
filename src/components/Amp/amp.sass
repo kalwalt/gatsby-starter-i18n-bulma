@@ -1,5 +1,4 @@
 @import "~bulma/sass/utilities/initial-variables"
-@import "~font-awesome/css/font-awesome.css"
 
 // Config vars
 // Kaki logo brand color: #FD461E
@@ -164,5 +163,23 @@ footer.footer
   margin-bottom: 10%
   .card-content
     padding: 5%
+
+//Amp section
+.carousel2
+  background: $kaki-red-invert
+  margin: 1rem 0
+
+.carousel2 .slide amp-img img
+  object-fit: contain
+
+.carousel2 .caption
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  padding: 0
+  background: rgba(0, 0, 0, 0.6)
+  font-size: smaller
+  max-height: 30%
 
 @import "~bulma"
