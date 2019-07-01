@@ -47,7 +47,7 @@ module.exports = {
         },
       },
       canonicalBaseUrl: 'localhost:9000',
-      components: ['amp-img', 'amp-carousel'],
+      components: ['amp-img', 'amp-carousel','amp-accordion'],
       excludedPaths: ['/404*','/admin', '/it/opere/*','/en/artworks/*','**/blog/*'],
       pathIdentifier: '/amp',
       relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
