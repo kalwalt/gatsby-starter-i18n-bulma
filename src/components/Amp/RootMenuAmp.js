@@ -24,10 +24,12 @@ const RootMenu = ( props ) => {
     return(
       <amp-accordion>
         <section>
-        <h4 className="navbar-item"><FaImage className="menu-names" /><FormattedMessage id="artworks"/></h4>
+        <h4 className="navbar-link">
+          <FaImage className="menu-names" />
+          <FormattedMessage id="artworks"/>
+        </h4>
         <div>
         <Link className="navbar-item" to={ "/" + props.langKey + "/" + menuTree.artworks[sel] + "/" }>
-          <FaImage className="menu-names" />
           <FormattedMessage id="artworks"/>
         </Link>
         <Link className="navbar-item" to={ menu.portfolio[sel] }>
