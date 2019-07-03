@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import logo from '../../img/logo.svg'
 import { FaHome, FaQuestion, FaImage, FaPenAlt, FaAmericanSignLanguageInterpreting } from 'react-icons/fa'
-import SelectLanguage from '../../components/SelectLanguage'
+import SelectLanguage from '../../components/Amp/SelectLanguageAmp'
 import { FormattedMessage } from 'react-intl';
 import menuTree from '../../data/menuTree'
 import RootMenu from '../../components/Amp/RootMenuAmp'
@@ -48,6 +48,7 @@ const Header = class extends React.Component {
       </div>
        </section>
      </amp-accordion>
+     <SelectLanguage langs={props.langs} />
      </header>
 )}
 }
