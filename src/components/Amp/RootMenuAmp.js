@@ -36,9 +36,7 @@ const RootMenu = ( props ) => {
         </Link>
         </li>
         <li>
-        <Link>
           <FormattedMessage id="painting"/>
-        </Link>
         </li>
         <li>
           <Dropdown
@@ -50,12 +48,7 @@ const RootMenu = ( props ) => {
              />
         </li>
         <li>
-          <Link>
           <FormattedMessage id="sculpture"/>
-            <span className="icon is-small">
-              <FaAngleRight  aria-hidden="true"/>
-            </span>
-            </Link>
         </li>
         <li>
           <Dropdown
@@ -67,12 +60,7 @@ const RootMenu = ( props ) => {
              />
         </li>
         <li>
-          <Link>
             <FormattedMessage id="performance"/>
-            <span className="icon is-small">
-              <FaAngleRight  aria-hidden="true"/>
-            </span>
-          </Link>
         </li>
         <li>
            <Dropdown
@@ -84,12 +72,7 @@ const RootMenu = ( props ) => {
            />
         </li>
         <li>
-          <Link>
           <FormattedMessage id="new-media"/>
-            <span className="icon is-small">
-              <FaAngleRight  aria-hidden="true"/>
-            </span>
-          </Link>
         </li>
         <li>
          <Dropdown
