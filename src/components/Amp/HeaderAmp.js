@@ -24,30 +24,28 @@ const Header = class extends React.Component {
        </Link>
        <amp-accordion class="accordion-menu" disable-session-states>
        <section>
-         <h4 class="text-accordion-menu">  </h4>
-         <nav class="list-menu">
-             <ul>
-                 <li><Link className="navbar-item" to={"/" + props.langKey}>
-                   <FaHome className="menu-names" /> <FormattedMessage id="home" />
-                 </Link></li>
-                 <RootMenu
-                   langKey={props.langKey}
-                   base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
-                   baseName="test"
-                   switches={keys}
-                   links={menu}
-                   />
-                 <li><Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
-                   <FaQuestion className="menu-names" /> <FormattedMessage id="about" />
-                 </Link></li>
-                 <li><Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
-                   <FaPenAlt className="menu-names" /> <FormattedMessage id="blog" />
-                 </Link></li>
-                 <li><Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.contact[sel] +"/"}>
-                   <FaAmericanSignLanguageInterpreting className="menu-names" /> <FormattedMessage id="contact" />
-                 </Link></li>
-             </ul>
-         </nav>
+        <h4 class="text-accordion-menu">  </h4>
+        <div>
+        <Link className="navbar-item" to={"/" + props.langKey}>
+          <FaHome className="menu-names" /> <FormattedMessage id="home" />
+        </Link>
+          <RootMenu
+            langKey={props.langKey}
+            base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
+            baseName="test"
+            switches={keys}
+            links={menu}
+            />
+        <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
+          <FaQuestion className="menu-names" /> <FormattedMessage id="about" />
+        </Link>
+        <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.blog[sel] +"/"}>
+          <FaPenAlt className="menu-names" /> <FormattedMessage id="blog" />
+        </Link>
+        <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.contact[sel] +"/"}>
+          <FaAmericanSignLanguageInterpreting className="menu-names" /> <FormattedMessage id="contact" />
+        </Link>
+      </div>
        </section>
      </amp-accordion>
      </header>

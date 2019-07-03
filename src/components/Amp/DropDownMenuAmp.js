@@ -11,18 +11,21 @@ const DropDownMenu = (props) => {
   const sel = select(props.langKey);
 
   return (
-    <ul>
+    <amp-accordion>
+      <section>
+        <h4><FormattedMessage id={props.header}/></h4>
+        <div>
        <Link className="navbar-link" to={props.base}>
          <FormattedMessage id={props.baseName} />
        </Link>
        {switches &&( switches.map(( message ) => (
-         <li>
          <Link className="navbar-item" key={message} to={links[message][sel]}>
            <FormattedMessage id={message} />
          </Link>
-         </li>
-        )))}       
-     </ul>
+        )))}
+        </div>
+      </section>
+     </amp-accordion>
   );
 };
 

@@ -22,69 +22,52 @@ const RootMenu = ( props ) => {
     const sel = select(props.langKey);
 
     return(
-      <section>
-        <ul>
-          <li>
-        <Link  to={ "/" + props.langKey + "/" + menuTree.artworks[sel] + "/" }>
+      <amp-accordion>
+        <section>
+        <h4 className="navbar-item"><FaImage className="menu-names" /><FormattedMessage id="artworks"/></h4>
+        <div>
+        <Link className="navbar-item" to={ "/" + props.langKey + "/" + menuTree.artworks[sel] + "/" }>
           <FaImage className="menu-names" />
           <FormattedMessage id="artworks"/>
         </Link>
-        </li>
-        <li>
-        <Link  to={ menu.portfolio[sel] }>
+        <Link className="navbar-item" to={ menu.portfolio[sel] }>
           <FormattedMessage id="portfolio"/>
         </Link>
-        </li>
-        <li>
-          <FormattedMessage id="painting"/>
-        </li>
-        <li>
           <Dropdown
+            header="painting"
             langKey={langKey}
             base={ menu_P.introduction[sel] }
             baseName="introduction"
             switches={keys_P}
             links={menu_P}
-             />
-        </li>
-        <li>
-          <FormattedMessage id="sculpture"/>
-        </li>
-        <li>
+            />
           <Dropdown
+            header="sculpture"
             langKey={langKey}
             base={ menu_S.introduction[sel] }
             baseName="introduction"
             switches={keys_S}
             links={menu_S}
-             />
-        </li>
-        <li>
-            <FormattedMessage id="performance"/>
-        </li>
-        <li>
-           <Dropdown
+            />
+          <Dropdown
+           header="performance"
            langKey={langKey}
            base={ menu_Perf.introduction[sel] }
            baseName="introduction"
            switches={keys_Perf}
            links={menu_Perf}
            />
-        </li>
-        <li>
-          <FormattedMessage id="new-media"/>
-        </li>
-        <li>
-         <Dropdown
-         langKey={langKey}
-         base={ menu_NM.augmented_reality[sel] }
-         baseName="augmented_reality"
-         switches={keys_NM}
-         links={menu_NM}
-         />
-     </li>
-   </ul>
-</section>
+          <Dropdown
+           header="new-media"
+           langKey={langKey}
+           base={ menu_NM.augmented_reality[sel] }
+           baseName="augmented_reality"
+           switches={keys_NM}
+           links={menu_NM}
+           />
+       </div>
+       </section>
+     </amp-accordion>
   );
 };
 
