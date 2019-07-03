@@ -13,9 +13,9 @@ const DropDownMenu = (props) => {
   return (
     <amp-accordion>
       <section>
-        <h4><FormattedMessage id={props.header}/></h4>
+        <h4 className="navbar-link"><FormattedMessage id={props.header}/></h4>
         <div>
-       <Link className="navbar-link" to={props.base}>
+       <Link className="navbar-item" to={props.base}>
          <FormattedMessage id={props.baseName} />
        </Link>
        {switches &&( switches.map(( message ) => (
