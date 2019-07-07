@@ -7,7 +7,7 @@ module.exports = {
   This is a blog theme. The description will be showed in SEO results on pages
   without their own descriptions.
 `,
-    siteUrl: "localhost:9000",
+    siteUrl: "https://gatsby-starter-i18n-bulma.netlify.com",
     image: 'img.jpg',
     author: {
       name: 'Your Name',
@@ -46,7 +46,7 @@ module.exports = {
           },
         },
       },
-      canonicalBaseUrl: 'localhost:9000',
+      canonicalBaseUrl: 'https://gatsby-starter-i18n-bulma.netlify.com',
       components: ['amp-img', 'amp-carousel','amp-accordion'],
       excludedPaths: ['/404*','/admin', '/it/opere/*','/en/artworks/*','**/blog/*'],
       pathIdentifier: '/amp',

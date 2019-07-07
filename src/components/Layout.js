@@ -69,15 +69,15 @@ class TemplateWrapper extends Component {
     this.className = this.props.className;
     const location = this.props.location;
     this.title = data.markdownRemark.frontmatter.title;
-    const url = location.pathname;
+    this.url = location.pathname;
     const { langs, defaultLangKey } = data.site.siteMetadata.languages;
-    this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
+    this.langKey = getCurrentLangKey(langs, defaultLangKey, this.url);
     this.homeLink = `/${this.langKey}/`;
-    this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
+    this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, this.url));
     const id_article = data.markdownRemark.frontmatter.id;
     const id = Number(id_article) - 1;
-    const basename = check_path(this.langKey, url, id, jsonData);
-    var basePath = startPath(this.langKey, this.langsMenu, basename[0], url);
+    const basename = check_path(this.langKey, this.url, id, jsonData);
+    var basePath = startPath(this.langKey, this.langsMenu, basename[0], this.url);
     //finally here we set the desired url...
     setLangsMenu( this.langsMenu, basename[1], basePath, jsonData);
 
@@ -100,6 +100,7 @@ class TemplateWrapper extends Component {
           >
           <html lang={this.langKey} />
           <meta name="description"  content={this.description}/>
+          <link rel="canonical" href={this.url} />
           </Helmet>
           <Header langKey={this.langKey} langs={this.langsMenu} menu={this.menuTree} />
           <Main key="app-main" className={this.className}>
