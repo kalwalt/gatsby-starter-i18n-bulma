@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from '../../components/Amp/HeaderAmp'
-//import Footer from '../../components/Footer'
+import Footer from '../../components/Amp/FooterAmp'
 import Main from '../../components/Main'
 import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
@@ -105,7 +105,7 @@ class TemplateWrapper extends Component {
           <Main key="app-main" className={this.className}>
             {this.children}
           </Main>
-
+          <Footer langKey={this.langKey}/>
         </div>
       </IntlProvider>
     );
