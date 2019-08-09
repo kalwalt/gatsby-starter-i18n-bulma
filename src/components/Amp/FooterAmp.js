@@ -6,7 +6,7 @@ import menuTree from '../../data/menuTree'
 import { FaFacebook, FaTwitter, FaInstagram, FaVimeo, FaLinkedin } from 'react-icons/fa';
 import Copyright from '../../components/Copyright'
 import ScrollToTop from '../../components/ScrollToTop'
-import logo from '../../img/logo.svg'
+import logo from '../../img/logo-amp.png'
 
 const FooterAmp = class extends React.Component {
   render() {
@@ -14,14 +14,14 @@ const FooterAmp = class extends React.Component {
     const sel = select(props.langKey);
     return (
       <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered" style={{ maxWidth: '300px', textAlign: 'center'}}>
+        <div className="content has-text-centered" style={{ maxWidth: '600px'}}>
           <amp-img
             layout="responsive"
-            width="1.33"
-            height="1"
+            width="600"
+            height="60"
             src={logo}
             alt="Kaki"
-            style={{ width: '14em', height: '5em' }}
+            style={{ marginLeft: '1em' }}
           />
         </div>
         <div className="content has-text-centered has-background-black has-text-white-ter">

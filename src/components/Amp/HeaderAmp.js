@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import logo from '../../img/logo.svg'
+import logo from '../../img/logo-amp.png'
 import { FaHome, FaQuestion, FaImage, FaPenAlt, FaAmericanSignLanguageInterpreting } from 'react-icons/fa'
 import SelectLanguage from '../../components/Amp/SelectLanguageAmp'
 import { FormattedMessage } from 'react-intl';
@@ -20,7 +20,15 @@ const Header = class extends React.Component {
    return (
      <header class="site-header">
      <Link to="/" className="logo" title="Logo">
-       <span class="logo"><amp-img src={logo} width="600" height="60" alt="kaki logo" noloading></amp-img></span>
+       <span className="logo">
+       <amp-img
+        layout="responsive"
+        src={logo}
+        width="600"
+        height="60"
+        alt="kaki logo">
+        </amp-img>
+        </span>
        </Link>
        <amp-accordion class="accordion-menu" disable-session-states>
        <section>
