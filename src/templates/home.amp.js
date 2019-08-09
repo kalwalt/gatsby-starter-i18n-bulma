@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import Layout from "../components/Amp/LayoutAmp"
 import SEO from '../components/SEO/SEO'
 import Content, { HTMLContent } from "../components/Content"
-import IconMenu from '../components/IconMenu'
+import IconMenu from '../components/Amp/IconMenuAmp'
 import iconLinks from '../data/artworksMenu'
 import select from '../components/utils'
 import Slider from '../components/Amp/SliderAmp'
@@ -57,7 +57,7 @@ const HomePageTemplate = ({
       }}
     >
       <h1
-        className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen is-centered animated bounceInLeft"
+        className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen is-centered"
         style={{
           boxShadow:
             'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
@@ -70,7 +70,7 @@ const HomePageTemplate = ({
         {title}
       </h1>
         <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen animated bounceInRight"
+          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
             boxShadow:
               'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
