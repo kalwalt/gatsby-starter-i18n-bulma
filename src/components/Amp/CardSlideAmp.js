@@ -4,7 +4,7 @@ import * as PropTypes from "prop-types"
 const CardImageSlide = ({ imageInfo }) => {
   const { alt = '', childImageSharp, image } = imageInfo
   const imageStyle = { borderRadius: '50%' }
-    return <amp-img layout='fixed' style={imageStyle} width="128" height="128" src={image.childImageSharp.fluid.src} alt={alt} noloading/>
+    return <amp-img layout='fixed' style={imageStyle} width="128" height="128" src={image.childImageSharp.fluid.src} alt={alt}/>
 }
 
 CardImageSlide.propTypes = {
