@@ -62,7 +62,7 @@ const IconMenu = class extends React.Component {
         </div>
       </a>
       <a className="column is-narrow has-text-centered" href={thirdLink}>
-      <span className="fa icon is-large fa-2x fa-stack animated">
+      <span className="fa icon is-large fa-2x fa-stack">
         <FaCircle className="fa fa-stack-2x"/>
         <FaBolt className="fa fa-stack-1x fa-inverse"/>
       </span>
@@ -73,7 +73,7 @@ const IconMenu = class extends React.Component {
         </div>
       </a>
       <a className="column is-narrow has-text-centered" href={fourthLink}>
-      <span className="fa icon is-large fa-2x fa-stack animated">
+      <span className="fa icon is-large fa-2x fa-stack">
         <FaCircle className="fa fa-stack-2x"/>
         <FaHandPointer className="fa fa-stack-1x fa-inverse"/>
       </span>
