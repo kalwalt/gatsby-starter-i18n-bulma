@@ -5,21 +5,6 @@ import { FormattedMessage } from 'react-intl';
 
 const IconMenu = class extends React.Component {
 
-  componentDidMount() {
-    // Get all "icon" elements
-   const sectionMenu = Array.prototype.slice.call(document.querySelectorAll('.icon'), 0);
-    // Check if there are any icon links
-   if (sectionMenu.length > 0) {
-
-     // Add a mouseenter event on each of them
-     sectionMenu.forEach( el => {
-       el.addEventListener('mouseenter', () => {
-         el.classList.toggle('shake');
-       }, true);
-     });
-   }
-
-  }
   render() {
     const firstLink = this.props.firstLink;
     const secondLink = this.props.secondLink;
