@@ -10,7 +10,6 @@ import en from 'react-intl/locale-data/en';
 import 'intl/locale-data/jsonp/en';
 import it from 'react-intl/locale-data/it';
 import 'intl/locale-data/jsonp/it';
-import './amp.sass'
 
 const getIdJsonUrl = (id, langKey, jsonData) => {
   if(id !== 'undefined'){
