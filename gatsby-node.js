@@ -109,7 +109,6 @@ exports.createPages = ({ actions, graphql }) => {
 				path: `${node.fields.slug}amp/`,
 				component:  path.resolve('src/templates/home.amp.js'),
         context: {
-           slug: node.fields.slug,
           id,
         },
 			})
