@@ -30,7 +30,7 @@ const Header = class extends React.Component {
         </amp-img>
         </span>
        </Link>
-       <amp-accordion class="accordion-menu" disable-session-states>
+       <amp-accordion class="accordion-menu" disable-session-states="">
        <section>
         <h4 class="text-accordion-menu">  </h4>
         <div>
