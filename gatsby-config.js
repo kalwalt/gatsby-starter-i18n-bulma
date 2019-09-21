@@ -49,6 +49,7 @@ module.exports = {
       canonicalBaseUrl: 'https://gatsby-starter-i18n-bulma.netlify.com',
       components: ['amp-img', 'amp-carousel','amp-accordion'],
       excludedPaths: ['/404*','/admin', '/it/opere/*','/en/artworks/*','**/blog/*'],
+      includedPaths: ['/it/', '/en/'],
       pathIdentifier: '/amp/',
       relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
       useAmpClientIdApi: true,
