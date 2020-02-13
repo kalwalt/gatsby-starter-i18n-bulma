@@ -12,9 +12,9 @@ heading: "The persimmon is the artist fruit..."
 slider:
   display: 'slide'
   array:
-    - { original: 'https://lorempixel.com/1000/600/nature/1/', thumbnail: 'https://lorempixel.com/250/150/nature/1/', originalAlt: "Ants on a blade of grass.", originalTitle: "Ants on a blade of grass.", description: "Ants rise upwards on a blade of grass." }
-    - { original: 'https://lorempixel.com/1000/600/nature/2/', thumbnail: 'https://lorempixel.com/250/150/nature/2/', originalAlt: 'A beautiful sunset over the sea.', originalTitle: 'A beautiful sunset over the sea.', description: 'A beautiful sunset over the sea, where numerous routes of imagination depart.'}
-    - { original: 'https://lorempixel.com/1000/600/nature/3/', thumbnail: 'https://lorempixel.com/250/150/nature/3/', originalAlt: 'A cliff on the sea.', originalTitle: 'A cliff on the sea.', description: 'A cliff where the sea incessantly breaks its waves.'}
+    - { original: 'https://i.picsum.photos/id/1015/6000/4000.jpg', thumbnail: 'https://i.picsum.photos/id/1015/6000/4000.jpg', originalAlt: "A wild fjord in the far north.", originalTitle: "A wild fjord in the far north.", description: "A wild fjord in the far North, admiring the infinite." }
+    - { original: 'https://i.picsum.photos/id/1019/5472/3648.jpg', thumbnail: 'https://i.picsum.photos/id/1019/5472/3648.jpg', originalAlt: 'A beautiful sunset over the sea.', originalTitle: 'A beautiful sunset over the sea.', description: 'A beautiful sunset over the sea, where numerous routes of imagination depart.'}
+    - { original: 'https://i.picsum.photos/id/1022/6000/3376.jpg', thumbnail: 'https://i.picsum.photos/id/1022/6000/3376.jpg', originalAlt: 'A Northern Lights.', originalTitle: 'A Northern Lights.', description: 'A northern lights with greenish hues.'}
 mainpitch:
   heading: "Artworks with augmented reality"
   subheading: "Interactive Art"

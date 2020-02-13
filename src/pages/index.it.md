@@ -12,9 +12,9 @@ heading: "Il kako è il frutto dell'artista..."
 slider:
   display: 'slide'
   array:
-    - { original: 'https://lorempixel.com/1000/600/nature/1/', thumbnail: 'https://lorempixel.com/250/150/nature/1/', originalAlt: "Delle formiche su un filo d'erba", originalTitle: "Delle formiche su un filo d'erba", description: "Delle formiche salgono verso l'alto su un filo d'erba."}
-    - { original: 'https://lorempixel.com/1000/600/nature/2/', thumbnail: 'https://lorempixel.com/250/150/nature/2/', originalAlt: 'Un bel tramonto sul mare', originalTitle: 'Un bel tramonto sul mare', description: "Un bel tramonto sul mare, dove partono numerose rotte dell'immaginazione."}
-    - { original: 'https://lorempixel.com/1000/600/nature/3/', thumbnail: 'https://lorempixel.com/250/150/nature/3/', originalAlt: 'una scogliera sul mare', originalTitle: 'Una scogliera sul mare', description: 'Una scogliera dove il mare infrange incessantemente i suoi flutti.'}
+    - { original: 'https://i.picsum.photos/id/1015/6000/4000.jpg', thumbnail: 'https://i.picsum.photos/id/1015/6000/4000.jpg', originalAlt: "Un fiordo selvaggio nel lontano Nord.", originalTitle: "Un fiordo selvaggio.", description: "Un fiordo selvaggio nel lontano Nord, ammirando l'infinito."}
+    - { original: 'https://i.picsum.photos/id/1019/5472/3648.jpg', thumbnail: 'https://i.picsum.photos/id/1019/5472/3648.jpg', originalAlt: 'Un bel tramonto sul mare.', originalTitle: 'Un bel tramonto sul mare.', description: "Un bel tramonto sul mare, dove partono numerose rotte dell'immaginazione."}
+    - { original: 'https://i.picsum.photos/id/1022/6000/3376.jpg', thumbnail: 'https://i.picsum.photos/id/1022/6000/3376.jpg', originalAlt: 'Un aurora boreale.', originalTitle: 'Un aurora boreale.', description: 'Un aurora boreale dalle sfumature verdastre.'}
 mainpitch:
   heading: "Opere con realtà aumentata"
   subheading: "Arte Interattiva"
