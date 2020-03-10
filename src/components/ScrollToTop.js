@@ -23,9 +23,9 @@ class ScrollToTop extends Component {
       <div className="level">
         <div style={{ width: '90%' }} className="level-item is-pulled-left"></div>
         <div className="level-item is-pulled-right">
-          <a className="button" id="toTop" title="Top">
+          <button className="button" id="toTop" title="Top">
             <FaChevronUp />
-          </a>
+          </button>
         </div>
       </div>
     )
