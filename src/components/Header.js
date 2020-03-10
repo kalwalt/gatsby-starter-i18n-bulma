@@ -7,7 +7,6 @@ import { FormattedMessage } from 'react-intl';
 import menuTree from '../data/menuTree'
 import RootMenu from '../components/RootMenu'
 import RootMenuMobile from '../components/RootMenuMobile'
-import bulmaCollapsible from '@creativebulma/bulma-collapsible/src/js/index.js'
 import {
   BrowserView,
   MobileView,
@@ -56,9 +55,6 @@ const Header = class extends React.Component {
 
    let navMenu = document.getElementById("navMenu");
    navMenu.style.backgroundColor = "#abd6d1"
-
-   // Return an array of bulmaCollapsible instances (empty if no DOM node found)
-   const bulmaCollapsibleInstances = bulmaCollapsible.attach('.is-collapsible');
 
  }
 }
