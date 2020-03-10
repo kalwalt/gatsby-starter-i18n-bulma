@@ -52,7 +52,7 @@
     "google-map-react": "^1.1.4",
     "intl": "^1.2.5",
     "lodash": "^4.17.11",
-    "netlify-cms": "^2.9.0",
+    "netlify-cms-app": "^2.11.27",
     "node-sass": "^4.11.0",
     "path": "^0.12.7",
     "react": "^16.3.1",
