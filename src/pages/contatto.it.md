@@ -14,9 +14,9 @@ email: 'kaki@kaki.com'
 linkinsta: 'kaki'
 instagram: '@kaki'
 locations:
-  - lat: 45.6500779
-    lng: 13.7677618
-    mapLink: ''
+  lat: 45.6500779
+  lng: 13.7677618
+  message: 'Kaki è qui!'
 imageCardSL:
   alt: "immagine"
   image: /img/128x128.png
