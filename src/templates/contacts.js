@@ -6,7 +6,7 @@ import Layout from "../components/Layout"
 import SEO from '../components/SEO/SEO'
 import Content, { HTMLContent } from "../components/Content"
 import ContactDetails from "../components/ContactDetails"
-import GoogleMap from '../components/GoogleMap'
+import OsmMap from '../components/OsmMap'
 import FollowUs from '../components/FollowUs'
 import { getCurrentLangKey } from 'ptz-i18n';
 import { FormattedMessage } from 'react-intl';
@@ -201,13 +201,16 @@ class ContactPage extends React.Component {
     const phone = dataMarkdown.frontmatter.phone;
     const email = dataMarkdown.frontmatter.email;
     const locations = dataMarkdown.frontmatter.locations;
+    const { lat } = locations;
+    const { lng } = locations;
+    const { message } = locations;
     const linkinsta = dataMarkdown.frontmatter.linkinsta;
     const instagram = dataMarkdown.frontmatter.instagram;
     const image = dataMarkdown.frontmatter.imageCardSL;
     const { frontmatter } = dataMarkdown;
     const imageSEO = frontmatter.image.childImageSharp.fluid.src;
     return (
-      <Layout className="container" data={data} jsonData={jsonData} location={location}>
+      <Layout className="container"  data={data} jsonData={jsonData} location={location}>
         <SEO
           frontmatter={frontmatter}
           postImage={imageSEO}
@@ -234,7 +237,7 @@ class ContactPage extends React.Component {
             </div>
           )}
         </Format>
-      <GoogleMap />
+        <OsmMap lat={lat} lng={lng} message={message}/>
       <FollowUs link={linkinsta} instagram={instagram}/>
     </Layout>
     )
@@ -289,7 +292,7 @@ export const pageQuery = graphql`
         locations{
           lat
           lng
-          mapLink
+          message
         }
         linkinsta
         instagram
