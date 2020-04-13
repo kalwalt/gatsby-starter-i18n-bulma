@@ -40,9 +40,13 @@ const IconMenu = class extends React.Component {
       </div>
     <div className="columns is-4 is-mobile is-multiline is-centered">
       <a className="column is-narrow has-text-centered" href={firstLink}>
-        <span className="fa icon is-large fa-2x fa-stack animated">
-          <FaCircle className="fa fa-stack-2x"/>
-          <FaPaintBrush className="fa fa-stack-1x fa-inverse"/>
+        <span className="animated" style={{ display: 'inline-block', position: 'relative' }}>
+          <FaCircle textAnchor="middle" alignmentBaseline="middle" style={{ fontSize: '3em'}}/>
+          <FaPaintBrush
+           textAnchor="middle"
+           alignmentBaseline="middle"
+           style={{ fontSize: '2.0em', position: 'absolute', right: '.25em', top: '.25em', color: 'white' }}
+          />
         </span>
       <div className="section">
         <h4 className="title has-text-centered">
@@ -51,9 +55,13 @@ const IconMenu = class extends React.Component {
       </div>
       </a>
       <a className="column is-narrow has-text-centered" href={secondLink}>
-      <span className="fa icon is-large fa-2x fa-stack animated">
-        <FaCircle className="fa fa-stack-2x"/>
-        <FaGavel className="fa fa-stack-1x fa-inverse"/>
+      <span className="animated" style={{ display: 'inline-block', position: 'relative' }}>
+        <FaCircle textAnchor="middle" alignmentBaseline="middle" style={{ fontSize: '3em'}}/>
+        <FaGavel
+         textAnchor="middle"
+         alignmentBaseline="middle"
+         style={{ fontSize: '2.0em', position: 'absolute', right: '.25em', top: '.25em', color: 'white' }}
+        />
       </span>
         <div className="section">
           <h4 className="title has-text-centered">
@@ -62,9 +70,13 @@ const IconMenu = class extends React.Component {
         </div>
       </a>
       <a className="column is-narrow has-text-centered" href={thirdLink}>
-      <span className="fa icon is-large fa-2x fa-stack animated">
-        <FaCircle className="fa fa-stack-2x"/>
-        <FaBolt className="fa fa-stack-1x fa-inverse"/>
+      <span className="animated" style={{ display: 'inline-block', position: 'relative' }}>
+        <FaCircle textAnchor="middle" alignmentBaseline="middle" style={{ fontSize: '3em'}}/>
+        <FaBolt
+         textAnchor="middle"
+         alignmentBaseline="middle"
+         style={{ fontSize: '2.0em', position: 'absolute', right: '.25em', top: '.25em', color: 'white' }}
+        />
       </span>
         <div className="section">
           <h4 className="title has-text-centered">
@@ -73,9 +85,13 @@ const IconMenu = class extends React.Component {
         </div>
       </a>
       <a className="column is-narrow has-text-centered" href={fourthLink}>
-      <span className="fa icon is-large fa-2x fa-stack animated">
-        <FaCircle className="fa fa-stack-2x"/>
-        <FaHandPointer className="fa fa-stack-1x fa-inverse"/>
+      <span className="animated" style={{ display: 'inline-block', position: 'relative' }}>
+        <FaCircle textAnchor="middle" alignmentBaseline="middle" style={{ fontSize: '3em'}}/>
+        <FaHandPointer
+         textAnchor="middle"
+         alignmentBaseline="middle"
+         style={{ fontSize: '2.0em', position: 'absolute', right: '.25em', top: '.25em', color: 'white' }}
+        />
       </span>
         <div className="section">
           <h4 className="title has-text-centered">
