@@ -13,7 +13,6 @@ import {
   isMobile
 } from "react-device-detect";
 import select from '../components/utils'
-import menu from '../data/artworksMenu'
 
 const Header = class extends React.Component {
 
@@ -63,7 +62,6 @@ const Header = class extends React.Component {
 
    const props = this.props;
    const sel = select(props.langKey);
-   const keys = ['introduction','portfolio','painting','sculpture','performance','interactivity'];
 
    return (
 
@@ -90,18 +88,12 @@ const Header = class extends React.Component {
             <RootMenu
               langKey={props.langKey}
               base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
-              baseName="test"
-              switches={keys}
-              links={menu}
               />
           </BrowserView>
           <MobileView viewClassName='navbar-item has-dropdown is-hoverable'>
             <RootMenuMobile
               langKey={props.langKey}
               base={"/" + props.langKey + "/" + menuTree.artworks[sel] +"/"}
-              baseName="test"
-              switches={keys}
-              links={menu}
               />
           </MobileView>
           <Link className="navbar-item" to={"/" + props.langKey + "/" + menuTree.about[sel] +"/"}>
