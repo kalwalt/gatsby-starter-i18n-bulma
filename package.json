@@ -2,7 +2,7 @@
   "name": "gatsby-starter-i18n-bulma",
   "private": true,
   "description": "Gatsby example site using i18n and bulma for CSS",
-  "version": "v1.1.1",
+  "version": "v1.1.2",
   "author": "Walter Perdan <info@kalwaltart.it> (www.kalwaltart.com)",
   "dependencies": {
     "@babel/parser": "^7.9.4",
