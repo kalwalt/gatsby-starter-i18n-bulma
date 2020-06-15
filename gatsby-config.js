@@ -7,7 +7,7 @@ module.exports = {
   This is a blog theme. The description will be showed in SEO results on pages
   without their own descriptions.
 `,
-    siteUrl: "localhost:8000",
+    siteUrl: "https://gatsby-starter-i18n-bulma.netlify.app",
     image: 'img.jpg',
     author: {
       name: 'Your Name',
