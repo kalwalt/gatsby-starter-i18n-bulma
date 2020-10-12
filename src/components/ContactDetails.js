@@ -2,13 +2,15 @@ import React from 'react'
 import { FaMapMarkerAlt, FaPhone, FaRegEnvelope } from 'react-icons/fa'
 import PropTypes from 'prop-types'
 import CardSlide from '../components/CardSlide'
+import { FormattedMessage } from 'react-intl';
+
 
 const ContactDetails = ({ infos, address, image, phone, email }) =>(
 
       <div className="section box">
         <div className="container">
           <h3 className="title">
-            {infos}
+              <FormattedMessage id='contact.infos'/>
             </h3>
               <div className="columns is-vcentered">
                 <div className="column">
