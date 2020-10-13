@@ -31,8 +31,7 @@ function setActionPath(langKey) {
 const ContactPageTemplate = ({
   title, content, contentComponent,
   image, address, phone, email,
-  handleSubmit, handleChange, action,
-  option, optionA, optionB, optionC
+  handleSubmit, handleChange, action
 }) => {
   const PageContent = contentComponent || Content
   return (
@@ -126,9 +125,15 @@ const ContactPageTemplate = ({
               <option name="options" disabled hidden>
                 Choose
               </option>
-              <option><FormattedMessage id='contact.enquiry.a'/></option>
-              <option><FormattedMessage id='contact.enquiry.b'/></option>
-              <option><FormattedMessage id='contact.enquiry.c'/></option>
+              <FormattedMessage id='contact.enquiry.a' key={'op' + '-' + 'a'}>
+                {(message) => <option value='a'>{message}</option>}
+              </FormattedMessage>
+              <FormattedMessage id='contact.enquiry.b' key={'op' + '-' + 'b'}>
+                {(message) => <option value='b'>{message}</option>}
+              </FormattedMessage>
+              <FormattedMessage id='contact.enquiry.c' key={'op' + '-' + 'c'}>
+                {(message) => <option value='c'>{message}</option>}
+              </FormattedMessage>
             </select>
             </div>
           </label>
@@ -239,7 +244,7 @@ ContactPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default ContactPage;
+export default ContactPage
 
 export const pageQuery = graphql`
   query ContactPageQuery($id: String!) {
