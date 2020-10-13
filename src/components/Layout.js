@@ -4,13 +4,14 @@ import Footer from '../components/Footer'
 import Main from '../components/Main'
 import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
-import { IntlProvider, addLocaleData } from 'react-intl';
-import 'intl';
-import en from 'react-intl/locale-data/en';
-import 'intl/locale-data/jsonp/en';
-import it from 'react-intl/locale-data/it';
-import 'intl/locale-data/jsonp/it';
+import { IntlProvider } from 'react-intl';
 import './all.sass'
+
+if (!Intl.RelativeTimeFormat) {
+  require('@formatjs/intl-relativetimeformat/polyfill');
+  require('@formatjs/intl-relativetimeformat/dist/locale-data/en'); // Add locale data for de
+  require('@formatjs/intl-relativetimeformat/dist/locale-data/it');
+}
 
 const getIdJsonUrl = (id, langKey, jsonData) => {
   if(id !== 'undefined'){
@@ -57,7 +58,7 @@ const setLangsMenu = ( langsMenu, id, basePath, jsonData) => {
 };
 
 // add concatenated locale data
-addLocaleData([...en, ...it]);
+//addLocaleData([...en, ...it]);
 
 class TemplateWrapper extends Component {
   constructor(props) {
@@ -91,6 +92,7 @@ class TemplateWrapper extends Component {
       <IntlProvider
         locale={this.langKey}
         messages={this.i18nMessages}
+        textComponent={React.Fragment}
       >
         <div>
           <Helmet

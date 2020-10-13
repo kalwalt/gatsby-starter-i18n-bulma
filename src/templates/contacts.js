@@ -10,7 +10,6 @@ import OsmMap from '../components/OsmMap'
 import FollowUs from '../components/FollowUs'
 import { getCurrentLangKey } from 'ptz-i18n';
 import { FormattedMessage } from 'react-intl';
-import { Format } from 'react-intl-format';
 
 
 function encode(data) {
@@ -31,9 +30,8 @@ function setActionPath(langKey) {
 
 const ContactPageTemplate = ({
   title, content, contentComponent,
-  infos, image, address, phone, email,
-  handleSubmit, handleChange, action,
-  option, optionA, optionB, optionC
+  image, address, phone, email,
+  handleSubmit, handleChange, action
 }) => {
   const PageContent = contentComponent || Content
   return (
@@ -43,7 +41,6 @@ const ContactPageTemplate = ({
       <h1 className="title">{title}</h1>
       <PageContent className="container content" content={content} />
       <ContactDetails
-      infos={infos}
       image={image}
       address={address}
       phone={phone}
@@ -116,7 +113,7 @@ const ContactPageTemplate = ({
         </div>
         <div className="field">
         <label className="label">
-        <p className="content has-text-weight-semibold">{option}</p>
+        <p className="content has-text-weight-semibold"><FormattedMessage id='contact.enquiry'/></p>
             <div className="select">
             <select
               className="content"
@@ -128,9 +125,15 @@ const ContactPageTemplate = ({
               <option name="options" disabled hidden>
                 Choose
               </option>
-              <option>{optionA}</option>
-              <option>{optionB}</option>
-              <option>{optionC}</option>
+              <FormattedMessage id='contact.enquiry.a' key={'op' + '-' + 'a'}>
+                {(message) => <option value='a'>{message}</option>}
+              </FormattedMessage>
+              <FormattedMessage id='contact.enquiry.b' key={'op' + '-' + 'b'}>
+                {(message) => <option value='b'>{message}</option>}
+              </FormattedMessage>
+              <FormattedMessage id='contact.enquiry.c' key={'op' + '-' + 'c'}>
+                {(message) => <option value='c'>{message}</option>}
+              </FormattedMessage>
             </select>
             </div>
           </label>
@@ -215,12 +218,10 @@ class ContactPage extends React.Component {
           frontmatter={frontmatter}
           postImage={imageSEO}
         />
-          <Format>
-           {intl => (
+
             <div className="container">
                 <ContactPageTemplate
                 contentComponent={HTMLContent}
-                infos={intl.formatMessage({ id: 'contact.infos' })}
                 image={image}
                 address={address}
                 phone={phone}
@@ -229,14 +230,9 @@ class ContactPage extends React.Component {
                 content={dataMarkdown.html}
                 onSubmit={this.handleSubmit}
                 action={action}
-                option={intl.formatMessage({ id: 'contact.enquiry' })}
-                optionA={intl.formatMessage({ id: 'contact.enquiry.a' })}
-                optionB={intl.formatMessage({ id: 'contact.enquiry.b' })}
-                optionC={intl.formatMessage({ id: 'contact.enquiry.c' })}
                  />
             </div>
-          )}
-        </Format>
+
         <OsmMap lat={lat} lng={lng} message={message}/>
       <FollowUs link={linkinsta} instagram={instagram}/>
     </Layout>
@@ -248,7 +244,7 @@ ContactPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default ContactPage;
+export default ContactPage
 
 export const pageQuery = graphql`
   query ContactPageQuery($id: String!) {
