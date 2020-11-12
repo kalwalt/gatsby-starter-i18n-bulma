@@ -12,7 +12,6 @@
     "accordion": "^3.0.2",
     "animate.css": "^3.7.0",
     "babel-runtime": "^6.26.0",
-    "bootstrap": "^4.5.0",
     "bulma": "^0.9.0",
     "classnames": "^2.2.6",
     "css-loader": "^3.4.2",
@@ -59,13 +58,10 @@
     "react-intl": "^4.6.9",
     "react-leaflet": "^2.6.3",
     "react-photo-gallery": "^8.0.0",
-    "react-typography": "^0.16.3",
     "react-wow": "^1.0.0",
     "slash": "^3.0.0",
     "slug": "^2.1.1",
     "style-loader": "^1.1.3",
-    "typography": "^0.16.18",
-    "typography-breakpoint-constants": "^0.16.19",
     "url-loader": "^4.0.0"
   },
   "keywords": [
