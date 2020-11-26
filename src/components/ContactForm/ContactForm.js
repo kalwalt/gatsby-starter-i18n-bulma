@@ -10,7 +10,7 @@ function encode(data) {
 }
 
 const ContactForm = ({ action}) => {
-  const { value:botField, bind:bindBotfield, reset:resetBotfield } = useInput('');
+  //const { value:botField, bind:bindBotfield, reset:resetBotfield } = useInput('');
   const { value:name, bind:bindFirstName, reset:resetFirstName } = useInput('');
   const { value:surname, bind:bindLastName, reset:resetLastName } = useInput('');
   const { value:email, bind:bindEmail, reset:resetEmail } = useInput('');
@@ -23,7 +23,7 @@ const ContactForm = ({ action}) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    resetBotfield();
+    //resetBotfield();
     resetFirstName();
     resetLastName();
     resetEmail();
@@ -57,7 +57,7 @@ const ContactForm = ({ action}) => {
     <div hidden>
       <label>
         Don’t fill this out:{" "}
-        <input name="bot-field" {...bindBotfield} />
+        <input name="bot-field"/>
       </label>
     </div>
     <div className="field">
