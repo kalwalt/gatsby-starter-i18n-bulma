@@ -60,13 +60,13 @@ const ContactForm = ({ action}) => {
       </label>
     </div>
     <div className="field">
-      <label className="label" htmlFor="name" ><FormattedMessage id="contact.name"/></label>
+      <label className="label" htmlFor="name" ><FormattedMessage id="contact.firstName"/></label>
       <div className="control">
         <input className="input" type="text" name="firstName" {...bindFirstName} id="firstName" required={true} />
       </div>
     </div>
     <div className="field">
-      <label className="label" htmlFor="surname" ><FormattedMessage id="contact.surname"/></label>
+      <label className="label" htmlFor="surname" ><FormattedMessage id="contact.lastName"/></label>
       <div className="control">
         <input className="input" type="text" name="lastName" {...bindLastName} id="lastName" required={true} />
       </div>
