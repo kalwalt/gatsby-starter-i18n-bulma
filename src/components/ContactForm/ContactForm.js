@@ -23,6 +23,7 @@ const ContactForm = ({ action}) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    reset();
     resetFirstName();
     resetLastName();
     resetEmail();
