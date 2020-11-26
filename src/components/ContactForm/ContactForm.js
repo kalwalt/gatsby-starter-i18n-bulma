@@ -11,8 +11,8 @@ function encode(data) {
 
 const ContactForm = ({ action}) => {
   const { value:botField, bind:bindBotfield, reset:resetBotfield } = useInput('');
-  const { value:firstName, bind:bindFirstName, reset:resetFirstName } = useInput('');
-  const { value:lastName, bind:bindLastName, reset:resetLastName } = useInput('');
+  const { value:name, bind:bindFirstName, reset:resetFirstName } = useInput('');
+  const { value:surname, bind:bindLastName, reset:resetLastName } = useInput('');
   const { value:email, bind:bindEmail, reset:resetEmail } = useInput('');
   const { value:subject, bind:bindSubject, reset:resetSubject } = useInput('');
   const { value:gender, bind:bindGender, reset:resetGender } = useInput('');
@@ -63,13 +63,13 @@ const ContactForm = ({ action}) => {
     <div className="field">
       <label className="label" htmlFor="name" ><FormattedMessage id="contact.firstName"/></label>
       <div className="control">
-        <input className="input" type="text" name="firstName" {...bindFirstName} id="firstName" required={true} />
+        <input className="input" type="text" name="name" {...bindFirstName} id="firstName" required={true} />
       </div>
     </div>
     <div className="field">
       <label className="label" htmlFor="surname" ><FormattedMessage id="contact.lastName"/></label>
       <div className="control">
-        <input className="input" type="text" name="lastName" {...bindLastName} id="lastName" required={true} />
+        <input className="input" type="text" name="surname" {...bindLastName} id="lastName" required={true} />
       </div>
     </div>
     <div className="field">
