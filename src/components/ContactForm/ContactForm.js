@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { navigate } from "gatsby-link"
 import { FormattedMessage } from 'react-intl'
 import { useInput } from './hooks/useInput'
 
@@ -10,10 +11,25 @@ function encode(data) {
 
 const ContactForm = ({ action}) => {
   const { value, bind, reset } = useInput('');
+  const { value:firstName, bind:bindFirstName, reset:resetFirstName } = useInput('');
+  const { value:lastName, bind:bindLastName, reset:resetLastName } = useInput('');
+  const { value:email, bind:bindEmail, reset:resetEmail } = useInput('');
+  const { value:subject, bind:bindSubject, reset:resetSubject } = useInput('');
+  const { value:gender, bind:bindGender, reset:resetGender } = useInput('');
+  const { value:enquiry, bind:bindEnquiry, reset:resetEnquiry } = useInput('');
+  const { value:message, bind:bindMessage, reset:resetMessage } = useInput('');
+
   const [isValidated, handleChange] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
+    resetFirstName();
+    resetLastName();
+    resetEmail();
+    resetSubject();
+    resetEnquiry();
+    resetGender();
+    resetMessage();
     const form = e.target;
     fetch("/?no-cache=1", {
       method: "POST",
@@ -46,25 +62,25 @@ const ContactForm = ({ action}) => {
     <div className="field">
       <label className="label" htmlFor="name" ><FormattedMessage id="contact.name"/></label>
       <div className="control">
-        <input className="input" type="text" name="name" {...bind} id="name" required={true} />
+        <input className="input" type="text" name="firstName" {...bindFirstName} id="firstName" required={true} />
       </div>
     </div>
     <div className="field">
       <label className="label" htmlFor="surname" ><FormattedMessage id="contact.surname"/></label>
       <div className="control">
-        <input className="input" type="text" name="surname" {...bind} id="surname" required={true} />
+        <input className="input" type="text" name="lastName" {...bindLastName} id="lastName" required={true} />
       </div>
     </div>
     <div className="field">
       <label className="label" htmlFor="email"><FormattedMessage id="contact.email"/></label>
         <div className="control">
-          <input className="input" type="email" name="email" {...bind} id="email" required={true} />
+          <input className="input" type="email" name="email" {...bindEmail} id="email" required={true} />
         </div>
       </div>
       <div className="field">
        <label className="label" htmlFor="subject"><FormattedMessage id="contact.subject"/></label>
          <div className="control">
-           <input className="input" type="subject" name="subject" {...bind} id="subject" required={true} />
+           <input className="input" type="subject" name="subject" {...bindSubject} id="subject" required={true} />
         </div>
     </div>
     <div className="field">
@@ -72,9 +88,9 @@ const ContactForm = ({ action}) => {
       <label className="radio menu-names">
         <input
           type="radio"
-          name="gender-male"
+          name="gender"
           value="male"
-          {...bind}
+          {...bindGender}
           defaultChecked
         />
         <span><FormattedMessage id="contact.gender.male"/></span>
@@ -82,9 +98,9 @@ const ContactForm = ({ action}) => {
       <label className="radio">
         <input
           type="radio"
-          name="gender-female"
+          name="gender"
           value="female"
-          {...bind}
+          {...bindGender}
         />
         <span><FormattedMessage id="contact.gender.female"/></span>
       </label>
@@ -96,9 +112,9 @@ const ContactForm = ({ action}) => {
         <div className="select">
         <select
           className="content"
-          name="type-enquiry"
+          name="enquiry"
           defaultValue="Type of Enquiry"
-          {...bind}
+          {...bindEnquiry}
           required
         >
           <option name="options" disabled hidden>
@@ -120,7 +136,7 @@ const ContactForm = ({ action}) => {
     <div className="field">
       <label className="label" htmlFor="message"><FormattedMessage id="contact.message"/></label>
       <div className="control">
-        <textarea className="textarea" name="message" {...bind} id="message" required={true} />
+        <textarea className="textarea" name="message" {...bindMessage} id="message" required={true} />
       </div>
     </div>
     <div className="field">
