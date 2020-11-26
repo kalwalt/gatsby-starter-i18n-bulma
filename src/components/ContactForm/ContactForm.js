@@ -63,13 +63,13 @@ const ContactForm = ({ action}) => {
     <div className="field">
       <label className="label" htmlFor="name" ><FormattedMessage id="contact.firstName"/></label>
       <div className="control">
-        <input className="input" type="text" name="name" {...bindFirstName} id="firstName" required={true} />
+        <input className="input" type="text" name="name" {...bindFirstName} id="name" required={true} />
       </div>
     </div>
     <div className="field">
       <label className="label" htmlFor="surname" ><FormattedMessage id="contact.lastName"/></label>
       <div className="control">
-        <input className="input" type="text" name="surname" {...bindLastName} id="lastName" required={true} />
+        <input className="input" type="text" name="surname" {...bindLastName} id="surname" required={true} />
       </div>
     </div>
     <div className="field">
