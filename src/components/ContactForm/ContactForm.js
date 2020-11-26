@@ -10,7 +10,7 @@ function encode(data) {
 }
 
 const ContactForm = ({ action}) => {
-  const { value: bot-field, bind: bindBotfield, reset: resetBotfield } = useInput('');
+  const { value:botField, bind:bindBotfield, reset:resetBotfield } = useInput('');
   const { value:firstName, bind:bindFirstName, reset:resetFirstName } = useInput('');
   const { value:lastName, bind:bindLastName, reset:resetLastName } = useInput('');
   const { value:email, bind:bindEmail, reset:resetEmail } = useInput('');
@@ -23,7 +23,7 @@ const ContactForm = ({ action}) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    reset();
+    resetBotfield();
     resetFirstName();
     resetLastName();
     resetEmail();
