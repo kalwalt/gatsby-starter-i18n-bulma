@@ -46,6 +46,7 @@
     "lodash": "^4.17.15",
     "netlify-cms-app": "^2.14.26",
     "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
     "path": "^0.12.7",
     "react": "^17.0.1",
     "react-device-detect": "^1.15.0",
