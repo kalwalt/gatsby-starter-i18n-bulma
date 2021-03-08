@@ -10,12 +10,13 @@ function encode(data) {
 }
 
 const ContactForm = ({ action}) => {
-  const { value, bind, reset } = useInput('');
-  const { value:firstName, bind:bindFirstName, reset:resetFirstName } = useInput('');
-  const { value:lastName, bind:bindLastName, reset:resetLastName } = useInput('');
+  //const { value:botField, bind:bindBotfield, reset:resetBotfield } = useInput('');
+  const { value:name, bind:bindFirstName, reset:resetFirstName } = useInput('');
+  const { value:surname, bind:bindLastName, reset:resetLastName } = useInput('');
   const { value:email, bind:bindEmail, reset:resetEmail } = useInput('');
   const { value:subject, bind:bindSubject, reset:resetSubject } = useInput('');
-  const { value:gender, bind:bindGender, reset:resetGender } = useInput('');
+  const { value:genderMale, bind:bindGenderMale, reset:resetGenderMale } = useInput('');
+  const { value:genderFemale, bind:bindGenderFemale, reset:resetGenderFemale } = useInput('');
   const { value:enquiry, bind:bindEnquiry, reset:resetEnquiry } = useInput('');
   const { value:message, bind:bindMessage, reset:resetMessage } = useInput('');
 
@@ -23,12 +24,14 @@ const ContactForm = ({ action}) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    //resetBotfield();
     resetFirstName();
     resetLastName();
     resetEmail();
     resetSubject();
     resetEnquiry();
-    resetGender();
+    resetGenderMale();
+    resetGenderFemale();
     resetMessage();
     const form = e.target;
     fetch("/?no-cache=1", {
@@ -56,19 +59,19 @@ const ContactForm = ({ action}) => {
     <div hidden>
       <label>
         Don’t fill this out:{" "}
-        <input name="bot-field" {...bind} />
+        <input name="bot-field"/>
       </label>
     </div>
     <div className="field">
       <label className="label" htmlFor="name" ><FormattedMessage id="contact.firstName"/></label>
       <div className="control">
-        <input className="input" type="text" name="firstName" {...bindFirstName} id="firstName" required={true} />
+        <input className="input" type="text" name="name" {...bindFirstName} id="name" required={true} />
       </div>
     </div>
     <div className="field">
       <label className="label" htmlFor="surname" ><FormattedMessage id="contact.lastName"/></label>
       <div className="control">
-        <input className="input" type="text" name="lastName" {...bindLastName} id="lastName" required={true} />
+        <input className="input" type="text" name="surname" {...bindLastName} id="surname" required={true} />
       </div>
     </div>
     <div className="field">
@@ -88,9 +91,9 @@ const ContactForm = ({ action}) => {
       <label className="radio menu-names">
         <input
           type="radio"
-          name="gender"
+          name="genderMale"
           value="male"
-          {...bindGender}
+          {...bindGenderMale}
           defaultChecked
         />
         <span><FormattedMessage id="contact.gender.male"/></span>
@@ -98,9 +101,9 @@ const ContactForm = ({ action}) => {
       <label className="radio">
         <input
           type="radio"
-          name="gender"
+          name="genderFemale"
           value="female"
-          {...bindGender}
+          {...bindGenderFemale}
         />
         <span><FormattedMessage id="contact.gender.female"/></span>
       </label>
