@@ -59,7 +59,7 @@ render() {
   const { frontmatter } = data.markdownRemark;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
   const { masonry } = frontmatter;
-  const image = frontmatter.image.childImageSharp.fluid.src;
+  const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
   const langKey = frontmatter.lang;
   const tags = frontmatter.tags;
     return (
@@ -94,8 +94,7 @@ ArtworksPortfolioPage.propTypes = {
 
 export default ArtworksPortfolioPage
 
-export const pageQuery = graphql`
-query ArtworksPortfolioQuery($id: String!) {
+export const pageQuery = graphql`query ArtworksPortfolioQuery($id: String!) {
   site {
     siteMetadata {
       languages {
@@ -104,35 +103,32 @@ query ArtworksPortfolioQuery($id: String!) {
       }
     }
   }
-  allArticlesJson(filter:{title:{eq:"home"}}){
- edges{
-   node{
-     articles {
-       en
-       it
-     }
-   }
- }
-}
-   markdownRemark(id: { eq: $id }) {
-     html
-     frontmatter {
-       id
-       title
-       tags
-       lang
-       image {
-         childImageSharp {
-           fluid(maxWidth: 2048, quality: 100) {
-             ...GatsbyImageSharpFluid
-             src
-           }
-         }
-       }
-       heading
-       description
-      masonry{
-        photos{
+  allArticlesJson(filter: {title: {eq: "home"}}) {
+    edges {
+      node {
+        articles {
+          en
+          it
+        }
+      }
+    }
+  }
+  markdownRemark(id: {eq: $id}) {
+    html
+    frontmatter {
+      id
+      title
+      tags
+      lang
+      image {
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
+      heading
+      description
+      masonry {
+        photos {
           src
           srcSet
           sizes

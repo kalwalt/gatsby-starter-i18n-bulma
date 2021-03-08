@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactWOW from 'react-wow'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 import * as PropTypes from "prop-types"
 
 const CardImageSlide = ({ imageInfo }) => {
@@ -9,14 +9,15 @@ const CardImageSlide = ({ imageInfo }) => {
 
   if (!!image && !!image.childImageSharp) {
     return (
-        <Img style={imageStyle} fluid={image.childImageSharp.fluid} alt={alt} />
-    )
+      <GatsbyImage
+        image={image.childImageSharp.gatsbyImageData}
+        style={imageStyle}
+        alt={alt} />
+    );
   }
 
   if (!!childImageSharp) {
-    return (
-        <Img style={imageStyle} fluid={childImageSharp.fluid} alt={alt} />
-    )
+    return <GatsbyImage image={childImageSharp.gatsbyImageData} style={imageStyle} alt={alt} />;
   }
 
   if (!!image && typeof image === 'string')

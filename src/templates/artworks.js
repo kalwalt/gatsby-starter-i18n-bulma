@@ -72,7 +72,7 @@ render() {
   const { array } = frontmatter.slider;
   const description = frontmatter.headingDesc;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
-  const image = frontmatter.image.childImageSharp.fluid.src;
+  const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
   const langKey = frontmatter.lang;
   const tags = frontmatter.tags;
     return (
@@ -111,8 +111,7 @@ ArtworksPage.propTypes = {
 
 export default ArtworksPage
 
-export const pageQuery = graphql`
-query ArtworksQuery($id: String!) {
+export const pageQuery = graphql`query ArtworksQuery($id: String!) {
   site {
     siteMetadata {
       languages {
@@ -121,56 +120,51 @@ query ArtworksQuery($id: String!) {
       }
     }
   }
-  allArticlesJson(filter:{title:{eq:"home"}}){
- edges{
-   node{
-     articles {
-       en
-       it
-     }
-   }
- }
-}
-   markdownRemark(id: { eq: $id }) {
-     html
-     frontmatter {
-       id
-       title
-       description
-       tags
-       lang
-       image {
-         childImageSharp {
-           fluid(maxWidth: 2048, quality: 100) {
-             ...GatsbyImageSharpFluid
-             src
-           }
-         }
-       }
-       heading
-       headingDesc
-       description
-       testimonials{
-         author
-         quote
-       }
-       intro {
-         blurbs {
-           image {
-             childImageSharp {
-               fluid(maxWidth: 240, quality: 64) {
-                 ...GatsbyImageSharpFluid
-               }
-             }
-           }
+  allArticlesJson(filter: {title: {eq: "home"}}) {
+    edges {
+      node {
+        articles {
+          en
+          it
+        }
+      }
+    }
+  }
+  markdownRemark(id: {eq: $id}) {
+    html
+    frontmatter {
+      id
+      title
+      description
+      tags
+      lang
+      image {
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
+      heading
+      headingDesc
+      description
+      testimonials {
+        author
+        quote
+      }
+      intro {
+        blurbs {
+          image {
+            childImageSharp {
+              gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+            }
+          }
           heading
           link
           text
-         }
+        }
       }
-      slider{
+      slider {
         display
-        array{
+        array {
           original
           thumbnail
           originalAlt

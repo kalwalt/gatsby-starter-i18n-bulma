@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 
 class Lightbox extends Component {
   state = {
@@ -91,9 +91,12 @@ class Lightbox extends Component {
       <Fragment>
         <div className="columns is-multiline">
           {images.map((img, i) => (
-            <div className="column is-one-quarter" key={img.image.childImageSharp.fluid.src}>
-              <a id="img-lightbox" className="image" href={img.image.childImageSharp.fluid.src} alt={img.alt} onClick={e => this.handleClick(e, i)}>
-                <Img fluid={img.image.childImageSharp.fluid} alt={img.alt} style={imageStyle} />
+            <div className="column is-one-quarter" key={img.image.childImageSharp.gatsbyImageData.src}>
+              <a id="img-lightbox" className="image" href={img.image.childImageSharp.gatsbyImageData.src} alt={img.alt} onClick={e => this.handleClick(e, i)}>
+                <GatsbyImage
+                  image={img.image.childImageSharp.gatsbyImageData}
+                  alt={img.alt}
+                  style={imageStyle} />
               </a>
             </div>
           ))}
@@ -104,7 +107,7 @@ class Lightbox extends Component {
           <div className="modal-background"></div>
           <div className="modal-content">
           <button id="modal-close" className="modal-close is-large" aria-label="close"></button>
-            <Img  fluid={images[selectedImage].image.childImageSharp.fluid} />
+            <GatsbyImage image={images[selectedImage].image.childImageSharp.gatsbyImageData} />
             <footer className="modal-card-foot">
                 <button className="button is-primary" onClick={this.goBack} disabled={selectedImage === 0}>
                   Previous
@@ -119,7 +122,8 @@ class Lightbox extends Component {
       </Fragment>
       :
       <div></div>
-    } </section>)
+    } </section>
+    );
   }
 }
 

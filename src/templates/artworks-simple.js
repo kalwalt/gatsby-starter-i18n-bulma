@@ -73,7 +73,7 @@ render() {
   const lightbox = frontmatter.lightbox;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
   const { masonry } = frontmatter;
-  const image = frontmatter.image.childImageSharp.fluid.src;
+  const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
   const langKey = frontmatter.lang;
   const tags = frontmatter.tags;
     return (
@@ -112,8 +112,7 @@ ArtworksSimplePage.propTypes = {
 
 export default ArtworksSimplePage
 
-export const pageQuery = graphql`
-query ArtworksSimpleQuery($id: String!) {
+export const pageQuery = graphql`query ArtworksSimpleQuery($id: String!) {
   site {
     siteMetadata {
       languages {
@@ -122,42 +121,39 @@ query ArtworksSimpleQuery($id: String!) {
       }
     }
   }
-  allArticlesJson(filter:{title:{eq:"home"}}){
- edges{
-   node{
-     articles {
-       en
-       it
-     }
-   }
- }
-}
-   markdownRemark(id: { eq: $id }) {
-     html
-     frontmatter {
-       id
-       title
-       tags
-       lang
-       image {
-         childImageSharp {
-           fluid(maxWidth: 1200, quality: 86) {
-             ...GatsbyImageSharpFluid
-             src
-           }
-         }
-       }
-       heading
-       description
-      info{
+  allArticlesJson(filter: {title: {eq: "home"}}) {
+    edges {
+      node {
+        articles {
+          en
+          it
+        }
+      }
+    }
+  }
+  markdownRemark(id: {eq: $id}) {
+    html
+    frontmatter {
+      id
+      title
+      tags
+      lang
+      image {
+        childImageSharp {
+          gatsbyImageData(quality: 86, layout: FULL_WIDTH)
+        }
+      }
+      heading
+      description
+      info {
         title
         artworkTitle
         year
         technique
         dimensions
       }
-      masonry{
-        photos{
+      masonry {
+        photos {
           src
           srcSet
           sizes
@@ -168,9 +164,9 @@ query ArtworksSimpleQuery($id: String!) {
           alt
         }
       }
-      slider{
+      slider {
         display
-        array{
+        array {
           original
           thumbnail
           originalAlt
@@ -180,13 +176,10 @@ query ArtworksSimpleQuery($id: String!) {
       }
       lightbox {
         display
-        images{
+        images {
           image {
             childImageSharp {
-              fluid(maxWidth: 1200, quality: 85) {
-                ...GatsbyImageSharpFluid
-                src
-              }
+              gatsbyImageData(quality: 85, layout: FULL_WIDTH)
             }
           }
           alt
