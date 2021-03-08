@@ -211,7 +211,7 @@ class ContactPage extends React.Component {
     const instagram = dataMarkdown.frontmatter.instagram;
     const image = dataMarkdown.frontmatter.imageCardSL;
     const { frontmatter } = dataMarkdown;
-    const imageSEO = frontmatter.image.childImageSharp.fluid.src;
+    const imageSEO = frontmatter.image.childImageSharp.gatsbyImageData.src;
     return (
       <Layout className="container"  data={data} jsonData={jsonData} location={location}>
         <SEO
@@ -246,69 +246,63 @@ ContactPage.propTypes = {
 
 export default ContactPage
 
-export const pageQuery = graphql`
-  query ContactPageQuery($id: String!) {
-    site {
-      siteMetadata {
-        languages {
-          defaultLangKey
-          langs
+export const pageQuery = graphql`query ContactPageQuery($id: String!) {
+  site {
+    siteMetadata {
+      languages {
+        defaultLangKey
+        langs
+      }
+    }
+  }
+  allArticlesJson(filter: {title: {eq: "home"}}) {
+    edges {
+      node {
+        articles {
+          en
+          it
         }
       }
     }
-    allArticlesJson(filter:{title:{eq:"home"}}){
-   edges{
-     node{
-       articles {
-         en
-         it
-       }
-     }
-   }
   }
-    markdownRemark(id: {eq: $id}) {
-      html
-      frontmatter {
-        id
-        title
-        description
-        tags
-        lang
+  markdownRemark(id: {eq: $id}) {
+    html
+    frontmatter {
+      id
+      title
+      description
+      tags
+      lang
+      image {
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
+      address
+      phone
+      email
+      locations {
+        lat
+        lng
+        message
+      }
+      linkinsta
+      instagram
+      imageCardSL {
+        alt
         image {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-              src
-            }
+            gatsbyImageData(width: 128, quality: 80, layout: CONSTRAINED)
           }
         }
-        address
-        phone
-        email
-        locations{
-          lat
-          lng
-          message
-        }
-        linkinsta
-        instagram
-        imageCardSL{
-          alt
-          image{
-            childImageSharp {
-              fluid(maxWidth: 128, quality: 80) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          name
-          description
-          website
-        }
-      }
-      fields {
-        slug
+        name
+        description
+        website
       }
     }
+    fields {
+      slug
+    }
   }
+}
 `
