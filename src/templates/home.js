@@ -40,7 +40,7 @@ const HomePageTemplate = ({
     className="full-width-image margin-top-0"
     style={{
       backgroundImage: `url(${
-        !!image.childImageSharp ? image.childImageSharp.gatsbyImageData.src : image
+        !!image.childImageSharp ? image.childImageSharp.fluid.src : image
       })`,
       backgroundPosition: `top left`,
       backgroundAttachment: `fixed`,
@@ -134,7 +134,7 @@ class HomePage extends React.Component {
     const { display } = frontmatter.slider;
     const { array } = frontmatter.slider;
     const sel = select(langKey);
-    const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
+    const image = frontmatter.image.childImageSharp.fluid.src;
     const tags = frontmatter.tags;
 
     return (
@@ -205,9 +205,12 @@ export const pageQuery = graphql`query HomePageQuery($id: String!) {
       lang
       image {
         childImageSharp {
-          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          fluid(maxWidth: 2048, quality: 100) {
+            ...GatsbyImageSharpFluid
+            src
+            }
+          }
         }
-      }
       heading
       mainpitch {
         heading
