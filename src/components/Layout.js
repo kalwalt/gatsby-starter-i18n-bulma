@@ -48,13 +48,17 @@ const check_path = (langKey, _url, id_article, jsonData) => {
   return [basename, id_article];
 }
 
-const setLangsMenu = ( langsMenu, id, basePath, jsonData) => {
+const setLangsMenu = ( langsMenu, id, basePath, jsonData) => { 
   if(id !== 'undefined'){
-  langsMenu[0].link = `/en/${basePath}` + getIdJsonUrl(id, 'en', jsonData) + '/';
-  langsMenu[1].link = `/it/${basePath}` + getIdJsonUrl(id, 'it', jsonData) + '/';
-  }else{
-  console.log("missed id in the setLangsMenu() function!");
-  }
+    console.log(id);
+    if (id === 0) {
+      langsMenu[0].link = `/en/`;
+      langsMenu[1].link = `/it/`;
+    } else {
+      langsMenu[0].link = `/en/${basePath}` + getIdJsonUrl(id, 'en', jsonData) + '/';  
+      langsMenu[1].link = `/it/${basePath}` + getIdJsonUrl(id, 'it', jsonData) + '/'; 
+    }
+ } else {  console.log("missed id in the setLangsMenu() function!");  }
 };
 
 // add concatenated locale data
