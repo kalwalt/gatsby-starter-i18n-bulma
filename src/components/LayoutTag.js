@@ -6,12 +6,9 @@ import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider } from 'react-intl';
 import './all.sass'
-
-if (!Intl.RelativeTimeFormat) {
-  require('@formatjs/intl-relativetimeformat/polyfill');
-  require('@formatjs/intl-relativetimeformat/dist/locale-data/en');
-  require('@formatjs/intl-relativetimeformat/dist/locale-data/it');
-}
+import '@formatjs/intl-relativetimeformat/polyfill'
+import '@formatjs/intl-relativetimeformat/locale-data/en' // locale-data for en
+import '@formatjs/intl-relativetimeformat/locale-data/it' // locale-data for it
 
 class TemplateWrapper extends Component {
   constructor(props) {
