@@ -6,9 +6,9 @@ import Helmet from 'react-helmet'
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider } from 'react-intl';
 import './all.sass'
-import '@formatjs/intl-relativetimeformat/polyfill'
+/*import '@formatjs/intl-relativetimeformat/polyfill'
 import '@formatjs/intl-relativetimeformat/locale-data/en' // locale-data for en
-import '@formatjs/intl-relativetimeformat/locale-data/it' // locale-data for it
+import '@formatjs/intl-relativetimeformat/locale-data/it' // locale-data for it*/
 
 const getIdJsonUrl = (id, langKey, jsonData) => {
   if(id !== 'undefined'){
