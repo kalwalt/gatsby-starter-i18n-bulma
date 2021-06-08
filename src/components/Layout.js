@@ -32,7 +32,7 @@ const getIdJsonUrl = (id, langKey, jsonData) => {
   }
 };
 
-const startPath = (langKey, langsMenu, basename, _url) => {
+const startPath = (langKey, basename, _url) => {
   const lengthLangKey = langKey.length;
   let indx;
   indx = _url.indexOf(basename);
@@ -40,7 +40,7 @@ const startPath = (langKey, langsMenu, basename, _url) => {
   return basePath;
 };
 
-const check_path = (langKey, _url, id_article, jsonData) => {
+const check_path = (langKey, id_article, jsonData) => {
   let basename
   if (id_article !== 'undefined'){
     basename = getIdJsonUrl(id_article, langKey, jsonData);
@@ -77,8 +77,8 @@ class TemplateWrapper extends Component {
     this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
     const id_article = data.markdownRemark.frontmatter.id;
     const id = Number(id_article) - 1;
-    const basename = check_path(this.langKey, url, id, jsonData);
-    var basePath = startPath(this.langKey, this.langsMenu, basename[0], url);
+    const basename = check_path(this.langKey, id, jsonData);
+    var basePath = startPath(this.langKey, basename[0], url);
     //finally here we set the desired url...
     setLangsMenu( this.langsMenu, basename[1], basePath, jsonData);
 
