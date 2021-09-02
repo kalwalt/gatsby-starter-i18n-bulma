@@ -1,27 +1,24 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-import PostList from '../components/PostList'
-import { FormattedMessage } from 'react-intl'
-import Helmet from 'react-helmet'
-import Layout from "../components/LayoutTag"
-import { FaTag, FaTags } from 'react-icons/fa'
+import * as React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql } from "gatsby";
+import PostList from "../components/PostList";
+import { FormattedMessage } from "react-intl";
+import Helmet from "react-helmet";
+import Layout from "../components/LayoutTag";
+import { FaTag, FaTags } from "react-icons/fa";
 
 const TagRouteTemplate = ({ data, pageContext }) => {
-
-  const posts = data.allMarkdownRemark.edges.map(p => p.node)
+  const posts = data.allMarkdownRemark.edges.map((p) => p.node);
 
   const allTagsLink = (
-    <FormattedMessage id="tags.allTagsLink" >
+    <FormattedMessage id="tags.allTagsLink">
       {(txt) => (
-        <Link
-          to={`/${pageContext.langKey}/tags/`}
-        >
-        <FaTags className="menu-names"/>  {txt}
+        <Link to={`/${pageContext.langKey}/tags/`}>
+          <FaTags className="menu-names" /> {txt}
         </Link>
       )}
     </FormattedMessage>
-  )
+  );
 
   return (
     <section className="section">
@@ -31,7 +28,7 @@ const TagRouteTemplate = ({ data, pageContext }) => {
             {(txt) => (
               <Helmet
                 title={`${pageContext.tag} | ${txt}`}
-                meta={[{ name: 'description', content: txt }]}
+                meta={[{ name: "description", content: txt }]}
               />
             )}
           </FormattedMessage>
@@ -40,39 +37,38 @@ const TagRouteTemplate = ({ data, pageContext }) => {
             values={{ nPosts: data.allMarkdownRemark.totalCount }}
           />
           <div className="content">
-          <span className="tag is-light is-medium"><FaTag className="menu-names"/>{pageContext.tag}</span>
+            <span className="tag is-light is-medium">
+              <FaTag className="menu-names" />
+              {pageContext.tag}
+            </span>
           </div>
           {allTagsLink}
         </header>
-        <PostList
-          posts={posts}
-        />
+        <PostList posts={posts} />
         <footer className="footer">
-          <span className="tag is-light is-medium">
-          {allTagsLink}
-          </span>
+          <span className="tag is-light is-medium">{allTagsLink}</span>
         </footer>
       </div>
     </section>
-  )
-}
+  );
+};
 
 TagRouteTemplate.propTypes = {
   posts: PropTypes.object,
-  pageContext: PropTypes.object
-}
+  pageContext: PropTypes.object,
+};
 
 class TagRoute extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      location:  { pathname: "" },
-  };
+      location: { pathname: "" },
+    };
   }
-  componentDidMount(){
-    if (typeof window !== 'undefined'){
-    this.state = {location:  {pathname: window.location.pathname}};
-  }
+  componentDidMount() {
+    if (typeof window !== "undefined") {
+      this.state = { location: { pathname: window.location.pathname } };
+    }
   }
 
   render() {
@@ -83,60 +79,66 @@ class TagRoute extends React.Component {
       pageContext = this.props.pageContext;
     }
 
-    return(
+    return (
       <Layout data={data} location={this.state.location}>
-      <TagRouteTemplate data={data} pageContext={pageContext}></TagRouteTemplate>
+        <TagRouteTemplate
+          data={data}
+          pageContext={pageContext}
+        ></TagRouteTemplate>
       </Layout>
-
-    )
-
+    );
   }
 }
 
-export default TagRoute
+export default TagRoute;
 
 export const pageQuery = graphql`
-query TagPage($langKey: String!, $tag: String!) {
-  site {
-    siteMetadata {
-      languages {
-        langs
-        defaultLangKey
+  query TagPage($langKey: String!, $tag: String!) {
+    site {
+      siteMetadata {
+        languages {
+          langs
+          defaultLangKey
+        }
       }
     }
-  }
-  markdownRemark {
-    frontmatter {
-      title
-      slug
+    markdownRemark {
+      frontmatter {
+        title
+        slug
+      }
     }
-  }
-  allMarkdownRemark(limit: 1000, sort: {fields: [frontmatter___date], order: DESC},
-    filter: {frontmatter: {templateKey: {ne: "message"}, lang: {eq: $langKey}},
-    fields: {
-    langKey: {eq: $langKey},
-    tagSlugs: {elemMatch: {tag: {eq: $tag}}}
-  }}) {
-    totalCount
-    edges {
-      node {
-        frontmatter {
-          title
-          description
-          date
-          slug
+    allMarkdownRemark(
+      limit: 1000
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        frontmatter: { templateKey: { ne: "message" }, lang: { eq: $langKey } }
+        fields: {
+          langKey: { eq: $langKey }
+          tagSlugs: { elemMatch: { tag: { eq: $tag } } }
         }
-        fields {
-          langKey
-          slug
-          tagSlugs {
-            tag
-            link
+      }
+    ) {
+      totalCount
+      edges {
+        node {
+          frontmatter {
+            title
+            description
+            date
+            slug
           }
+          fields {
+            langKey
+            slug
+            tagSlugs {
+              tag
+              link
+            }
+          }
+          excerpt
         }
-        excerpt
       }
     }
   }
-}
-`
+`;

@@ -1,5 +1,5 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import * as React from "react";
+import Helmet from "react-helmet";
 
 export default React.memo(
   ({
@@ -16,8 +16,8 @@ export default React.memo(
   }) => {
     const baseSchema = [
       {
-        '@context': 'http://schema.org',
-        '@type': 'WebSite',
+        "@context": "http://schema.org",
+        "@type": "WebSite",
         url,
         name: title,
         alternateName: defaultTitle,
@@ -28,14 +28,14 @@ export default React.memo(
       ? [
           ...baseSchema,
           {
-            '@context': 'http://schema.org',
-            '@type': 'BreadcrumbList',
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
             itemListElement: [
               {
-                '@type': 'ListItem',
+                "@type": "ListItem",
                 position: 1,
                 item: {
-                  '@id': url,
+                  "@id": url,
                   name: title,
                   image,
                 },
@@ -43,30 +43,30 @@ export default React.memo(
             ],
           },
           {
-            '@context': 'http://schema.org',
-            '@type': 'BlogPosting',
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
             url,
             name: title,
             alternateName: defaultTitle,
             headline: title,
             image: {
-              '@type': 'ImageObject',
+              "@type": "ImageObject",
               url: image,
             },
             description,
             author: {
-              '@type': 'Person',
+              "@type": "Person",
               name: author.name,
             },
             publisher: {
-              '@type': 'Organization',
+              "@type": "Organization",
               url: organization.url,
               logo: organization.logo,
               name: organization.name,
             },
             mainEntityOfPage: {
-              '@type': 'WebSite',
-              '@id': siteUrl,
+              "@type": "WebSite",
+              "@id": siteUrl,
             },
             datePublished,
           },
@@ -79,5 +79,5 @@ export default React.memo(
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
     );
-  },
+  }
 );
