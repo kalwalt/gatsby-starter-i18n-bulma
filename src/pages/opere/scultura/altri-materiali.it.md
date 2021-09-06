@@ -1,14 +1,14 @@
 ---
 id: '06'
-title: "Pagina introduttiva sulle opere di scultura in altri materiali"
+title: 'Pagina introduttiva sulle opere di scultura in altri materiali'
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina introduttiva sulle sezioni delle opere di scultura in altri materiali"
+description: 'Pagina introduttiva sulle sezioni delle opere di scultura in altri materiali'
 templateKey: artworks-intro
 tags:
   - art
 lang: it
-date: "05-03-2019"
+date: '05-03-2019'
 path: /it/opere/scultura/altri-materiali/
 slug: /it/opere/scultura/altri-materiali/
 intro:

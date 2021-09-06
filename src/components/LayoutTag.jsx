@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Main from '../components/Main'
-import Helmet from 'react-helmet'
+import React, { Component } from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Main from '../components/Main';
+import Helmet from 'react-helmet';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider } from 'react-intl';
-import './all.sass'
+import './all.sass';
 
 class TemplateWrapper extends Component {
   constructor(props) {
@@ -20,7 +20,11 @@ class TemplateWrapper extends Component {
     const { langs, defaultLangKey } = data.site.siteMetadata.languages;
     this.langKey = getCurrentLangKey(langs, defaultLangKey, url);
     this.homeLink = `/${this.langKey}/`;
-    this.langsMenu = getLangs(langs, this.langKey, getUrlForLang(this.homeLink, url));
+    this.langsMenu = getLangs(
+      langs,
+      this.langKey,
+      getUrlForLang(this.homeLink, url)
+    );
 
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
@@ -29,28 +33,29 @@ class TemplateWrapper extends Component {
   }
   render() {
     return (
-      <IntlProvider
-        locale={this.langKey}
-        messages={this.i18nMessages}
-      >
+      <IntlProvider locale={this.langKey} messages={this.i18nMessages}>
         <div>
           <Helmet
             key="app-head"
             defaultTitle={this.title}
             titleTemplate={`%s | ${this.title}`}
           >
-          <html lang={this.langKey} />
-          <meta name="description"  content={this.description}/>
+            <html lang={this.langKey} />
+            <meta name="description" content={this.description} />
           </Helmet>
-          <Header langKey={this.langKey} langs={this.langsMenu} menu={this.menuTree} />
+          <Header
+            langKey={this.langKey}
+            langs={this.langsMenu}
+            menu={this.menuTree}
+          />
           <Main key="app-main" className={this.className}>
             {this.children}
           </Main>
-          <Footer langKey={this.langKey}/>
+          <Footer langKey={this.langKey} />
         </div>
       </IntlProvider>
     );
   }
 }
 
-export default TemplateWrapper
+export default TemplateWrapper;

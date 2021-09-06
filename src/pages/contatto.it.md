@@ -1,13 +1,13 @@
 ---
 id: '04'
-title: "Pagina di contatto"
-description: "Pagina per contattarmi"
+title: 'Pagina di contatto'
+description: 'Pagina per contattarmi'
 templateKey: contacts
 tags:
   - web
 lang: it
 image: /img/PersimmonHD.jpg
-date: "08-03-2019"
+date: '08-03-2019'
 address: "Piazza Unità d'Italia, 34121 Trieste TS"
 phone: '+3900123456789'
 email: 'kaki@kaki.com'
@@ -18,7 +18,7 @@ locations:
   lng: 13.7677618
   message: 'Kaki è qui!'
 imageCardSL:
-  alt: "immagine"
+  alt: 'immagine'
   image: /img/128x128.png
   name: John Kaki
   description: Sono un artista visivo, seguimi in questa avventura...!

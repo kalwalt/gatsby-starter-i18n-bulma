@@ -1,14 +1,14 @@
 ---
 id: '21'
-title: "Artworks Introduction page - Bronze Sculpture"
+title: 'Artworks Introduction page - Bronze Sculpture'
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "An introduction for the bronze artworks sculpture page"
+description: 'An introduction for the bronze artworks sculpture page'
 templateKey: artworks-intro
 tags:
   - art
 lang: en
-date: "05-03-2019"
+date: '05-03-2019'
 path: /en/artworks/sculpture/bronze/
 slug: /en/artworks/sculpture/bronze/
 intro:

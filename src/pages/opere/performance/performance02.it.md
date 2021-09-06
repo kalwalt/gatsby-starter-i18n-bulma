@@ -1,29 +1,29 @@
 ---
 id: '25'
-title: "Pagina sulla performance 02 - italiano"
+title: 'Pagina sulla performance 02 - italiano'
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina di introduzione dedicata alle opere di performance"
+description: 'Pagina di introduzione dedicata alle opere di performance'
 templateKey: artworks-simple
 tags:
   - art
 lang: it
-date: "22-03-2019"
+date: '22-03-2019'
 path: /it/opere/performance/performance02/
 slug: /it/opere/performance/performance02/
 lightbox:
   display: true
   images:
     - image: /img/Kaki.jpg
-      alt: "qualche Kako sull albero"
+      alt: 'qualche Kako sull albero'
     - image: /img/Persimmon.jpg
-      alt: "Un albero del Kako"
+      alt: 'Un albero del Kako'
 info:
-  title: "Un caco tra le stelle"
-  artworkTitle: "Un caco tra le stelle"
-  year: "2019"
-  technique: "colore acrilico su tela"
-  dimensions: "70x50 cm"  
+  title: 'Un caco tra le stelle'
+  artworkTitle: 'Un caco tra le stelle'
+  year: '2019'
+  technique: 'colore acrilico su tela'
+  dimensions: '70x50 cm'
 intro:
   blurbs:
     - image: /img/Persimmon.jpg
@@ -36,8 +36,8 @@ slider:
   display: 'false'
   array: []
 testimonials:
-  - author: ""
-    quote: ""
+  - author: ''
+    quote: ''
 ---
 
 ## Performance 02

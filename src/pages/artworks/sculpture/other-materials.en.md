@@ -1,14 +1,14 @@
 ---
 id: '23'
-title: "Artworks Introduction page - Other Materials Sculpture"
+title: 'Artworks Introduction page - Other Materials Sculpture'
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "An introduction for the other materials artworks sculpture page"
+description: 'An introduction for the other materials artworks sculpture page'
 templateKey: artworks-intro
 tags:
   - art
 lang: en
-date: "05-03-2019"
+date: '05-03-2019'
 path: /en/artworks/sculpture/other-materials/
 slug: /en/artworks/sculpture/other-materials/
 intro:

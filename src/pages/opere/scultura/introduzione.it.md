@@ -1,14 +1,14 @@
 ---
 id: '10'
-title: "Pagina di opere di scultura introduzione - italiano"
+title: 'Pagina di opere di scultura introduzione - italiano'
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina dedicata alle opere di scultura - introduzione"
+description: 'Pagina dedicata alle opere di scultura - introduzione'
 templateKey: artworks-intro
 tags:
   - art
 lang: it
-date: "22-03-2019"
+date: '22-03-2019'
 path: /it/opere/scultura/introduzione/
 slug: /it/opere/scultura/introduzione/
 intro:

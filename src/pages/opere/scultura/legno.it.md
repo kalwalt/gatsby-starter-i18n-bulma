@@ -1,14 +1,14 @@
 ---
 id: '06'
-title: "Pagina introduttiva sulle opere di scultura in legno"
+title: 'Pagina introduttiva sulle opere di scultura in legno'
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina introduttiva sulle sezioni delle opere di scultura in legno"
+description: 'Pagina introduttiva sulle sezioni delle opere di scultura in legno'
 templateKey: artworks-intro
 tags:
   - art
 lang: it
-date: "05-03-2019"
+date: '05-03-2019'
 path: /it/opere/scultura/legno/
 slug: /it/opere/scultura/legno/
 intro:

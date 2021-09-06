@@ -11,4 +11,5 @@ slug: /en/blog/2019-03-11-news-from-art-planet
 tags:
   - art
 ---
+
 Direct news from the Art planet...

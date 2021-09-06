@@ -1,15 +1,15 @@
 ---
 id: '18'
-title: "Artworks Painting Introduction page"
+title: 'Artworks Painting Introduction page'
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "An introduction for the Painting artworks page"
+description: 'An introduction for the Painting artworks page'
 templateKey: artworks-intro
 tags:
   - art
   - painting
 lang: en
-date: "15-03-2019"
+date: '15-03-2019'
 path: /en/artworks/painting/introduction/
 slug: /en/artworks/painting/introduction/
 intro:
@@ -35,6 +35,7 @@ intro:
       text: >
         If only I could eat one of those fruits ...
 ---
+
 ## Artworks Painting introduction
 
 Probant et summis offendit se de ubi consectetur, laborum est cillum, si e

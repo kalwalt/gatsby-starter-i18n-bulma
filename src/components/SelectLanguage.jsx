@@ -7,39 +7,46 @@ import It from './Flags/It';
 
 const getIcon = langKey => {
   switch (langKey) {
-    case 'en': return <En />;
-    case 'it': return <It />;
-    default: return null;
+    case 'en':
+      return <En />;
+    case 'it':
+      return <It />;
+    default:
+      return null;
   }
 };
 
-const SelectLanguage = (props) => {
-  const links = props.langs.map(lang =>
-      <li className="flags" key={lang.langKey} selected={lang.selected}>
-        <Link to={lang.link} alt={lang.langKey} style={{
-          color: '#D64000'
-        }}>
+const SelectLanguage = props => {
+  const links = props.langs.map(lang => (
+    <li className="flags" key={lang.langKey} selected={lang.selected}>
+      <Link
+        to={lang.link}
+        alt={lang.langKey}
+        style={{
+          color: '#D64000',
+        }}
+      >
         {getIcon(lang.langKey)}
-          </Link>
-      </li>
-  );
+      </Link>
+    </li>
+  ));
 
   return (
     <div className="section" style={{ padding: '1.5rem' }}>
-      <header style={{
-        color: '#D64000'
-      }}>
+      <header
+        style={{
+          color: '#D64000',
+        }}
+      >
         <FormattedMessage id="selectLanguage" />
       </header>
-      <ul>
-        {links}
-      </ul>
+      <ul>{links}</ul>
     </div>
   );
 };
 
 SelectLanguage.propTypes = {
-  langs: PropTypes.array
+  langs: PropTypes.array,
 };
 
 export default SelectLanguage;

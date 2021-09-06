@@ -1,13 +1,13 @@
 ---
 id: '13'
-title: "Pagina di ringraziamento"
-description: "Pagina di ringraziamento"
+title: 'Pagina di ringraziamento'
+description: 'Pagina di ringraziamento'
 templateKey: message
 tags:
   - web
 lang: it
 image: /img/PersimmonHD.jpg
-date: "31-03-2019"
+date: '31-03-2019'
 path: /it/contatto/grazie/
 slug: /it/contatto/grazie/
 ---

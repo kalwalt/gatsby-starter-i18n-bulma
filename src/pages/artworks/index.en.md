@@ -1,16 +1,16 @@
 ---
 id: '05'
-title: "Artworks start page english"
+title: 'Artworks start page english'
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
 headingDesc: >
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-description: "The root of the artwork page"
+description: 'The root of the artwork page'
 templateKey: artworks
 tags:
   - art
 lang: en
-date: "05-03-2019"
+date: '05-03-2019'
 path: /en/artworks/
 slug: /en/artworks/
 intro:
@@ -38,9 +38,27 @@ intro:
 slider:
   display: 'slide'
   array:
-    - { original: 'https://i.picsum.photos/id/1015/6000/4000.jpg', thumbnail: 'https://i.picsum.photos/id/1015/6000/4000.jpg', originalAlt: "A wild fjord in the far north.", originalTitle: "A wild fjord in the far north.", description: "A wild fjord in the far North, admiring the infinite." }
-    - { original: 'https://i.picsum.photos/id/1019/5472/3648.jpg', thumbnail: 'https://i.picsum.photos/id/1019/5472/3648.jpg', originalAlt: 'A beautiful sunset over the sea.', originalTitle: 'A beautiful sunset over the sea.', description: 'A beautiful sunset over the sea, where numerous routes of imagination depart.'}
-    - { original: 'https://i.picsum.photos/id/1022/6000/3376.jpg', thumbnail: 'https://i.picsum.photos/id/1022/6000/3376.jpg', originalAlt: 'A Northern Lights.', originalTitle: 'A Northern Lights.', description: 'A northern lights with greenish hues.'}
+    - {
+        original: 'https://i.picsum.photos/id/1015/6000/4000.jpg',
+        thumbnail: 'https://i.picsum.photos/id/1015/6000/4000.jpg',
+        originalAlt: 'A wild fjord in the far north.',
+        originalTitle: 'A wild fjord in the far north.',
+        description: 'A wild fjord in the far North, admiring the infinite.',
+      }
+    - {
+        original: 'https://i.picsum.photos/id/1019/5472/3648.jpg',
+        thumbnail: 'https://i.picsum.photos/id/1019/5472/3648.jpg',
+        originalAlt: 'A beautiful sunset over the sea.',
+        originalTitle: 'A beautiful sunset over the sea.',
+        description: 'A beautiful sunset over the sea, where numerous routes of imagination depart.',
+      }
+    - {
+        original: 'https://i.picsum.photos/id/1022/6000/3376.jpg',
+        thumbnail: 'https://i.picsum.photos/id/1022/6000/3376.jpg',
+        originalAlt: 'A Northern Lights.',
+        originalTitle: 'A Northern Lights.',
+        description: 'A northern lights with greenish hues.',
+      }
 testimonials:
   - author: anonimous
     quote: >-

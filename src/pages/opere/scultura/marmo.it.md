@@ -1,14 +1,14 @@
 ---
 id: '06'
-title: "Pagina introduttiva sulle opere di scultura in marmo"
+title: 'Pagina introduttiva sulle opere di scultura in marmo'
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina introduttiva sulle sezioni delle opere di scultura in marmo"
+description: 'Pagina introduttiva sulle sezioni delle opere di scultura in marmo'
 templateKey: artworks-intro
 tags:
   - art
 lang: it
-date: "05-03-2019"
+date: '05-03-2019'
 path: /it/opere/scultura/marmo/
 slug: /it/opere/scultura/marmo/
 intro:

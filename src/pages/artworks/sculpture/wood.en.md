@@ -1,14 +1,14 @@
 ---
 id: '22'
-title: "Artworks Introduction page - Wood Sculpture"
+title: 'Artworks Introduction page - Wood Sculpture'
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "An introduction for the wood artworks sculpture page"
+description: 'An introduction for the wood artworks sculpture page'
 templateKey: artworks-intro
 tags:
   - art
 lang: en
-date: "05-03-2019"
+date: '05-03-2019'
 path: /en/artworks/sculpture/wood/
 slug: /en/artworks/sculpture/wood/
 intro:

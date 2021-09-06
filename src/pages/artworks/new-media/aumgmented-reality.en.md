@@ -1,14 +1,14 @@
 ---
 id: '12'
-title: "Aumgmented reality artworks page introdcution - english"
+title: 'Aumgmented reality artworks page introdcution - english'
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "Artworks introduction page for aumgmented reality"
+description: 'Artworks introduction page for aumgmented reality'
 templateKey: artworks-intro
 tags:
   - art
 lang: en
-date: "22-03-2019"
+date: '22-03-2019'
 path: /en/artworks/new-media/aumgmented-reality/
 slug: /en/artworks/new-media/aumgmented-reality/
 intro:
@@ -23,8 +23,8 @@ slider:
   display: 'false'
   array: []
 testimonials:
-  - author: ""
-    quote: ""
+  - author: ''
+    quote: ''
 ---
 
 ## Augmented reality
