@@ -1,29 +1,29 @@
 ---
 id: '17'
-title: "Abstract Art | A Persimmon among the stars"
+title: 'Abstract Art | A Persimmon among the stars'
 image: /img/Persimmon.jpg
-heading: "The Beauty of the Nature"
-description: "A Persimmon among the stars is an abstract work made with acrylic color on canvas"
+heading: 'The Beauty of the Nature'
+description: 'A Persimmon among the stars is an abstract work made with acrylic color on canvas'
 templateKey: artworks-simple
 tags:
   - art
 lang: en
-date: "07-05-2019"
+date: '07-05-2019'
 path: /en/artwork/painting/new/abstract-art-persimmon-among-the-stars/
 slug: /en/artwork/painting/new/abstract-art-persimmon-among-the-stars/
 lightbox:
   display: true
   images:
     - image: /img/Kaki.jpg
-      alt: "Some Persimmon on the tree"
+      alt: 'Some Persimmon on the tree'
     - image: /img/Persimmon.jpg
-      alt: "A Persimmon tree"
+      alt: 'A Persimmon tree'
 info:
-  title: "A Persimmon among the stars"
-  artworkTitle: "A Persimmon among the stars"
-  year: "2019"
-  technique: "acrylic color on canvas"
-  dimensions: "70x50 cm"  
+  title: 'A Persimmon among the stars'
+  artworkTitle: 'A Persimmon among the stars'
+  year: '2019'
+  technique: 'acrylic color on canvas'
+  dimensions: '70x50 cm'
 ---
 
 Est sunt occaecat a quamquam ad sunt excepteur. Deserunt concursionibus est

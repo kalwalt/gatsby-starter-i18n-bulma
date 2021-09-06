@@ -1,21 +1,21 @@
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
-const { graphql } = require ('gatsby')
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
+const { graphql } = require('gatsby');
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   return graphql(`
     {
-      site{
-        siteMetadata{
-          languages{
+      site {
+        siteMetadata {
+          languages {
             langs
           }
         }
       }
-      markdownRemark{
-        frontmatter{
+      markdownRemark {
+        frontmatter {
           heading
         }
       }
@@ -29,7 +29,7 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               slug
               langKey
-              tagSlugs{
+              tagSlugs {
                 tag
                 link
               }
@@ -50,13 +50,13 @@ exports.createPages = ({ actions, graphql }) => {
     }
   `).then(result => {
     if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()))
-      return Promise.reject(result.errors)
+      result.errors.forEach(e => console.error(e.toString()));
+      return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMarkdownRemark.edges;
 
-    posts.forEach(edge =>{
+    posts.forEach(edge => {
       const id = edge.node.id;
       createPage({
         path: edge.node.fields.slug,
@@ -67,18 +67,17 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           id,
         },
-      })
-    })
-
-  })
-}
+      });
+    });
+  });
+};
 
 exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
-  const config = getConfig()
+  const config = getConfig();
   if (stage.startsWith('develop') && config.resolve) {
     config.resolve.alias = {
       ...config.resolve.alias,
-      'react-dom': '@hot-loader/react-dom'
-    }
+      'react-dom': '@hot-loader/react-dom',
+    };
   }
-}
+};

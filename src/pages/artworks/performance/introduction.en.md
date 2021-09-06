@@ -1,14 +1,14 @@
 ---
 id: '11'
-title: "Performance artworks page introduction - english"
+title: 'Performance artworks page introduction - english'
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "Artworks introduction page for performance"
+description: 'Artworks introduction page for performance'
 templateKey: artworks
 tags:
   - art
 lang: en
-date: "22-03-2019"
+date: '22-03-2019'
 path: /en/artworks/performance/introduction/
 slug: /en/artworks/performance/introduction/
 intro:
@@ -23,8 +23,8 @@ slider:
   display: 'false'
   array: []
 testimonials:
-  - author: ""
-    quote: ""
+  - author: ''
+    quote: ''
 ---
 
 ## Performance introduction

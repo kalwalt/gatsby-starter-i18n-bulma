@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import TagList from '../components/TagList'
-import Helmet from 'react-helmet'
-import SEO from '../components/SEO/SEO'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import React from 'react';
+import PropTypes from 'prop-types';
+import TagList from '../components/TagList';
+import Helmet from 'react-helmet';
+import SEO from '../components/SEO/SEO';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
 
 const BlogPostTemplate = ({
   data,
@@ -18,7 +18,7 @@ const BlogPostTemplate = ({
   helmet,
   langKey,
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
 
   return (
     <section className="section">
@@ -31,13 +31,13 @@ const BlogPostTemplate = ({
             </h1>
             <p>{description}</p>
             <PostContent content={content} />
-            <TagList tags={tags} langKey={langKey}/>
+            <TagList tags={tags} langKey={langKey} />
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -47,32 +47,34 @@ BlogPostTemplate.propTypes = {
   helmet: PropTypes.object,
   location: PropTypes.string,
   tags: PropTypes.array,
-  langKey: PropTypes.string
-}
+  langKey: PropTypes.string,
+};
 
 const BlogPost = ({ data, location }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
   const langKey = post.frontmatter.lang;
   const image = post.frontmatter.image.childImageSharp.gatsbyImageData.src;
 
   return (
-    <Layout className="container" data={data} jsonData={jsonData} location={location}>
-     <SEO
-       frontmatter={post.frontmatter}
-       postImage={image}
-       isBlogPost
-     />
+    <Layout
+      className="container"
+      data={data}
+      jsonData={jsonData}
+      location={location}
+    >
+      <SEO frontmatter={post.frontmatter} postImage={image} isBlogPost />
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet
-            titleTemplate="%s | Blog"
-          >
+          <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
-            <meta name="description" content={`${post.frontmatter.description}`} />
+            <meta
+              name="description"
+              content={`${post.frontmatter.description}`}
+            />
           </Helmet>
         }
         tags={post.frontmatter.tags}
@@ -80,56 +82,57 @@ const BlogPost = ({ data, location }) => {
         langKey={langKey}
       />
     </Layout>
-  )
-}
+  );
+};
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
   location: PropTypes.shape({
-   pathname: PropTypes.string.isRequired,
- }).isRequired,
-}
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
-export default BlogPost
+export default BlogPost;
 
-export const pageQuery = graphql`query BlogPostByID($id: String!) {
-  site {
-    siteMetadata {
-      title
-      languages {
-        langs
-        defaultLangKey
-      }
-    }
-  }
-  allArticlesJson(filter: {title: {eq: "home"}}) {
-    edges {
-      node {
-        articles {
-          en
-          it
+export const pageQuery = graphql`
+  query BlogPostByID($id: String!) {
+    site {
+      siteMetadata {
+        title
+        languages {
+          langs
+          defaultLangKey
         }
       }
     }
-  }
-  markdownRemark(id: {eq: $id}) {
-    id
-    html
-    frontmatter {
+    allArticlesJson(filter: { title: { eq: "home" } }) {
+      edges {
+        node {
+          articles {
+            en
+            it
+          }
+        }
+      }
+    }
+    markdownRemark(id: { eq: $id }) {
       id
-      title
-      image {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+      html
+      frontmatter {
+        id
+        title
+        image {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+          }
         }
+        description
+        date
+        tags
+        lang
       }
-      description
-      date
-      tags
-      lang
     }
   }
-}
-`
+`;

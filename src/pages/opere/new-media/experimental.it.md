@@ -1,14 +1,14 @@
 ---
 id: '28'
-title: "Pagina di opere sperimentali - italiano"
+title: 'Pagina di opere sperimentali - italiano'
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina di introduzione dedicata alle opere di sperimentali"
+description: 'Pagina di introduzione dedicata alle opere di sperimentali'
 templateKey: artworks-intro
 tags:
   - art
 lang: it
-date: "22-03-2019"
+date: '22-03-2019'
 path: /it/opere/new-media/experimental/
 slug: /it/opere/new-media/experimental/
 intro:
@@ -23,8 +23,8 @@ slider:
   display: 'false'
   array: []
 testimonials:
-  - author: ""
-    quote: ""
+  - author: ''
+    quote: ''
 ---
 
 ## Arte sperimentale

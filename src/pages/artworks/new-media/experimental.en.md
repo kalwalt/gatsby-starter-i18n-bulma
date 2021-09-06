@@ -1,14 +1,14 @@
 ---
 id: '28'
-title: "Experimental artworks page introdcution - english"
+title: 'Experimental artworks page introdcution - english'
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "Experimental Artworks introduction page"
+description: 'Experimental Artworks introduction page'
 templateKey: artworks-intro
 tags:
   - art
 lang: en
-date: "22-03-2019"
+date: '22-03-2019'
 path: /en/artworks/new-media/experimental/
 slug: /en/artworks/new-media/experimental/
 intro:
@@ -23,8 +23,8 @@ slider:
   display: 'false'
   array: []
 testimonials:
-  - author: ""
-    quote: ""
+  - author: ''
+    quote: ''
 ---
 
 ## Experimental art

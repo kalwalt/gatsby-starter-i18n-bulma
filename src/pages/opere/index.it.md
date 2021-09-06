@@ -1,16 +1,16 @@
 ---
 id: '05'
-title: "Pagina principale opere italiano"
+title: 'Pagina principale opere italiano'
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
 headingDesc: >
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-description: "La pagina principale delle opere"
+description: 'La pagina principale delle opere'
 templateKey: artworks
 tags:
   - art
 lang: it
-date: "05-03-2019"
+date: '05-03-2019'
 path: /it/opere/
 slug: /it/opere/
 intro:
@@ -38,9 +38,27 @@ intro:
 slider:
   display: 'slide'
   array:
-    - { original: 'https://picsum.photos/id/1015/6000/4000.jpg', thumbnail: 'https://picsum.photos/id/1015/6000/4000.jpg', originalAlt: "Un fiordo selvaggio nel lontano Nord.", originalTitle: "Un fiordo selvaggio.", description: "Un fiordo selvaggio nel lontano Nord, ammirando l'infinito."}
-    - { original: 'https://picsum.photos/id/1019/5472/3648.jpg', thumbnail: 'https://picsum.photos/id/1019/5472/3648.jpg', originalAlt: 'Un bel tramonto sul mare.', originalTitle: 'Un bel tramonto sul mare.', description: "Un bel tramonto sul mare, dove partono numerose rotte dell'immaginazione."}
-    - { original: 'https://picsum.photos/id/1022/6000/3376.jpg', thumbnail: 'https://picsum.photos/id/1022/6000/3376.jpg', originalAlt: 'Un aurora boreale.', originalTitle: 'Un aurora boreale.', description: 'Un aurora boreale dalle sfumature verdastre.'}
+    - {
+        original: 'https://picsum.photos/id/1015/6000/4000.jpg',
+        thumbnail: 'https://picsum.photos/id/1015/6000/4000.jpg',
+        originalAlt: 'Un fiordo selvaggio nel lontano Nord.',
+        originalTitle: 'Un fiordo selvaggio.',
+        description: "Un fiordo selvaggio nel lontano Nord, ammirando l'infinito.",
+      }
+    - {
+        original: 'https://picsum.photos/id/1019/5472/3648.jpg',
+        thumbnail: 'https://picsum.photos/id/1019/5472/3648.jpg',
+        originalAlt: 'Un bel tramonto sul mare.',
+        originalTitle: 'Un bel tramonto sul mare.',
+        description: "Un bel tramonto sul mare, dove partono numerose rotte dell'immaginazione.",
+      }
+    - {
+        original: 'https://picsum.photos/id/1022/6000/3376.jpg',
+        thumbnail: 'https://picsum.photos/id/1022/6000/3376.jpg',
+        originalAlt: 'Un aurora boreale.',
+        originalTitle: 'Un aurora boreale.',
+        description: 'Un aurora boreale dalle sfumature verdastre.',
+      }
 testimonials:
   - author: anonimo
     quote: >-
@@ -48,6 +66,7 @@ testimonials:
       perché dopo la distruzione di Nagasaki, nell’agosto 1945,
       sopravvissero soltanto alcuni alberi di kaki.
 ---
+
 ## Pagina principale opere italiano
 
 Eu eram ingeniis te eu voluptate praesentibus ex malis te ita magna consequat ad

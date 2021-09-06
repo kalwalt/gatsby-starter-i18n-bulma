@@ -11,6 +11,7 @@ slug: /en/blog/2019-02-01-my-first-gatsby-blog-post
 tags:
   - gatsby
 ---
+
 My first **Gatsby** blog post really... where they are? can't find anywhere, no blog page at all?
 
 Investigating....

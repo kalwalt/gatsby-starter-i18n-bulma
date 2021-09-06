@@ -1,29 +1,29 @@
 ---
 id: '25'
-title: "Performance artworks page introduction  - performance 02 - english"
+title: 'Performance artworks page introduction  - performance 02 - english'
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "Artworks introduction page for performance"
+description: 'Artworks introduction page for performance'
 templateKey: artworks-simple
 tags:
   - art
 lang: en
-date: "22-03-2019"
+date: '22-03-2019'
 path: /en/artworks/performance/performance02/
 slug: /en/artworks/performance/performance02/
 lightbox:
   display: true
   images:
     - image: /img/Kaki.jpg
-      alt: "Some Persimmon on the tree"
+      alt: 'Some Persimmon on the tree'
     - image: /img/Persimmon.jpg
-      alt: "A Persimmon tree"
+      alt: 'A Persimmon tree'
 info:
-  title: "Un caco tra le stelle"
-  artworkTitle: "Un caco tra le stelle"
-  year: "2019"
-  technique: "colore acrilico su tela"
-  dimensions: "70x50 cm"  
+  title: 'Un caco tra le stelle'
+  artworkTitle: 'Un caco tra le stelle'
+  year: '2019'
+  technique: 'colore acrilico su tela'
+  dimensions: '70x50 cm'
 intro:
   blurbs:
     - image: /img/Persimmon.jpg
@@ -36,8 +36,8 @@ slider:
   display: 'false'
   array: []
 testimonials:
-  - author: ""
-    quote: ""
+  - author: ''
+    quote: ''
 ---
 
 ## Performance 02

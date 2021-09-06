@@ -1,14 +1,14 @@
 ---
 id: '10'
-title: "Sculpture artworks introduction page - english"
+title: 'Sculpture artworks introduction page - english'
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "Artworks introduction page for sculpture"
+description: 'Artworks introduction page for sculpture'
 templateKey: artworks-intro
 tags:
   - art
 lang: en
-date: "22-03-2019"
+date: '22-03-2019'
 path: /en/artworks/sculpture/introduction/
 slug: /en/artworks/sculpture/introduction/
 intro:

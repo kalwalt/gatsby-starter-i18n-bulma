@@ -1,29 +1,29 @@
 ---
 id: '17'
-title: "Arte astratta | Un caco tra le stelle"
+title: 'Arte astratta | Un caco tra le stelle'
 image: /img/Persimmon.jpg
 heading: "La bellezza della Natura nell'Arte"
-description: "Un caco tra le stelle è un opera astratta realizzata con colore acrilico su tela"
+description: 'Un caco tra le stelle è un opera astratta realizzata con colore acrilico su tela'
 templateKey: artworks-simple
 tags:
   - art
 lang: it
-date: "07-05-2019"
+date: '07-05-2019'
 path: /it/opere/pittura/nuova/arte-astratta-caco-tra-le-stelle/
 slug: /it/opere/pittura/nuova/arte-astratta-caco-tra-le-stelle/
 lightbox:
   display: true
   images:
     - image: /img/Kaki.jpg
-      alt: "qualche Kako sull albero"
+      alt: 'qualche Kako sull albero'
     - image: /img/Persimmon.jpg
-      alt: "Un albero del Kako"
+      alt: 'Un albero del Kako'
 info:
-  title: "Un caco tra le stelle"
-  artworkTitle: "Un caco tra le stelle"
-  year: "2019"
-  technique: "colore acrilico su tela"
-  dimensions: "70x50 cm"  
+  title: 'Un caco tra le stelle'
+  artworkTitle: 'Un caco tra le stelle'
+  year: '2019'
+  technique: 'colore acrilico su tela'
+  dimensions: '70x50 cm'
 ---
 
 Est sunt occaecat a quamquam ad sunt excepteur. Deserunt concursionibus est

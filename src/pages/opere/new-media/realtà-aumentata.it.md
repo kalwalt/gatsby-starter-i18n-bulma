@@ -1,14 +1,14 @@
 ---
 id: '12'
-title: "Pagina di opere di realtà aumentata - italiano"
+title: 'Pagina di opere di realtà aumentata - italiano'
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina di introduzione dedicata alle opere di realtà aumentata"
+description: 'Pagina di introduzione dedicata alle opere di realtà aumentata'
 templateKey: artworks-intro
 tags:
   - art
 lang: it
-date: "22-03-2019"
+date: '22-03-2019'
 path: /it/opere/new-media/realtà-aumentata/
 slug: /it/opere/new-media/realtà-aumentata/
 intro:
@@ -23,8 +23,8 @@ slider:
   display: 'false'
   array: []
 testimonials:
-  - author: ""
-    quote: ""
+  - author: ''
+    quote: ''
 ---
 
 ## Realtà aumentata

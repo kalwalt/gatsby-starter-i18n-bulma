@@ -1,6 +1,7 @@
 {
   "title": "home",
-  "articles": [{
+  "articles": [
+    {
       "id": "01",
       "en": "",
       "it": ""

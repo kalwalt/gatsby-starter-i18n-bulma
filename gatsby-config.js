@@ -7,7 +7,7 @@ module.exports = {
   This is a blog theme. The description will be showed in SEO results on pages
   without their own descriptions.
 `,
-    siteUrl: "https://gatsby-starter-i18n-bulma.netlify.app",
+    siteUrl: 'https://gatsby-starter-i18n-bulma.netlify.app',
     image: 'img.jpg',
     author: {
       name: 'Your Name',
@@ -33,9 +33,9 @@ module.exports = {
       resolve: 'gatsby-plugin-sass',
       options: {
         sassOptions: {
-          indentedSyntax: true
-        }
-      }
+          indentedSyntax: true,
+        },
+      },
     },
     {
       resolve: 'gatsby-plugin-i18n',
@@ -43,11 +43,12 @@ module.exports = {
         langKeyForNull: 'any',
         langKeyDefault: languages.defaultLangKey,
         useLangKeyLayout: false,
-      }
+      },
     },
     {
       resolve: 'gatsby-plugin-i18n-tags',
-      options: { // Default options
+      options: {
+        // Default options
         tagPage: 'src/templates/tags.jsx',
         tagsUrl: '/tags/',
         langKeyForNull: 'any',
@@ -57,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-      path: `${__dirname}/src/data/articles`,
+        path: `${__dirname}/src/data/articles`,
       },
     },
     {
@@ -82,7 +83,7 @@ module.exports = {
         name: 'images',
       },
     },
-    "gatsby-transformer-javascript-frontmatter",
+    'gatsby-transformer-javascript-frontmatter',
     `gatsby-plugin-image`,
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -98,7 +99,7 @@ module.exports = {
           },
           {
             resolve: 'gatsby-remark-images',
-             options: {
+            options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
@@ -117,9 +118,9 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-netlify`,
     {
-      resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
-        develop: true,            // Activates purging in npm run develop
+        develop: true, // Activates purging in npm run develop
         purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
@@ -145,9 +146,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-react-leaflet',
       options: {
-        linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
-      }
+        linkStyles: true, // (default: true) Enable/disable loading stylesheets via CDN
+      },
     },
     `gatsby-plugin-offline`,
   ],
-}
+};

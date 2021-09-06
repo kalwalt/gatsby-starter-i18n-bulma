@@ -1,15 +1,15 @@
 ---
 id: '18'
-title: "Pagina introduttiva sulle opere artistiche pittoriche"
+title: 'Pagina introduttiva sulle opere artistiche pittoriche'
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina introduttiva sulle sezioni delle opere pittoriche"
+description: 'Pagina introduttiva sulle sezioni delle opere pittoriche'
 templateKey: artworks-intro
 tags:
   - art
   - pittura
 lang: it
-date: "15-03-2019"
+date: '15-03-2019'
 path: /it/opere/pittura/introduzione/
 slug: /it/opere/pittura/introduzione/
 intro:

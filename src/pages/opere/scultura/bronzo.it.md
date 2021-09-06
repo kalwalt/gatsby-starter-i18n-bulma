@@ -1,14 +1,14 @@
 ---
 id: '21'
-title: "Pagina introduttiva sulle opere di scultura in bronzo"
+title: 'Pagina introduttiva sulle opere di scultura in bronzo'
 image: /img/Persimmon.jpg
 heading: La bellezza del caco
-description: "Pagina introduttiva sulle sezioni delle opere di scultura in bronzo"
+description: 'Pagina introduttiva sulle sezioni delle opere di scultura in bronzo'
 templateKey: artworks-intro
 tags:
   - art
 lang: it
-date: "05-03-2019"
+date: '05-03-2019'
 path: /it/opere/scultura/bronzo/
 slug: /it/opere/scultura/bronzo/
 intro:

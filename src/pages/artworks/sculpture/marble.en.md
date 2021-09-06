@@ -1,14 +1,14 @@
 ---
 id: '06'
-title: "Artworks Introduction page - Marble Sculpture"
+title: 'Artworks Introduction page - Marble Sculpture'
 image: /img/Persimmon.jpg
 heading: The beauty of Persimmon
-description: "An introduction for the marble artworks sculpture page"
+description: 'An introduction for the marble artworks sculpture page'
 templateKey: artworks-intro
 tags:
   - art
 lang: en
-date: "05-03-2019"
+date: '05-03-2019'
 path: /en/artworks/sculpture/marble/
 slug: /en/artworks/sculpture/marble/
 intro:
