@@ -46,13 +46,13 @@ module.exports = {
       }
     },
     {
-    resolve: 'gatsby-plugin-i18n-tags',
-    options: { // Default options
-      tagPage: 'src/templates/tags.js',
-      tagsUrl: '/tags/',
-      langKeyForNull: 'any',
+      resolve: 'gatsby-plugin-i18n-tags',
+      options: { // Default options
+        tagPage: 'src/templates/tags.jsx',
+        tagsUrl: '/tags/',
+        langKeyForNull: 'any',
+      },
     },
-  },
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
