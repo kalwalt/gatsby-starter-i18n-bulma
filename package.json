@@ -72,11 +72,13 @@
   "main": "n/a",
   "resolutions": "",
   "scripts": {
-    "develop": "gatsby develop",
     "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write .",
     "start": "gatsby serve"
   },
   "devDependencies": {
-    "@creativebulma/bulma-collapsible": "^1.0.3"
+    "@creativebulma/bulma-collapsible": "^1.0.3",
+    "prettier": "^2.3.2"
   }
 }
