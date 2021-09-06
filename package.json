@@ -73,6 +73,7 @@
   "resolutions": "",
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
     "format": "prettier --write .",
     "start": "gatsby serve"
