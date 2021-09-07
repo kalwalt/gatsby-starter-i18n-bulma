@@ -70,7 +70,7 @@
   ],
   "license": "MIT",
   "main": "n/a",
-  "resolutions": "",
+  "resolutions": {},
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
