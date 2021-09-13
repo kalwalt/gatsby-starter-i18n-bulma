@@ -38,7 +38,7 @@
     "gatsby-source-filesystem": "^3.6.0",
     "gatsby-transformer-javascript-frontmatter": "^3.6.0",
     "gatsby-transformer-json": "^3.6.0",
-    "gatsby-transformer-remark": "^4.3.0",
+    "gatsby-transformer-remark": "^4.10.0",
     "gatsby-transformer-sharp": "^3.6.0",
     "leaflet": "^1.6.0",
     "lodash": "^4.17.21",
