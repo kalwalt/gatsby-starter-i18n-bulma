@@ -15,7 +15,7 @@
     "dependencies": "^0.0.1",
     "gatsby": "^3.6.0",
     "gatsby-cli": "^3.6.0",
-    "gatsby-image": "^3.6.0",
+    "gatsby-image": "^3.11.0",
     "gatsby-plugin-google-analytics": "^3.6.0",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-i18n-tags": "^1.0.0",
