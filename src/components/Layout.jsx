@@ -32,7 +32,7 @@ class TemplateWrapper extends Component {
     const basename = checkPath(this.langKey, id, jsonData);
     var basePath = startPath(this.langKey, basename[0], url);
     //finally here we set the desired url...
-    setLangsMenu(this.langsMenu, basename[1], basePath, jsonData);
+    setLangsMenu(this.langsMenu, basename[1], basePath, jsonData, langs);
 
     // get the appropriate message file based on langKey
     // at the moment this assumes that langKey will provide us
