@@ -37,12 +37,12 @@ const startPath = (langKey, basename, _url) => {
 const setLangsMenu = (langsMenu, id, basePath, jsonData, langs) => {
   if (id !== 'undefined') {
     if (id === 0) {
-      langs.map((lang, index) =>{
-        langsMenu[index].link = '/'+ lang + '/';
+      langs.map((lang, index) => {
+        langsMenu[index].link = `/` + lang + `/`;
       })
     } else {
-      langs.map((lang, index) =>{
-        langsMenu[index].link = `/`+ lang + `/${basePath}` + getIdJsonUrl(id,  '/'+ lang + '/', jsonData) + '/';
+      langs.map((lang, index) => {
+        langsMenu[index].link = `/` + lang + `/${basePath}` + getIdJsonUrl(id, `/` + lang + `/`, jsonData) + `/`;
       })
     }
   } else {
