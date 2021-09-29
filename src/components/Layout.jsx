@@ -5,59 +5,8 @@ import Main from '../components/Main';
 import Helmet from 'react-helmet';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider } from 'react-intl';
+import { checkPath, startPath, setLangsMenu } from '../components/LayoutUtils';
 import './all.sass';
-
-const getIdJsonUrl = (id, langKey, jsonData) => {
-  if (id !== 'undefined') {
-    let res;
-    switch (langKey) {
-      //we get the name of the page according the id
-      case 'en':
-        res = jsonData[id].en;
-        break;
-      case 'it':
-        res = jsonData[id].it;
-        break;
-      default:
-        return ' ';
-    }
-    return res;
-  } else {
-    console.log('missed id in the getIdUrl() function!');
-  }
-};
-
-const startPath = (langKey, basename, _url) => {
-  const lengthLangKey = langKey.length;
-  let indx;
-  indx = _url.indexOf(basename);
-  const basePath = _url.slice(lengthLangKey + 2, indx);
-  return basePath;
-};
-
-const check_path = (langKey, id_article, jsonData) => {
-  let basename;
-  if (id_article !== 'undefined') {
-    basename = getIdJsonUrl(id_article, langKey, jsonData);
-  }
-  return [basename, id_article];
-};
-
-const setLangsMenu = (langsMenu, id, basePath, jsonData) => {
-  if (id !== 'undefined') {
-    if (id === 0) {
-      langsMenu[0].link = `/en/`;
-      langsMenu[1].link = `/it/`;
-    } else {
-      langsMenu[0].link =
-        `/en/${basePath}` + getIdJsonUrl(id, 'en', jsonData) + '/';
-      langsMenu[1].link =
-        `/it/${basePath}` + getIdJsonUrl(id, 'it', jsonData) + '/';
-    }
-  } else {
-    console.log('missed id in the setLangsMenu() function!');
-  }
-};
 
 class TemplateWrapper extends Component {
   constructor(props) {
@@ -80,7 +29,7 @@ class TemplateWrapper extends Component {
     );
     const id_article = data.markdownRemark.frontmatter.id;
     const id = Number(id_article) - 1;
-    const basename = check_path(this.langKey, id, jsonData);
+    const basename = checkPath(this.langKey, id, jsonData);
     var basePath = startPath(this.langKey, basename[0], url);
     //finally here we set the desired url...
     setLangsMenu(this.langsMenu, basename[1], basePath, jsonData);
