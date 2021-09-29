@@ -34,16 +34,16 @@ const startPath = (langKey, basename, _url) => {
   return basePath;
 };
 
-const setLangsMenu = (langsMenu, id, basePath, jsonData) => {
+const setLangsMenu = (langsMenu, id, basePath, jsonData, langs) => {
   if (id !== 'undefined') {
     if (id === 0) {
-      langsMenu[0].link = `/en/`;
-      langsMenu[1].link = `/it/`;
+      langs.map((lang, index) =>{
+        langsMenu[index].link = '/'+ lang + '/';
+      })
     } else {
-      langsMenu[0].link =
-        `/en/${basePath}` + getIdJsonUrl(id, 'en', jsonData) + '/';
-      langsMenu[1].link =
-        `/it/${basePath}` + getIdJsonUrl(id, 'it', jsonData) + '/';
+      langs.map((lang, index) =>{
+        langsMenu[index].link = `/`+ lang + `/${basePath}` + getIdJsonUrl(id,  '/'+ lang + '/', jsonData) + '/';
+      })
     }
   } else {
     console.log('missed id in the setLangsMenu() function!');
