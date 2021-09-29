@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
 export default class OsmMap extends Component {
   render() {
@@ -8,7 +8,7 @@ export default class OsmMap extends Component {
 
     if (typeof window !== 'undefined') {
       return (
-        <MapContainer
+        <Map
           center={position}
           zoom={13}
           style={{ zIndex: 0, height: '350px' }}
@@ -20,7 +20,7 @@ export default class OsmMap extends Component {
           <Marker position={position}>
             <Popup>{props.message}</Popup>
           </Marker>
-        </MapContainer>
+        </Map>
       );
     }
     return null;
