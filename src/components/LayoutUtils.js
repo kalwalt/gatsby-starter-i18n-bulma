@@ -1,18 +1,6 @@
 const getIdJsonUrl = (id, langKey, jsonData) => {
   if (id !== 'undefined') {
-    let res;
-    switch (langKey) {
-      //we get the name of the page according the id 
-      case 'en':
-        res = jsonData[id].en;
-        break;
-      case 'it':
-        res = jsonData[id].it;
-        break;
-      default:
-        return ' ';
-    }
-    return res;
+    return jsonData[id][langKey];
   } else {
     console.log('missed id in the getIdJsonUrl() function!');
   }
