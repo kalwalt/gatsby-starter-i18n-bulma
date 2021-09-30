@@ -14,7 +14,7 @@ const getIdJsonUrl = (id, langKey, jsonData) => {
     }
     return res;
   } else {
-    console.log('missed id in the getIdUrl() function!');
+    console.log('missed id in the getIdJsonUrl() function!');
   }
 };
 
@@ -42,7 +42,7 @@ const setLangsMenu = (langsMenu, id, basePath, jsonData, langs) => {
       })
     } else {
       langs.map((lang, index) => {
-        langsMenu[index].link = `/` + lang + `/${basePath}` + getIdJsonUrl(id, `/` + lang + `/`, jsonData) + `/`;
+        langsMenu[index].link = `/` + lang + `/${basePath}` + getIdJsonUrl(id, lang, jsonData) + `/`;
       })
     }
   } else {
