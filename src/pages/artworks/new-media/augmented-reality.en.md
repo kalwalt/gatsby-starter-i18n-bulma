@@ -9,8 +9,8 @@ tags:
   - art
 lang: en
 date: '22-03-2019'
-path: /en/artworks/new-media/aumgmented-reality/
-slug: /en/artworks/new-media/aumgmented-reality/
+path: /en/artworks/new-media/augmented-reality/
+slug: /en/artworks/new-media/augmented-reality/
 intro:
   blurbs:
     - image: /img/Persimmon.jpg
@@ -19,12 +19,6 @@ intro:
     - image: /img/Kaki.jpg
       text: >
         Have you ever thought of creating a persimmon forest?
-slider:
-  display: 'false'
-  array: []
-testimonials:
-  - author: ''
-    quote: ''
 ---
 
 ## Augmented reality
