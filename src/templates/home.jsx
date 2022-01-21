@@ -40,7 +40,7 @@ const HomePageTemplate = ({
         className="full-width-image margin-top-0"
         style={{
           backgroundImage: `url(${
-            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+            !!image.childImageSharp ? image.childImageSharp.gatsbyImageData.src : image
           })`,
           backgroundPosition: `top left`,
           backgroundAttachment: `fixed`,
@@ -134,7 +134,7 @@ class HomePage extends React.Component {
     const { display } = frontmatter.slider;
     const { array } = frontmatter.slider;
     const sel = select(langKey);
-    const image = frontmatter.image.childImageSharp.fluid.src;
+    const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
     const tags = frontmatter.tags;
 
     return (
@@ -178,89 +178,85 @@ HomePage.propTypes = {
 
 export default HomePage;
 
-export const pageQuery = graphql`
-  query HomePageQuery($id: String!) {
-    site {
-      siteMetadata {
-        languages {
-          defaultLangKey
-          langs
-        }
-      }
-    }
-    allArticlesJson(filter: { title: { eq: "home" } }) {
-      edges {
-        node {
-          articles {
-            en
-            it
-          }
-        }
-      }
-    }
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        id
-        title
-        description
-        tags
-        lang
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-              src
-            }
-          }
-        }
-        heading
-        mainpitch {
-          heading
-          subheading
-          title
-          description
-          link
-        }
-        slider {
-          display
-          array {
-            original
-            thumbnail
-            originalAlt
-            originalTitle
-            description
-          }
-        }
-        imageCardSL {
-          alt
-          image {
-            childImageSharp {
-              gatsbyImageData(width: 128, quality: 84, layout: CONSTRAINED)
-            }
-          }
-          name
-          description
-          website
-        }
-        main {
-          image1 {
-            alt
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 500, quality: 90, layout: CONSTRAINED)
-              }
-            }
-          }
-        }
-        testimonials {
-          author
-          quote
-        }
-      }
-      fields {
-        slug
+export const pageQuery = graphql`query HomePageQuery($id: String!) {
+  site {
+    siteMetadata {
+      languages {
+        defaultLangKey
+        langs
       }
     }
   }
+  allArticlesJson(filter: {title: {eq: "home"}}) {
+    edges {
+      node {
+        articles {
+          en
+          it
+        }
+      }
+    }
+  }
+  markdownRemark(id: {eq: $id}) {
+    html
+    frontmatter {
+      id
+      title
+      description
+      tags
+      lang
+      image {
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
+      heading
+      mainpitch {
+        heading
+        subheading
+        title
+        description
+        link
+      }
+      slider {
+        display
+        array {
+          original
+          thumbnail
+          originalAlt
+          originalTitle
+          description
+        }
+      }
+      imageCardSL {
+        alt
+        image {
+          childImageSharp {
+            gatsbyImageData(width: 128, quality: 84, layout: CONSTRAINED)
+          }
+        }
+        name
+        description
+        website
+      }
+      main {
+        image1 {
+          alt
+          image {
+            childImageSharp {
+              gatsbyImageData(width: 500, quality: 90, layout: CONSTRAINED)
+            }
+          }
+        }
+      }
+      testimonials {
+        author
+        quote
+      }
+    }
+    fields {
+      slug
+    }
+  }
+}
 `;
