@@ -1,5 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
+import { StaticImage } from "gatsby-plugin-image"
 import TagList from '../components/TagList';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
@@ -38,14 +39,10 @@ const HomePageTemplate = ({
     <div>
       <div
         className="full-width-image margin-top-0"
-        style={{
-          backgroundImage: `url(${
-            !!image.childImageSharp ? image.childImageSharp.gatsbyImageData.src : image
-          })`,
-          backgroundPosition: `top left`,
-          backgroundAttachment: `fixed`,
-        }}
+       
       >
+        <StaticImage src="../../static/img/PersimmonHD.jpg" alt="id"></StaticImage>
+
         <div
           style={{
             display: 'flex',
@@ -134,7 +131,8 @@ class HomePage extends React.Component {
     const { display } = frontmatter.slider;
     const { array } = frontmatter.slider;
     const sel = select(langKey);
-    const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
+    //const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
+    const image = frontmatter.image;
     const tags = frontmatter.tags;
 
     return (
