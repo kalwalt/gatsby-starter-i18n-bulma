@@ -6684,6 +6684,11 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
+gbimage-bridge@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/gbimage-bridge/-/gbimage-bridge-0.2.1.tgz#3bb44a4eb06855f1a8c23db5396d710352acaf05"
+  integrity sha512-Wy7fiXyYewxzgs17Mx+msSbxSK8JGbkVDQmkuyXER6T3wfZHC04PLnzP1ZrFr7qpboOdIExUChp3TZtzRor4AA==
+
 generate-robotstxt@^8.0.3:
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/generate-robotstxt/-/generate-robotstxt-8.0.3.tgz#83384090406e760e9d02247412b2b704562c9b58"
