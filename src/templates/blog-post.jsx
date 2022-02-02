@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getSrc } from "gatsby-plugin-image";
 import TagList from '../components/TagList';
 import Helmet from 'react-helmet';
 import SEO from '../components/SEO/SEO';
@@ -54,7 +55,8 @@ const BlogPost = ({ data, location }) => {
   const { markdownRemark: post } = data;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
   const langKey = post.frontmatter.lang;
-  const image = post.frontmatter.image.childImageSharp.gatsbyImageData.src;
+  const image = frontmatter.image;
+  const postImage = getSrc(image) || image;
 
   return (
     <Layout
@@ -63,7 +65,7 @@ const BlogPost = ({ data, location }) => {
       jsonData={jsonData}
       location={location}
     >
-      <SEO frontmatter={post.frontmatter} postImage={image} isBlogPost />
+      <SEO frontmatter={post.frontmatter} postImage={postImage} isBlogPost />
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
