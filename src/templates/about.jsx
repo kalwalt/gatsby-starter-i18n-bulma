@@ -1,5 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
+import { getSrc } from "gatsby-plugin-image";
 import TagList from '../components/TagList';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
@@ -41,7 +42,8 @@ class AboutPage extends React.Component {
     }
     const jsonData = this.props.data.allArticlesJson.edges[0].node.articles;
     const { frontmatter } = dataMarkdown;
-    const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
+    const image = frontmatter.image;
+    const postImage = getSrc(image) || image;
     const langKey = frontmatter.lang;
     const tags = frontmatter.tags;
     return (
@@ -51,7 +53,7 @@ class AboutPage extends React.Component {
         jsonData={jsonData}
         location={this.props.location}
       >
-        <SEO frontmatter={frontmatter} postImage={image} />
+        <SEO frontmatter={frontmatter} postImage={postImage} />
         <div>
           <AboutPageTemplate
             contentComponent={HTMLContent}
