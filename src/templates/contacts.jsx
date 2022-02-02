@@ -1,6 +1,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import { getSrc } from "gatsby-plugin-image";
 import { navigate } from 'gatsby-link';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO/SEO';
@@ -280,7 +281,8 @@ class ContactPage extends React.Component {
     const instagram = dataMarkdown.frontmatter.instagram;
     const image = dataMarkdown.frontmatter.imageCardSL;
     const { frontmatter } = dataMarkdown;
-    const imageSEO = frontmatter.image.childImageSharp.gatsbyImageData.src;
+    const imageP = frontmatter.image;
+    const postImage = getSrc(imageP) || imageP;
     return (
       <Layout
         className="container"
@@ -288,7 +290,7 @@ class ContactPage extends React.Component {
         jsonData={jsonData}
         location={location}
       >
-        <SEO frontmatter={frontmatter} postImage={imageSEO} />
+        <SEO frontmatter={frontmatter} postImage={postImage} />
 
         <div className="container">
           <ContactPageTemplate

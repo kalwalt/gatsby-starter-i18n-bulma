@@ -1,7 +1,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import FullWidthImage from "../components/FullWidthImage";
-import { getImage } from "gatsby-plugin-image";
+import { getImage, getSrc } from "gatsby-plugin-image";
 import TagList from '../components/TagList';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
@@ -92,7 +92,8 @@ class HomePage extends React.Component {
     const { display } = frontmatter.slider;
     const { array } = frontmatter.slider;
     const sel = select(langKey);
-    const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
+    const image = frontmatter.image;
+    const postImage = getSrc(image) || image;
     const tags = frontmatter.tags;
 
     return (
@@ -102,7 +103,7 @@ class HomePage extends React.Component {
         jsonData={jsonData}
         location={this.props.location}
       >     
-        <SEO frontmatter={frontmatter} postImage={image}/>
+        <SEO frontmatter={frontmatter} postImage={postImage}/>
         <div>
           <HomePageTemplate
             imageCardSL={dataMarkdown.frontmatter.imageCardSL}

@@ -1,5 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
+import { getSrc } from "gatsby-plugin-image";
 import TagList from '../components/TagList';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
@@ -55,7 +56,8 @@ class ArtworksPortfolioPage extends React.Component {
     const { frontmatter } = data.markdownRemark;
     const jsonData = data.allArticlesJson.edges[0].node.articles;
     const { masonry } = frontmatter;
-    const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
+    const image = frontmatter.image;
+    const postImage = getSrc(image) || image;
     const langKey = frontmatter.lang;
     const tags = frontmatter.tags;
     return (
@@ -65,7 +67,7 @@ class ArtworksPortfolioPage extends React.Component {
         jsonData={jsonData}
         location={this.props.location}
       >
-        <SEO frontmatter={frontmatter} postImage={image} />
+        <SEO frontmatter={frontmatter} postImage={postImage} />
         <div>
           <ArtworkPortfolioTemplate
             contentComponent={HTMLContent}
