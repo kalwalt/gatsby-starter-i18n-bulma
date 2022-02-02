@@ -7,8 +7,9 @@ tags:
   - web
 lang: it
 date: '05-03-2019'
-image: ./img/PersimmonHD.jpg
+image: /img/PersimmonHD.jpg
 heading: "Il kako è il frutto dell'artista..."
+subheading: "Il kako è il frutto dell'artista..."
 slider:
   display: 'slide'
   array:
