@@ -1,6 +1,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import { StaticImage } from "gatsby-plugin-image"
+import FullWidthImage from "../components/FullWidthImage";
+import { getImage } from "gatsby-plugin-image";
 import TagList from '../components/TagList';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
@@ -30,57 +31,16 @@ const HomePageTemplate = ({
   secondLink,
   thirdLink,
   fourthLink,
+  subheading,
   tags,
   langKey,
 }) => {
   const PageContent = contentComponent || Content;
+  const heroImage = getImage(image) || image;
 
   return (
-    <div>
-      <div
-        className="full-width-image margin-top-0"
-       
-      >
-        <StaticImage src="../../static/img/PersimmonHD.jpg" alt="id"></StaticImage>
-
-        <div
-          style={{
-            display: 'flex',
-            height: '150px',
-            lineHeight: '1',
-            justifyContent: 'space-around',
-            alignItems: 'left',
-            flexDirection: 'column',
-          }}
-        >
-          <h1
-            className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen is-centered animated bounceInLeft"
-            style={{
-              boxShadow:
-                'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-              backgroundColor: 'rgb(255, 68, 0)',
-              color: 'white',
-              lineHeight: '1',
-              padding: '0.25em',
-            }}
-          >
-            {title}
-          </h1>
-          <h3
-            className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen animated bounceInRight"
-            style={{
-              boxShadow:
-                'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-              backgroundColor: 'rgb(255, 68, 0)',
-              color: 'white',
-              lineHeight: '1',
-              padding: '0.25em',
-            }}
-          >
-            {heading}
-          </h3>
-        </div>
-      </div>
+    <div>    
+      <FullWidthImage img={heroImage} title={title} subheading={subheading} />  
       <Slider array={array} display={display} />
       <Banner main={main.image1} mainpitch={mainpitch} />
       <div className="container section">
@@ -113,6 +73,7 @@ HomePageTemplate.propTypes = {
   heading: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  subheading: PropTypes.string,
   tags: PropTypes.array,
   langKey: PropTypes.string,
 };
@@ -131,8 +92,7 @@ class HomePage extends React.Component {
     const { display } = frontmatter.slider;
     const { array } = frontmatter.slider;
     const sel = select(langKey);
-    //const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
-    const image = frontmatter.image;
+    const image = frontmatter.image.childImageSharp.gatsbyImageData.src;
     const tags = frontmatter.tags;
 
     return (
@@ -141,13 +101,14 @@ class HomePage extends React.Component {
         data={this.props.data}
         jsonData={jsonData}
         location={this.props.location}
-      >
-        <SEO frontmatter={frontmatter} postImage={image} />
+      >     
+        <SEO frontmatter={frontmatter} postImage={image}/>
         <div>
           <HomePageTemplate
             imageCardSL={dataMarkdown.frontmatter.imageCardSL}
             image={dataMarkdown.frontmatter.image}
             heading={dataMarkdown.frontmatter.heading}
+            subheading={dataMarkdown.frontmatter.subheading}
             display={display}
             array={array}
             mainpitch={dataMarkdown.frontmatter.mainpitch}
@@ -209,6 +170,7 @@ export const pageQuery = graphql`query HomePageQuery($id: String!) {
         }
       }
       heading
+      subheading
       mainpitch {
         heading
         subheading
