@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { getSrc, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getSrc, getImage } from 'gatsby-plugin-image';
 
 class Lightbox extends Component {
   state = {
@@ -89,7 +88,6 @@ class Lightbox extends Component {
 
   render() {
     const { images, lightbox } = this.props;
-    console.log(images[0].alt)
     const { selectedImage } = this.state;
     const display = lightbox.display;
     const imageStyle = { borderRadius: '5px' };
