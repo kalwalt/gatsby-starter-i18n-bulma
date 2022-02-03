@@ -97,10 +97,7 @@ class Lightbox extends Component {
           <Fragment>
             <div className="columns is-multiline">
               {images.map((img, i) => (
-                <div
-                  className="column is-one-quarter"
-                  key={getSrc(img.image)}
-                >
+                <div className="column is-one-quarter" key={getSrc(img.image)}>
                   <a
                     id="img-lightbox"
                     className="image"
@@ -127,9 +124,7 @@ class Lightbox extends Component {
                   aria-label="close"
                 ></button>
                 <GatsbyImage
-                  image={
-                    getImage(images[selectedImage].image)
-                  }
+                  image={getImage(images[selectedImage].image)}
                   alt={images[selectedImage].alt}
                 />
                 <footer className="modal-card-foot">

@@ -27,11 +27,12 @@ const setLangsMenu = (langsMenu, id, basePath, jsonData, langs) => {
     if (id === 0) {
       langs.map((lang, index) => {
         langsMenu[index].link = `/` + lang + `/`;
-      })
+      });
     } else {
       langs.map((lang, index) => {
-        langsMenu[index].link = `/` + lang + `/${basePath}` + getIdJsonUrl(id, lang, jsonData) + `/`;
-      })
+        langsMenu[index].link =
+          `/` + lang + `/${basePath}` + getIdJsonUrl(id, lang, jsonData) + `/`;
+      });
     }
   } else {
     console.log('missed id in the setLangsMenu() function!');
@@ -39,5 +40,7 @@ const setLangsMenu = (langsMenu, id, basePath, jsonData, langs) => {
 };
 
 module.exports = {
-  checkPath, startPath, setLangsMenu
-}
+  checkPath,
+  startPath,
+  setLangsMenu,
+};

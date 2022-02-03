@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getSrc } from "gatsby-plugin-image";
+import { getSrc } from 'gatsby-plugin-image';
 import TagList from '../components/TagList';
 import Helmet from 'react-helmet';
 import SEO from '../components/SEO/SEO';

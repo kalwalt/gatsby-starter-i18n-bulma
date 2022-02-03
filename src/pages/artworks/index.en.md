@@ -39,7 +39,7 @@ slider:
   display: 'slide'
   array:
     - {
-        original: 'https://picsum.photos/id/1015/6000/4000.jpg', 
+        original: 'https://picsum.photos/id/1015/6000/4000.jpg',
         thumbnail: 'https://picsum.photos/id/1015/6000/4000.jpg',
         originalAlt: 'A wild fjord in the far north.',
         originalTitle: 'A wild fjord in the far north.',

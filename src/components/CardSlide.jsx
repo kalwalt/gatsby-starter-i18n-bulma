@@ -12,7 +12,7 @@ const CardImageSlide = ({ imageInfo }) => {
       <GatsbyImage
         image={image.childImageSharp.gatsbyImageData}
         style={imageStyle}
-        alt={alt} 
+        alt={alt}
       />
     );
   } else if (!!childImageSharp) {
@@ -25,7 +25,7 @@ const CardImageSlide = ({ imageInfo }) => {
     );
   } else if (image) {
     return <img style={imageStyle} src={image} alt={alt} />;
-  } else { 
+  } else {
     return null;
   }
 };
