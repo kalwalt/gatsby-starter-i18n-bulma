@@ -12,12 +12,10 @@ const CardImageSlide = ({ imageInfo }) => {
       <GatsbyImage
         image={image.childImageSharp.gatsbyImageData}
         style={imageStyle}
-        alt={alt}
+        alt={alt} 
       />
     );
-  }
-
-  if (!!childImageSharp) {
+  } else if (!!childImageSharp) {
     return (
       <GatsbyImage
         image={childImageSharp.gatsbyImageData}
@@ -25,11 +23,11 @@ const CardImageSlide = ({ imageInfo }) => {
         alt={alt}
       />
     );
-  }
-
-  if (!!image && typeof image === 'string')
+  } else if (image) {
     return <img style={imageStyle} src={image} alt={alt} />;
-  return null;
+  } else { 
+    return null;
+  }
 };
 
 CardImageSlide.propTypes = {
