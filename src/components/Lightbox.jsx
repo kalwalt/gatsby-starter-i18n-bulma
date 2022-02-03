@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { getSrc, getImage } from "gatsby-plugin-image";
 
 class Lightbox extends Component {
   state = {
@@ -88,6 +89,7 @@ class Lightbox extends Component {
 
   render() {
     const { images, lightbox } = this.props;
+    console.log(images[0].alt)
     const { selectedImage } = this.state;
     const display = lightbox.display;
     const imageStyle = { borderRadius: '5px' };
@@ -99,17 +101,17 @@ class Lightbox extends Component {
               {images.map((img, i) => (
                 <div
                   className="column is-one-quarter"
-                  key={img.image.childImageSharp.gatsbyImageData.src}
+                  key={getSrc(img.image)}
                 >
                   <a
                     id="img-lightbox"
                     className="image"
-                    href={img.image.childImageSharp.gatsbyImageData.src}
+                    href={getSrc(img.image)}
                     alt={img.alt}
                     onClick={e => this.handleClick(e, i)}
                   >
                     <GatsbyImage
-                      image={img.image.childImageSharp.gatsbyImageData}
+                      image={getImage(img.image)}
                       alt={img.alt}
                       style={imageStyle}
                     />
@@ -128,8 +130,9 @@ class Lightbox extends Component {
                 ></button>
                 <GatsbyImage
                   image={
-                    images[selectedImage].image.childImageSharp.gatsbyImageData
+                    getImage(images[selectedImage].image)
                   }
+                  alt={images[selectedImage].alt}
                 />
                 <footer className="modal-card-foot">
                   <button
