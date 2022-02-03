@@ -1,6 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import { getSrc } from "gatsby-plugin-image";
+import { getSrc } from 'gatsby-plugin-image';
 import TagList from '../components/TagList';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';

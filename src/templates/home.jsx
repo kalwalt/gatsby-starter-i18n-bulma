@@ -1,7 +1,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import FullWidthImage from "../components/FullWidthImage";
-import { getImage, getSrc } from "gatsby-plugin-image";
+import FullWidthImage from '../components/FullWidthImage';
+import { getImage, getSrc } from 'gatsby-plugin-image';
 import TagList from '../components/TagList';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
@@ -39,8 +39,8 @@ const HomePageTemplate = ({
   const heroImage = getImage(image) || image;
 
   return (
-    <div>    
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} />  
+    <div>
+      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
       <Slider array={array} display={display} />
       <Banner main={main.image1} mainpitch={mainpitch} />
       <div className="container section">
@@ -102,8 +102,8 @@ class HomePage extends React.Component {
         data={this.props.data}
         jsonData={jsonData}
         location={this.props.location}
-      >     
-        <SEO frontmatter={frontmatter} postImage={postImage}/>
+      >
+        <SEO frontmatter={frontmatter} postImage={postImage} />
         <div>
           <HomePageTemplate
             imageCardSL={dataMarkdown.frontmatter.imageCardSL}
@@ -138,86 +138,87 @@ HomePage.propTypes = {
 
 export default HomePage;
 
-export const pageQuery = graphql`query HomePageQuery($id: String!) {
-  site {
-    siteMetadata {
-      languages {
-        defaultLangKey
-        langs
-      }
-    }
-  }
-  allArticlesJson(filter: {title: {eq: "home"}}) {
-    edges {
-      node {
-        articles {
-          en
-          it
+export const pageQuery = graphql`
+  query HomePageQuery($id: String!) {
+    site {
+      siteMetadata {
+        languages {
+          defaultLangKey
+          langs
         }
       }
     }
-  }
-  markdownRemark(id: {eq: $id}) {
-    html
-    frontmatter {
-      id
-      title
-      description
-      tags
-      lang
-      image {
-        childImageSharp {
-          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-        }
-      }
-      heading
-      subheading
-      mainpitch {
-        heading
-        subheading
-        title
-        description
-        link
-      }
-      slider {
-        display
-        array {
-          original
-          thumbnail
-          originalAlt
-          originalTitle
-          description
-        }
-      }
-      imageCardSL {
-        alt
-        image {
-          childImageSharp {
-            gatsbyImageData(width: 128, quality: 84, layout: CONSTRAINED)
+    allArticlesJson(filter: { title: { eq: "home" } }) {
+      edges {
+        node {
+          articles {
+            en
+            it
           }
         }
-        name
-        description
-        website
       }
-      main {
-        image1 {
+    }
+    markdownRemark(id: { eq: $id }) {
+      html
+      frontmatter {
+        id
+        title
+        description
+        tags
+        lang
+        image {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
+        heading
+        subheading
+        mainpitch {
+          heading
+          subheading
+          title
+          description
+          link
+        }
+        slider {
+          display
+          array {
+            original
+            thumbnail
+            originalAlt
+            originalTitle
+            description
+          }
+        }
+        imageCardSL {
           alt
           image {
             childImageSharp {
-              gatsbyImageData(width: 500, quality: 90, layout: CONSTRAINED)
+              gatsbyImageData(width: 128, quality: 84, layout: CONSTRAINED)
+            }
+          }
+          name
+          description
+          website
+        }
+        main {
+          image1 {
+            alt
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 500, quality: 90, layout: CONSTRAINED)
+              }
             }
           }
         }
+        testimonials {
+          author
+          quote
+        }
       }
-      testimonials {
-        author
-        quote
+      fields {
+        slug
       }
-    }
-    fields {
-      slug
     }
   }
-}
 `;
