@@ -55,7 +55,7 @@ const BlogPost = ({ data, location }) => {
   const { markdownRemark: post } = data;
   const jsonData = data.allArticlesJson.edges[0].node.articles;
   const langKey = post.frontmatter.lang;
-  const image = frontmatter.image;
+  const image = post.frontmatter.image;
   const postImage = getSrc(image) || image;
 
   return (
