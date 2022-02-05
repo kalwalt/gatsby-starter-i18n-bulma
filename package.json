@@ -35,7 +35,6 @@
     "gatsby-remark-images": "^6.0.0",
     "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-source-filesystem": "^4.5.0",
-    "gatsby-transformer-javascript-frontmatter": "^4.5.0",
     "gatsby-transformer-json": "^4.5.0",
     "gatsby-transformer-remark": "^5.0.0",
     "gatsby-transformer-sharp": "^4.5.0",
