@@ -83,7 +83,6 @@ module.exports = {
         name: 'images',
       },
     },
-    'gatsby-transformer-javascript-frontmatter',
     `gatsby-plugin-image`,
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
