@@ -83,7 +83,6 @@ module.exports = {
         name: 'images',
       },
     },
-    'gatsby-transformer-javascript-frontmatter',
     `gatsby-plugin-image`,
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -116,7 +115,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-netlify`,
     {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
@@ -150,5 +148,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`,
   ],
 };
