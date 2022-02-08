@@ -3,6 +3,8 @@ id: '03'
 title: 'About me'
 description: 'Something about me'
 templateKey: about
+tags:
+  - about
 lang: en
 image: /img/PersimmonHD.jpg
 date: '05-03-2019'
