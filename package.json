@@ -4,15 +4,8 @@
   "version": "v1.2.0",
   "author": "Walter Perdan <info@kalwaltart.it> (www.kalwaltart.com)",
   "dependencies": {
-    "@hot-loader/react-dom": "^17.0.1",
-    "@reach/dialog": "^0.13.2",
-    "@vizuaalog/bulmajs": "^0.12.1",
-    "accordion": "^3.0.2",
     "animate.css": "^3.7.0",
     "bulma": "^0.9.3",
-    "classnames": "^2.3.1",
-    "css-loader": "^6.3.0",
-    "dependencies": "^0.0.1",
     "gatsby": "^4.5.0",
     "gatsby-cli": "^4.5.0",
     "gatsby-plugin-google-analytics": "^4.5.0",
@@ -57,9 +50,7 @@
     "sass": "^1.35.1",
     "sass-loader": "^11.0.1",
     "slash": "^4.0.0",
-    "slug": "^5.0.1",
-    "style-loader": "^2.0.0",
-    "url-loader": "^4.1.1"
+    "slug": "^5.0.1"
   },
   "keywords": [
     "gatsby",
