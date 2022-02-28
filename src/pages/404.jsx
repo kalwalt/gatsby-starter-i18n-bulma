@@ -7,7 +7,7 @@ import { graphql } from 'gatsby';
 const NotFoundPage = ({ data, location }) => {
   const jsonData = data.allArticlesJson.edges[0].node.articles;
   return (
-    <Layout data={data} jsonData={jsonData} location={location}>
+    <Layout className='content'>
       <React.Fragment>
         <div className="container content">
           <h1 className="title is-size-2 has-text-weight-bold is-bold-light">

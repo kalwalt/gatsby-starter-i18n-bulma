@@ -37,30 +37,7 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-i18n',
-      options: {
-        langKeyForNull: 'any',
-        langKeyDefault: languages.defaultLangKey,
-        useLangKeyLayout: false,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-i18n-tags',
-      options: {
-        // Default options
-        tagPage: 'src/templates/tags.jsx',
-        tagsUrl: '/tags/',
-        langKeyForNull: 'any',
-      },
-    },
     `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/data/articles`,
-      },
-    },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
@@ -81,6 +58,12 @@ module.exports = {
       options: {
         path: `${__dirname}/src/img`,
         name: 'images',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/articles`,
       },
     },
     `gatsby-plugin-image`,

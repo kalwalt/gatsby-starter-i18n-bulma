@@ -3,7 +3,8 @@ import * as PropTypes from 'prop-types';
 import { getSrc } from 'gatsby-plugin-image';
 import TagList from '../components/TagList';
 import { graphql } from 'gatsby';
-import LayoutTest from '../components/LayoutTest';
+import Layout from '../components/Layout';
+import Lightbox from '../components/Lightbox';
 import SEO from '../components/SEO/SEO';
 import Content, { HTMLContent } from '../components/Content';
 
@@ -11,6 +12,8 @@ const AboutPageTemplate = ({
   title,
   content,
   contentComponent,
+  lightbox,
+  images,
   tags,
   langKey,
 }) => {
@@ -20,6 +23,7 @@ const AboutPageTemplate = ({
       <h1 className="title animated bounceInLeft">{title}</h1>
       <section className="section">
         <PageContent className="container content" content={content} />
+        <Lightbox lightbox={lightbox} images={images} />
         <TagList tags={tags} langKey={langKey} />
       </section>
     </div>
@@ -34,51 +38,44 @@ AboutPageTemplate.propTypes = {
   langKey: PropTypes.string,
 };
 
-class AboutPage extends React.Component {
-  render() {
-    var dataMarkdown = [];
-    if (this.props.data !== null) {
-      console.log(this.props.data);
-      dataMarkdown = this.props.data.markdownRemark;
-    }
-    const jsonData = this.props.data.allArticlesJson.edges[0].node.articles;
-    const { frontmatter } = dataMarkdown;
+const Test = ({data}) => {
+
+    const { frontmatter } = data.markdownRemark;
     console.log(frontmatter);
     const image = frontmatter.image;
     const postImage = getSrc(image) || image;
+    const images = frontmatter.lightbox.images;
+    const lightbox = frontmatter.lightbox;
     const langKey = frontmatter.lang;
     const tags = frontmatter.tags;
-    console.log(this.props.location);
     return (
-      <LayoutTest
-        className="container"
-        data={this.props.data}
-        jsonData={jsonData}
-        location={this.props.location}
+      <Layout
+        className="container"   
       >
         <SEO frontmatter={frontmatter} postImage={postImage} />
         <div>
           <AboutPageTemplate
             contentComponent={HTMLContent}
-            title={dataMarkdown.frontmatter.title}
-            content={dataMarkdown.html}
+            title={frontmatter.title}
+            content={data.markdownRemark.html}
+            lightbox={lightbox}
+            images={images}
             tags={tags}
             langKey={langKey}
           />
         </div>
-      </LayoutTest>
+      </Layout>
     );
-  }
 }
 
-AboutPage.propTypes = {
+Test.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default AboutPage;
+export default Test;
 
 export const pageQuery = graphql`
-  query AboutPageTestQuery($id: String!) {
+  query TestQuery($id: String!) {
     site {
       siteMetadata {
         languages {
@@ -108,6 +105,17 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
+        lightbox {
+          display
+          images {
+            image {
+              childImageSharp {
+                gatsbyImageData(quality: 85, layout: FULL_WIDTH)
+              }
+            }
+            alt
           }
         }
       }
