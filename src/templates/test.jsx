@@ -8,7 +8,7 @@ import Lightbox from '../components/Lightbox';
 import SEO from '../components/SEO/SEO';
 import Content, { HTMLContent } from '../components/Content';
 
-const AboutPageTemplate = ({
+const TestTemplate = ({
   title,
   content,
   contentComponent,
@@ -30,7 +30,7 @@ const AboutPageTemplate = ({
   );
 };
 
-AboutPageTemplate.propTypes = {
+TestTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
@@ -54,7 +54,7 @@ const Test = ({data}) => {
       >
         <SEO frontmatter={frontmatter} postImage={postImage} />
         <div>
-          <AboutPageTemplate
+          <TestTemplate
             contentComponent={HTMLContent}
             title={frontmatter.title}
             content={data.markdownRemark.html}
