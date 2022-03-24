@@ -4,7 +4,7 @@ import { getSrc } from 'gatsby-plugin-image';
 import TagList from '../components/TagList';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Lightbox from '../components/Lightbox';
+//import Lightbox from '../components/Lightbox';
 import SEO from '../components/SEO/SEO';
 import Content, { HTMLContent } from '../components/Content';
 
@@ -23,7 +23,6 @@ const TestTemplate = ({
       <h1 className="title animated bounceInLeft">{title}</h1>
       <section className="section">
         <PageContent className="container content" content={content} />
-        <Lightbox lightbox={lightbox} images={images} />
         <TagList tags={tags} langKey={langKey} />
       </section>
     </div>
@@ -118,9 +117,6 @@ export const pageQuery = graphql`
             alt
           }
         }
-      }
-      fields {
-        slug
       }
     }
   }

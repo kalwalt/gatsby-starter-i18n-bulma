@@ -30,6 +30,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyForNull: 'any',
+        langKeyDefault: languages.defaultLangKey,
+        useLangKeyLayout: false,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sass',
       options: {
         sassOptions: {

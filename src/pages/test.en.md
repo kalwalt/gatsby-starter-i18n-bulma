@@ -10,7 +10,6 @@ lang: en
 image: /img/PersimmonHD.jpg
 date: '05-03-2019'
 path: /test/
-slug: /test/
 lightbox:
   display: true
   images:

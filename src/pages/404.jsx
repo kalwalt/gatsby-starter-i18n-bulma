@@ -55,9 +55,6 @@ export const pageQuery = graphql`
         id
         title
       }
-      fields {
-        slug
-      }
     }
   }
 `;
