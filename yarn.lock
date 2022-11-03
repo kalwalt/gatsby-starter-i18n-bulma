@@ -1410,14 +1410,7 @@
     core-js-pure "^3.20.2"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.15.4", "@babel/runtime@^7.16.7", "@babel/runtime@^7.2.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
-  version "7.17.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.2.tgz#66f68591605e59da47523c631416b18508779941"
-  integrity sha512-hzeyJyMA1YGdJTuWU0e/j4wKXrU4OMFvY2MSlaI9B7VQb0r5cxTE3EAIS2Q7Tn2RIcDkRvTA/v2JsAEhxe99uw==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
-"@babel/runtime@^7.18.0", "@babel/runtime@^7.18.9":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.10", "@babel/runtime@^7.15.4", "@babel/runtime@^7.16.7", "@babel/runtime@^7.18.0", "@babel/runtime@^7.18.9", "@babel/runtime@^7.2.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.20.1"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.1.tgz#1148bb33ab252b165a06698fde7576092a78b4a9"
   integrity sha512-mrzLkl6U9YLF8qpqI7TB82PESyEGjm/0Ly91jG575eVxMMlb8fYfOXFZIJ8XfLrJZQbm7dlKry2bJmXBUEkdFg==
@@ -7159,10 +7152,10 @@ gatsby-plugin-robots-txt@^1.7.0:
     "@babel/runtime" "^7.16.7"
     generate-robotstxt "^8.0.3"
 
-gatsby-plugin-sass@^5.5.0:
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-5.8.0.tgz#5b5c029c2e5c43a3e2625028678667b2e4687913"
-  integrity sha512-Styk3PK8uIZbw4nH1sGet63LF485L/D16a4Ww0dtE5sFEIJW+x9q6RrvMGIkRLKaPRX9UowHdSHgkZBrGw3wpQ==
+gatsby-plugin-sass@^5.24.0:
+  version "5.24.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-5.24.0.tgz#4c46adfbc7da5726eab4d04656e7310e55afc95e"
+  integrity sha512-yXclHh6XWYVI7lCdauOuAiBw0hrb82M3DYxWI3iqJ1kXD5tp0xbiiK/I1HvtAcKJi6KzI4RdB7vEBP4ZTxjv7g==
   dependencies:
     "@babel/runtime" "^7.15.4"
     resolve-url-loader "^3.1.4"
