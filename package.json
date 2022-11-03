@@ -6,8 +6,8 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "bulma": "^0.9.3",
-    "gatsby": "^4.8.0",
-    "gatsby-cli": "^4.8.1",
+    "gatsby": "^4.24.7",
+    "gatsby-cli": "^4.24.0",
     "gatsby-plugin-google-analytics": "^4.8.0",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-i18n-tags": "^1.0.0",
