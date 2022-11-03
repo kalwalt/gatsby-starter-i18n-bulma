@@ -4,7 +4,7 @@
   "version": "v1.3.0",
   "author": "Walter Perdan <info@kalwaltart.it> (www.kalwaltart.com)",
   "dependencies": {
-    "animate.css": "^3.7.0",
+    "animate.css": "^4.1.1",
     "bulma": "^0.9.3",
     "gatsby": "^4.24.7",
     "gatsby-cli": "^4.24.0",
