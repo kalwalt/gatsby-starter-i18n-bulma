@@ -31,6 +31,9 @@ gatsby develop
 A simple website with multilanguage support, blogging, bulma css, fontawesome, i18n, netlify-cms
 and much more...
 
+## Gatsby.js
+It support Gatsby.js v.4 !!
+
 ### Language switcher
 
 With this starter you can switch between different languages pages with different names for example:
