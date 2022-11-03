@@ -38,12 +38,10 @@ class AboutPage extends React.Component {
   render() {
     var dataMarkdown = [];
     if (this.props.data !== null) {
-      console.log(this.props.data);
       dataMarkdown = this.props.data.markdownRemark;
     }
     const jsonData = this.props.data.allArticlesJson.edges[0].node.articles;
     const { frontmatter } = dataMarkdown;
-    console.log(frontmatter);
     const image = frontmatter.image;
     const postImage = getSrc(image) || image;
     const langKey = frontmatter.lang;
