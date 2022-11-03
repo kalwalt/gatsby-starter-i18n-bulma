@@ -48,7 +48,7 @@
     "react-wow": "^1.0.0",
     "sass": "^1.43.2",
     "slash": "^4.0.0",
-    "slug": "^5.2.0"
+    "slug": "^8.2.2"
   },
   "keywords": [
     "gatsby",
