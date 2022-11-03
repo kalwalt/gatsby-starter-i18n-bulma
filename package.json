@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-i18n-bulma",
   "description": "Gatsby example site using i18n and bulma for CSS",
-  "version": "v1.2.0",
+  "version": "v1.3.0",
   "author": "Walter Perdan <info@kalwaltart.it> (www.kalwaltart.com)",
   "dependencies": {
     "animate.css": "^3.7.0",
