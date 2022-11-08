@@ -23,7 +23,7 @@ const ArtworkSimpleTemplate = ({
   const PageContent = contentComponent || Content;
   return (
     <div className="content">
-      <h1 className="title animated bounceInLeft">{title}</h1>
+      <h1 className="title animate__animated animate__bounceInLeft">{title}</h1>
       <div className="hero">
         <Lightbox lightbox={lightbox} images={images} />
       </div>

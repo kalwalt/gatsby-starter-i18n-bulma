@@ -30,7 +30,7 @@ const ArtworkPortfolioTemplate = ({
       <div className="container">
         <div className="content">
           <hr />
-          <h1 className="title animated bounceInLeft">{heading}</h1>
+          <h1 className="title animate__animated animate__bounceInLeft">{heading}</h1>
           <section className="section">
             <PageContent className="container content" content={content} />
             <TagList tags={tags} langKey={langKey} />

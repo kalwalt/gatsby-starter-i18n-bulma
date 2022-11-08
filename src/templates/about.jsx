@@ -17,7 +17,7 @@ const AboutPageTemplate = ({
   const PageContent = contentComponent || Content;
   return (
     <div className="container content">
-      <h1 className="title animated bounceInLeft">{title}</h1>
+      <h1 className="title animate__animated animate__bounceInLeft">{title}</h1>
       <section className="section">
         <PageContent className="container content" content={content} />
         <TagList tags={tags} langKey={langKey} />

@@ -51,7 +51,7 @@ const IconMenu = class extends React.Component {
           <div className="columns is-4 is-mobile is-multiline is-centered">
             <a className="column is-narrow has-text-centered" href={firstLink}>
               <span
-                className="animated"
+                className="animate__animated animate__heartBeat"
                 style={{ display: 'inline-block', position: 'relative' }}
               >
                 <FaCircle
@@ -79,7 +79,7 @@ const IconMenu = class extends React.Component {
             </a>
             <a className="column is-narrow has-text-centered" href={secondLink}>
               <span
-                className="animated"
+                className="animate__animated animate__heartBeat"
                 style={{ display: 'inline-block', position: 'relative' }}
               >
                 <FaCircle
@@ -107,7 +107,7 @@ const IconMenu = class extends React.Component {
             </a>
             <a className="column is-narrow has-text-centered" href={thirdLink}>
               <span
-                className="animated"
+                className="animate__animated animate__heartBeat"
                 style={{ display: 'inline-block', position: 'relative' }}
               >
                 <FaCircle
@@ -135,7 +135,7 @@ const IconMenu = class extends React.Component {
             </a>
             <a className="column is-narrow has-text-centered" href={fourthLink}>
               <span
-                className="animated"
+                className="animate__animated animate__heartBeat"
                 style={{ display: 'inline-block', position: 'relative' }}
               >
                 <FaCircle

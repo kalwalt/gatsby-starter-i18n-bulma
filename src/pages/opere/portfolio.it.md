@@ -2,7 +2,7 @@
 id: '16'
 title: "Portfolio artistico"
 image: /img/Persimmon.jpg
-heading: ""
+heading: "Portfolio"
 description: "Il mio portfolio artistico"
 templateKey: artworks-portfolio
 tags:
