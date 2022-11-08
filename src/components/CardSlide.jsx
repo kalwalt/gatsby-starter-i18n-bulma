@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactWOW from 'react-wow';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import * as PropTypes from 'prop-types';
 
@@ -56,13 +55,9 @@ class CardSlide extends React.Component {
                   <CardImageSlide imageInfo={imageInfo} />
                 </figure>
               </div>
-              <div className="media-content">
-                <ReactWOW animation="pulse">
+              <div className="media-content">                
                   <p className="title is-4">{name}</p>
-                </ReactWOW>
-                <ReactWOW delay="1s" animation="pulse">
                   <p className="title is-6">{description}</p>
-                </ReactWOW>
                 <br />
                 <a href={'https://' + website}>
                   <i className="is-family-code">{website}</i>

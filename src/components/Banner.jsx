@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactWOW from 'react-wow';
 import * as PropTypes from 'prop-types';
 import { FaAward } from 'react-icons/fa';
 import PreviewImage from '../components/PreviewCompatibleImage';
@@ -7,7 +6,6 @@ import { FormattedMessage } from 'react-intl';
 
 const Banner = ({ main, mainpitch }) => (
   <section className="section banner">
-    <ReactWOW animation="bounceInUp">
       <div className="container">
         <div className="columns is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
           <div
@@ -42,7 +40,6 @@ const Banner = ({ main, mainpitch }) => (
           </div>
         </div>
       </div>
-    </ReactWOW>
   </section>
 );
 
