@@ -92,53 +92,45 @@ class TagRoute extends React.Component {
 
 export default TagRoute;
 
-export const pageQuery = graphql`
-  query TagPage($langKey: String!, $tag: String!) {
-    site {
-      siteMetadata {
-        languages {
-          langs
-          defaultLangKey
-        }
-      }
-    }
-    markdownRemark {
-      frontmatter {
-        title
-        slug
-      }
-    }
-    allMarkdownRemark(
-      limit: 1000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: { templateKey: { ne: "message" }, lang: { eq: $langKey } }
-        fields: {
-          langKey: { eq: $langKey }
-          tagSlugs: { elemMatch: { tag: { eq: $tag } } }
-        }
-      }
-    ) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            title
-            description
-            date
-            slug
-          }
-          fields {
-            langKey
-            slug
-            tagSlugs {
-              tag
-              link
-            }
-          }
-          excerpt
-        }
+export const pageQuery = graphql`query TagPage($langKey: String!, $tag: String!) {
+  site {
+    siteMetadata {
+      languages {
+        langs
+        defaultLangKey
       }
     }
   }
-`;
+  markdownRemark {
+    frontmatter {
+      title
+      slug
+    }
+  }
+  allMarkdownRemark(
+    limit: 1000
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {templateKey: {ne: "message"}, lang: {eq: $langKey}}, fields: {langKey: {eq: $langKey}, tagSlugs: {elemMatch: {tag: {eq: $tag}}}}}
+  ) {
+    totalCount
+    edges {
+      node {
+        frontmatter {
+          title
+          description
+          date
+          slug
+        }
+        fields {
+          langKey
+          slug
+          tagSlugs {
+            tag
+            link
+          }
+        }
+        excerpt
+      }
+    }
+  }
+}`;

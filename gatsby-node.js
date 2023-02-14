@@ -5,50 +5,45 @@ const { graphql } = require('gatsby');
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
-  return graphql(`
-    {
-      site {
-        siteMetadata {
-          languages {
-            langs
+  return graphql(`{
+  site {
+    siteMetadata {
+      languages {
+        langs
+      }
+    }
+  }
+  markdownRemark {
+    frontmatter {
+      heading
+    }
+  }
+  allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 1000) {
+    edges {
+      node {
+        id
+        fields {
+          slug
+          langKey
+          tagSlugs {
+            tag
+            link
           }
         }
-      }
-      markdownRemark {
         frontmatter {
+          id
+          date
+          path
+          tags
+          templateKey
+          lang
+          title
           heading
         }
       }
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-              langKey
-              tagSlugs {
-                tag
-                link
-              }
-            }
-            frontmatter {
-              id
-              date
-              path
-              tags
-              templateKey
-              lang
-              title
-              heading
-            }
-          }
-        }
-      }
     }
-  `).then(result => {
+  }
+}`).then(result => {
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()));
       return Promise.reject(result.errors);
