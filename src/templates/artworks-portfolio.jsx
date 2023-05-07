@@ -6,7 +6,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO/SEO';
 import Content, { HTMLContent } from '../components/Content';
-import MasonryGal from '../components/Masonry/MasonryGal';
+//import MasonryGal from '../components/Masonry/MasonryGal';
 
 const ArtworkPortfolioTemplate = ({
   content,
@@ -22,9 +22,7 @@ const ArtworkPortfolioTemplate = ({
     <div className="content">
       <section className="hero is-info">
         <div className="hero-body">
-          <div className="content">
-            {masonry && <MasonryGal photos={masonry.photos} />}
-          </div>
+          
         </div>
       </section>
       <div className="container">
