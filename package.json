@@ -44,6 +44,7 @@
     "react-images": "^1.1.2",
     "react-intl": "^6.4.2",
     "react-leaflet": "^4.2.0",
+    "react-photo-gallery": "^8.0.0",
     "react-wow": "^1.0.0",
     "sass": "^1.58.0",
     "slash": "^5.0.0",
