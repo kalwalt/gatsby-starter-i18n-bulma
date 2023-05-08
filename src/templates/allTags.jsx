@@ -128,69 +128,80 @@ AllTagsPage.propTypes = {
 
 export default AllTagsPage;
 
-export const pageQuery = graphql`query AllTagsPageQuery($id: String!) {
-  site {
-    siteMetadata {
-      languages {
-        defaultLangKey
-        langs
-      }
-    }
-  }
-  markdownRemark(id: {eq: $id}) {
-    frontmatter {
-      title
-      description
-      slug
-      path
-    }
-  }
-  blog: allMarkdownRemark(
-    limit: 2000
-    filter: {frontmatter: {templateKey: {eq: "blog-post"}}, fields: {langKey: {eq: "en"}}}
-  ) {
-    edges {
-      node {
-        frontmatter {
-          title
-          slug
+export const pageQuery = graphql`
+  query AllTagsPageQuery($id: String!) {
+    site {
+      siteMetadata {
+        languages {
+          defaultLangKey
+          langs
         }
       }
     }
-    group(field: {frontmatter: {tags: SELECT}}) {
-      fieldValue
-      totalCount
-    }
-  }
-  pages: allMarkdownRemark(
-    limit: 2000
-    filter: {frontmatter: {templateKey: {regex: "/artworks/"}}, fields: {langKey: {eq: "en"}}}
-  ) {
-    edges {
-      node {
-        frontmatter {
-          title
-          slug
-        }
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        title
+        description
+        slug
+        path
       }
     }
-    group(field: {frontmatter: {tags: SELECT}}) {
-      fieldValue
-      totalCount
-    }
-  }
-  all: allMarkdownRemark(limit: 2000, filter: {fields: {langKey: {eq: "en"}}}) {
-    edges {
-      node {
-        frontmatter {
-          title
-          slug
+    blog: allMarkdownRemark(
+      limit: 2000
+      filter: {
+        frontmatter: { templateKey: { eq: "blog-post" } }
+        fields: { langKey: { eq: "en" } }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            slug
+          }
         }
       }
+      group(field: { frontmatter: { tags: SELECT } }) {
+        fieldValue
+        totalCount
+      }
     }
-    group(field: {frontmatter: {tags: SELECT}}) {
-      fieldValue
-      totalCount
+    pages: allMarkdownRemark(
+      limit: 2000
+      filter: {
+        frontmatter: { templateKey: { regex: "/artworks/" } }
+        fields: { langKey: { eq: "en" } }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            slug
+          }
+        }
+      }
+      group(field: { frontmatter: { tags: SELECT } }) {
+        fieldValue
+        totalCount
+      }
+    }
+    all: allMarkdownRemark(
+      limit: 2000
+      filter: { fields: { langKey: { eq: "en" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            slug
+          }
+        }
+      }
+      group(field: { frontmatter: { tags: SELECT } }) {
+        fieldValue
+        totalCount
+      }
     }
   }
-}`;
+`;

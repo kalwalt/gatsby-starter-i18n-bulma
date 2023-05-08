@@ -81,57 +81,69 @@ BlogRoll.propTypes = {
 
 export default langKey => (
   <StaticQuery
-    query={graphql`query BlogRollQuery {
-  site {
-    siteMetadata {
-      title
-      languages {
-        langs
-        defaultLangKey
+    query={graphql`
+      query BlogRollQuery {
+        site {
+          siteMetadata {
+            title
+            languages {
+              langs
+              defaultLangKey
+            }
+          }
+        }
+        en: allMarkdownRemark(
+          sort: { frontmatter: { date: DESC } }
+          filter: {
+            frontmatter: {
+              templateKey: { eq: "blog-post" }
+              lang: { regex: "/(en|any)/" }
+            }
+          }
+        ) {
+          edges {
+            node {
+              excerpt(pruneLength: 400)
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                templateKey
+                date
+                lang
+              }
+            }
+          }
+        }
+        it: allMarkdownRemark(
+          sort: { frontmatter: { date: DESC } }
+          filter: {
+            frontmatter: {
+              templateKey: { eq: "blog-post" }
+              lang: { regex: "/(it|any)/" }
+            }
+          }
+        ) {
+          edges {
+            node {
+              excerpt(pruneLength: 400)
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                templateKey
+                date
+                lang
+              }
+            }
+          }
+        }
       }
-    }
-  }
-  en: allMarkdownRemark(
-    sort: {frontmatter: {date: DESC}}
-    filter: {frontmatter: {templateKey: {eq: "blog-post"}, lang: {regex: "/(en|any)/"}}}
-  ) {
-    edges {
-      node {
-        excerpt(pruneLength: 400)
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          templateKey
-          date
-          lang
-        }
-      }
-    }
-  }
-  it: allMarkdownRemark(
-    sort: {frontmatter: {date: DESC}}
-    filter: {frontmatter: {templateKey: {eq: "blog-post"}, lang: {regex: "/(it|any)/"}}}
-  ) {
-    edges {
-      node {
-        excerpt(pruneLength: 400)
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          templateKey
-          date
-          lang
-        }
-      }
-    }
-  }
-}`}
+    `}
     render={data => <BlogRoll data={data} />}
   />
 );
