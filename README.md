@@ -28,11 +28,11 @@ gatsby develop
 
 ## Features
 
-A simple website with multilanguage support, blogging, bulma css, fontawesome, i18n, netlify-cms
+A simple website with multilanguage support, blogging, bulma css, i18n, netlify-cms
 and much more...
 
 ## Gatsby.js
-It support Gatsby.js v.4 !!
+It support Gatsby.js v.5 !!
 
 ### Language switcher
 
