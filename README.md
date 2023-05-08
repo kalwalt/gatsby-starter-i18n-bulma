@@ -32,6 +32,7 @@ A simple website with multilanguage support, blogging, bulma css, fontawesome, i
 and much more...
 
 ## Gatsby.js
+
 It support Gatsby.js v.4 !!
 
 ### Language switcher
