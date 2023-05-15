@@ -10,7 +10,7 @@ import Content, { HTMLContent } from '../components/Content';
 import IconMenu from '../components/IconMenu';
 import iconLinks from '../data/artworksMenu';
 import select from '../components/utils';
-import Slider from '../components/Slider';
+import SlickSlider from '../components/SlickComponents/SlickSlider';
 import Banner from '../components/Banner';
 import Testimonials from '../components/Testimonials';
 import CardSlide from '../components/CardSlide';
@@ -40,8 +40,10 @@ const HomePageTemplate = ({
 
   return (
     <div>
+      
       <FullWidthImage img={heroImage} title={title} subheading={subheading} />
-      <Slider array={array} display={display} />
+      
+      <SlickSlider />
       <Banner main={main.image1} mainpitch={mainpitch} />
       <div className="container section">
         <IconMenu
@@ -137,6 +139,13 @@ HomePage.propTypes = {
 };
 
 export default HomePage;
+
+export const Head = () => (
+  <>
+    <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+  </>
+)
 
 export const pageQuery = graphql`
   query HomePageQuery($id: String!) {
