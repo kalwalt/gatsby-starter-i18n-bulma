@@ -78,6 +78,7 @@ const SlickSlider = () => {
   const settings = {
     dots: true,
     autoplay: true,
+    lazyLoad: true,
     infinite: true,
     speed: 500,
     slidesToShow: imageCount,
