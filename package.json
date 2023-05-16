@@ -49,6 +49,7 @@
     "react-wow": "^1.0.0",
     "sass": "^1.62.1",
     "slash": "^5.1.0",
+    "slick-carousel": "^1.8.1",
     "slug": "^8.2.2"
   },
   "keywords": [
