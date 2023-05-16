@@ -64,7 +64,7 @@ const SlickSlider = () => {
 //console.log(sliderQuery);
   const imageMap = sliderQuery.slider.edges.map(image => {
     let img = image.node.childImageSharp;
-    console.log(img);
+   // console.log(img);
     return (
       <div className="" key={'0'}>
         <GatsbyImage

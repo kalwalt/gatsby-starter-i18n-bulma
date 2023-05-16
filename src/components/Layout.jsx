@@ -73,7 +73,7 @@ class TemplateWrapper extends Component {
 export const Head = () => (
   <>
     <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
   </>
 )
 
