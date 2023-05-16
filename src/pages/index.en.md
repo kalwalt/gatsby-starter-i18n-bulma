@@ -7,7 +7,7 @@ tags:
   - web
 lang: en
 date: '05-03-2019'
-image: /img/PersimmonHD.jpg
+image: /img/Persimmon400px.jpg
 heading: 'The persimmon is the artist fruit...'
 subheading: 'The persimmon is the artist fruit...'
 slider:
