@@ -54,7 +54,7 @@ const SlickSlider = () => {
         edges {
           node {
             childImageSharp {
-                gatsbyImageData(width: 500, quality: 84, layout: CONSTRAINED)
+                gatsbyImageData(width: 500, quality: 82, layout: CONSTRAINED)
               }
           }
         }

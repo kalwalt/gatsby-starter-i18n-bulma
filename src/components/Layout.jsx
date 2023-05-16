@@ -70,4 +70,10 @@ class TemplateWrapper extends Component {
   }
 }
 
+export const Head = () => (
+  <>
+    <link href='https://fonts.gstatic.com' rel='preconnect' crossorigin/>
+  </>
+)
+
 export default TemplateWrapper;
