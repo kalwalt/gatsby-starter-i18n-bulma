@@ -6760,10 +6760,10 @@ gatsby-react-router-scroll@^6.9.0:
     "@babel/runtime" "^7.20.13"
     prop-types "^15.8.1"
 
-gatsby-remark-copy-linked-files@^6.9.0:
-  version "6.9.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-6.9.0.tgz#d50d86c04233cb3f30427eb52a5ebc47763a0ea6"
-  integrity sha512-qdwLWCVv5WRrFJltavNd8j2sGlm7ESbedByrhN2bE01Oog00cdVI0P3j0Pqwf5rmfZXecbz+VK7M8VMC6lb5Vg==
+gatsby-remark-copy-linked-files@^6.10.0:
+  version "6.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-6.10.0.tgz#2c02ea539158aefcaee2a370ab01e961c71e67f5"
+  integrity sha512-6t2paFX4l3MjrUHT5c0TNa7pJw+RFmI1LmfZgsK6Zpqr/lrdav5ancPq4mMk73E+JNtWAGWanGAEatZN33Cwbw==
   dependencies:
     "@babel/runtime" "^7.20.13"
     cheerio "^1.0.0-rc.10"
