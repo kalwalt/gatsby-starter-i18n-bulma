@@ -6458,10 +6458,10 @@ gatsby-cli@^5.9.0:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^4.0.0, gatsby-core-utils@^4.9.0:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-4.9.0.tgz#1134d9a119f49b90d3b5107210dfdd17a4231463"
-  integrity sha512-diCAmlr42YQpSKapD374JVF+ojDXTHxnrNoS907jNGgT4J35t2az9GsEQFgrEou3Td5TLuUl/8yJM2Hpwn4gyg==
+gatsby-core-utils@^4.0.0, gatsby-core-utils@^4.10.0, gatsby-core-utils@^4.9.0:
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-4.10.0.tgz#affc18e2a64f2e49e50c59ec13c7114c7937ad7d"
+  integrity sha512-7wNANRPzxyTsZMnZFyCq1f2D0T6299l1qUew8q8Ax2QJM0kzFY/4uuJaV/fnrC0RdjWnkwGIAiZ1ZnGK4E8HSA==
   dependencies:
     "@babel/runtime" "^7.20.13"
     ci-info "2.0.0"
@@ -6581,16 +6581,16 @@ gatsby-plugin-image@^3.9.0:
     objectFitPolyfill "^2.3.5"
     prop-types "^15.8.1"
 
-gatsby-plugin-manifest@^5.9.0:
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-5.9.0.tgz#0d181c86e840400f93b263d2dcbbf486f6d5388c"
-  integrity sha512-6BrS5WprI+MJM4JsoJ30Z5cuKzICFlohpXiUMO2Xc+p2bzl+hgeIb06nm4lP52gNAPOVyLQDZDqB0PKRNYVe/w==
+gatsby-plugin-manifest@^5.10.0:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-5.10.0.tgz#27e479ac82b5c776e849155c0d62cc23d6947b5b"
+  integrity sha512-y3TUARyNaK29oD/8ZJOVvLVRvSvfKNjLHmNc0D6KPJRQld7T+ZKCZh4ylwN+Hor8vHnXKHyVoBZd+BIEjTBVAg==
   dependencies:
     "@babel/runtime" "^7.20.13"
-    gatsby-core-utils "^4.9.0"
-    gatsby-plugin-utils "^4.9.0"
-    semver "^7.3.8"
-    sharp "^0.31.3"
+    gatsby-core-utils "^4.10.0"
+    gatsby-plugin-utils "^4.10.0"
+    semver "^7.5.0"
+    sharp "^0.32.1"
 
 gatsby-plugin-netlify-cms@^7.9.0:
   version "7.9.0"
@@ -6737,19 +6737,19 @@ gatsby-plugin-typescript@^5.9.0:
     "@babel/runtime" "^7.20.13"
     babel-plugin-remove-graphql-queries "^5.9.0"
 
-gatsby-plugin-utils@^4.9.0:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-4.9.0.tgz#d0b7c72964ef6c4dee7d81f4e6217e5e677c7352"
-  integrity sha512-JGd6FNjoj2ceb4eCw7xzIELlPwSBxGGkJpy+iQTnLT32aPT0vidjGmiytXpNDvktLrxpmuTDPVfMJTjopu+y2A==
+gatsby-plugin-utils@^4.10.0, gatsby-plugin-utils@^4.9.0:
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-4.10.0.tgz#828dbae087b5a749eafa770777336a698e3751e2"
+  integrity sha512-+hQ4wVvdai8cNI+Mg0CoJbZGJVXAda7hPEekiI9oTSbqGxtTkIw0L3s4EADUEJ5jTuuJhNQzuuueOBkwJVioIw==
   dependencies:
     "@babel/runtime" "^7.20.13"
     fastq "^1.15.0"
     fs-extra "^11.1.1"
-    gatsby-core-utils "^4.9.0"
-    gatsby-sharp "^1.9.0"
+    gatsby-core-utils "^4.10.0"
+    gatsby-sharp "^1.10.0"
     graphql-compose "^9.0.10"
     import-from "^4.0.0"
-    joi "^17.9.1"
+    joi "^17.9.2"
     mime "^3.0.0"
 
 gatsby-react-router-scroll@^6.9.0:
@@ -6805,6 +6805,13 @@ gatsby-script@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/gatsby-script/-/gatsby-script-2.9.0.tgz#57e2cc9fcc57472456aadabd0b9375505a14eb46"
   integrity sha512-9AWRBIDgahdurDjOnlNnEeiQLPzSpeec4zESDNRJXHBeGgsqq/i8k5nVf19dp0zF5iaYH6EdxMk7nAedTYX80w==
+
+gatsby-sharp@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-sharp/-/gatsby-sharp-1.10.0.tgz#8aadca6146c46abfe4e59a11e1695aae6bbd01a3"
+  integrity sha512-9D1hYBRyr85RBCqbqXbKdGgSoNO5qrqhqs7F9igOEAT9Qv8m65gfBBg+rVz6eWhlCA7TvYRBIsUfpAbB2dfTUg==
+  dependencies:
+    sharp "^0.32.1"
 
 gatsby-sharp@^1.9.0:
   version "1.9.0"
@@ -8527,7 +8534,7 @@ jest-worker@^27.4.5, jest-worker@^27.5.1:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-joi@^17.7.0, joi@^17.9.1:
+joi@^17.7.0, joi@^17.9.1, joi@^17.9.2:
   version "17.9.2"
   resolved "https://registry.yarnpkg.com/joi/-/joi-17.9.2.tgz#8b2e4724188369f55451aebd1d0b1d9482470690"
   integrity sha512-Itk/r+V4Dx0V3c7RLFdRh12IOjySm2/WGPMubBT92cQvRfYZhPM2W0hZlctjj72iES8jsRCwp7S/cRmWBnJ4nw==
@@ -10066,6 +10073,11 @@ node-addon-api@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-5.0.0.tgz#7d7e6f9ef89043befdb20c1989c905ebde18c501"
   integrity sha512-CvkDw2OEnme7ybCykJpVcKH+uAOLV2qLqiyla128dN9TkEWfrYmxG6C2boDe5KcNQqZF3orkqzGgOMvZ/JNekA==
+
+node-addon-api@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-6.1.0.tgz#ac8470034e58e67d0c6f1204a18ae6995d9c0d76"
+  integrity sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==
 
 node-fetch@2.6.7:
   version "2.6.7"
@@ -12733,10 +12745,10 @@ semver@^6.0.0, semver@^6.1.1, semver@^6.1.2, semver@^6.3.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
 
-semver@^7.2.1, semver@^7.3.2, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7, semver@^7.3.8:
-  version "7.3.8"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.8.tgz#07a78feafb3f7b32347d725e33de7e2a2df67798"
-  integrity sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==
+semver@^7.2.1, semver@^7.3.2, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7, semver@^7.3.8, semver@^7.5.0:
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.1.tgz#c90c4d631cf74720e46b21c1d37ea07edfab91ec"
+  integrity sha512-Wvss5ivl8TMRZXXESstBA4uR5iXgEN/VC5/sOcuXdVLzcdkz4HWetIoRfG5gb5X+ij/G9rw9YoGn3QoQ8OCSpw==
   dependencies:
     lru-cache "^6.0.0"
 
@@ -12834,6 +12846,20 @@ sharp@^0.31.3:
     node-addon-api "^5.0.0"
     prebuild-install "^7.1.1"
     semver "^7.3.8"
+    simple-get "^4.0.1"
+    tar-fs "^2.1.1"
+    tunnel-agent "^0.6.0"
+
+sharp@^0.32.1:
+  version "0.32.1"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.32.1.tgz#41aa0d0b2048b2e0ee453d9fcb14ec1f408390fe"
+  integrity sha512-kQTFtj7ldpUqSe8kDxoGLZc1rnMFU0AO2pqbX6pLy3b7Oj8ivJIdoKNwxHVQG2HN6XpHPJqCSM2nsma2gOXvOg==
+  dependencies:
+    color "^4.2.3"
+    detect-libc "^2.0.1"
+    node-addon-api "^6.1.0"
+    prebuild-install "^7.1.1"
+    semver "^7.5.0"
     simple-get "^4.0.1"
     tar-fs "^2.1.1"
     tunnel-agent "^0.6.0"
