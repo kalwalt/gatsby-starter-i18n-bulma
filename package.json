@@ -8,7 +8,7 @@
     "bulma": "^0.9.4",
     "gatsby": "^5.9.1",
     "gatsby-cli": "^5.9.0",
-    "gatsby-plugin-google-analytics": "^5.9.0",
+    "gatsby-plugin-google-analytics": "^5.10.0",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-i18n-tags": "^1.0.0",
     "gatsby-plugin-image": "^3.9.0",
