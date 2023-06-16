@@ -22,7 +22,7 @@
     "gatsby-plugin-remove-trailing-slashes": "^4.19.0",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sass": "^6.9.0",
-    "gatsby-plugin-sharp": "^5.9.0",
+    "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-plugin-sitemap": "^6.9.0",
     "gatsby-remark-copy-linked-files": "^6.9.0",
     "gatsby-remark-images": "^7.9.0",
