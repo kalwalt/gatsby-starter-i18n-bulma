@@ -11,7 +11,7 @@
     "gatsby-plugin-google-analytics": "^5.9.0",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-i18n-tags": "^1.0.0",
-    "gatsby-plugin-image": "^3.9.0",
+    "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.9.0",
     "gatsby-plugin-netlify": "^5.1.0",
     "gatsby-plugin-netlify-cms": "^7.9.0",
